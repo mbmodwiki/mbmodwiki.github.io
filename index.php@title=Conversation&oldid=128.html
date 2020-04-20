@@ -12,7 +12,7 @@
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
 <link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Conversation&amp;action=creativecommons" rel="meta" />
 <link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
-<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%3ARecentChanges&amp;feed=atom" />
 <link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
 <meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
 <link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
@@ -36,7 +36,7 @@
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub">
-				<div id="mw-revision-info">Revision as of 12:01, 8 June 2013 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter" title="Special:Contributions/Swyter">contribs</a>)</span></div>
+				<div id="mw-revision-info">Revision as of 12:01, 8 June 2013 by <a href="User%3ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%3ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%3AContributions/Swyter" title="Special:Contributions/Swyter">contribs</a>)</span></div>
 
 				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Conversation&amp;diff=prev&amp;oldid=128" title="Conversation">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Conversation&amp;direction=prev&amp;oldid=128" title="Conversation">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
 			</div>
@@ -211,7 +211,7 @@
 </p>
 <h4><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=5" title="Edit section: Flags">edit</a>]</span> <span class="mw-headline" id="Flags"> Flags </span></h4>
 <p>For lines of dialogue that are intended to be spoken by the player, the <a href="Flag" title="Flag">flag</a> "plyr" is added to the actor name.  These will be presented in a menu if there is more than one choice, or automatically spoken if there is only one choice available.  In game, if there is only one choice, the camera will automatically pan to the player as he or she speaks.  Otherwise, the camera will remain focused on the NPC.
-</p><p>For lines of dialogue that are to be spoken by a third party present in the <a href="Scene.html" title="Scene">scene</a>, the flag "other(<i>troop</i>)" is added to the actor name, with <i>troop</i> assigned to the troop ID of the other person in the conversation.  Note that in encounters in the world map, a new scene is automatically produced and there will be no way to introduce a third party<small><sup><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>; this function works only for scenes such as towns and interiors.
+</p><p>For lines of dialogue that are to be spoken by a third party present in the <a href="Scene.html" title="Scene">scene</a>, the flag "other(<i>troop</i>)" is added to the actor name, with <i>troop</i> assigned to the troop ID of the other person in the conversation.  Note that in encounters in the world map, a new scene is automatically produced and there will be no way to introduce a third party<small><sup><a href="index.php@title=Talk%3AConversation&amp;action=edit&amp;redlink=1" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>; this function works only for scenes such as towns and interiors.
 </p><p>If you want the conversation to proceed automatically, append the flag "auto_proceed" to the actor name.  Note that this will skip the dialogue text completely and is usually intended only if you want to use one dialogue topic to accomplish a certain bit of code (<i>e.g.</i>, playing a sound effect) before immediately displaying the next, or if you want two or more distinct actors to redirect the player to the same dialogue topic when conversation is started.
 </p><p>If you want a dialogue topic to iterate through a number of in-game objects or even a set number, use the <i>repeat_for_x</i> flags as follows. See <a href="index.php@title=Conversation&amp;oldid=128.html#Iteration">below in special notes</a> for more information.
 </p>
@@ -330,7 +330,7 @@
 </p><p>Alternatively, it can be set to "close_window" to end the conversation and return the player back to main gameplay.
 </p>
 <h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=12" title="Edit section: Consequences block">edit</a>]</span> <span class="mw-headline" id="Consequences_block"> Consequences block </span></h3>
-<p>The consequences block is a set of script instructions executed after the dialogue entry is chosen.  Unlike the condition block, any condition function in the consequences block will not halt execution of the code, except in the case of cancelling a <a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1.html" class="new" title="Try begin (page does not exist)">try_begin</a> block.<small><sup><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>
+<p>The consequences block is a set of script instructions executed after the dialogue entry is chosen.  Unlike the condition block, any condition function in the consequences block will not halt execution of the code, except in the case of cancelling a <a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1.html" class="new" title="Try begin (page does not exist)">try_begin</a> block.<small><sup><a href="index.php@title=Talk%3AConversation&amp;action=edit&amp;redlink=1" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>
 </p>
 <h2><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=13" title="Edit section: Special notes">edit</a>]</span> <span class="mw-headline" id="Special_notes"> Special notes </span></h2>
 <h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=14" title="Edit section: Playing speech">edit</a>]</span> <span class="mw-headline" id="Playing_speech"> Playing speech </span></h3>
@@ -386,7 +386,7 @@ Expensive parser function count: 0/100
 Retrieved from "<a href="Conversation">http://mbmodwiki.ollclan.eu/Conversation</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AModule_System" title="Category:Module System">Module System</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%3ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%3AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%3AModule_System" title="Category:Module System">Module System</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -413,7 +413,7 @@ Retrieved from "<a href="Conversation">http://mbmodwiki.ollclan.eu/Conversation<
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="Conversation"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%3AConversation&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -484,11 +484,11 @@ Retrieved from "<a href="Conversation">http://mbmodwiki.ollclan.eu/Conversation<
 				<ul>
 					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
 					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-The-Basics"><a href="Category%3AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%3A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%3ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
 					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
+					<li id="n-help"><a href="Help%3AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -504,9 +504,9 @@ Retrieved from "<a href="Conversation">http://mbmodwiki.ollclan.eu/Conversation<
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Conversation" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Conversation" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+					<li id="t-whatlinkshere"><a href="Special%3AWhatLinksHere/Conversation" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%3ARecentChangesLinked/Conversation" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%3ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
 									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Conversation&amp;oldid=128&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
 						<li id="t-permalink"><a href="index.php@title=Conversation&amp;oldid=128" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
@@ -526,9 +526,9 @@ Retrieved from "<a href="Conversation">http://mbmodwiki.ollclan.eu/Conversation<
 																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%3APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%3AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%3AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">
