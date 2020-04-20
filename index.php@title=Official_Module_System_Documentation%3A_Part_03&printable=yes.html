@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Official Module System Documentation: Part 03 - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Official_Module_System_Documentation_Part_03 skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Official Module System Documentation: Part 03</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#mw-head">navigation</a>,
+					<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
+<p>	<span class="swynavbar-left" style="float:left;">
+	<a href="Official_Module_System_Documentation%253A_Part_02.html" title="Official Module System Documentation: Part 02"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+           </span></a>
+	</span>
+	<span class="swynavbar-right">
+	<a href="Official_Module_System_Documentation%253A_Part_04.html" title="Official Module System Documentation: Part 04"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	</span>
+</p>
+</div>
+<p><br />
+In this chapter of the documentation, we cover module_troops.py and its functions. Module_troops is where all regular troops, Heroes, chests and town NPCs are defined, complete with faces, ability scores and inventory. Whenever you wish to make a new character or troop type, this is the file you'll be modding.
+</p><p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#3.1_--_Breakdown_of_Module_Troops"><span class="tocnumber">1</span> <span class="toctext">3.1 -- Breakdown of Module_Troops</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#3.2_--_Upgrading_Troops"><span class="tocnumber">2</span> <span class="toctext">3.2 -- Upgrading Troops</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#3.3_--_Adding_New_Troops"><span class="tocnumber">3</span> <span class="toctext">3.3 -- Adding New Troops</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#3.4_--_Mercenaries"><span class="tocnumber">4</span> <span class="toctext">3.4 -- Mercenaries</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#3.5_--_NPCs"><span class="tocnumber">5</span> <span class="toctext">3.5 -- NPCs</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#3.6_--_Merchants"><span class="tocnumber">6</span> <span class="toctext">3.6 -- Merchants</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="3.1_--_Breakdown_of_Module_Troops"> 3.1 -- Breakdown of Module_Troops </span></h2>
+<p>The file begins with a small block of code that calculates weapon proficiencies and some other non-moddable code. Since this whole block falls outside the Python list and we will not be editing it, it needn't concern us yet. Skip ahead to the list troops = [.
+</p><p>Here we find tuples for our friend, the player, and several other troops important to the game. Just below that are the various fighters we encounter in the Zendar trainer. We'll study a few of these, as they are excellent examples of regular troops' level progression.
+</p><p>Observe:
+</p>
+<pre> ["novice_fighter","novice_fighter","novice_fighters",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
+  [itm_sword,itm_hide_boots],
+  str_6|agi_6|level(5),wp(60),knows_common,swadian_face1, swadian_face2],
+</pre>
+<p>This is a bog-standard troop called "novice fighter". "novice fighter" is low-level, not very good at fighting, has low ability scores, and is otherwise unremarkable.
+</p><p><br />
+Breakdown of the tuple fields:
+</p><p>1 ) Troop id. Used for referencing troops in other files.
+</p><p>2 ) Troop name.
+</p><p>3 ) Plural troop name.
+</p><p>4 ) Troop flags. tf_guarantee_* flags must be set if you want to make sure a troop always gets equipped with a certain category of inventory. If you do not, the troop may appear without armour of that category. Only melee weapons are guaranteed to be equipped, if there are any in the troop's inventory.
+</p><p>5 ) Scene. This is only applicable to Heroes; it governs at which scene and entry point the Hero will appear. For example, scn_reyvadin_castle|entry(1) puts the troop at entry point 1 in Reyvadin Castle.
+</p><p>6 ) Reserved. Not currently used; must be either reserved or 0.
+</p><p>7 ) Faction. The troop's faction, used with the fac_ prefix.
+</p><p>8 ) Inventory. A list of items in the troop's inventory. Regular troops will choose equipment from this list at random.
+</p><p>9 ) Attributes. The troop's attribute scores and character level. These work exactly as they do for the player.
+</p><p>10 ) Weapon proficiencies. The weapon proficiency scores of this troop. The function wp(x) will create random weapon proficiencies close to value x, but you can also add extra definitions to specifically designate certain proficiency scores. For example, to make an expert archer with other weapon proficiencies close to 60 you could use:
+</p>
+<pre>          wp_archery(160) | wp(60)
+</pre>
+<p>11 ) Skills. These are the same as the player's skills. Note that, in addition to the attributes and skills you've defined, the troop also gets 1 random attribute point and 1 random skill point per character level.
+</p><p>12 ) Face code. The game will generate a face according to this code. You can export new face codes from the game by pressing CTRL+E in the face editor screen while Edit Mode is active.
+</p><p>13 ) Face code 2. Only applicable to regular troops, can be omitted for Heroes. The game will create random faces between face code 1 and face code 2 for each individual of this troop type.
+</p><p>Novice_fighter tuple examination:
+</p><p>1 ) Troop id = "novice_fighter"
+</p><p>2 ) Troop name = "novice_fighter"
+</p><p>3 ) Plural troop name = "novice_fighters"
+</p><p>4 ) Troop flags = tf_guarantee_boots|tf_guarantee_armor
+</p><p>5 ) Scene = no_scene
+</p><p>6 ) Reserved = reserved
+</p><p>7 ) Faction = fac_commoners
+</p><p>8 ) Inventory = [itm_sword,itm_hide_boots]
+</p><p>9 ) Attributes = str_6|agi_6|level(5)
+</p><p>10 ) Weapon proficiencies = wp(60)
+</p><p>11 ) Skills = knows_common
+</p><p>12 ) Face code = swadian_face1
+</p><p>13 ) Face code 2 = swadian_face2
+</p><p>There are three things worth noting about this tuple.
+</p><p>Our "novice fighter" has tf_guarantee_armor, but no armour of his own. However, this does not make tf_guarantee_armor redundant; the troop will put on any armour he receives during the game.
+</p><p>To begin with (ie, at Level 1), "novice_fighter" has a STR of 6 and an AGI of 6. Upon start of the game, he is bumped up to Level 5, with all the usual stat gains that implies.
+</p><p>He has the skill knows_common. knows_common is a collection of skills that was defined at the beginning of module_troops; scroll up and observe this collection now.
+</p><p>knows_common = knows_riding_1|knows_trade_2|knows_inventory_management_2|knows_prisoner_management_1|knows_leadership_1
+</p><p>A troop that has knows_common will have every skill listed here; a Riding skill of 1, a Trade skill of 2, an Inventory Management skill of 2, a Prisoner Management skill of 1, and a Leadership skill of 1. knows_common is what is known as a constant; a phrase that represents something else, be it a number, an identifier, another constant, or any other valid object. A constant can represent any number of objects, as long as those objects are in the right order for the place where you intend to use this constant.
+</p><p>In this case, knows_common is defined as knows_riding_1|knows_trade_2|knows_inventory_management_2|knows_prisoner_management_1|knows_leadership_1. So in effect, by putting knows_common in the Skills field, the module system will function just as if you'd typed out knows_riding_1|knows_trade_2|knows_inventory_management_2|knows_prisoner_management_1|knows_leadership_1 in the Skills field.
+</p><p>Now let us look at the next entry in the list.
+</p><p><br />
+</p>
+<pre> ["regular_fighter","regular_fighter","regular_fighters",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
+  [itm_sword,itm_hide_boots],
+  str_8|agi_8|level(11),wp(90),knows_common|knows_ironflesh_1|knows_power_strike_1|knows_athletics_1|knows_riding_1|knows_shield_2,swadian_face1, swadian_face2],
+</pre>
+<p><br />
+In this example, you can see the slightly stronger "regular fighter"; this one has higher ability scores, is level 11, and knows some skills beyond knows_common. In-game, if some "novice fighters" in our party had reached sufficient experience to reach level 11, we could upgrade them into "regular fighters".
+</p>
+<h2> <span class="mw-headline" id="3.2_--_Upgrading_Troops"> 3.2 -- Upgrading Troops </span></h2>
+<p>The list of which troops can be upgraded into what is contained at the bottom of module_troops. Please scroll down to the bottom now.
+</p><p>As you can see, each troop's upgrade choices must be defined here through the operation upgrade(troops). The first string is the ID of the troop to be upgraded, the second string is the ID of the resulting troop. For example, upgrade(troops,"farmer", "watchman") will allow a "farmer" to upgrade into a "watchman", when the "farmer" has accrued enough experience.
+</p><p>There are two types of upgrade operations.
+</p><p>upgrade(troops,"source_troop", "target_troop_1") offers only one upgrade choice; "source_troop" to "target_troop_1".
+</p><p>upgrade2(troops,"source_troop", "target_troop_1", "target_troop_2"), however, offers the player a choice to upgrade "source_troop" into either "target_troop_1" or "target_troop_2". 2 is currently the maximum number of possible upgrade choices.
+</p><p>There is currently no entry for "novice_fighter" in this block, so let's make one. Copy upgrade(troops,"farmer", "watchman")
+and paste it to the bottom of the block. Then change "farmer" to "novice_fighter" and "watchman" to "regular_fighter". Any "novice fighters" in our party will now be able to upgrade to "regular fighters" as described in the last segment.
+</p><p>Next, we'll take it a bit further. Make another entry at the bottom of the list, with the source troop "new_troop" and the target troop "regular_fighter". Then scroll up to the phrase: # Add Extra Quest NPCs below this point . Here you will see ], the closing bracket of the Troops Python list. New troops should be added before the bracket, which is what we're going to do now.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="3.3_--_Adding_New_Troops"> 3.3 -- Adding New Troops </span></h2>
+<p>Move the bracket down two lines, then copy/paste the following code into the empty space:
+</p>
+<pre> ["new_troop","new_troop","new_troops",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
+  [itm_sword,itm_hide_boots],
+  str_6|agi_6|level(5),wp(60),knows_common,swadian_face1, swadian_face2],
+</pre>
+<p>This is the entry we're going to play with to make our new troop.
+</p><p>First let's give him some armour and a helmet.
+</p><p><br />
+</p>
+<pre> ["new_troop","new_troop","new_troops",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
+  [itm_sword,itm_hide_boots,itm_leather_jerkin,itm_skullcap],
+  str_6|agi_6|level(5),wp(60),knows_common,swadian_face1, swadian_face2],
+</pre>
+<p><br />
+From now on, every troop of the type "new_troop" will be wearing itm_leather_jerkin. However, only some of them will have itm_skullcap, because of the entries in the Flags field; this troop only has guaranteed armour and boots. In order to make sure our new troops will all have helmets, we must add tf_guarantee_helmet to the Flags field.
+</p><p><br />
+</p>
+<pre> ["new_troop","new_troop","new_troops",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet,no_scene,reserved,fac_commoners,
+  [itm_sword,itm_hide_boots,itm_leather_jerkin,itm_skullcap],
+  str_6|agi_6|level(5),wp(60),knows_common,swadian_face1, swadian_face2],
+</pre>
+<p><br />
+For our next edit, we will make some changes the troop's stats. Put its STR to 9, and AGI to 9. Once that's done, change Level to 4 and weapon proficiency to 80.
+</p><p>Our "new troop" should now look like this:
+</p>
+<pre> ["new_troop","new_troop","new_troops",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet,no_scene,reserved,fac_commoners,
+  [itm_sword,itm_hide_boots,itm_leather_jerkin,itm_skullcap],
+  str_9|agi_9|level(4),wp(80),knows_common,swadian_face1, swadian_face2],
+</pre>
+<p>It's now ready to be placed into the game, as an experiment.
+</p>
+<h2> <span class="mw-headline" id="3.4_--_Mercenaries"> 3.4 -- Mercenaries </span></h2>
+<p>Save your progress, then open module_parties.py. Scroll down until you see the party "zendar_mercs".
+</p>
+<pre> ("zendar_mercs","zendar_mercs",pf_disabled, no_menu, pt_none, fac_commoners,0,ai_bhvr_hold,0,(0,0),[(trp_farmer,15,0)]),
+</pre>
+<p>This is a mercenary party; a party that isn't placed on the map, but whose troops can be hired as mercenaries from the town's tavernkeeper. This particular party is linked to the tavernkeeper in Zendar. <b>EDIT: Zendar was removed in patch 0.950</b>
+</p><p>"zendar_mercs" currently contains 15 farmers. If you started the game right now, that is what you would be able to hire. However, if we change "trp_farmer" to "trp_new_troop", we will be able to hire 15 "new troops" instead. Make this change now.
+</p><p>Save your progress, close module_parties, and double-click on build_module.bat. If the build finishes without problems, you will now find your new troops available for hire with the Zendar tavernkeeper. (You'll need to start a new game for the new troops to show up. You need to start a new game for changes to parties to take effect.)
+</p><p>Start the game and hire some "new troops". Then go out of town, fight some battles, and notice how you are able to upgrade the new troops to "regular fighters" when they accumulate enough XP.
+</p><p><br />
+Congratulations! You now know how to make and manipulate regular troops. We will cover Heroes, Merchants and other NPCs in the next segment.
+</p>
+<h2> <span class="mw-headline" id="3.5_--_NPCs"> 3.5 -- NPCs </span></h2>
+<p>The various merchants and NPCs you see in the game are very similar to regular troops. The most significant element setting them apart is the flag tf_hero; this flag is what causes Marnid and Borcha to achieve their special status. Every unique NPC you encounter in the game is a Hero, even the merchants. The main differences between Heroes and regular troops are:
+</p><p>1 ) Heroes are unkillable. Their health is represented by a percentage value, and you can have only one of each Hero unless they are cloned by error or by design. Even by design, however, cloning Heroes is a bad idea.
+2 ) Heroes each take up a full party stack.
+3 ) Heroes show up properly in a scene when they are assigned to one in their troop tuple.
+4 ) Heroes stay with the player when he is defeated by an enemy party -- the Heroes are not captured by the enemy -- but the player can capture enemy Heroes as normal.
+</p><p>Because there should be only one specimen of each Hero, they have no plural troop name. Field 3 of the Hero tuple is therefore identical to Field 2.
+</p><p>Example of a Hero tuple:
+</p>
+<pre> ["Marnid","Marnid","Marnid", tf_hero, scn_the_happy_boar|entry(4),reserved, fac_commoners,[itm_linen_tunic,itm_hide_boots,itm_club],def_attrib|level(6),wp(60),knows_trade_3|knows_inventory_management_2|knows_riding_2,0x00000000000c600301c2510211a5b292],
+</pre>
+<p>Here we have our friend Marnid, a faithful companion over the course of the game. He is marked as a Hero by the tf_hero in his Flags field. We can find him at entry point 4 in the Happy Boar inn. He's a bit of a pushover in combat, but his fairly good Trade skill comes in handy during our early adventures, and as a Hero he will never die unless removed by some scripted event. You will also note that Marnid has his own unique face code. It is possible to design faces using the in-game face editor and then retrieve their face codes for use in your module; this is covered in Part 10 of the documentation, Using the In-Game Edit Mode.
+</p><p>Another important thing to note is that even though Marnid's troop identifier in this file -- "Marnid" -- uses an uppercase letter M, we must always reference the identifier with lowercase letters. The module system will throw an error if you try to use an uppercase letter when referencing an identifier from another file. So, in order to reference "Marnid", we must use the identifier "trp_marnid".
+</p><p>Our last point of interest is the entry you may have noticed in Marnid's Attributes field; def_attrib. def_attrib is a constant much like knows_common, but defined in header_troops.py. Its function is similar to knows_common -- it sets default attributes for the troop it's used on. Quoted from header_troops:
+</p><p>def_attrib = str_5 | agi_5 | int_4 | cha_4
+</p><p>This tells us that any troop with def_attrib will have STR 5, AGI 5, INT 4 and CHA 4 to start with. Any attributes set after def_attrib will overwrite the relevant attribute setting from def_attrib.
+</p><p><br />
+We can now begin to make our own hero. Copy Marnid's tuple, and paste it just below the "new_troop" tuple we created earlier.
+</p>
+<pre> ["Geoffrey","Geoffrey","Geoffrey", tf_hero, scn_the_happy_boar|entry(4),reserved, fac_commoners,[itm_linen_tunic,itm_hide_boots,itm_club],def_attrib|level(6),wp(60),knows_trade_3|knows_inventory_management_2|knows_riding_2,0x00000000000c600301c2510211a5b292],
+</pre>
+<p>In this example, we've changed the new hero's identifier and names to "Geoffrey". Please make this change for yourself now.
+</p><p>At this point, if we were to click on build_module.bat, the module system would compile without problems. Our new tuple does not conflict with anything that the module system can see. Yet if we did, we would have one major problem -- both Geoffrey and Marnid are currently using the same entry point in the same scene. Marnid would get placed because his tuple is further up the file, and Geoffrey would not show up at all because the entry point is already taken.
+</p><p>In order to solve this, we will assign Geoffrey to entry point 6 instead. This is right at the back of the inn, where he won't be in anyone's way.
+</p><p>Your tuple should now look like this:
+</p>
+<pre> ["Geoffrey","Geoffrey","Geoffrey", tf_hero, scn_the_happy_boar|entry(6),reserved, fac_commoners,[itm_linen_tunic,itm_hide_boots,itm_club],def_attrib|level(6),wp(60),knows_trade_3|knows_inventory_management_2|knows_riding_2,0x00000000000c600301c2510211a5b292],
+</pre>
+<p>Feel free to assign him some new equipment or stats, as we did with "new_troop". Then click on build_module.bat, open the game, and go to the Zendar inn. If all went welll, you should now find Geoffrey standing against the far walll of the inn.
+</p><p>Attempting a dialogue with Geoffrey will cause him to give a stock response, as he currently has no dialogue associated with him. This is another example of interrelation.
+</p><p>We will leave Geoffrey where is for now, and come back to him later as we explore module_quests and module_dialogs.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="3.6_--_Merchants"> 3.6 -- Merchants </span></h2>
+<p>Merchants are a special type of Hero. In addition to tf_hero, they also have the flag tf_is_merchant. This flag causes them to not equip any of the items in their inventory, except what they are originally assigned in their troop tuple. In other words, these merchants can receive all sorts of items over the course of the game, but they will not wear or use the items, and the items will properly show up for sale.
+</p><p>Example of a merchant:
+</p>
+<pre> ["zendar_weaponsmith","Dunga","Dunga",tf_hero|tf_is_merchant, scn_zendar_center|entry(3),0,  fac_commoners,[itm_linen_tunic,itm_nomad_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, 0x00000000000021c401f545a49b6eb2bc],
+</pre>
+<p>This is the weapon merchant in Zendar, named Dunga. He is almost identical to the other merchants in Native M&amp;B. If you look closely, the only differences are their identifiers, names, scene placement, and faces.
+</p><p>To add a merchant, however, can be slightly complex. They are gathered into groups for a reason. There are scripts in M&amp;B to update merchant inventories every day for each type of merchant -- to do this, these scripts use a range, a number of subsequent tuples between a starting point of choice (the lower bound) and a stopping point of choice (the upper bound). For example, the range of armour merchants includes everything from "zendar_armorer" (the lower bound) up to -- but not including -- "zendar_weaponsmith" (the upper bound). The upper bound of a range is not included in the range, so the upper bound needs to be set one entry further down (to "zendar_weaponsmith") if we want "town_14_armorer" to be included in the armour merchant range.
+</p><p>For this reason, new armour merchants must be added before "zendar_weaponsmith". New weapon merchants must be added before "zendar_tavernkeeper". New goods merchants must be added before "merchants_end".
+</p><p><br />
+3.7 -- Chests
+</p><p>Chest troops are special troops which serve as inventories for chests inside the game with which the player can interact. These chest troops are not the chests themselves, only their inventories. Chests as you see them in the game are part scene prop, part scene information, part troop and part hardcoded. New chests are somewhat complex to create and cross various module files; here we will cover only the information relevant to module_troops.
+</p><p>Example of a chest:
+</p>
+<pre> ["zendar_chest","zendar_chest","zendar_chest",tf_hero|tf_inactive, 0,reserved,  fac_vaegirs,[],def_attrib|level(18),wp(60),knows_common, 0],
+</pre>
+<p>All chests must follow this example. The only things you should consider changing on a new chest troop are the troop's name and identifier, (possibly) troop level and troop skills, and the inventory. As mentioned, chest troops serve as inventory for in-game chests; therefore, any items you add to the chest troop's inventory will be inside the chest at the start of the game.
+</p><p>Chests require a chest troop to function. However, they also require several other modifications to different module files, which we will cover in the files' respective documentation.
+</p><p><br />
+Having learned this, you now know all there is to know about module_troops. There is a list of available flags in header_troops.py that you can use for the creation of further troops. Feel free to experiment, and when you're ready, please move on to the next part of this documentation.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 39/1000000
+Post-expand include size: 543/2097152 bytes
+Template argument size: 148/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:71-0!*!0!!en!*!edit=0 and timestamp 20200419221419 -->
+<div class="printfooter">
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_03</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_03&amp;returntoquery=printable=yes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_03.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_03.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_03.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_03.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;oldid=394.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 4 July 2015, at 19:16.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 15 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Official_Module_System_Documentation:_Part_03", "wgTitle": "Official Module System Documentation: Part 03", "wgAction": "view", "wgArticleId": 71, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 394, "wgCategories": ["Official Documentation"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.154 secs. -->			</body>
+</html>

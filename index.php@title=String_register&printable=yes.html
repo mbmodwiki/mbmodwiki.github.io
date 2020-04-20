@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>String register - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=String_register&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=String_register&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=String_register&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-String_register skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">String register</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=String_register&amp;printable=yes.html#mw-head">navigation</a>,
+					<a href="index.php@title=String_register&amp;printable=yes.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p><b>String registers</b>, sometimes referred to as <b>s#</b> or <b>sreg</b> for short, are a variation on standard <a href="Register.html" title="Register">registers</a> that are used to contain a <a href="String.html" title="String">string</a> that can be "embedded" in another text string which will be displayed in dialogue or messages.  When embedded into a string, they are one of the four methods of producing dynamic text for the player (the others being <a href="Register.html" title="Register">registers</a>, <a href="Conditional_string.html" title="Conditional string">conditional strings</a>, and <a href="Gender_string.html" title="Gender string">gender strings</a>).
+</p>
+<h2> <span class="mw-headline" id="Using_string_registers"> Using string registers </span></h2>
+<p>String registers are used by inserting them ("embedding them") into a text string between braces ("{" and "}"). When the text is displayed to the player, the contents of the string register are substituted in place of the braces.  Note that spaces and other text inside a string register is included literally, exactly as written.
+</p><p>String registers have fixed variable names, being identified by the letter "s" followed by a number starting from 0.  The following text string:
+</p>
+<pre>You dare question the might of {s43}?! Prepare to die, {s5}!
+</pre>
+<p>contains two string registers, corresponding to ID numbers 5 and 43, which will have to be filled with content prior to being displayed to the player.  These string registers can be assigned values by using the string register manipulation functions to assign values to <i>s5</i> and <i>s53</i>; in this case, the most likely functions used would be <b>str_store_string_faction_name</b> for s43 and <b>str_store_string_troop_name</b> for s5.
+</p>
+<h2> <span class="mw-headline" id="Manipulating_string_registers"> Manipulating string registers </span></h2>
+<p>String registers can be manipulated with the various string register functions.  The first parameter is always the ID of the string register to assign a value to.  The second parameter, if included, is the ID of the object to extract the name from.
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Function </th>
+<th> Parameters </th>
+<th> Notes
+</th></tr>
+<tr>
+<td> str_is_empty </td>
+<td> <i>register</i> </td>
+<td> <a href="index.php@title=Condition_function&amp;action=edit&amp;redlink=1.html" class="new" title="Condition function (page does not exist)">Condition function</a>. Returns 1 if the specified register is not in use (has been cleared or has never been assigned), 0 otherwise
+</td></tr>
+<tr>
+<td> str_clear </td>
+<td> <i>register</i> </td>
+<td> Clears the contents of <i>register</i> &#8212; rarely necessary, but chiefly useful to clean up if you stored a very large amount of text in a register that is unlikely to be overwritten
+</td></tr>
+<tr>
+<td> str_store_string </td>
+<td> <i>register, string</i> </td>
+<td> Stores the string or <a href="Quick_string.html" title="Quick string">quick string</a> <i>string</i> into <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_string_reg </td>
+<td> <i>register, register2</i> </td>
+<td> Copies <i>register2</i> over <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_troop_name </td>
+<td> <i>register, troop</i> </td>
+<td> Stores the name of the specified <i><a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a></i> (<i>e.g.</i>, <i>Sarranid Mameluke</i>) in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_troop_name_plural </td>
+<td> <i>register, troop</i> </td>
+<td> Stores the plural name of the specified <i>troop</i> (<i>e.g.</i>, <i>Sarranid Mamelukes</i>) in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_troop_name_by_count </td>
+<td> <i>register, troop, number</i> </td>
+<td> Intelligently stores the single name of the specified <i>troop</i> if <i>number</i> is equal to 1, or the plural name otherwise, in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_item_name </td>
+<td> <i>register, item</i> </td>
+<td> Stores the name of the specified <i><a href="index.php@title=Item&amp;action=edit&amp;redlink=1.html" class="new" title="Item (page does not exist)">item</a></i> (<i>e.g.</i>, <i>Leather Gloves</i>) in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_party_name </td>
+<td> <i>register, party</i> </td>
+<td> Stores the world map name of the specified <i><a href="index.php@title=Party&amp;action=edit&amp;redlink=1.html" class="new" title="Party (page does not exist)">party</a></i> (<i>e.g.</i>, <i>Bandits Awaiting Ransom</i>) in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_agent_name </td>
+<td> <i>register, agent</i> </td>
+<td> Stores the name  of the specified <i><a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agent</a></i> (<i>e.g.</i>, <i>Nervous Man</i>) in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_faction_name </td>
+<td> <i>register, faction</i> </td>
+<td> Stores the name of the specified <i><a href="index.php@title=Faction&amp;action=edit&amp;redlink=1.html" class="new" title="Faction (page does not exist)">faction</a></i> (<i>e.g.</i>, <i>Kingdom of Sarranids</i>) in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_quest_name </td>
+<td> <i>register, quest</i> </td>
+<td> Stores the name of the specified <i><a href="index.php@title=Quest&amp;action=edit&amp;redlink=1.html" class="new" title="Quest (page does not exist)">quest</a></i> (<i>e.g.</i>, <i>Ransom Kidnapped Girl from Bandits</i>) in <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_info_page_name </td>
+<td> <i>register, infopage</i> </td>
+<td> Stores the name of the <a href="index.php@title=Info_page&amp;action=edit&amp;redlink=1.html" class="new" title="Info page (page does not exist)">info page</a> <i>infopage</i> (<i>e.g.</i>, <i>Military Campaigns</i>) into <i>register</i>
+</td></tr>
+<tr>
+<td> str_store_date </td>
+<td> <i>register, hours</i> </td>
+<td> Adds the specified number of <i>hours</i> to the current game date and then stores the new name into <i>register</i>; set <i>hours</i> to 0 to use the current date
+</td></tr>
+<tr>
+<td> str_store_troop_name_link </td>
+<td> <i>register, troop</i> </td>
+<td> Stores the hyperlinked troop name to the info page of the specified <i>troop</i> in <i>register</i>; intended only for info pages, and should be used only for unique troops (lords and heroes)
+</td></tr>
+<tr>
+<td> str_store_party_name_link </td>
+<td> <i>register, party</i> </td>
+<td> As above, but for a <i>party</i>; intended only for info pages
+</td></tr>
+<tr>
+<td> str_store_faction_name_link </td>
+<td> <i>register, faction</i> </td>
+<td> Stores the hyperlinked faction name that leads to the faction info page of the specified <i>faction</i> in <i>register</i>; intended only for info pages
+</td></tr>
+<tr>
+<td> str_store_quest_name_link </td>
+<td> <i>register, quest</i> </td>
+<td> Stores the hyperlinked quest name that leads to the quest info page of the specified <i>quest</i> in <i>register</i>; intended only for info pages. If the quest no longer exists, the hyperlink will still exist but will do nothing when clicked.
+</td></tr>
+<tr>
+<td> str_store_class_name </td>
+<td> <i>register, class</i> </td>
+<td> Warband: Unknown. Related to multiplayer?
+</td></tr>
+<tr>
+<td> str_store_player_username </td>
+<td> <i>register, player</i> </td>
+<td> Warband: Stores the username of the <i>player</i> on the multiplayer server in <i>register</i>; undefined behaviour in single player mode
+</td></tr>
+<tr>
+<td> str_store_server_password </td>
+<td> <i>register</i> </td>
+<td> Warband: Stores the unencrypted raw server password specified when the multiplayer server was created in <i>register</i>; undefined behaviour in single player mode
+</td></tr>
+<tr>
+<td> str_store_server_name </td>
+<td> <i>register</i> </td>
+<td> Warband: Stores the name specified when the multiplayer server was created in <i>register</i>; undefined behaviour in single player mode
+</td></tr>
+<tr>
+<td> str_store_welcome_message </td>
+<td> <i>register</i> </td>
+<td> Warband: Stores the welcome message specified when the multiplayer server was created in <i>register</i>; undefined behaviour in single player mode
+</td></tr>
+<tr>
+<td> str_encode_url </td>
+<td> <i>register</i> </td>
+<td> Warband: Unknown. Stores an HTML-encoded link to the multiplayer server that can be posted online?
+</td></tr></table>
+<p>Invalid functions:
+</p>
+<table class="wikitable">
+<tr>
+<td> str_store_item_name_plural </td>
+<td> <i>register, item</i> </td>
+<td> Should return the plural name for the <i>item</i>, but there are no plural names for items
+</td></tr>
+<tr>
+<td> str_store_item_name_by_count </td>
+<td> <i>register, item, number</i> </td>
+<td> Should intelligently return the plural name for the <i>item</i> based on the <i>number</i>, but there are no plural names for items
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 7/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:121-0!*!0!!*!*!edit=0 and timestamp 20200419222906 -->
+<div class="printfooter">
+Retrieved from "<a href="String_register.html">http://mbmodwiki.ollclan.eu/String_register</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AVariables.html" title="Category:Variables">Variables</a></span> | <span dir='ltr'><a href="Category%253AStrings.html" title="Category:Strings">Strings</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=String_register&amp;returntoquery=printable=yes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="String_register.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AString_register&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=String_register&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="String_register.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=String_register&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=String_register&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=String_register&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/String_register.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/String_register.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php@title=String_register&amp;oldid=704.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 25 June 2012, at 16:43.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 15 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "String_register", "wgTitle": "String register", "wgAction": "view", "wgArticleId": 121, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 704, "wgCategories": ["Modding Concepts", "Variables", "Strings"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.166 secs. -->			</body>
+</html>

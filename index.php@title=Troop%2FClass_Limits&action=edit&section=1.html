@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Editing Troop/Class Limits (section) - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Troop%252FClass_Limits&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Troop%252FClass_Limits&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Troop%252FClass_Limits&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<!--[if IE 8]><link rel="stylesheet" href="/skins/common/IE80Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Troop_Class_Limits skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Editing Troop/Class Limits (section)</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Troop%252FClass_Limits&amp;action=edit&amp;section=1.html#mw-head">navigation</a>,
+					<a href="index.php@title=Troop%252FClass_Limits&amp;action=edit&amp;section=1.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div id="mw-anon-edit-warning">
+<p><b>Warning:</b> You are not logged in.
+</p>
+Your IP address will be recorded in this page's edit history.</div>
+<div id="wikiPreview" class="ontop" style="display: none;"></div><div id='toolbar'>
+
+</div>
+<form id="editform" name="editform" method="post" action="http://mbmodwiki.ollclan.eu/index.php?title=Troop/Class_Limits&amp;action=submit" enctype="multipart/form-data"><div id="checkmeout" style="display: none;">
+<label for="check">bot check.
+Do <b>NOT</b> fill this in!</label> <input type="text" name="check" id="check" value="" />
+<input type="hidden" name="swy-master" id="swy-master" value="ñ" />
+<input type="text" name="swy-magic" id="swy-magic" value="imasocool-yousuckbot!" />
+</div>
+<input type='hidden' value="1" name="wpSection" />
+<input type='hidden' value="20200419223101" name="wpStarttime" />
+<input type='hidden' value="20110617024739" name="wpEdittime" />
+<input type='hidden' value="" name="wpScrolltop" id="wpScrolltop" />
+<input type="hidden" value="e5c91ce39ac618bd504754c2d30d4821" name="wpAutoSummary" /><input type="hidden" value="0" name="oldid" /><textarea tabindex="1" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" name="wpTextbox1">== Troop Limits for Multiplayer ==
+
+'''Coded by:''' Jerkuh
+
+'''Python Files Used:''' Module_Scripts.py, Module_Presentations.py and Module_Common.py
+
+'''How to implement:'''
+
+1. Add All of the required New and Changed Codes (seen below) and make any edits said
+
+
+2. Edit the units to your requirements:
+
+(troop_set_slot, "trp_TROOPNAME", 300, PERCENTAGE OF TEAM),
+If you want the unit to be availabe to everyone put -2 at 'PERCENTAGE OF TEAM'
+If you want the unit to be availabe to only 1 person put -1 at 'PERCENTAGE OF TEAM'
+
+3. Test the in-game admin panel
+
+4. Change the '      (assign, ":cur_y", 1840), # This variable makes the size of the scroller screen, if you have more troops than fit you can change this value to somewhat higher.' to a higher or lower number for less or more scroll space.
+
+
+
+=== New and Changed Codes: ===
+
+=== '''Module_Scripts''' ===
+
+'''Add these scripts'''
+
+&lt;syntaxhighlight lang="python">
+("player_troop_count",
+	 [
+	   (assign, "$g_vikingr_team_1_count", 0),
+	   (assign, "$g_vikingr_team_2_count", 0),
+	   (try_for_range, ":cur_troop", "trp_bueskytter_multiplayer", "trp_multiplayer_end"),
+	     (troop_set_slot, ":cur_troop", 301, 0),
+	   (try_end),
+	   (get_max_players, ":num_players"),
+	   (try_for_range, ":cur_player", 0, ":num_players"),
+	     (player_is_active, ":cur_player"),
+		 (player_get_troop_id, ":cur_troop", ":cur_player"),
+		 (neq, ":cur_troop", -1),
+		 (troop_get_slot, ":num", ":cur_troop", 301),
+		 (val_add, ":num", 1),
+         (troop_set_slot, ":cur_troop", 301, ":num"),
+		 (player_get_team_no, ":cur_team", ":cur_player"),
+		 (troop_get_slot, ":max_troop", ":cur_troop", 300),
+		 (try_begin),
+		   (eq, ":cur_team", 0),
+		   (neq, ":max_troop", -1),
+		   (val_add, "$g_vikingr_team_1_count", 1),
+		 (else_try),
+		   (eq, ":cur_team", 1),
+		   (neq, ":max_troop", -1),
+		   (val_add, "$g_vikingr_team_2_count", 1),
+		 (try_end),
+	     (assign, reg1, ":cur_player"),
+	     #(display_message, "@Player ID: {reg1}"),
+       (try_end),
+	 ]),   
+
+("cf_troop_room",
+	 [
+	   (store_script_param, ":player_no", 1),
+	   (store_script_param, ":troop", 2),
+	   (assign, ":max", 0),
+	   (call_script, "script_player_troop_count"),
+	   (troop_get_slot, ":max_troop", ":troop", 300),
+	   (try_begin),
+	     (neq, ":max_troop", -1),
+		 (neq, ":max_troop", -2),
+	     (store_troop_faction, ":faction", ":troop"),
+	     (assign, ":max_faction", 0),
+	     (try_for_range, ":cur_troop", "trp_bueskytter_multiplayer", "trp_multiplayer_end"),
+		   (troop_get_slot, ":max_cur", ":cur_troop", 300),
+	       (neq, ":max_cur", -1),
+	       (store_troop_faction, ":cur_faction", ":cur_troop"),
+	       (eq, ":faction", ":cur_faction"),
+		   (val_add, ":max_faction", ":max_cur"),
+	       (assign, reg1, ":max_cur"),
+	       #(display_message, "@Troop Perc: {reg1}"),
+         (try_end),
+	     (val_mul, ":max_troop", 100),
+	     (assign, reg1, ":max_faction"),
+	     #(display_message, "@Maximum Count Of Faction: {reg1}"),
+	     (assign, reg1, ":max_troop"),
+	     #(display_message, "@Maximum Count Of Troops: {reg1}"),
+	     (store_div, ":max", ":max_troop", ":max_faction"),
+	     (assign, reg1, ":max"),
+	     #(display_message, "@Maximum Count Of Troops After Divide: {reg1}"),
+	     (player_get_team_no, ":cur_team", ":player_no"),
+	     (try_begin),
+	       (eq, ":cur_team", 0),
+		   (val_mul, ":max", "$g_vikingr_team_1_count"),
+	     (else_try),
+		   (eq, ":cur_team", 1),
+	       (val_mul, ":max", "$g_vikingr_team_2_count"),
+	     (try_end),
+	     (troop_get_slot, ":troop_amount", ":troop", 301),
+	     (val_mul, ":troop_amount", 100),
+	     (val_sub, ":max", ":troop_amount"),
+	     (val_add, ":max", 100),
+	     (val_div, ":max", 100),
+	   (else_try),
+	     (troop_get_slot, ":leader", ":troop", 301),
+		 (eq, ":leader", 0),
+	     (assign, ":max", 1),
+	   (else_try),
+		 (eq, ":max_troop", -2),
+	     (assign, ":max", 1),
+	   (try_end),
+	   (assign, reg1, ":max"),
+	   #(display_message, "@Maximum Count: {reg1}"),
+	   (gt, ":max", 0),
+	 ]),   
+
+("troop_limit_variables",
+	 [
+	 
+	 # CHANGE ONLY THIS VARIABLES TO SET THE TROOP LIMIT PERCENTAGES
+	 
+	 (troop_set_slot, "trp_bueskytter_multiplayer", 300, 100),
+	 (troop_set_slot, "trp_hersir_multiplayer", 300, -2),
+	 (troop_set_slot, "trp_berserkr_multiplayer", 300, 80),
+	 (troop_set_slot, "trp_chieftain_multiplayer", 300, -1), # Leader
+	 (troop_set_slot, "trp_ceorl_multiplayer", 300, 100),
+	 (troop_set_slot, "trp_thegn_multiplayer", 300, -2),
+	 (troop_set_slot, "trp_huscarl_multiplayer", 300, 70),
+	 (troop_set_slot, "trp_earl_multiplayer", 300, -1), # Leader
+   ]),
+&lt;/syntaxhighlight>
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+  #script_game_quick_start
+  # This script is called from the game engine for initializing the global variables for tutorial, multiplayer and custom battle modes.
+  # INPUT:
+  # none
+  # OUTPUT:
+  # none
+  ("game_quick_start",
+    [
+	  #for quick battle mode
+      (assign, "$g_is_quick_battle", 0),
+      (assign, "$g_quick_battle_game_type", 0),
+      (assign, "$g_quick_battle_troop", quick_battle_troops_begin),
+      (assign, "$g_quick_battle_map", quick_battle_scenes_begin),
+      (assign, "$g_quick_battle_team_1_faction", "fac_kingdom_1"),
+      (assign, "$g_quick_battle_team_2_faction", "fac_kingdom_2"),
+      (assign, "$g_quick_battle_army_1_size", 25),
+      (assign, "$g_quick_battle_army_2_size", 25),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+  #script_game_quick_start
+  # This script is called from the game engine for initializing the global variables for tutorial, multiplayer and custom battle modes.
+  # INPUT:
+  # none
+  # OUTPUT:
+  # none
+  ("game_quick_start",
+    [
+     (call_script, "script_troop_limit_variables"),
+ 
+	  #for quick battle mode
+      (assign, "$g_is_quick_battle", 0),
+      (assign, "$g_quick_battle_game_type", 0),
+      (assign, "$g_quick_battle_troop", quick_battle_troops_begin),
+      (assign, "$g_quick_battle_map", quick_battle_scenes_begin),
+      (assign, "$g_quick_battle_team_1_faction", "fac_kingdom_1"),
+      (assign, "$g_quick_battle_team_2_faction", "fac_kingdom_2"),
+      (assign, "$g_quick_battle_army_1_size", 25),
+      (assign, "$g_quick_battle_army_2_size", 25),
+&lt;/syntaxhighlight>
+
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+      (else_try),
+        (eq, ":event_type", multiplayer_event_change_troop_id),
+        (store_script_param, ":value", 3),
+        #troop-faction validity check
+        (try_begin),
+          (eq, ":value", -1),
+          (player_set_troop_id, ":player_no", -1),
+        (else_try),
+          (is_between, ":value", multiplayer_troops_begin, multiplayer_troops_end),
+          (player_get_team_no, ":player_team", ":player_no"),
+          (is_between, ":player_team", 0, multi_team_spectator),
+          (team_get_faction, ":team_faction", ":player_team"),
+          (store_troop_faction, ":new_troop_faction", ":value"),
+          (eq, ":new_troop_faction", ":team_faction"),
+          (player_set_troop_id, ":player_no", ":value"),
+          (call_script, "script_multiplayer_clear_player_selected_items", ":player_no"),
+        (try_end),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+      (else_try),
+        (eq, ":event_type", multiplayer_event_change_troop_id),
+        (store_script_param, ":value", 3),
+        #troop-faction validity check
+        (try_begin),
+          (eq, ":value", -1),
+          (player_set_troop_id, ":player_no", -1),
+        (else_try),
+          (is_between, ":value", multiplayer_troops_begin, multiplayer_troops_end),
+          (player_get_team_no, ":player_team", ":player_no"),
+          (is_between, ":player_team", 0, multi_team_spectator),
+          (team_get_faction, ":team_faction", ":player_team"),
+          (store_troop_faction, ":new_troop_faction", ":value"),
+          (eq, ":new_troop_faction", ":team_faction"),
+
+          (call_script, "script_cf_troop_room", ":player_no", ":value"),
+
+          (player_set_troop_id, ":player_no", ":value"),
+          (call_script, "script_multiplayer_clear_player_selected_items", ":player_no"),
+        (try_end),
+&lt;/syntaxhighlight>
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+      (else_try),
+        (eq, ":event_type", multiplayer_event_admin_set_disallow_ranged_weapons),
+        (try_begin),
+          (store_script_param, ":value", 3),
+          #validity check
+          (player_is_admin, ":player_no"),
+          (is_between, ":value", 0, 2),
+          #condition checks are done
+          (assign, "$g_multiplayer_disallow_ranged_weapons", ":value"),
+        (try_end),
+      (else_try),
+        ###############
+        #CLIENT EVENTS#
+        ###############
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+      (else_try),
+        (eq, ":event_type", multiplayer_event_admin_set_disallow_ranged_weapons),
+        (try_begin),
+          (store_script_param, ":value", 3),
+          #validity check
+          (player_is_admin, ":player_no"),
+          (is_between, ":value", 0, 2),
+          #condition checks are done
+          (assign, "$g_multiplayer_disallow_ranged_weapons", ":value"),
+        (try_end), 
+ 
+      (else_try),
+            (eq, ":event_type", multiplayer_event_admin_set_troop_perc),
+       (player_is_admin, ":player_no"),
+            (store_script_param,":cur_troop",3),
+            (store_script_param,":value",4),
+       (troop_set_slot, ":cur_troop", 300, ":value"),
+      
+       (get_max_players, ":num_players"),
+       (try_for_range, ":cur_player", 1, ":num_players"),
+        (player_is_active, ":cur_player"),
+        (multiplayer_send_2_int_to_player, ":cur_player", multiplayer_event_set_limitations, ":cur_troop", ":value"),
+       (try_end),
+       
+      (else_try),
+        ###############
+        #CLIENT EVENTS#
+        ###############
+&lt;/syntaxhighlight>
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+        (else_try),
+          (eq, ":event_type", multiplayer_event_cancel_duel),
+          (store_script_param, ":value", 3),
+          (try_begin),
+            (agent_is_active, ":value"),
+            (agent_get_player_id, ":value_player_no", ":value"),
+            (try_begin),
+              (player_is_active, ":value_player_no"),
+              (str_store_player_username, s0, ":value_player_no"),
+            (else_try),
+              (str_store_agent_name, s0, ":value"),
+            (try_end),
+            (display_message, "str_your_duel_with_s0_is_cancelled"),
+          (try_end),
+          (try_begin),
+            (get_player_agent_no, ":player_agent"),
+            (agent_is_active, ":player_agent"),
+            (agent_set_slot, ":player_agent", slot_agent_in_duel_with, -1),
+            (agent_clear_relations_with_agents, ":player_agent"),
+          (try_end),
+        (else_try),
+          (eq, ":event_type", multiplayer_event_show_server_message),
+          (display_message, "str_server_s0", 0xFFFF6666),
+        (try_end),
+     ]),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+        (else_try),
+          (eq, ":event_type", multiplayer_event_cancel_duel),
+          (store_script_param, ":value", 3),
+          (try_begin),
+            (agent_is_active, ":value"),
+            (agent_get_player_id, ":value_player_no", ":value"),
+            (try_begin),
+              (player_is_active, ":value_player_no"),
+              (str_store_player_username, s0, ":value_player_no"),
+            (else_try),
+              (str_store_agent_name, s0, ":value"),
+            (try_end),
+            (display_message, "str_your_duel_with_s0_is_cancelled"),
+          (try_end),
+          (try_begin),
+            (get_player_agent_no, ":player_agent"),
+            (agent_is_active, ":player_agent"),
+            (agent_set_slot, ":player_agent", slot_agent_in_duel_with, -1),
+            (agent_clear_relations_with_agents, ":player_agent"),
+          (try_end),
+        (else_try),
+          (eq, ":event_type", multiplayer_event_show_server_message),
+          (display_message, "str_server_s0", 0xFFFF6666),
+        (else_try),
+          (eq, ":event_type", multiplayer_event_set_limitations),
+          (store_script_param, ":troop", 3),
+          (store_script_param, ":perc", 4),
+		  (troop_set_slot, ":troop", 300, ":perc"),
+        (try_end),
+     ]),
+&lt;/syntaxhighlight>
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+  #script_multiplayer_send_initial_information
+  # Input: arg1 = player_no
+  # Output: none
+  ("multiplayer_send_initial_information",
+   [
+     (store_script_param, ":player_no", 1),
+          
+     (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_return_num_bots_in_team, 1, "$g_multiplayer_num_bots_team_1"),
+     (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_return_num_bots_in_team, 2, "$g_multiplayer_num_bots_team_2"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_auto_team_balance_limit, "$g_multiplayer_auto_team_balance_limit"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_num_bots_voteable, "$g_multiplayer_num_bots_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_factions_voteable, "$g_multiplayer_factions_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_maps_voteable, "$g_multiplayer_maps_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_kick_voteable, "$g_multiplayer_kick_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_ban_voteable, "$g_multiplayer_ban_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_allow_player_banners, "$g_multiplayer_allow_player_banners"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_force_default_armor, "$g_multiplayer_force_default_armor"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_disallow_ranged_weapons, "$g_multiplayer_disallow_ranged_weapons"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_respawn_period, "$g_multiplayer_respawn_period"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_round_max_seconds, "$g_multiplayer_round_max_seconds"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_game_type, "$g_multiplayer_game_type"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_player_respawn_as_bot, "$g_multiplayer_player_respawn_as_bot"),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+  #script_multiplayer_send_initial_information
+  # Input: arg1 = player_no
+  # Output: none
+  ("multiplayer_send_initial_information",
+   [
+     (store_script_param, ":player_no", 1),
+     (try_for_range, ":cur_troop", "trp_bueskytter_multiplayer", "trp_multiplayer_end"),
+	   (troop_get_slot, ":cur_perc", ":cur_troop", 300),
+	   (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_set_limitations, ":cur_troop", ":cur_perc"),
+	 (try_end),
+          
+     (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_return_num_bots_in_team, 1, "$g_multiplayer_num_bots_team_1"),
+     (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_return_num_bots_in_team, 2, "$g_multiplayer_num_bots_team_2"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_auto_team_balance_limit, "$g_multiplayer_auto_team_balance_limit"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_num_bots_voteable, "$g_multiplayer_num_bots_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_factions_voteable, "$g_multiplayer_factions_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_maps_voteable, "$g_multiplayer_maps_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_kick_voteable, "$g_multiplayer_kick_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_ban_voteable, "$g_multiplayer_ban_voteable"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_allow_player_banners, "$g_multiplayer_allow_player_banners"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_force_default_armor, "$g_multiplayer_force_default_armor"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_disallow_ranged_weapons, "$g_multiplayer_disallow_ranged_weapons"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_respawn_period, "$g_multiplayer_respawn_period"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_round_max_seconds, "$g_multiplayer_round_max_seconds"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_game_type, "$g_multiplayer_game_type"),
+     (multiplayer_send_int_to_player, ":player_no", multiplayer_event_return_player_respawn_as_bot, "$g_multiplayer_player_respawn_as_bot"),
+&lt;/syntaxhighlight>
+
+
+=== '''Module_Presentations''' ===
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+      (assign, ":cur_troop_index", 0),
+      (try_for_range, ":troop_no", multiplayer_troops_begin, multiplayer_troops_end),
+        (store_troop_faction, ":troop_faction", ":troop_no"),
+        (eq, ":troop_faction", ":my_faction_no"),
+        (str_store_troop_name, s1, ":troop_no"),
+        (create_button_overlay, reg0, s1, 0),
+        (overlay_set_color, reg0, 0xFFFFFF),
+        (store_add, ":button_index_slot", ":cur_troop_index", multi_data_troop_button_indices_begin),
+        (troop_set_slot, "trp_multiplayer_data", ":button_index_slot", reg0),
+        (position_set_y, pos1, ":cur_y"),
+        (overlay_set_position, reg0, pos1),
+        (val_sub, ":cur_y", escape_menu_item_height),
+        (position_set_y, pos1, ":cur_y"),
+        (val_add, ":cur_troop_index", 1),
+      (try_end),
+      (presentation_set_duration, 999999),
+      ]),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+      (assign, ":cur_troop_index", 0),
+      (try_for_range, ":troop_no", multiplayer_troops_begin, multiplayer_troops_end),
+        (store_troop_faction, ":troop_faction", ":troop_no"),
+        (eq, ":troop_faction", ":my_faction_no"),
+        (str_store_troop_name, s1, ":troop_no"),
+        (create_button_overlay, reg0, s1, 0),
+        (try_begin),
+          (call_script, "script_cf_troop_room", ":my_player_no", ":troop_no"),
+          (overlay_set_color, reg0, 0xFFFFFF),
+          (overlay_set_hilight_color, reg0, 0x55FF50),
+        (else_try),
+          (overlay_set_color, reg0, 0x888888),
+          (overlay_set_hilight_color, reg0, 0x888888),
+        (try_end),
+        (store_add, ":button_index_slot", ":cur_troop_index", multi_data_troop_button_indices_begin),
+        (troop_set_slot, "trp_multiplayer_data", ":button_index_slot", reg0),
+        (position_set_y, pos1, ":cur_y"),
+        (overlay_set_position, reg0, pos1),
+        (val_sub, ":cur_y", escape_menu_item_height),
+        (position_set_y, pos1, ":cur_y"),
+        (val_add, ":cur_troop_index", 1),
+      (try_end),
+      (presentation_set_duration, 999999),
+      ]),
+&lt;/syntaxhighlight>
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+        (try_begin),
+          (multiplayer_get_my_troop, ":troop_no"),
+          (neq, ":troop_no", ":selected_troop_no"),
+          (player_set_troop_id, ":my_player_no", ":selected_troop_no"),
+          (multiplayer_send_int_to_server, multiplayer_event_change_troop_id, ":selected_troop_no"),
+          (call_script, "script_multiplayer_set_default_item_selections_for_troop", ":selected_troop_no"),
+          (call_script, "script_multiplayer_send_item_selections"),
+        (try_end),
+        (presentation_set_duration, 0),
+        (assign, "$g_presentation_state", 0),
+        (start_presentation, "prsnt_multiplayer_item_select"),
+        (assign, ":end_cond", 0), #break
+      (try_end),
+      ]),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+        (try_begin),
+          (multiplayer_get_my_troop, ":troop_no"),
+          (neq, ":troop_no", ":selected_troop_no"),
+		  (call_script, "script_cf_troop_room", ":my_player_no", ":selected_troop_no"),
+		  (player_set_troop_id, ":my_player_no", ":selected_troop_no"),
+          (multiplayer_send_int_to_server, multiplayer_event_change_troop_id, ":selected_troop_no"),
+          (call_script, "script_multiplayer_set_default_item_selections_for_troop", ":selected_troop_no"),
+          (call_script, "script_multiplayer_send_item_selections"),
+		  (assign, ":room", 1),
+        (try_end),
+        (try_begin),
+		  (eq,":room", 1),
+          (presentation_set_duration, 0),
+          (assign, "$g_presentation_state", 0),
+          (start_presentation, "prsnt_multiplayer_item_select"),
+          (assign, ":end_cond", 0), #break
+        (else_try),
+          (presentation_set_duration, 0),
+          (start_presentation, "prsnt_multiplayer_troop_select"),
+		(try_end),
+      (try_end),
+      ]),
+&lt;/syntaxhighlight>
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+      (create_text_overlay, reg0, "str_force_default_armor", 0),
+      (position_set_x, pos1, 30),
+      (position_set_y, pos1, ":cur_y"),
+      (overlay_set_position, reg0, pos1),
+
+      (create_check_box_overlay, "$g_presentation_obj_admin_panel_40", "mesh_checkbox_off", "mesh_checkbox_on"),
+      (position_set_x, pos1, 7),
+      (store_add, ":special_cur_y", ":cur_y", 7),
+      (position_set_y, pos1, ":special_cur_y"),
+      (overlay_set_position, "$g_presentation_obj_admin_panel_40", pos1),
+      (overlay_set_val, "$g_presentation_obj_admin_panel_40", "$g_multiplayer_force_default_armor"),
+
+      (set_container_overlay, -1),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+      (create_text_overlay, reg0, "str_force_default_armor", 0),
+      (position_set_x, pos1, 30),
+      (position_set_y, pos1, ":cur_y"),
+      (overlay_set_position, reg0, pos1),
+
+      (create_check_box_overlay, "$g_presentation_obj_admin_panel_40", "mesh_checkbox_off", "mesh_checkbox_on"),
+      (position_set_x, pos1, 7),
+      (store_add, ":special_cur_y", ":cur_y", 7),
+      (position_set_y, pos1, ":special_cur_y"),
+      (overlay_set_position, "$g_presentation_obj_admin_panel_40", pos1),
+      (overlay_set_val, "$g_presentation_obj_admin_panel_40", "$g_multiplayer_force_default_armor"),
+
+	  (assign, ":cur_troop_index", 0),
+      (try_for_range, ":cur_troop", "trp_bueskytter_multiplayer", "trp_multiplayer_end"),
+	    (troop_get_slot, ":max_cur", ":cur_troop", 300),
+		
+        (val_sub, ":cur_y", ":cur_y_adder"),
+		
+        (str_store_troop_name, s1, ":cur_troop"),
+        (create_text_overlay, reg0, s1, 0),
+        (position_set_x, pos1, 0),
+        (position_set_y, pos1, ":cur_y"),
+        (overlay_set_position, reg0, pos1),
+		
+        (create_slider_overlay, reg0, 0, 100),
+		(overlay_set_val, reg0, ":max_cur"),
+        (store_add, ":button_index_slot", ":cur_troop_index", multi_data_troop_button_indices_begin),
+        (troop_set_slot, "trp_multiplayer_data", ":button_index_slot", reg0),
+        (troop_set_slot, ":cur_troop", 302, ":button_index_slot"),
+        (position_set_x, pos1, 900),
+        (position_set_y, pos1, 1000),
+        (overlay_set_size, reg0, pos1),
+        (position_set_x, pos1, 390),
+        (position_set_y, pos1, ":cur_y"),
+        (overlay_set_position, reg0, pos1),
+        (val_add, ":cur_troop_index", 1),
+      (try_end),
+ 
+      (set_container_overlay, -1),
+&lt;/syntaxhighlight>
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+      (else_try),
+        (eq, ":object", "$g_presentation_obj_admin_panel_41"),
+        (multiplayer_send_int_to_server, multiplayer_event_admin_set_anti_cheat, ":value"),
+      (else_try),
+        (eq, ":object", "$g_presentation_obj_admin_panel_42"),
+        (multiplayer_send_int_to_server, multiplayer_event_admin_set_disallow_ranged_weapons, ":value"),
+      (try_end),
+      ]),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+      (else_try),
+        (eq, ":object", "$g_presentation_obj_admin_panel_41"),
+        (multiplayer_send_int_to_server, multiplayer_event_admin_set_anti_cheat, ":value"),
+      (else_try),
+        (eq, ":object", "$g_presentation_obj_admin_panel_42"),
+        (multiplayer_send_int_to_server, multiplayer_event_admin_set_disallow_ranged_weapons, ":value"),
+      (try_end),
+
+	  (assign, ":end_cond", multi_data_troop_button_indices_end),
+      (try_for_range, ":i_button", multi_data_troop_button_indices_begin, ":end_cond"),
+        (troop_slot_eq, "trp_multiplayer_data", ":i_button", ":object"),
+		(try_for_range, ":cur_troop", "trp_bueskytter_multiplayer", "trp_multiplayer_end"),
+		  (troop_slot_eq, ":cur_troop", 302, ":i_button"),
+		  (troop_set_slot, ":cur_troop", 300, ":value"),
+		  (multiplayer_send_2_int_to_server, multiplayer_event_admin_set_troop_perc, ":cur_troop", ":value"),
+		(try_end),
+      (try_end),
+	  
+      ]),
+&lt;/syntaxhighlight>
+
+Now you neet to change the troop trp_bueskytter_multiplayer in the first troop you use, in this operation.
+
+(try_for_range, ":cur_troop", "trp_bueskytter_multiplayer", "trp_multiplayer_end"),
+
+'''Change this'''
+
+&lt;syntaxhighlight lang="python">
+      (create_mesh_overlay, reg0, "mesh_mp_ui_host_main"),
+      (position_set_x, pos1, -1),
+      (position_set_y, pos1, -1),
+      (overlay_set_position, reg0, pos1),
+      (position_set_x, pos1, 1002),
+      (position_set_y, pos1, 1002),
+      (overlay_set_size, reg0, pos1),
+
+      (assign, ":cur_y", 1240),
+      (assign, ":cur_y_adder", 40),
+&lt;/syntaxhighlight>
+
+'''To'''
+
+&lt;syntaxhighlight lang="python">
+      (create_mesh_overlay, reg0, "mesh_mp_ui_host_main"),
+      (position_set_x, pos1, -1),
+      (position_set_y, pos1, -1),
+      (overlay_set_position, reg0, pos1),
+      (position_set_x, pos1, 1002),
+      (position_set_y, pos1, 1002),
+      (overlay_set_size, reg0, pos1),
+
+      (assign, ":cur_y", 1840), # This variable makes the size of the scroller screen, if you have more troops than fit you can change this value to somewhat higher.
+      (assign, ":cur_y_adder", 40),
+&lt;/syntaxhighlight>
+
+==== Module_Common ====
+
+'''Add these lines'''
+
+&lt;syntaxhighlight lang="python">
+multiplayer_event_admin_set_troop_perc                        = 120
+multiplayer_event_set_limitations                             = 121
+&lt;/syntaxhighlight>
+
+Wolf.
+
+[[category:Script]]
+</textarea><div id="editpage-copywarn">
+<p>Please note that all contributions to Mount&amp;Blade Modding Wiki are considered to be released under the Public Domain (see <a href="http://mbmodwiki.ollclan.eu/index.php?title=ModdingWiki:Copyrights&amp;action=edit&amp;redlink=1" class="new" title="ModdingWiki:Copyrights (page does not exist)">ModdingWiki:Copyrights</a> for details).
+If you do not want your writing to be edited mercilessly and redistributed at will, then do not submit it here.<br />
+You are also promising us that you wrote this yourself, or copied it from a public domain or similar free resource.
+<b>Do not submit copyrighted work without permission!</b>
+</p>
+</div>
+<div class='editOptions'>
+<span class="mw-summary" id="wpSummaryLabel"><label for="wpSummary">Summary:</label></span> <input class="mw-summary" id="wpSummary" maxlength="200" tabindex="1" size="60" spellcheck="true" title="Enter a short summary [b]" accesskey="b" value="/* Troop Limits for Multiplayer */ " name="wpSummary" /><div class='editCheckboxes'>
+</div>
+<div class='editButtons'>
+<input id="imDone" name="imDone" type="submit" tabindex="3" value="Save page" accesskey="s" title="Save your changes [s]" />
+<input id="wpPreview" name="wpPreview" type="submit" tabindex="4" value="Show preview" accesskey="p" title="Preview your changes, please use this before saving! [p]" />
+
+<input id="wpDiff" name="wpDiff" type="submit" tabindex="5" value="Show changes" accesskey="v" title="Show which changes you made to the text [v]" />
+	<span class='editHelp'><a href="Troop/Class_Limits.html" title="Troop/Class Limits" id="mw-editform-cancel">Cancel</a> | <a target="helpwindow" href="http://mbmodwiki.ollclan.eu/Help:Editing">Editing help</a> (opens in new window)</span>
+</div><!-- editButtons -->
+</div><!-- editOptions -->
+
+<input type="hidden" value="+\" name="wpEditToken" />
+<div class="mw-editTools"></div>
+<div class='templatesUsed'>
+
+</div>
+<div class='hiddencats'>
+
+</div></form>
+<div class="printfooter">
+Retrieved from "<a href="Troop/Class_Limits.html">http://mbmodwiki.ollclan.eu/Troop/Class_Limits</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=Troop/Class_Limits&amp;returntoquery=action%3Dedit%26section%3D1" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Troop/Class_Limits.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ATroop%252FClass_Limits&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Troop%252FClass_Limits&amp;action=edit&amp;section=1.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view"><span><a href="Troop/Class_Limits.html" >Read</a></span></li>
+					<li id="ca-edit" class="selected"><span><a href="index.php@title=Troop%252FClass_Limits&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Troop%252FClass_Limits&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Troop%252FClass_Limits&amp;action=edit&amp;section=1.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Troop/Class_Limits.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Troop/Class_Limits.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+													</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+																		<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Troop/Class_Limits", "wgTitle": "Troop/Class Limits", "wgAction": "edit", "wgArticleId": 132, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 736, "wgCategories": [], "wgBreakFrames": true, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.edit", "mediawiki.action.edit", "ext.wikiEditor.dialogs", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) { addButton("/skins/common/images/button_bold.png","Bold text","\'\'\'","\'\'\'","Bold text","mw-editbutton-bold");
+addButton("/skins/common/images/button_italic.png","Italic text","\'\'","\'\'","Italic text","mw-editbutton-italic");
+addButton("/skins/common/images/button_link.png","Internal link","[[","]]","Link title","mw-editbutton-link");
+addButton("/skins/common/images/button_extlink.png","External link (remember http:// prefix)","[","]","http://www.example.com link title","mw-editbutton-extlink");
+addButton("/skins/common/images/button_headline.png","Level 2 headline","\n== "," ==\n","Headline text","mw-editbutton-headline");
+addButton("/skins/common/images/button_nowiki.png","Ignore wiki formatting","\x3cnowiki\x3e","\x3c/nowiki\x3e","Insert non-formatted text here","mw-editbutton-nowiki");
+addButton("/skins/common/images/button_sig.png","Your signature with timestamp","--~~~~","","","mw-editbutton-signature");
+addButton("/skins/common/images/button_hr.png","Horizontal line (use sparingly)","\n----\n","","","mw-editbutton-hr");
+ }</script>
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.159 secs. -->			</body>
+</html>

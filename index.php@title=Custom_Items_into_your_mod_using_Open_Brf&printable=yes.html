@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Custom Items into your mod using Open Brf - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+
+<style type="text/css">/*<![CDATA[*/
+.source-python {line-height: normal;}
+.source-python li, .source-python pre {
+	line-height: normal; border: 1px dashed #2f6fab;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for python
+ * CSS class: source-python, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.python.source-python .de1, .python.source-python .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.python.source-python  {font-family:monospace;}
+.python.source-python .imp {font-weight: bold; color: red;}
+.python.source-python li, .python.source-python .li1 {font-weight: normal; vertical-align:top;}
+.python.source-python .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.python.source-python .li2 {font-weight: bold; vertical-align:top;}
+.python.source-python .kw1 {color: #ff7700;font-weight:bold;}
+.python.source-python .kw2 {color: #008000;}
+.python.source-python .kw3 {color: #dc143c;}
+.python.source-python .kw4 {color: #0000cd;}
+.python.source-python .co1 {color: #808080; font-style: italic;}
+.python.source-python .coMULTI {color: #808080; font-style: italic;}
+.python.source-python .es0 {color: #000099; font-weight: bold;}
+.python.source-python .br0 {color: black;}
+.python.source-python .sy0 {color: #66cc66;}
+.python.source-python .st0 {color: #483d8b;}
+.python.source-python .nu0 {color: #ff4500;}
+.python.source-python .me1 {color: black;}
+.python.source-python .ln-xtra, .python.source-python li.ln-xtra, .python.source-python div.ln-xtra {background-color: #ffc;}
+.python.source-python span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "index.php@title=MediaWiki%253AGeshi.css&usemsgcache=yes&action=raw&ctype=text%252Fcss&smaxage=18000.css";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Custom_Items_into_your_mod_using_Open_Brf skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Custom Items into your mod using Open Brf</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#mw-head">navigation</a>,
+					<a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p>This tutorial will take you through the steps of adding your own items to your mod. It's quite easy, doesn't require much coding at all nor knowledge of coding.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#Required_Things"><span class="tocnumber">1</span> <span class="toctext">Required Things</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#Setting_up_your_mod_folder"><span class="tocnumber">2</span> <span class="toctext">Setting up your mod folder</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#OpenBRF"><span class="tocnumber">3</span> <span class="toctext">OpenBRF</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#Configuring_Module_ini"><span class="tocnumber">4</span> <span class="toctext">Configuring Module ini</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#Adding_the_item_to_the_module_system"><span class="tocnumber">5</span> <span class="toctext">Adding the item to the module system</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Required_Things"> Required Things </span></h2>
+<ul><li> A DDS plugin for your photo editing software. Gimp: <a href="http://code.google.com/p/gimp-dds/#Downloads" class="external text" rel="nofollow">Gimp DDS plugin</a> , Photoshop: <a href="http://developer.nvidia.com/object/photoshop_dds_plugins.html" class="external text" rel="nofollow">Nvidia DDS plugin</a>
+</li><li> Marco Tarini's OpenBRF to get your texture and model together into the game. <a href="http://www.mbrepository.com/file.php?id=1466" class="external text" rel="nofollow">Open Brf</a>
+</li><li> A proper text editor. Example: <a href="http://www.pnotepad.org/" class="external text" rel="nofollow">Programmers Notepad</a> | <a href="http://notepad-plus-plus.org/" class="external text" rel="nofollow">Notepad++ </a>
+</li><li> Newest version of the Module System: <a href="http://download2.taleworlds.com/mb_warband_module_system_1134.zip" class="external text" rel="nofollow">Download</a>
+</li><li> Python 2.6 (Or earlier if wanted. Newer versions <b>WONT WORK</b>) <a href="http://www.python.org/download/releases/2.6/" class="external text" rel="nofollow">Python 2.6</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Setting_up_your_mod_folder"> Setting up your mod folder </span></h2>
+<p>First, we need to create a working mod folder for your mod. So, navigate to your Mount&amp;Blade Warband Modules folder.
+</p><p>If you have installed through steam and used the default installation path for it, it should be located in here:
+</p>
+<pre>C:\Program Files\Steam\steamapps\common\mountblade warband\modules</pre>
+<p>Or if you did not install it through steam:
+</p>
+<pre>C:\Program Files\Mount&amp;Blade Warband\Modules</pre>
+<p>These are the defaults for Windows XP. Vista Entries will be added.
+</p><p>So, now in your modules folder, copy the native folder, paste it there. You will get a folder called "copy native". Change the name to whatever you want your mod name to be. For me
+</p><p>Finland At WW2
+</p><p>Now, we need to change our module_info directory to match your mod directory. So, open up your module system folder and look for module info. Open it up with your text editor (Which I presume is a good one which I mentione earlier on in the tutorial). You will see two lines:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="co1">#export_dir = &quot;../&quot;</span>
+&#160;
+export_dir = <span class="st0">&quot;E:/Program Files/Steam/steamapps/common/mountblade warband/Modules/Finland At WW2/&quot;</span></pre></div></div>
+<p>What you do is change the second line to match your mod folder. For me it's this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">export_dir = <span class="st0">&quot;E:/Program Files/Steam/steamapps/common/mountblade warband/Modules/Finland At WW2/&quot;</span></pre></div></div>
+<p>Save it up. Now, to test that everything works, run the build_module.bat. I presume that you have installed python properly by now. If your not sure, take a look in this <a href="http://forums.taleworlds.com/index.php/topic,35044.0.html" class="external text" rel="nofollow">thread</a>Â . So, if any errors occure like "Python not recognised", take a look in the thread.
+</p><p>Now, if everything went fine, Congratulations! You succesfully compiled your mod for the first time. Now, lets get onto Open Brf!
+</p>
+<h2> <span class="mw-headline" id="OpenBRF"> OpenBRF </span></h2>
+<p>BRF files (Binary Resource Files) contains your model, the material for your model and the texture files. I will take you through of adding your item, adding a basic configuration on the material settings, talking about lods and multimeshing too. Some information:
+</p>
+<ul><li> Texture files MUST BE in DDS format. For non alpha map textures, BC1/DXT1 compression. For texture maps with alpha maps, BC1/DXT5. Using Mipmaps is suggested.
+</li><li> Model files MUST BE in .obj format. A model can be put together from several different parts and models can (And should) have LODS (Level of Detail).
+</li><li> Skeletal animations must be in .smd format.
+</li><li> Vertex animated meshes are supported
+</li></ul>
+<p>So, furthermore, lets get started. So, first things first. Export your model in <i>.obj</i> format. But before you do export, make sure you have the right export/import settings:
+</p><p>Tessellation: Triangulation
+</p><p>SwapY and Z axes
+</p><p>Import Scale: 10.0
+</p><p>Export Scale: 0.1
+</p><p>Subdivision steps: 0
+</p><p>It's very important that the model is triangulated when exporting. If not, you will get problems.
+</p><p>Now, when you have applied the settings, go on and export the model to somewhere where it is easy to find.
+</p><p>Next, we need to make our texture files into DDS file format. As I mentioned, it is very important, otherwise the game can't read the texture files. So, in either Gimp or Photoshop (Could be paint.net as it also supports saving in DDS), go on and save your texture(Textures if you have Normal and Specular maps, which is recommended). Again, save them to a place where it's easy to find them. Now, the next step is to copy your dds files to your mods texture folder. So, find your dds textures, copy them (Ctrl C or right click and click copy), navigate to your mod folder. In there, go to textures folder and paste the dds files there.
+</p><p>Now, we will start work with Open Brf. Fire it up. Now, you have six tabs starting from the top left hand corner. We only need to worry about the "Import" tab. So, click on and press "Static mesh". Find your model file (Which should be in .obj format!) and import it. If it says that the model has multiple materials, just click no. Now, you will get a tab called "Mesh". This is where all your models will be in. As you noticed, your model has blue and white checkboard pattern. It's because it's missing a texture. So, now, we need to create a material for your model. The material controls various settings. Shaders, all the diffuses (texture maps), Specularity settings (How much the item shines), Rendering order and finally, the material flags. In all basicness, your model file contains the following:
+</p>
+<ul><li> The model
+</li><li> The material
+</li><li> The texture(s)
+</li></ul>
+<p>Now, go on and create a material for your mesh from the import tab. Name it something that is easy to connect to the mesh. Now, when you have creater the material, it will most likely have the checkboard pattern (Unless you named the material the same as your texture, then it will show the texture). Now, first of all, we need to get the texture maps right on the material. So, for the Diffuse A, put your main texture map name for it. Â Next, if you made normal and specular maps for your texture (Use <a href="http://www.crazybump.com/" class="external text" rel="nofollow">Crazybump</a> if your not too familiar making ones.) We need to assign Â them to the material. Normal map on the Bump entry, and Specular map to the Specular entry. Next, we need to change the shader. The simple shader is not good for anything, expect testing the model in-game. Â Lets say Id be adding a sword. There are various shaders for swords and helmets but Ill use
+</p><p>specular_shader_noskin_bump_high_Instanced
+</p><p>This shader uses both Bump (Normal map) and the specular map.
+</p><p>Now, we need to add the basic Spec RGB settings. I suggest you play around with them if the specular maps are too shiny. But for all basic meshes with specular maps, I use these settings:
+</p><p>10 10 10
+</p><p>Coeff: 16
+</p><p>Rend ord: 0
+</p><p>Next, add 720 the material flags. This enables
+</p><p>Blend
+</p><p>Blend Add
+</p><p>Blend Multiply
+</p><p>Specular Enable
+</p><p>Not entirely sure what the blend flags do, but the specular enable is pretty self explanatory.
+</p><p>Now, the last step is to actually import our texture(s) into the brf file. To do this, go to the import tab and press "New Texture". Give the name exactly the same as your textures in the texture folder. If it's not exactly the same, you will get problems later on. When you have done everything, go to "File" and press "Save as". Give it a name and save in M&amp;B Resource Brf. Save it up and lets get to new stuff.
+</p>
+<h2> <span class="mw-headline" id="Configuring_Module_ini"> Configuring Module ini </span></h2>
+<p>Look for module.ini in your mod folder. When you find it, open it up. First, search for
+</p><p>scan_module_textures
+</p><p>If it's
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">scan_module_textures = <span class="nu0">0</span></pre></div></div>
+<p>Change it to 1. Like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">scan_module_textures = <span class="nu0">1</span></pre></div></div>
+<p>This makes the mod check the mods texture folder for textures.
+</p><p>Next, we need to add our brf file. So, search for this line
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">load_resource = materials_face_gen</pre></div></div>
+<p>Create a space between it and add
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">load_mod_resource = pystykorva_mesh</pre></div></div>
+<p>load_mod_resource tells the mod to load the resource from the mods own resource folder. Make sure you set the Â "pystykorva_mesh"
+</p><p>To match your resource file. So, it's the resource files name without the .brf tag at the end. When your read, save it up and close it.
+</p>
+<h2> <span class="mw-headline" id="Adding_the_item_to_the_module_system"> Adding the item to the module system </span></h2>
+<p>Now, go to your module system folder, and look for module_items. When you find it, open it up.
+</p><p>Now , module items is the file where you add all your items. Swords, helmets, clothing, everything. Now, lets say id like to add a basic sword into my mod. What I do is find a existing sword code, copy it and change it to my liking. Here is an example
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#91;</span><span class="st0">&quot;sword_viking_1&quot;</span>, <span class="st0">&quot;Nordic Sword&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#40;</span><span class="st0">&quot;sword_viking_c&quot;</span>,<span class="nu0">0</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;sword_viking_c_scabbard &quot;</span>, ixmesh_carry<span class="br0">&#41;</span><span class="br0">&#93;</span>, itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+&#160;
+<span class="nu0">147</span> , weight<span class="br0">&#40;</span><span class="nu0">1.5</span><span class="br0">&#41;</span>|difficulty<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>|spd_rtng<span class="br0">&#40;</span><span class="nu0">99</span><span class="br0">&#41;</span> | weapon_length<span class="br0">&#40;</span><span class="nu0">94</span><span class="br0">&#41;</span>|swing_damage<span class="br0">&#40;</span><span class="nu0">28</span> , cut<span class="br0">&#41;</span> | thrust_damage<span class="br0">&#40;</span><span class="nu0">20</span> , Â pierce<span class="br0">&#41;</span>,imodbits_sword_high <span class="br0">&#93;</span> ,</pre></div></div>
+<p>sword_viking_1 is the id of our item which can be then used in other files. "Nordic Sword" is the name of the sword which appears in game. "sword_viking_c" is the actual model name in the brf file. So, if you would want add your sword. you change the "sword_viking_c" to match the name of your sword in the brf file. So if my swords name would be mysword in the brf file, it would go look something like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#91;</span><span class="st0">&quot;my_sword&quot;</span>, <span class="st0">&quot;My Uber Cool Sword&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#40;</span><span class="st0">&quot;mysword&quot;</span>,<span class="nu0">0</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;sword_viking_c_scabbard &quot;</span>, ixmesh_carry<span class="br0">&#41;</span><span class="br0">&#93;</span>, itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+&#160;
+<span class="nu0">147</span> , weight<span class="br0">&#40;</span><span class="nu0">1.5</span><span class="br0">&#41;</span>|difficulty<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>|spd_rtng<span class="br0">&#40;</span><span class="nu0">99</span><span class="br0">&#41;</span> | weapon_length<span class="br0">&#40;</span><span class="nu0">94</span><span class="br0">&#41;</span>|swing_damage<span class="br0">&#40;</span><span class="nu0">28</span> , cut<span class="br0">&#41;</span> | thrust_damage<span class="br0">&#40;</span><span class="nu0">20</span> , Â pierce<span class="br0">&#41;</span>,imodbits_sword_high <span class="br0">&#93;</span> ,</pre></div></div>
+<p>The "sword_viking_c_scabbard" is the scabbard where the sword is put when you sheath it. Now, if you want to change the swords stats,
+</p><p>you could change the weight(), difficulty(What does it require), spd_rtn(Speed rating, how fast you swing it), weapon_length(Use the measure tool in openbrf to get the accurate length), swing_damage(Self explanatory), thrust_damage(Self explanatory),
+</p><p>After you have edited it your liking, save it up and <i><b>build_module.bat</b></i>. If it goes fine, congratulations! You have succesfully added your item. If it builds with errors, make sure you have done everything right.
+</p><p><a href="index.php@title=User%253AWEe&amp;action=edit&amp;redlink=1.html" class="new" title="User:WEe (page does not exist)">WEe</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 97/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:17-0!*!0!!en!*!edit=0 and timestamp 20200419221133 -->
+<div class="printfooter">
+Retrieved from "<a href="Custom_Items_into_your_mod_using_Open_Brf.html">http://mbmodwiki.ollclan.eu/Custom_Items_into_your_mod_using_Open_Brf</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253ATutorials.html" title="Category:Tutorials">Tutorials</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Custom_Items_into_your_mod_using_Open_Brf&amp;returntoquery=printable=yes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Custom_Items_into_your_mod_using_Open_Brf.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ACustom_Items_into_your_mod_using_Open_Brf&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Custom_Items_into_your_mod_using_Open_Brf.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Custom_Items_into_your_mod_using_Open_Brf.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Custom_Items_into_your_mod_using_Open_Brf.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php@title=Custom_Items_into_your_mod_using_Open_Brf&amp;oldid=142.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 18 February 2013, at 17:05.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 12 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Custom_Items_into_your_mod_using_Open_Brf", "wgTitle": "Custom Items into your mod using Open Brf", "wgAction": "view", "wgArticleId": 17, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 142, "wgCategories": ["Tutorials"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.127 secs. -->			</body>
+</html>

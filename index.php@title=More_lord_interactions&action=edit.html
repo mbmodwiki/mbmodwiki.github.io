@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Editing More lord interactions - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=More_lord_interactions&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=More_lord_interactions&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=More_lord_interactions&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<!--[if IE 8]><link rel="stylesheet" href="/skins/common/IE80Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-More_lord_interactions skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Editing More lord interactions</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=More_lord_interactions&amp;action=edit.html#mw-head">navigation</a>,
+					<a href="index.php@title=More_lord_interactions&amp;action=edit.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div id="mw-anon-edit-warning">
+<p><b>Warning:</b> You are not logged in.
+</p>
+Your IP address will be recorded in this page's edit history.</div>
+<div id="wikiPreview" class="ontop" style="display: none;"></div><div id='toolbar'>
+
+</div>
+<form id="editform" name="editform" method="post" action="http://mbmodwiki.ollclan.eu/index.php?title=More_lord_interactions&amp;action=submit" enctype="multipart/form-data"><div id="checkmeout" style="display: none;">
+<label for="check">bot check.
+Do <b>NOT</b> fill this in!</label> <input type="text" name="check" id="check" value="" />
+<input type="hidden" name="swy-master" id="swy-master" value="ñ" />
+<input type="text" name="swy-magic" id="swy-magic" value="imasocool-yousuckbot!" />
+</div>
+<input type='hidden' value="" name="wpSection" />
+<input type='hidden' value="20200419223019" name="wpStarttime" />
+<input type='hidden' value="20111127151902" name="wpEdittime" />
+<input type='hidden' value="" name="wpScrolltop" id="wpScrolltop" />
+<input type="hidden" value="d41d8cd98f00b204e9800998ecf8427e" name="wpAutoSummary" /><input type="hidden" value="0" name="oldid" /><textarea tabindex="1" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" name="wpTextbox1">==Features==
+Quote from forum topic:
+* New, extended Prisoner Chat
+* Ability to persuade prisoners to join you directly
+* Ability to set them free
+* Ability to murder regular prisoners
+* Ability to taunt nobles
+* Ability to let nobles go, with a gain to honor and relation
+* Ability to kill nobles permanently in-game.
+
+==Script==
+In ''module_dialogs'' search for native prisoner dialogs:
+&lt;syntaxhighlight lang="python">
+  [anyone|plyr,"prisoner_chat", [], "Do not try running away or trying something stupid. I will be watching you.", "prisoner_chat_2",[]],
+  [anyone,"prisoner_chat_2", [], "No, I swear I won't.", "close_window",[]],
+&lt;/syntaxhighlight>
+Replace previous code with new one:
+&lt;syntaxhighlight lang="python">
+  ###################################################################################################
+  # Prisoner Talk - Originally written by Leprechaun, majorly overhauled &amp; extended by Mordachai
+  ###################################################################################################
+
+  # this is a dummy dialog - it sets up the globals we need
+  [anyone|plyr, "prisoner_chat", [
+    (store_conversation_troop,"$g_talk_troop"),
+    (store_troop_faction,"$g_talk_troop_faction","$g_talk_troop"),
+    (store_relation, "$g_talk_troop_faction_relation", "$g_talk_troop_faction", "fac_player_faction"),
+    (call_script, "script_troop_get_player_relation", "$g_talk_troop"),
+    (assign, "$g_talk_troop_relation", reg0),
+    (eq, 1, 0)
+  ], "", "close_window", []],
+
+  # the following is intended to catch when you free up space for a prisoner that already agreed to join you
+  [anyone|plyr, "prisoner_chat", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 1),(troops_can_join, 1)], "All right, I have made room for you.", "prisoner_chat_accept_confirm", []],
+  [anyone,      "prisoner_chat_accept_confirm", [], "I am at your command, my {lord/lady}.", "prisoner_chat_accept3", []],
+
+  # and we catch the case where you still don't have any room for a pending conscripted prisoner
+  [anyone|plyr, "prisoner_chat", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 1),(neg|troops_can_join, 1)], "I am sorry, I still have no room for you. You'll have to wait a while longer.", "close_window",[]],
+
+  # default entry (no prior join agreement, or they've previously refused)
+  [anyone|plyr, "prisoner_chat", [(neg|troop_slot_eq, "$g_talk_troop", slot_troop_occupation, slto_kingdom_hero)], "You there!", "prisoner_chat_commoner", []],
+  [anyone|plyr, "prisoner_chat", [(troop_slot_eq, "$g_talk_troop", slot_troop_occupation, slto_kingdom_hero),(str_store_troop_name, s1, "$g_talk_troop")], "{s1}", "prisoner_chat_lord", []],
+
+  # reaction to you based on noble or low-birth
+  [anyone,     "prisoner_chat_commoner", [], "Me?! (Gulp!)", "prisoner_chat_menu",[]],
+  [anyone,     "prisoner_chat_lord", [(str_store_troop_name, s1, "trp_player")], "Yes, {Lord/Lady} {s1}?", "prisoner_chat_noble",[]],
+
+  # nobles chat begin
+  [anyone|plyr,"prisoner_chat_noble", [], "You are free to go.", "prisoner_chat_noble_prerelease",[]],
+  [anyone|plyr,"prisoner_chat_noble", [], "You will remain my prisoner.", "prisoner_chat_noble_prekeep",[]],
+  [anyone|plyr,"prisoner_chat_noble", [(gt, "$players_kingdom", 0)], "You have committed high treason!", "prisoner_chat_treason",[]],
+
+  [anyone|plyr,"prisoner_chat_noble_prerelease", [], "Despite what you may have heard, I am a {man/woman} of honor.  You are free to go.", "prisoner_chat_noble_release", []],
+  [anyone,     "prisoner_chat_noble_release", [], "I will not forget this act of Chivalry!", "close_window",
+   [
+    # remove the troop from prison
+    (call_script, "script_remove_troop_from_prison", "$g_talk_troop"),
+    (party_remove_prisoners, "p_main_party", "$g_talk_troop", 1),
+
+    # determine how much honor and faction relation change this prisoner is worth
+    (try_begin),
+      # king
+      (faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop"),
+      (assign, ":honor", 5),
+      (assign, ":fac_reln", 15),
+    (else_try),
+      # other lord
+      (assign, ":honor", 2),
+      (assign, ":fac_reln", 5),
+    (try_end),
+
+    # give the player their honor, faction relation, and lord relation change
+    (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 10),
+    (call_script, "script_change_player_honor", ":honor"),
+    (call_script, "script_change_player_relation_with_faction", "$g_talk_troop_faction", ":fac_reln" ),
+  ]],
+
+  [anyone|plyr,"prisoner_chat_noble_prekeep", [], "You will understand if I keep you hostage until your family can afford to... compensate me for certain expenses and hardships I have endured to keep you fed and ...safe... these past weeks.", "prisoner_chat_noble_keep",[]],
+
+  [anyone,     "prisoner_chat_noble_keep", [(ge, "$player_honor", 10),(ge, "$g_talk_troop_relation", 0)], "Truly, this is beneath you.", "close_window",[]],
+  [anyone,     "prisoner_chat_noble_keep", [], "And I trust you will be as understanding when I hunt you down like the dog you are!", "close_window",[(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -1)]],
+
+  # commoners chat begin
+  [anyone|plyr,"prisoner_chat_menu", [], "Hmmm... perhaps you're not as stupid as the rest of those rabble.", "prisoner_chat_offer",[]],
+  [anyone|plyr,"prisoner_chat_menu", [], "As wretched as you are, I cannot help but feel sorry for you.", "prisoner_chat_release",[]],
+  [anyone|plyr,"prisoner_chat_menu", [], "The sight of you makes me sick! You.. Die.. Now!", "prisoner_chat_die1",[]],
+  [anyone|plyr,"prisoner_chat_menu", [], "Get back in line, Scum!", "close_window",[]],
+
+  [anyone|plyr,"prisoner_chat_release", [], "I'm feeling magnanimous today.  Begone, before I change my mind!", "prisoner_chat_release2", []],
+  [anyone,     "prisoner_chat_release2", [], "Oh, thank you, {sir/madam}.  Blessings on you!", "close_window",
+    [(remove_troops_from_prisoners, "$g_talk_troop", 1),(call_script, "script_change_player_honor", 1)]],
+
+  [anyone|plyr,"prisoner_chat_offer", [], "Listen, scum, you have one last chance to redeem yourself before I sell you to the slave-traders.  "\
+                                      "Drop all your previous allegiances and swear fealty to me, obey my every order to the letter, and you'll be paid, fed and equipped.  "\
+                                      "If you don't....well, let's just say that life as a slave will be seemingly unending years of agony, malnutrition and beatings.  "\
+                                      "I'd advise you to think very, very carefully before choosing.  ", "prisoner_chat_reaction",
+                                      [(call_script, "script_determine_prisoner_agreed", "$g_talk_troop", "$g_talk_troop_faction_relation")]],
+
+  [anyone,     "prisoner_chat_reaction", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 1)], "Thank you for your mercy, {sir/madam}. I swear on my mothers grave I will serve you, my {lord/lady}!","prisoner_chat_accept1",[]],
+  [anyone,     "prisoner_chat_reaction", [], "I'll show you what I think of your offer! (The prisoner spits at your feet) There. Now get lost, I'm not interested.", "prisoner_chat_refuse",[]],
+
+  [anyone|plyr,"prisoner_chat_refuse", [], "I see...", "prisoner_chat_menu",[]],
+
+  [anyone|plyr,"prisoner_chat_die1", [], "(You advance on the prisoner...)", "prisoner_chat_die2",[]],
+  [anyone,     "prisoner_chat_die2", [], "Please, {sir/madam}, don't kill me. I am a defenceless prisoner. Surely you're not that cruel?", "prisoner_chat_die3",[]],
+  [anyone|plyr,"prisoner_chat_die3", [], "(Kill the prisoner)", "prisoner_chat_die4",[]],
+  [anyone|plyr,"prisoner_chat_die3", [], "No, I will not sink that low.", "close_window",[]],
+  [anyone|plyr,"prisoner_chat_die4", [], "(The prisoner struggles against his shackles, desperate to free himself and escape you, but to no avail. You slit their throat with a knife and watch, satisfied, as his corpse sags to the floor.)", "close_window",
+   [(remove_troops_from_prisoners, "$g_talk_troop", 1),
+    (call_script, "script_change_player_honor", -1)]],
+
+  [anyone|plyr, "prisoner_chat_accept1", [], "If you so much as fail to tremble on my command, I will have you severely disciplined!", "prisoner_chat_accept2",[]],
+  [anyone|plyr, "prisoner_chat_accept1", [], "In my camp we are all treated as equals.  I expect your obedience, but also your trust.", "prisoner_chat_accept2",[]],
+
+  [anyone,      "prisoner_chat_accept2", [], "I will obey your wishes, my {lord/lady}.  I swear!", "prisoner_chat_accept3",[]],
+
+  [anyone|plyr, "prisoner_chat_accept3", [(neg|troops_can_join, 1)], "Oh! Apparently there isn't enough room for you in my party. I will be back when I have made space.", "close_window", []],
+  [anyone|plyr, "prisoner_chat_accept3", [(troops_can_join, 1)], "Excellent. Report to the quartermaster for provisions and equiment.  There is hard fighting ahead.", "close_window",
+   [(troop_set_slot, "$g_talk_troop", slot_prisoner_agreed, 0),
+    (remove_troops_from_prisoners, "$g_talk_troop",1),
+    (party_add_members, "p_main_party", "$g_talk_troop", 1),
+    (call_script, "script_change_troop_renown", "trp_player", 1),]],
+
+  [anyone|plyr, "prisoner_chat_treason", [(str_store_troop_name, s1, "$g_talk_troop"), (str_store_faction_name, s2, "$players_kingdom")],
+    "{s1}, you have committed cimes against the {s2}, for which you will now stand trial.^How plead you?", "prisoner_chat_treason_plead",
+    [
+      # determine the noble's reaction to this accusation
+      (store_random_in_range, reg0, 1, 5),#bug: must set upper number one higher to actually generate correct range
+      #TODO: weight the reaction according to the renown?  Or at least according to king or not...
+      (troop_set_slot, "$g_talk_troop", slot_prisoner_agreed, reg0),
+    ]
+  ],
+
+  [anyone,      "prisoner_chat_treason_plead", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 1),],
+    "Please have mercy upon my soul.  All I have done, I have done in the name of my King and Country!  I am but a patriot, as you, and I deserve your respect, if nothing else.", "prisoner_chat_treason_choose", []],
+  [anyone,      "prisoner_chat_treason_plead", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 2),],
+    "You are gravely mistaken!  I am an honorable Lord, and I have done nothing that you would not do were our roles exchanged.", "prisoner_chat_treason_choose", []],
+  [anyone,      "prisoner_chat_treason_plead", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 3),],
+    "I spit on you and yours!  You are but a cur come to put on airs, as though you were Noble and had any right whatsoever to judge me!  Me!  You are a nothing but a common brigand and a coward!  I do not bow to you.  You should drop to your knees and beg *my* forgiveness!", "prisoner_chat_treason_choose", []],
+  [anyone,      "prisoner_chat_treason_plead", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 4),],
+    "You dare accuse me?!  You sniveling whelpling!  I should see you flogged and put in chains in one of my prisons for your insolence!", "prisoner_chat_treason_choose", []],
+
+  [anyone|plyr, "prisoner_chat_treason_choose", [], "I am a {man/woman} of honor.  I shall spare your life this day!", "prisoner_chat_treason_not_guilty",
+    [
+      #TODO: have the relation with the prison have a mixed (random) result - relief, anger, etc, which dictates their final monologue to the player before exiting the dialog
+
+      # make sure we don't try to recruit this prisoner later!
+      (troop_set_slot, "$g_talk_troop", slot_prisoner_agreed, 0),
+    ]
+  ],
+
+  [anyone,      "prisoner_chat_treason_not_guilty", [(str_store_troop_name, s1, "trp_player")], "There is yet hope for you, {s1}.", "close_window", []],
+
+  [anyone|plyr, "prisoner_chat_treason_choose", [], "You do not deserve leiniency.  You must pay for your crimes with your life.", "prisoner_chat_treason_guilty", []],
+
+  [anyone|plyr, "prisoner_chat_treason_guilty", [], "For your many crimes against {s1}, I hereby sentence you to death, to be carried out immediately.  Have you any final words to say?", "prisoner_chat_treason_final_words",
+    [(store_random_in_range, reg0, 1, 6), (troop_set_slot, "$g_talk_troop", slot_prisoner_agreed, reg0)]],
+
+  [anyone,      "prisoner_chat_treason_final_words", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 1)], "I believe you will one day come to regret your actions.  There is only one who is worthy to decide another's fate... and that one is not you.", "prisoner_chat_treason_execute", []],
+  [anyone,      "prisoner_chat_treason_final_words", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 2)], "You are a coward and a dog!  May your soul rot eternal, damn you!", "prisoner_chat_treason_execute", []],
+  [anyone,      "prisoner_chat_treason_final_words", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 3)], "Winter's mortality,^locked in frozen indifference,^melts with Spring's rebirth.", "prisoner_chat_treason_execute", []],
+  [anyone,      "prisoner_chat_treason_final_words", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 4)], "You will find no peace on this earth!  I shall haunt thee eternal!  Unto death you will find nothing but unhappiness and fear.  And beyond... only torture and pain!", "prisoner_chat_treason_execute", []],
+  [anyone,      "prisoner_chat_treason_final_words", [(troop_slot_eq, "$g_talk_troop", slot_prisoner_agreed, 5)], "Who are you?^A day passes^We are but children", "prisoner_chat_treason_execute", []],
+
+  [anyone|plyr, "prisoner_chat_treason_execute", [],
+    "(The prisoner struggles against his shackles, desperate to free himself and escape you, but to no avail. You slit his throat and watch, satisfied, as his corpse sags to the floor.)",
+    "close_window",
+    [
+      # attempt to allow the player to see the consequences of their actions
+      #(set_show_messages, 1),  # this not only fails - but messages are hereafter disabled in the main game...
+
+      # make sure we don't try to recruit this prisoner stack later!
+      (troop_set_slot, "$g_talk_troop", slot_prisoner_agreed, 0),
+
+      # "kill" the NPC - force the 48 hr respawn kingdom heros trigger to ignore this troop (no party will be created for this troop, ever again)
+      # [q.v. script_create_kingdom_hero_party]
+      (troop_set_slot, "$g_talk_troop", slot_troop_occupation, slto_dead),
+
+      # remove them from their faction
+      (troop_set_slot, "$g_talk_troop", slot_troop_change_to_faction, "fac_no_faction"),
+      (troop_set_slot, "$g_talk_troop", slot_troop_original_faction, "fac_no_faction"),
+
+      # determine the penalty for this act (based on the honor of the troop they've killed)
+      (troop_get_slot, ":impact", "$g_talk_troop", slot_troop_renown),
+      (val_div, ":impact", -33),
+      (store_div, ":half", ":impact", 2),
+
+      # reduce the player's relationship with every village, town, and castle
+      (try_for_range, ":center", centers_begin, centers_end),
+        (store_faction_of_party, ":faction", ":center"),
+        (store_relation, ":relation", ":faction", "$g_talk_troop_faction"),
+        (try_begin),
+          (le, ":relation", -10),
+          # enemies, half impact
+          (call_script, "script_change_player_relation_with_center", ":center", ":half"),
+        (else_try),
+          # not at war, full impact
+          (call_script, "script_change_player_relation_with_center", ":center", ":impact"),
+        (try_end),
+      (try_end),
+
+      # reduce the player's relationship with every hero, companion, lady, and daughter
+      (try_for_range, ":troop", trp_npc1, trp_heroes_end),
+        # don't make the dead any angrier than they already are!
+        (neg|troop_slot_eq, ":troop", slot_troop_occupation, slto_dead),
+        (store_troop_faction, ":faction", ":troop"),
+        (store_relation, ":relation", ":faction", "$g_talk_troop_faction"),
+        (try_begin),
+          (le, ":relation", -10),
+          # enemies, half impact
+          (call_script, "script_change_player_relation_with_troop", ":troop", ":half"),
+        (else_try),
+          # not at war, full impact
+          (call_script, "script_change_player_relation_with_troop", ":troop", ":impact"),
+        (try_end),
+      (try_end),
+
+      # reduce the player's relationship with every faction (enemies 1/2 as much)
+      (try_for_range, ":faction", kingdoms_begin, kingdoms_end),
+        (store_relation, ":relation", ":faction", "$g_talk_troop_faction"),
+        (try_begin),
+          (le, ":relation", -10),
+          # enemies, half impact
+          (call_script, "script_change_player_relation_with_faction", ":faction", ":half"),
+        (else_try),
+          # not at war, full impact
+          (call_script, "script_change_player_relation_with_faction", ":faction", ":impact"),
+        (try_end),
+      (try_end),
+
+      # apply the honor hit
+      (call_script, "script_change_player_honor", ":impact"),
+
+      # party morale takes a hit as well
+      (call_script, "script_change_player_party_morale", ":half"),
+
+      # but give them renown for this evil deed (their deed spreads upon every tongue, impressing some, and cowing others)
+      (val_mul, ":impact", -1),
+      (call_script, "script_change_troop_renown", "trp_player" , ":impact"),
+
+      # start with the assumption that the fief should return to its faction for redistribution
+      (assign, ":fief_faction", "$g_talk_troop_faction"),
+
+      (try_begin),
+        # handle executing the King!
+        (faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop"),
+
+        # find best candidate to become king
+        (assign, ":best_troop", -1),
+        (assign, ":best_renown", -1),
+        (try_for_range, ":troop", kingdom_heroes_begin, kingdom_heroes_end),
+          (neg|troop_slot_eq, ":troop", slot_troop_occupation, slto_dead),  #can't choose a dead hero!
+          (store_troop_faction, ":faction", ":troop"),
+          (eq, ":faction", "$g_talk_troop_faction"),
+          (troop_slot_eq, ":troop", slot_troop_occupation, slto_kingdom_hero),  #only other heros of this faction may become the king
+          (troop_get_slot, ":renown", ":troop", slot_troop_renown),
+          (gt, ":renown", ":best_renown"),
+          (assign, ":best_troop", ":troop"),
+          (assign, ":best_renown", ":renown"),
+        (try_end),
+
+        (try_begin),
+          # check if a candidate was found
+          (neq, ":best_troop", -1),
+
+          # make them king
+          (faction_set_slot, "$g_talk_troop_faction", slot_faction_leader, ":best_troop"),
+
+          # announce it!
+          #TODO: generate a presentation for this! (start_presentation, "prsnt_enemy_succession"),
+          (str_store_troop_name, s1, ":best_troop"),
+          (str_store_faction_name, s2, "$g_talk_troop_faction"),
+          (display_message, "@{s1} is the new King of the {s2}!!!", 0xFFFF2222),
+          #TODO: update the game log for this event
+        (else_try),
+          # all of the lords have been eliminated - so eliminate the faction by making their last fief neutral (q.v. trigger: # Check if a faction is defeated every day)
+          (assign, ":fief_faction", "fac_no_faction"),
+        (try_end),
+      (try_end),
+
+      # free up the deceased's fief
+      (try_for_range, ":fief", centers_begin, centers_end),
+        (party_get_slot, ":lord", ":fief", slot_town_lord),
+        (eq, ":lord", "$g_talk_troop"),
+        (call_script, "script_give_center_to_faction", ":fief", ":fief_faction"),
+      (try_end),
+
+      # no longer our prisoner
+      (call_script, "script_remove_troop_from_prison", "$g_talk_troop"),
+      (remove_troops_from_prisoners, "$g_talk_troop", 1),
+    ]
+  ],
+
+  ###################################################################################################
+  # End Prisoner Talk
+  ###################################################################################################
+&lt;/syntaxhighlight>
+In ''module_constants'' add follwing:
+&lt;syntaxhighlight lang="python">
+slto_dead = 86
+slot_prisoner_agreed = 142
+&lt;/syntaxhighlight>
+
+Finally add following into ''module_scripts'' (the end works fine):
+&lt;syntaxhighlight lang="python">
+  #MORDACHAI - update whether the specified prisoner would like to join the player's party
+  # script_determine_prisoner_agreed
+  # Input: arg1 = troop, arg2 = troop faction relation
+  # Output: slot_prisoner_agreed is set to 1 if they agreed, or 0 if not
+  #         reg0 = agreed or not
+  ("determine_prisoner_agreed",
+    [
+      (store_script_param, ":troop", 1),
+      (store_script_param, ":relation", 2),
+
+      # upper bound = Persuasion*3 + Charisma + Leadership*3 + Honor/2 + Renown/100
+      (store_attribute_level, ":charisma", "trp_player", ca_charisma),
+      (store_skill_level, ":persuasion", "skl_persuasion", "trp_player"),
+      (store_skill_level, ":leadership", "skl_leadership", "trp_player"),
+      (val_mul, ":persuasion", 3),
+      (val_mul, ":leadership", 3),
+      (store_div, ":half_honor", "$player_honor", 2),
+      (troop_get_slot, ":renown_factor", slot_troop_renown),
+      (val_div, ":renown_factor", 100),
+      (assign, ":upper_bound", ":persuasion"),
+      (val_add, ":upper_bound", ":leadership"),
+      (val_add, ":upper_bound", ":charisma"),
+      (val_add, ":upper_bound", ":half_honor"),
+      (val_add, ":upper_bound", ":renown_factor"),
+      (val_min, ":relation", ":upper_bound"),
+
+      # determine their reaction (relation...upper_bound)
+      (store_random_in_range, ":reaction", ":relation", ":upper_bound"),
+      (assign, reg1, ":reaction"),
+      (assign, reg2, ":relation"),
+      (assign, reg3, ":upper_bound"),
+      #(display_message, "@Prisoner Agrees Check: rolled a {reg1} out of a possible {reg2}-{reg3}"),#diagnostic only
+
+      # record whether they agree or not
+      (try_begin),
+        (ge, ":reaction", 0),
+        (troop_set_slot, ":troop", slot_prisoner_agreed, 1),
+      (else_try),
+        (troop_set_slot, ":troop", slot_prisoner_agreed, 0),
+      (try_end),
+
+      # return the results
+      (troop_get_slot, reg0, ":troop", slot_prisoner_agreed),
+      #(display_message, "@Prisoner Agrees Check: slot_prisoner_agreed = {reg0?yes:no}"),#diagnostic only
+    ]
+  ),
+&lt;/syntaxhighlight>
+
+==Forum Link==
+http://forums.taleworlds.com/index.php/topic,8652.msg1525822.html#msg1525822
+
+==Credits==
+Originally written by Leprechaun, majorly overhauled &amp; extended by Mordachai
+
+ [[category:Script]]
+</textarea><div id="editpage-copywarn">
+<p>Please note that all contributions to Mount&amp;Blade Modding Wiki are considered to be released under the Public Domain (see <a href="http://mbmodwiki.ollclan.eu/index.php?title=ModdingWiki:Copyrights&amp;action=edit&amp;redlink=1" class="new" title="ModdingWiki:Copyrights (page does not exist)">ModdingWiki:Copyrights</a> for details).
+If you do not want your writing to be edited mercilessly and redistributed at will, then do not submit it here.<br />
+You are also promising us that you wrote this yourself, or copied it from a public domain or similar free resource.
+<b>Do not submit copyrighted work without permission!</b>
+</p>
+</div>
+<div class='editOptions'>
+<span class="mw-summary" id="wpSummaryLabel"><label for="wpSummary">Summary:</label></span> <input class="mw-summary" id="wpSummary" maxlength="200" tabindex="1" size="60" spellcheck="true" title="Enter a short summary [b]" accesskey="b" name="wpSummary" /><div class='editCheckboxes'>
+</div>
+<div class='editButtons'>
+<input id="imDone" name="imDone" type="submit" tabindex="3" value="Save page" accesskey="s" title="Save your changes [s]" />
+<input id="wpPreview" name="wpPreview" type="submit" tabindex="4" value="Show preview" accesskey="p" title="Preview your changes, please use this before saving! [p]" />
+
+<input id="wpDiff" name="wpDiff" type="submit" tabindex="5" value="Show changes" accesskey="v" title="Show which changes you made to the text [v]" />
+	<span class='editHelp'><a href="More_lord_interactions.html" title="More lord interactions" id="mw-editform-cancel">Cancel</a> | <a target="helpwindow" href="http://mbmodwiki.ollclan.eu/Help:Editing">Editing help</a> (opens in new window)</span>
+</div><!-- editButtons -->
+</div><!-- editOptions -->
+
+<input type="hidden" value="+\" name="wpEditToken" />
+<div class="mw-editTools"></div>
+<div class='templatesUsed'>
+
+</div>
+<div class='hiddencats'>
+
+</div></form>
+<div class="printfooter">
+Retrieved from "<a href="More_lord_interactions.html">http://mbmodwiki.ollclan.eu/More_lord_interactions</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=More_lord_interactions&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="More_lord_interactions.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AMore_lord_interactions&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=More_lord_interactions&amp;action=edit.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view"><span><a href="More_lord_interactions.html" >Read</a></span></li>
+					<li id="ca-edit" class="selected"><span><a href="index.php@title=More_lord_interactions&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=More_lord_interactions&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=More_lord_interactions&amp;action=edit.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/More_lord_interactions.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/More_lord_interactions.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+													</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+																		<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "More_lord_interactions", "wgTitle": "More lord interactions", "wgAction": "edit", "wgArticleId": 59, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 303, "wgCategories": [], "wgBreakFrames": true, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.edit", "mediawiki.action.edit", "ext.wikiEditor.dialogs", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) { addButton("/skins/common/images/button_bold.png","Bold text","\'\'\'","\'\'\'","Bold text","mw-editbutton-bold");
+addButton("/skins/common/images/button_italic.png","Italic text","\'\'","\'\'","Italic text","mw-editbutton-italic");
+addButton("/skins/common/images/button_link.png","Internal link","[[","]]","Link title","mw-editbutton-link");
+addButton("/skins/common/images/button_extlink.png","External link (remember http:// prefix)","[","]","http://www.example.com link title","mw-editbutton-extlink");
+addButton("/skins/common/images/button_headline.png","Level 2 headline","\n== "," ==\n","Headline text","mw-editbutton-headline");
+addButton("/skins/common/images/button_nowiki.png","Ignore wiki formatting","\x3cnowiki\x3e","\x3c/nowiki\x3e","Insert non-formatted text here","mw-editbutton-nowiki");
+addButton("/skins/common/images/button_sig.png","Your signature with timestamp","--~~~~","","","mw-editbutton-signature");
+addButton("/skins/common/images/button_hr.png","Horizontal line (use sparingly)","\n----\n","","","mw-editbutton-hr");
+ }</script>
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.153 secs. -->			</body>
+</html>

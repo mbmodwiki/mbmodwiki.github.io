@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding="utf-8" ?>
+<rdf:RDF xmlns:cc="http://web.resource.org/cc/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<cc:Work rdf:about="http://mbmodwiki.ollclan.eu/Ironsights">
+		<dc:title>Ironsights</dc:title>
+		<dc:publisher rdf:resource="http://mbmodwiki.ollclan.eu/ModdingWiki:About" />
+		<dc:language>en</dc:language>
+		<dc:type>Text</dc:type>
+		<dc:format>text/html</dc:format>
+		<dc:identifier>http://mbmodwiki.ollclan.eu/Ironsights</dc:identifier>
+		<dc:date>2011-06-16</dc:date>
+		<dc:creator>Edi Tor</dc:creator>
+		<dc:rights rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+		<cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+	</cc:Work>
+</rdf:RDF>

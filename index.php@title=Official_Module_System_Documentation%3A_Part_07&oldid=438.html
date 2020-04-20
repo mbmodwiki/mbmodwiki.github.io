@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Official Module System Documentation: Part 07 - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Official_Module_System_Documentation_Part_07 skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Official Module System Documentation: Part 07</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 13:34, 26 February 2012 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter.html" title="Special:Contributions/Swyter">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_07&amp;diff=prev&amp;oldid=438" title="Official Module System Documentation: Part 07">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_07&amp;direction=prev&amp;oldid=438" title="Official Module System Documentation: Part 07">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#mw-head">navigation</a>,
+					<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
+<p>	<span class="swynavbar-left" style="float:left;">
+	<a href="Official_Module_System_Documentation%253A_Part_06.html" title="Official Module System Documentation: Part 06"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+           </span></a>
+	</span>
+	<span class="swynavbar-right">
+	<a href="Official_Module_System_Documentation%253A_Part_08.html" title="Official Module System Documentation: Part 08"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	</span>
+</p>
+</div>
+<p><br />
+In this Part we will be examining module_dialogs.py, by far the largest file in the module system and one of the most important, as it contains all dialogue in Mount&amp;Blade. Any new dialogue that you wish to create will go into this file. It also contains placeholder dialogue at the very bottom, which is used for troops that do not (yet) have their own dialogue.
+</p><p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#7.1_--_Breakdown_of_Module_Dialogs"><span class="tocnumber">1</span> <span class="toctext">7.1 -- Breakdown of Module_Dialogs</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#7.2_--_Requirements_And_The_Conditions_Block"><span class="tocnumber">2</span> <span class="toctext">7.2 -- Requirements And The Conditions Block</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#7.3_--_Adding_New_Dialogue"><span class="tocnumber">3</span> <span class="toctext">7.3 -- Adding New Dialogue</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#7.4_--_Dialogue_And_Quests"><span class="tocnumber">4</span> <span class="toctext">7.4 -- Dialogue And Quests</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=1.html" title="Edit section: 7.1 -- Breakdown of Module Dialogs">edit</a>]</span> <span class="mw-headline" id="7.1_--_Breakdown_of_Module_Dialogs"> 7.1 -- Breakdown of Module_Dialogs </span></h2>
+<p>The file begins immediately with a Python list, followed by the first piece of dialogue in the game -- Constable Hareck's announcement regarding the river pirates. An important fact to remember is that the game scans module_dialogs from top to bottom, using the first line that meets all the criteria of its situation. It differentiates between lines used in different situations, from a party encounter on the map to chatting with an NPC in a scene.
+</p><p>You will note, each line of dialogue is an individual tuple. The only things connecting them are their dialog-states, which we will review in a moment.
+</p><p>Example of a dialogue tuple:
+</p>
+<pre> [trp_constable_hareck,"start", [], "What do you want?", "constable_hareck_talk",[]],
+</pre>
+<p>This is a wonderfully simple tuple, which will serve well as our example. It does everything a line of dialogue might do; it opens by accosting Constable Hareck in a scene, displays the text "What do you want?", and then segues into the starting dialog-state "constable_hareck_talk" upon mouse-click.
+</p><p><br />
+Tuple field breakdown:
+</p><p>1 ) Dialogue partner. This should match the person player is talking to.
+2 ) Starting dialog-state. Determines how this line is opened.
+3 ) Conditions block. The list of conditions that must be met for this line to be considered. This must be a valid operation block.
+4 ) Dialogue text. The actual line as it will appear in-game.
+5 ) Ending dialog-state. Determines what happens after this line.
+6 ) Consequences block. The operations that take place after the player has clicked through this line. This must be a valid operation block.
+</p><p><br />
+Constable Hareck example tuple examination:
+</p><p>1 ) Dialogue partner = trp_constable_hareck
+2 ) Starting dialog-state = "start"
+3 ) Conditions block = []
+4 ) Dialogue text = "What do you want?"
+5 ) Ending dialog-state = "constable_hareck_talk"
+6 ) Consequences block = []
+</p><p><br />
+The most important things to note in this tuple are the dialog-states, mentioned in the opening paragraph of this segment. We will delve into these more deeply now.
+</p><p>The ending dialog-state ("constable_hareck_talk") is what leads a conversation from one line to the next. The ending dialog-state can be anything you like -- but there must be another tuple with a matching starting dialog-state. For example, if we were to make a tuple with the ending state "blue_oyster", this would lead into any tuple with the starting state "blue_oyster". There must be an exact match; if no match exists, build_module.bat will throw an error upon trying to build.
+</p><p>If there are multiple tuples with the starting state "blue_oyster", something special happens. If the tuples are spoken by the player, they result in a menu where the player can choose between the provided tuples. If spoken by an NPC, the module system will use the first tuple in module_dialogs for which all conditions are met -- even if there are multiple lines that qualify.
+</p><p>To end a conversation, you must use the ending dialog-state "close_window".
+</p><p><br />
+To start a conversation, there are several special starting dialog-states from which you can choose. We will refer to these as initial dialog-states. Here is the full list of initial dialog-states:
+</p><p><br />
+"start" -- Considered when speaking to an NPC in a scene or when a conversation is triggered inside a scene.
+"party_encounter" -- Considered when encountering another party on the overland map.
+"party_relieved" -- Considered when assisting a battling party on the overland map, once the player has won the fight.
+"prisoner_liberated" -- Considered when the player defeats an enemy party with one or more Hero prisoners.
+"enemy_defeated" -- Considered when the player defeats an enemy party led by a Hero.
+"event_triggered" -- Considered when a dialogue is triggered by an operation while not in a scene.
+"member_chat" -- Considered when speaking to a member in your party.
+"prisoner_chat" -- Considered when speaking to a prisoner in your party.
+</p><p><br />
+As you can see, each initial dialog-state is designed for a specific situation. It will not be considered anywhere outside its situation.
+</p><p>Since our example tuple is initiated by speaking to Constable Hareck in Zendar, its initial dialog-state is "start".
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=2.html" title="Edit section: 7.2 -- Requirements And The Conditions Block">edit</a>]</span> <span class="mw-headline" id="7.2_--_Requirements_And_The_Conditions_Block"> 7.2 -- Requirements And The Conditions Block </span></h2>
+<p>The dialogue interface is very flexible, and can be used in a great number of ways. It handles both events on the overland map and events in scenes. It allows dialogues to be triggered whenever you want them.
+</p><p>In the following segments, we examine how to use the dialogue interface to its fullest, and after that we will learn how to create complex dialogues of our own.
+</p><p><br />
+As we have outlined in the last segment, a dialogue line will only be considered if all its requirements are met. First of all, the player must be speaking to the correct troop. A line with trp_constable_hareck will not be considered if the player is addressing trp_ramun_the_slave_trader. The constant anyone may be used if the line is to be spoken by anyone the player is addressing at the time.
+</p><p>Second, the starting dialog-state must be in accordance with the situation -- either the dialogue line is initiated by an initial dialog-state, or the line follows from a matching ending dialog-state in another line. If the starting dialog-state does not meet specifications, it won't be considered for use.
+</p><p>Thirdly, the same logic of the previous two points applies to the conditions block. Unless all of a line's conditions are met, the line will not be considered. If either the conditions or the starting dialog-state are erroneous, you will experience problems; either build_module.bat will throw an error, or the erroneous dialogue lines will simply freeze in-game, since their ending dialog-states will not be able to find another tuple to activate.
+</p><p>This is the reason why you must be careful with conditions blocks. Make sure you don't break your own dialogue by planting conditions which are not properly set.
+</p><p><br />
+However, when everything is working in harmony, conditions blocks can be very powerful. They can contain try blocks. You can call slots from inside a conditions block, and then use the result in a condition operation inside the same block. You can set registers and string registers in order to use them in the actual dialogue. We will do all of these things in this Part of the documentation, one at a time.
+</p><p>You can observe the use of a conditions block in the very first tuple of module_dialogs:
+</p>
+<pre> [trp_constable_hareck,"start", [(eq,"$constable_announcement",0)]
+</pre>
+<p>This block contains only one condition, which requires the variable "$constable_announcement" to be equal to 0. This is because all registers and variables are equal to 0 at the beginning of a new game. And if you look at the end of this tuple, you will notice the consequences block:
+</p>
+<pre> "constable_hareck_introduce_1",[(assign,"$constable_announcement",1)]]
+</pre>
+<p>The assign operation in this block sets the variable "$constable_announcement" to 1 after the line has been displayed. In other words, after this line has been displayed once, it will never be displayed again -- because afterwards, the variable "$constable_announcement" will no longer be equal to 0. The dialogue system will then ignore this line and instead go to the next tuple in the file which meets requirements:
+</p>
+<pre> [trp_constable_hareck,"start", [], "What do you want?", "constable_hareck_talk",[]],
+</pre>
+<p>The only requirements on this line are that the player must be speaking to Constable Hareck in a scene. It will always be selected when speaking to Constable Hareck in the Zendar centre after he has delivered his speech.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=3.html" title="Edit section: 7.3 -- Adding New Dialogue">edit</a>]</span> <span class="mw-headline" id="7.3_--_Adding_New_Dialogue"> 7.3 -- Adding New Dialogue </span></h2>
+<p>Here we finally have a chance to give our new troop Geoffrey some unique dialogue. However, like module_troops, module_dialogs is another file where you cannot simply add more tuples at the bottom of the list. The end of module_dialogs's Python list contains placeholder conversations that will trigger for anyone at all, and because the file is scanned from top to bottom for a match, any dialogue that you add after the placeholder conversations will be completely ignored.
+</p><p>It is recommended that you add new dialogue before the following comment:
+</p>
+<pre>###COMPANIONS
+</pre>
+<p>Our first goal is to create an introduction for Geoffrey. This will allow us to gain a little bit of experience before we throw ourselves into the creation of a full-blown quest.
+</p><p>Copy the following tuple and paste it into the appropriate location in your module_dialogs:
+</p>
+<pre> [trp_geoffrey,"start", [], "What? What do you want? Leave me be, {sir/wench}, I have no time for beggars.", "geoffrey_talk",[]],
+</pre>
+<p>This is the first tuple in our new conversation. It's activated by the initial dialog-state "start",  spoken by Geoffrey, and it leads into the starting dialog-state "geoffrey_talk". Also, the dialogue system will display the word 'sir' or 'wench' depending on the player's gender.
+</p><p>Next we will make a follow-up line, spoken by the player. Copy the following tuple and paste it into module_dialogs, just below the new tuple:
+</p>
+<pre> [trp_geoffrey|plyr,"geoffrey_talk", [], "Nothing, never you mind.", "close_window",[]],
+</pre>
+<p>This line will be displayed right after the first. It is spoken by the player. Due to the ending dialog-state "close_window", this conversation will end after the line has been displayed.
+</p><p>As we have covered before, adding multiple tuples with the same starting dialog-state will result in an option menu from which the player can choose the preferred line. Again, remember that this only works for tuples that are spoken by the player, and not for any other troop. Copy the following tuples and paste them into your module_dialogs file:
+</p>
+<pre> [trp_geoffrey|plyr,"geoffrey_talk", [], "And who are you supposed to be?", "geoffrey_talk_2",[]],
+ [trp_geoffrey,"geoffrey_talk_2", [], "Why, I'm Geoffrey Eaglescourt, son of the Baron Eaglescourt! Leader of the Red Riders, bane of bandits, and crusher of pirates!", "geoffrey_talk_3",[]],
+ [trp_geoffrey|plyr,"geoffrey_talk_3", [], "Oh, I see. And how many pirates have you killed?", "geoffrey_talk_4",[]],
+ [trp_geoffrey,"geoffrey_talk_4", [], "See for yourself! I scalp every one of the dogs I kill. They are my battle trophies.", "geoffrey_talk_5",[]],
+ [trp_geoffrey|plyr,"geoffrey_talk_5", [], "That's nice. I'll be going now.", "close_window",[]],
+</pre>
+<p>This is all part of one possible conversation path -- a small back-and-forth between Geoffrey and the player. Nothing important is happening yet, but we're about to add a little more variety to this exchange. Add the following two tuples to the dialogue:
+</p>
+<pre> [trp_geoffrey|plyr,"geoffrey_talk_5", [(check_quest_active,"qst_speak_with_troublemakers"),(eq,"$geoffrey_duel",0)], "Really? Those scalps look suspiciously like horse tails to me.", "geoffrey_hostile",[]],
+ [trp_geoffrey|plyr,"geoffrey_talk", [(check_quest_active,"qst_speak_with_troublemakers"),(eq,"$geoffrey_duel",0)], "You look familiar. Haven't I seen your face in a pigsty before?", "geoffrey_hostile",[]],
+</pre>
+<p>These two lines will create extra menu choices for the starting dialog-states "geoffrey_talk_5" and "geoffrey_talk", respectively. It doesn't technically matter where in module_dialogs you place tuples with the same starting dialog-state. The dialogue system will find them all and, if conditions are met, add them to the menu options. However, you should try to keep menu tuples together in order to keep your code straightforward and readable.
+</p><p>The most notable feature of these lines is their condition blocks. Either line will only ever appear as a dialogue option if the quest "qst_speak_with_troublemakers" is currently active and if "$geoffrey_duel" is equal to 0. If either of these conditions is not met, the line won't be considered for display. Now, copy and paste these last few tuples:
+</p>
+<pre> [trp_geoffrey,"geoffrey_hostile", [], "What?! I'll see you dead for that insult, peasant! Don't you know who I am?", "geoffrey_hostile_2",[]],
+ [trp_geoffrey|plyr,"geoffrey_hostile_2", [], "No . . . Was I supposed to remember?", "geoffrey_hostile_3",[]],
+ [trp_geoffrey,"geoffrey_hostile_3", [], "Why, I'm Geoffrey Eaglescourt, son of the Baron Eaglescourt, and you have delivered the gravest insult to my family's honour! I demand satisfaction! Meet me outside the town walls tonight, or you will be known a coward to every man in this countryside. Good day, {sirrah/wench}.", "geoffrey_hostile_4",[]],
+ [trp_geoffrey|plyr,"geoffrey_hostile_4", [], "Charming lad. Tonight, eh . . .&#160;? I shouldn't miss it . . .", "close_window",[(assign,"$geoffrey_duel",1)]],
+</pre>
+<p><br />
+With that done, we now have a conversation with several quest-related conditions and consequences, as well as a ready-made quest tuple; but we have yet to create the conditions that will allow the player to activate the quest in the first place. This we will do in the next segment.
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=4.html" title="Edit section: 7.4 -- Dialogue And Quests">edit</a>]</span> <span class="mw-headline" id="7.4_--_Dialogue_And_Quests"> 7.4 -- Dialogue And Quests </span></h2>
+<p>When adding new lines to an existing conversation, we must be very careful that our new tuples play nicely with the existing ones. Remember that the dialogue file is scanned from top to bottom; remember to check your conditions blocks; remember to keep a close eye on your syntax. One misspelling can throw off entire blocks of code. Build your module often so that you can catch any syntax errors early.
+</p><p>First, we're going to add one more tuple for Geoffrey, and we're going to add it before any of his other lines. This means it will be considered before his other lines. If this tuple's conditions are present, it will be selected for use regardless of any others that might have also met conditions.
+</p><p><br />
+Currently, Geoffrey's first tuple is this:
+</p>
+<pre> [trp_geoffrey,"start", [], "What? What do you want? Leave me be, {sir/wench}, I have no time for beggars.", "geoffrey_talk",[]],
+</pre>
+<p><br />
+Now, copy the following tuple and paste it into your dialogs file above the aforementioned tuple:
+</p>
+<pre> [trp_geoffrey,"start", [(eq,"$geoffrey_duel",1)], "Begone! I have nothing to say to you, varlet.", "close_window",[]],
+</pre>
+<p><br />
+With this tuple in place, Geoffrey's normal conversation will no longer be displayed once he has challenged you to a duel. This way, you can change conversations depending on their situation, and create infinite varieties of dialogue with conditions blocks to manage when each line appears.
+</p><p><br />
+The last tuple in Constable Hareck's conversations is this:
+</p>
+<pre> [trp_constable_hareck|plyr,"constable_hareck_talk", [], "Nothing. Good-bye.", "close_window",[]],
+</pre>
+<p><br />
+"constable_hareck_talk" is a menu dialog-state with several options, of which this tuple is the last. In order for a dialogue option to appear in the menu above this one, we have to add it into module_dialogs above this tuple.
+</p><p>Copy the following tuple and paste it into your dialogs file above the aforementioned tuple:
+</p>
+<pre> [trp_constable_hareck|plyr,"constable_hareck_talk", [(neg|check_quest_active,"qst_speak_with_troublemakers"),(neg|check_quest_finished,"qst_speak_with_troublemakers")], "Is something wrong? You look worried.", "constable_hareck_troublemakers",[]],
+</pre>
+<p><br />
+This tuple will only be displayed if the quest "qst_speak_with_troublemakers" is not active and not completed. This is due to the negation-prefix neg|, which causes a condition operation to require the opposite of what it normally requires. For example, the condition operation eq requires two values to be equal; neg|eq requires the values to be inequal.
+</p><p>Now, just below this new tuple, copy and paste the following:
+</p>
+<pre> [trp_constable_hareck,"constable_hareck_troublemakers", [], "Oh, it's nothing, just . . .", "constable_hareck_troublemakers_2",[]],
+ [trp_constable_hareck|plyr,"constable_hareck_troublemakers_2", [], "You can tell me, sir.", "constable_hareck_troublemakers_3",[]],
+ [trp_constable_hareck,"constable_hareck_troublemakers_3", [], "No harm in it, I suppose. The trouble is, a few of the town's young nobles . . . spoiled dandies and fops, the lot of them . . . they've decided that suddenly they're men to be respected, and that they should 'take matters into their own hands', to 'take action where the official government has failed'. They say they're going to kill all the river pirates that have been troubling Zendar of late. Of course, they've not actually gone out to fight any river pirates, but they've been making a great ruckus in town and there's not a thing I can do about it.", "constable_hareck_troublemakers_4",[]],
+ [trp_constable_hareck|plyr,"constable_hareck_troublemakers_4", [], "Hmm . . . Would there be a reward for solving this problem?", "constable_hareck_troublemakers_5",[]],
+ [trp_constable_hareck,"constable_hareck_troublemakers_5", [], "What? What are you saying?", "constable_hareck_troublemakers_6",[]],
+ [trp_constable_hareck|plyr,"constable_hareck_troublemakers_6", [], "Nothing, sir. However, it sounds to me like a neutral third party might be just what you need. I could talk to them.", "constable_hareck_troublemakers_7",[]],
+ [trp_constable_hareck,"constable_hareck_troublemakers_7", [], "Heh. Well, you can try, friend. If you manage to do any good, I'll even throw in a few coins for getting the sand out of my breeches. Their leader is a boy named Geoffrey, spends most of his time on watered-down ale and whores in the Happy Boar. Chances are you'll find him there.", "constable_hareck_troublemakers_8",[]],
+ [trp_constable_hareck|plyr,"constable_hareck_troublemakers_8", [], "Thank you, constable. I shall return.", "close_window",[(setup_quest_text,"qst_speak_with_troublemakers"),(start_quest,"qst_speak_with_troublemakers")]],
+</pre>
+<pre> [trp_constable_hareck|plyr,"constable_hareck_talk", [(check_quest_active,"qst_speak_with_troublemakers"),(eq,"$geoffrey_duel",2)], "Constable, I've taken care of the toublemakers for you. They shouldn't be a worry any longer.", "constable_hareck_troublemakers_10",[]],
+ [trp_constable_hareck,"constable_hareck_troublemakers_10", [], "Truly? Thank God! A few more days and I would've thrown them all into a cell and thrown away the key. Here, take this. You've earned it.", "constable_hareck_troublemakers_11",[(troop_add_gold,"trp_player",100),(add_xp_as_reward,750),(succeed_quest,"qst_speak_with_troublemakers")]],
+ [trp_constable_hareck|plyr,"constable_hareck_troublemakers_11", [], "My pleasure, constable. If you've any other jobs that need doing, please let me know. Farewell.", "close_window",[]],
+</pre>
+<pre> [trp_constable_hareck|plyr,"constable_hareck_talk", [(check_quest_active,"qst_speak_with_troublemakers"),(eq,"$geoffrey_duel",3)], "Constable, I failed. I'm sorry.", "constable_hareck_troublemakers_15",[]],
+ [trp_constable_hareck,"constable_hareck_troublemakers_15", [], "Oh . . . Oh well. I suppose you did the best you could. Thanks anyway, friend. Perhaps some other job will suit you better. I shall let you know when I have any. Farewell.", "close_window",[(fail_quest,"qst_speak_with_troublemakers")]],
+</pre>
+<p><br />
+The first block sets up the quest, explaining the details and how to start it. The second block finishes the quest with a nice little reward of gold and experience points, once the variable "$geoffrey_duel" has been set to 2, which we will do upon defeating Geoffrey. The third block finishes the quest if the player fails to defeat Geoffrey, which means he will receive no rewards.
+</p><p><br />
+As you can see, it can take some doing to cover all possible aspects of a quest. Ours is only half-finished. All the dialogue is now in place, however, so we are now ready to move on to the next part of this documentation.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 31/1000000
+Post-expand include size: 543/2097152 bytes
+Template argument size: 148/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:75-0!*!0!!en!* and timestamp 20200419220842 -->
+<div class="printfooter">
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_07</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=Official_Module_System_Documentation:_Part_07&amp;returntoquery=oldid%3D438" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_07.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_07.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_07.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_07.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_07&amp;oldid=438&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Official_Module_System_Documentation:_Part_07", "wgTitle": "Official Module System Documentation: Part 07", "wgAction": "view", "wgArticleId": 75, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 438, "wgCategories": ["Official Documentation"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.145 secs. -->			</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Official Module System Documentation: Part 08 - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Official_Module_System_Documentation_Part_08 skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Official Module System Documentation: Part 08</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 13:33, 26 February 2012 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter.html" title="Special:Contributions/Swyter">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_08&amp;diff=prev&amp;oldid=449" title="Official Module System Documentation: Part 08">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_08&amp;direction=prev&amp;oldid=449" title="Official Module System Documentation: Part 08">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;oldid=449.html#mw-head">navigation</a>,
+					<a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;oldid=449.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
+<p>	<span class="swynavbar-left" style="float:left;">
+	<a href="Official_Module_System_Documentation%253A_Part_07.html" title="Official Module System Documentation: Part 07"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+           </span></a>
+	</span>
+	<span class="swynavbar-right">
+	<a href="Official_Module_System_Documentation%253A_Part_09.html" title="Official Module System Documentation: Part 09"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	</span>
+</p>
+</div>
+<p><br />
+Now that we have gained some significant experience working with the module system, we can turn our hands to one of the more complex components; Triggers. Triggers are time-based operations blocks that activate at regular intervals or at specified occasions. All operations in the trigger's operations block will then be executed.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=edit&amp;section=1.html" title="Edit section: 8.1 -- Breakdown, Module Simple Triggers">edit</a>]</span> <span class="mw-headline" id="8.1_--_Breakdown.2C_Module_Simple_Triggers"> 8.1 -- Breakdown, Module_Simple_Triggers </span></h2>
+<p>Currently, module_simple_triggers has only one function: to direct the player to an appropriate menu when encountering another party on the overland map. To this effect, its Python list contains only one fairly long tuple.
+</p>
+<pre> (ti_on_party_encounter,
+  [
+      (store_encountered_party, reg(1)),
+      (store_encountered_party2,reg(2)), # encountered_party2 is set when we come across a battle or siege, otherwise it's a minus value
+      (try_begin),
+        (lt, reg(2),0), #Normal encounter. Not battle or siege.
+        (try_begin),
+          (ge, reg(1), towns_begin),
+          (lt, reg(1), towns_end),
+          (jump_to_menu, "mnu_town"),
+        (else_try),
+        (else_try),
+          (ge, reg(1), castles_begin),
+          (lt, reg(1), castles_end),
+          (jump_to_menu, "mnu_castle"),
+        (else_try),
+          (eq, reg(1), "p_zendar"),
+          (jump_to_menu, "mnu_zendar"),
+        (else_try),
+          (eq, reg(1), "p_salt_mine"),
+          (jump_to_menu, "mnu_salt_mine"),
+        (else_try),
+          (eq, reg(1), "p_four_ways_inn"),
+          (jump_to_menu, "mnu_four_ways_inn"),
+        (else_try),
+          (eq, reg(1), "p_dhorak_keep"),
+          (jump_to_menu, "mnu_dhorak_keep"),
+        (else_try),
+          (eq, reg(1), "p_training_ground"),
+          (jump_to_menu, "mnu_training_ground"),
+        (else_try),
+          (store_current_hours, reg(7)),
+          (le, reg(7), "$defended_until_time"),
+          (assign, "$defended_until_time", 0),
+          (jump_to_menu, "mnu_in_castle_under_attack"),
+        (end_try),
+      (else_try), #Battle or siege
+      (try_end)
+   ]),
+</pre>
+<p><br />
+This is the first and only trigger in the list. It is a very simple construction, containing only two separate fields.
+</p><p>Breakdown of the tuple fields:
+</p><p>1 ) Check interval: When or how frequently this trigger will be checked
+2 ) Operation block: This must be a valid operation block. See header_operations.py for reference. 
+</p><p><br />
+Tuple examination:
+</p><p>1 ) Check interval = ti_on_party_encounter.
+2 ) Operation block. Examination of the operation block will follow.
+</p><p>As we can see by ti_on_party_encounter, this trigger is checked whenever the player encounters a party on the overland map. We will now individually highlight each section of the tuple to examine what it does.
+</p><p><br />
+Section 1:
+</p>
+<pre>      (store_encountered_party, reg(1)),
+      (store_encountered_party2,reg(2)), # encountered_party2 is set when we come across a battle or siege, otherwise it's a minus value
+</pre>
+<p><br />
+1 ) "store_encountered_party" finds whatever party the player has encountered, and stores that party's identity to the register "reg(1)".
+2 ) "store_encountered_party2" does the same, storing the second encountered party to "reg(2)". Obviously this only occurs if the player is encountering a battle or siege in progress. If there is no second party, "reg(2)" will contain a value below 0.
+</p><p><br />
+Section 2:
+</p>
+<pre>      (try_begin),
+        (lt, reg(2),0), #Normal encounter. Not battle or siege.
+</pre>
+<p>The condition (lt, reg(2),0) requires "reg(2)" to be below 0. Since "reg(2)" is always below 0 unless the player has encountered a battle in progress, the operations block will continue to Section 3.
+</p><p>The interesting thing to note about this section is the operation (try_begin). This operation opens a try operation, which functions just like a normal operations block, except for one difference. If a try operation contains a condition whose requirements are not met, this doesn't cancel the entire rest of the operations block; it only cancels up to the nearest (try_end). Everything after the (try_end) proceeds as normal. In essence, a try operation functions like an isolated operations block inside an operations block.
+</p><p>There is also the additional try operation (else_try), which can be inserted into an active try operation such as the one in module_simple_triggers. The contents of an else_try block will only be considered for execution if all active try operations before the (else_try) (including other else_trys) have failed to meet their conditions.
+</p><p><br />
+Section 3:
+</p>
+<pre>        (try_begin),
+          (ge, reg(1), towns_begin),
+          (lt, reg(1), towns_end),
+          (jump_to_menu, "mnu_town"),
+</pre>
+<p>This section begins a try operation inside a try operation. This section will succeed if "reg(1)" -- the encountered party -- is between the constant towns_begin ("p_town_1" in module_parties.py) and towns_end ("p_salt_mine" in module_parties). If this condition succeeds, the player will be directed to the menu "mnu_town". If it fails, the block will move on to Section 4.
+</p><p><br />
+Section 4:
+</p>
+<pre>        (else_try),
+          (ge, reg(1), castles_begin),
+          (lt, reg(1), castles_end),
+          (jump_to_menu, "mnu_castle"),
+</pre>
+<p>This section will only be considered if the try operation above it has failed; therefore, it will only be considered if the encountered party is not a town. So, having concluded that the encountered party is not a town, this section checks if it is between castles_begin ("p_castle_1") and castles_end ("p_river_pirate_spawn_point"). If this try operation succeeds, the player is directed to "mnu_castle". If it fails, the block moves on to Section 5.
+</p><p><br />
+Section 5:
+</p>
+<pre>        (else_try),
+          (eq, reg(1), "p_zendar"),
+          (jump_to_menu, "mnu_zendar"),
+</pre>
+<p>Having concluded that the encountered party is neither a town nor a castle, this try operation checks if the encountered party is "p_zendar". If it succeeds, this try operation will jump the player to "mnu_zendar". If it fails, on to Section 6.
+</p><p><br />
+Section 6:
+</p>
+<pre>        (else_try),
+          (eq, reg(1), "p_salt_mine"),
+          (jump_to_menu, "mnu_salt_mine"),
+</pre>
+<p>If the encountered party is "p_salt_mine", this try operation will jump the player to "mnu_salt_mine".
+</p><p><br />
+Section 7:
+</p>
+<pre>        (else_try),
+          (eq, reg(1), "p_four_ways_inn"),
+          (jump_to_menu, "mnu_four_ways_inn"),
+</pre>
+<p>If the encountered party is "p_four_ways_inn", this section will jump the player to "mnu_four_ways_inn".
+</p><p><br />
+Section 8:
+</p>
+<pre>        (else_try),
+          (eq, reg(1), "p_dhorak_keep"),
+          (jump_to_menu, "mnu_dhorak_keep"),
+</pre>
+<p>If the encountered party is "p_dhorak_keep", this section will jump the player to "mnu_dhorak_keep".
+</p><p><br />
+Section 9:
+</p>
+<pre>        (else_try),
+          (eq, reg(1), "p_training_ground"),
+          (jump_to_menu, "mnu_training_ground"),
+</pre>
+<p>If the encountered party is "p_training_ground", this section will jump the player to "mnu_training_ground".
+</p><p><br />
+Section 10:
+</p>
+<pre>        (else_try),
+          (store_current_hours, reg(7)),
+          (le, reg(7), "$defended_until_time"),
+          (assign, "$defended_until_time", 0),
+          (jump_to_menu, "mnu_in_castle_under_attack"),
+</pre>
+<p>This section stores the number of hours that have passed since the beginning of the game to "reg(7)", and then checks if "reg(7)" is less than or equal to the variable "$defended_until_time". On success, it will set "$defended_until_time" to 0 and jump the player to "mnu_in_castle_under_attack". On faillure, it will move on to Section 11.
+</p><p><br />
+Section 11:
+</p>
+<pre>        (end_try),
+</pre>
+<p>This signifies the end of the second try operation. The first try operation continues as normal, regardless of what happened in the second try operation.
+</p><p><br />
+Section 12:
+</p>
+<pre>      (else_try), #Battle or siege
+      (try_end)
+</pre>
+<p>This else_try operation covers every encounter with a party engaged in battle with another party. Since it currently contains no other operations, it will result in a battle encounter -- just like the "new_town" we created in Part 2 of this documentation, which still has no operations linking it to a menu and no pf_auto_start_dialog flag set. We will rectify this in the next segment.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=edit&amp;section=2.html" title="Edit section: 8.2 -- Editing the Party Encounters Trigger">edit</a>]</span> <span class="mw-headline" id="8.2_--_Editing_the_Party_Encounters_Trigger"> 8.2 -- Editing the Party Encounters Trigger </span></h2>
+<p>In order to make a town work, we have to make sure that any encounter with this town directs the player to the proper game menu. This leaves us with two choices; either we can direct our new party to use one of the Native menus, such as mnu_town, or we can create a new one.
+</p><p>For our new_town, we will create a custom menu, but later we will examine what's required for a newly-created town to use the Native town menu.
+</p><p>First, any further entries in the party encounters trigger should be added before Section 10:
+</p>
+<pre>        (else_try),
+          (store_current_hours, reg(7)),
+          (le, reg(7), "$defended_until_time"),
+          (assign, "$defended_until_time", 0),
+          (jump_to_menu, "mnu_in_castle_under_attack"),
+</pre>
+<p>If you add any entries after this one, it will create problems when encountering your new parties at midnight. To make sure this doesn't happen, we will place our new entry just above it, and just below Section 9:
+</p>
+<pre>        (else_try),
+          (eq, reg(1), "p_training_ground"),
+          (jump_to_menu, "mnu_training_ground"),
+</pre>
+<p>Create some space between Section 9 and Section 10. Once you've done so, we can begin creating the new entry.
+</p><p>Any new entries in this trigger must begin with an else_try. After the else_try, we can add condition operations to specify when this entry should and should not fire. Then, once all the conditions are in place, we can add consequences, such as jumping the player to a game menu. These consequences can be very varied, they're not limited merely to jump_to_menu, but they must all be valid operations.
+</p><p>Copy and paste Section 9 (the training_ground entry) into our newly-created space. When you've done so, replace the new entry's "p_training_ground" with "p_new_town" and "mnu_training_ground" with "mnu_new_town".
+</p><p>Now the only thing left to do to make our town operational is creating a menu for it. Before we move on to module_game_menus, however, there is a lot more functionality waiting to be explored in triggers. Open module_triggers.py now and move on the next segment.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=edit&amp;section=3.html" title="Edit section: 8.3 -- Breakdown, Module Triggers">edit</a>]</span> <span class="mw-headline" id="8.3_--_Breakdown.2C_Module_Triggers"> 8.3 -- Breakdown, Module_Triggers </span></h2>
+<p>There are two types of triggers in the M&amp;B module system: simple triggers and expanded triggers. Expanded triggers are contained in module_triggers.py. They work via the same theory as simple triggers, but have several more options.
+</p><p><br />
+</p>
+<pre> (0.1, 0, ti_once, [(map_free,0)], [(tutorial_box,"str_tutorial_map1")]),
+</pre>
+<p>The first trigger in this file is nice and simple. It is the trigger that pops up the map tutorial when the player first spawns on the overland map.
+</p><p><br />
+Breakdown of the tuple fields:
+</p><p>1) Check interval: How frequently this trigger will be checked.
+2) Delay interval: How long to wait before applying the consequences of the trigger after its conditions block has succeeded.
+3) Re-arm interval: How much time must pass after applying the consequences of the trigger for the trigger to become active again.
+4) Conditions block. This must be a valid operation block. If the conditions block is empty, it always succeeds, therefore the trigger always fires.
+5) Consequences block. This must be a valid operation block.
+</p><p><br />
+Tutorial tuple examination:
+</p><p>1) Check interval = 0.1
+2) Delay interval = 0
+3) Re-arm interval = ti_once
+4) Conditions block = (map_free,0)
+5) Consequences block = (tutorial_box,"str_tutorial_map1")
+</p><p><br />
+As we can see from the examination, this trigger is checked every 0.1 hours of game time; it has no delay interval; it never rearms due to ti_once. This means that, if the conditions in the trigger's conditions block are all met, the trigger fires once and never again. In this case, the trigger will fire if the player is placed anywhere on the map.
+</p><p>We can now begin to make a trigger of our own. Copy the tutorial trigger and paste it to the bottom of the Python list.
+</p><p>What we are going to do with this new trigger is spawn another party on the map; namely, Geoffrey's party. Replace (map_free,0) in the trigger's conditions block with the following operations:
+</p><p>(eq,"$geoffrey_duel",1),
+(store_time_of_day,reg(1)),
+(gt,reg(1),19),
+</p><p>If you remember what we did in Part 7 of this doscumentation, we assigned the variable "$geoffrey_duel" to 1 after you talk Geoffrey into challenging you to a duel. Therefore, (eq,"$geoffrey_duel",1) checks whether or not Geoffrey has challenged you. If he hasn't, the conditions block will fail.
+</p><p>The following two operations store the time of day to reg(1), and then check if reg(1) is greater than 19; essentially, whether the time of day is later than 19:00. If it is, the conditions block will succeed and allow the trigger to fire.
+</p><p><br />
+Now, replace (tutorial_box,"str_tutorial_map1") in the consequences block with the following operations:
+</p><p>(set_spawn_radius,0),
+(spawn_around_party,"p_zendar","pt_new_template"),
+(assign,"$geoffrey_party_id",reg(0)),
+(party_set_ai_behavior,"$geoffrey_party_id",ai_bhvr_track_party),
+(party_set_ai_object,"$geoffrey_party_id","p_main_party"),
+</p><p>The first operation sets the spawn radius; you must do this every time you want to spawn a party, or the party will be spawned at the most recently set radius, which can be very unpredictable.
+</p><p>The second operation spawns a party template ("pt_new_template") around a party ("p_zendar"). This operation also outputs the identifier of the spawned party to reg(0). We then assign this identifier to a variable so that it will not be lost when reg(0) is next overwritten.
+</p><p>Lastly, we set the party's AI behaviour and object. These operations are fairly straightforward. We are telling "$geoffrey_party_id" to track "p_main_party". When you set a party to track another party, it will relentlessly hunt down the other party and then attack it, regardless of faction and other considerations.
+</p><p><br />
+Save your progress. You cannot compile yet, as we have yet to create a menu for the party encounter we created in segment 8.2. We'll do this next. You are now ready to move on to Part 9 of this documentation.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 27/1000000
+Post-expand include size: 543/2097152 bytes
+Template argument size: 148/2097152 bytes
+Expensive parser function count: 0/100
+-->
+<div class="printfooter">
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_08.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_08</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=Official_Module_System_Documentation:_Part_08&amp;returntoquery=oldid%3D449" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_08.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_08&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;oldid=449.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_08.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;oldid=449.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_08.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_08.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_08&amp;oldid=449&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_08&amp;oldid=449.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Official_Module_System_Documentation:_Part_08", "wgTitle": "Official Module System Documentation: Part 08", "wgAction": "view", "wgArticleId": 76, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 449, "wgCategories": ["Official Documentation"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.172 secs. -->			</body>
+</html>

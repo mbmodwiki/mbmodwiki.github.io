@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Adding new multiplayer faction - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Adding_new_multiplayer_faction&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<style type="text/css">/*<![CDATA[*/
+.source-python {line-height: normal;}
+.source-python li, .source-python pre {
+	line-height: normal; border: 1px dashed #2f6fab;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for python
+ * CSS class: source-python, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.python.source-python .de1, .python.source-python .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.python.source-python  {font-family:monospace;}
+.python.source-python .imp {font-weight: bold; color: red;}
+.python.source-python li, .python.source-python .li1 {font-weight: normal; vertical-align:top;}
+.python.source-python .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.python.source-python .li2 {font-weight: bold; vertical-align:top;}
+.python.source-python .kw1 {color: #ff7700;font-weight:bold;}
+.python.source-python .kw2 {color: #008000;}
+.python.source-python .kw3 {color: #dc143c;}
+.python.source-python .kw4 {color: #0000cd;}
+.python.source-python .co1 {color: #808080; font-style: italic;}
+.python.source-python .coMULTI {color: #808080; font-style: italic;}
+.python.source-python .es0 {color: #000099; font-weight: bold;}
+.python.source-python .br0 {color: black;}
+.python.source-python .sy0 {color: #66cc66;}
+.python.source-python .st0 {color: #483d8b;}
+.python.source-python .nu0 {color: #ff4500;}
+.python.source-python .me1 {color: black;}
+.python.source-python .ln-xtra, .python.source-python li.ln-xtra, .python.source-python div.ln-xtra {background-color: #ffc;}
+.python.source-python span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "index.php@title=MediaWiki%253AGeshi.css&usemsgcache=yes&action=raw&ctype=text%252Fcss&smaxage=18000.css";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Adding_new_multiplayer_faction skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Adding new multiplayer faction</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="Adding_new_multiplayer_faction.html#mw-head">navigation</a>,
+					<a href="Adding_new_multiplayer_faction.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Adding_new_multiplayer_faction.html#Adding_a_new_multiplayer_faction"><span class="tocnumber">1</span> <span class="toctext">Adding a new multiplayer faction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Adding_new_multiplayer_faction.html#Module_Files_to_be_edited"><span class="tocnumber">2</span> <span class="toctext">Module Files to be edited</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Adding_new_multiplayer_faction.html#Module_Factions"><span class="tocnumber">3</span> <span class="toctext">Module Factions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Adding_new_multiplayer_faction.html#Module_Troops"><span class="tocnumber">4</span> <span class="toctext">Module Troops</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="Adding_new_multiplayer_faction.html#Multiplayer_Ai_Troops"><span class="tocnumber">4.1</span> <span class="toctext">Multiplayer Ai Troops</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Adding_new_multiplayer_faction.html#Multiplayer_Player_Classes"><span class="tocnumber">4.2</span> <span class="toctext">Multiplayer Player Classes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Adding_new_multiplayer_faction.html#Module_Presentations"><span class="tocnumber">5</span> <span class="toctext">Module Presentations</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Adding_new_multiplayer_faction.html#Module_Scripts"><span class="tocnumber">6</span> <span class="toctext">Module Scripts</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Adding_new_multiplayer_faction.html#Adding_your_own_Flags"><span class="tocnumber">7</span> <span class="toctext">Adding your own Flags</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="Adding_new_multiplayer_faction.html#Module_Meshes"><span class="tocnumber">7.1</span> <span class="toctext">Module Meshes</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Adding_new_multiplayer_faction.html#Module_Scene_Props"><span class="tocnumber">7.2</span> <span class="toctext">Module Scene Props</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="Adding_new_multiplayer_faction.html#Adding_your_own_items_to_multiplayer"><span class="tocnumber">8</span> <span class="toctext">Adding your own items to multiplayer</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=1.html" title="Edit section: Adding a new multiplayer faction">edit</a>]</span> <span class="mw-headline" id="Adding_a_new_multiplayer_faction"> Adding a new multiplayer faction </span></h2>
+<p>This tutorial will cover on how to add new multiplayer factions to warband. It's relatively easy and doesn't really require and coding knowlegde. Only a the module system, proper text editor.(<a href="Notepad-plus-plus.html" title="Notepad-plus-plus" class="mw-redirect">Notepad++</a>, <a href="index.php@title=Programmers_Notepad&amp;action=edit&amp;redlink=1.html" class="new" title="Programmers Notepad (page does not exist)">Programmers Notepad</a> etc.) and a working install of <a href="Python.html" title="Python">python</a> 2.6(Or earlier will do too, but I suggest to use the version 2.6 .Any newer version wont work.)
+</p>
+<hr />
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=2.html" title="Edit section: Module Files to be edited">edit</a>]</span> <span class="mw-headline" id="Module_Files_to_be_edited"> Module Files to be edited </span></h2>
+<p><a href="index.php@title=Module_Factions&amp;action=edit&amp;redlink=1.html" class="new" title="Module Factions (page does not exist)">Module Factions</a>
+</p><p><a href="index.php@title=Module_Troops&amp;action=edit&amp;redlink=1.html" class="new" title="Module Troops (page does not exist)">Module Troops</a>
+</p><p><a href="index.php@title=Module_Presentations&amp;action=edit&amp;redlink=1.html" class="new" title="Module Presentations (page does not exist)">Module Presentations</a>
+</p><p><a href="index.php@title=Module_Scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module Scripts (page does not exist)">Module Scripts</a>
+</p><p><a href="index.php@title=Module_Meshes&amp;action=edit&amp;redlink=1.html" class="new" title="Module Meshes (page does not exist)">Module Meshes</a>
+</p>
+<hr />
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=3.html" title="Edit section: Module Factions">edit</a>]</span> <span class="mw-headline" id="Module_Factions"> Module Factions </span></h2>
+<p>First of all, open up module_factions. This part is fairly simple and requires only one line of code. So copy this code. 
+</p><p><b>NOTE!!YOUR CUSTOM KINGDOM MUST START FROM NUMBER 8. 7 IS USED FOR REBEL FACTIONS</b>
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#40;</span><span class="st0">&quot;kingdom_8&quot;</span>,  <span class="st0">&quot;Finland&quot;</span>,  <span class="nu0">0</span>, <span class="nu0">0.9</span>, <span class="br0">&#91;</span><span class="br0">&#40;</span><span class="st0">&quot;outlaws&quot;</span>,-<span class="nu0">0.05</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;peasant_rebels&quot;</span>, -<span class="nu0">0.1</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;deserters&quot;</span>, -<span class="nu0">0.02</span><span class="br0">&#41;</span>,    <span class="br0">&#40;</span><span class="st0">&quot;mountain_bandits&quot;</span>, -<span class="nu0">0.05</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;forest_bandits&quot;</span>, -<span class="nu0">0.05</span><span class="br0">&#41;</span><span class="br0">&#93;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span>, 0xDDDD33<span class="br0">&#41;</span>,</pre></div></div>
+<p>and paste it under the sarranid faction code.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#40;</span><span class="st0">&quot;kingdom_6&quot;</span>,  <span class="st0">&quot;Sarranid Sultanate&quot;</span>,  <span class="nu0">0</span>, <span class="nu0">0.9</span>, <span class="br0">&#91;</span><span class="br0">&#40;</span><span class="st0">&quot;outlaws&quot;</span>,-<span class="nu0">0.05</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;peasant_rebels&quot;</span>, -<span class="nu0">0.1</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;deserters&quot;</span>, -<span class="nu0">0.02</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;mountain_bandits&quot;</span>, -<span class="nu0">0.05</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;forest_bandits&quot;</span>, -<span class="nu0">0.05</span><span class="br0">&#41;</span><span class="br0">&#93;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span>, 0xDDDD33<span class="br0">&#41;</span>,
+<span class="br0">&#40;</span><span class="st0">&quot;kingdom_8&quot;</span>,  <span class="st0">&quot;Finland&quot;</span>,  <span class="nu0">0</span>, <span class="nu0">0.9</span>, <span class="br0">&#91;</span><span class="br0">&#40;</span><span class="st0">&quot;outlaws&quot;</span>,-<span class="nu0">0.05</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;peasant_rebels&quot;</span>, -<span class="nu0">0.1</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;deserters&quot;</span>, -<span class="nu0">0.02</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;mountain_bandits&quot;</span>, -<span class="nu0">0.05</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span><span class="st0">&quot;forest_bandits&quot;</span>, -<span class="nu0">0.05</span><span class="br0">&#41;</span><span class="br0">&#93;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span>, 0xDDDD33<span class="br0">&#41;</span>,</pre></div></div>
+<p>Change the faction name to your liking. After you have finished, save and open up module troops.
+</p>
+<hr />
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=4.html" title="Edit section: Module Troops">edit</a>]</span> <span class="mw-headline" id="Module_Troops"> Module Troops </span></h2>
+<h3><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=5.html" title="Edit section: Multiplayer Ai Troops">edit</a>]</span> <span class="mw-headline" id="Multiplayer_Ai_Troops"> Multiplayer Ai Troops </span></h3>
+<p>Now, as you should have module_troops open, search for #Multiplayer ai troops. You should see bunch of lines like this 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#91;</span><span class="st0">&quot;swadian_crossbowman_multiplayer_ai&quot;</span>,<span class="st0">&quot;Swadian Crossbowman&quot;</span>,<span class="st0">&quot;Swadian      Crossbowmen&quot;</span>,tf_guarantee_all,<span class="nu0">0</span>,<span class="nu0">0</span>,fac_kingdom_1,
+   <span class="br0">&#91;</span>itm_bolts,itm_crossbow,itm_sword_medieval_a,itm_tab_shield_heater_b,
+    itm_leather_jerkin,itm_leather_armor,itm_ankle_boots,itm_footman_helmet<span class="br0">&#93;</span>,   def_attrib|level<span class="br0">&#40;</span><span class="nu0">19</span><span class="br0">&#41;</span>,wp_melee<span class="br0">&#40;</span><span class="nu0">90</span><span class="br0">&#41;</span>|wp_crossbow<span class="br0">&#40;</span><span class="nu0">100</span><span class="br0">&#41;</span>,knows_common|knows_ironflesh_4|knows_athletics_6|knows_shield_5|knows_power_strike_3,swadian_face_young_1, swadian_face_old_2<span class="br0">&#93;</span>,</pre></div></div>
+<p>What you want to do, is to copy one of the existing unit lines, copy it, paste it under the last sarranid unit code and then edit to match your liking. So, Ill use the "swadian crossbowman_multiplayer_ai". What I do, is I copy the code, and paste it under the last sarranid unit code. After you have done that, you want to change the unit id. Ill change it to "finnish_rifleman_multiplayer_ai" <b>Remember, the unit id must have "_multiplayer_ai"</b> because its a multiplayer ai troop. Now, the next things you want to edit are the display names. There are two kinds. The display name for single troop, and the display name for several troops. So Edit the "Swadian Crossbowman" to your liking. Ill put it as "Finnish Rifleman". Now, edit the second display name, which for me, is "Swadian Crossbowmen". Ill change it to "Finnish Riflemen". Now, it will look like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#91;</span><span class="st0">&quot;finnish_rifleman_multiplayer_ai&quot;</span>,<span class="st0">&quot;Finnish Rifleman&quot;</span>,<span class="st0">&quot;Finnish Riflemen&quot;</span>,tf_guarantee_all,<span class="nu0">0</span>,<span class="nu0">0</span>,fac_kingdom_1,
+   <span class="br0">&#91;</span>itm_cartridges,itm_cartridges,itm_pystykorva,itm_ukkopekka,
+    itm_leather_jerkin,itm_leather_armor,itm_ankle_boots,itm_kypara<span class="br0">&#93;</span>,
+ def_attrib|level<span class="br0">&#40;</span><span class="nu0">19</span><span class="br0">&#41;</span>,wp_melee<span class="br0">&#40;</span><span class="nu0">90</span><span class="br0">&#41;</span>|wp_crossbow<span class="br0">&#40;</span><span class="nu0">120</span><span class="br0">&#41;</span>,knows_common|knows_ironflesh_4|knows_athletics_6|knows_shield_5|knows_power_strike_3,swadian_face_young_1, swadian_face_old_2<span class="br0">&#93;</span>,</pre></div></div>
+<p>The next thing we want to edit in that is this line.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">tf_guarantee_all,<span class="nu0">0</span>,<span class="nu0">0</span>,fac_kingdom_1,</pre></div></div>
+<p>We want to change that to our own factions number, which is 8. So, change it that it looks like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">tf_guarantee_all,<span class="nu0">0</span>,<span class="nu0">0</span>,fac_kingdom_8,</pre></div></div>
+<p><br />
+Next, you can change the units items if you want, example, changing "itm_leather_jerkin" to "itm_your_model_id". Then, the lines after that are the units skills and attributs. You can change them if you want, but ill leave them for now. Repeat these steps if you need to add more multiplayer ai troops to your multiplayer faction. Now, it's good time to save, just to be safe. You have now succesfully created ai troops to your multiplayer faction. Next, we will create a multiplayer troops which the players can use.
+</p>
+<hr />
+<p><br />
+</p>
+<h3><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=6.html" title="Edit section: Multiplayer Player Classes">edit</a>]</span> <span class="mw-headline" id="Multiplayer_Player_Classes"> Multiplayer Player Classes </span></h3>
+<hr />
+<p><br />
+So, in the same file (module_troops), search for #Multiplayer troops. You should see lines like this 
+</p><p><br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#91;</span><span class="st0">&quot;swadian_crossbowman_multiplayer&quot;</span>,<span class="st0">&quot;Swadian Crossbowman&quot;</span>,<span class="st0">&quot;Swadian         Crossbowmen&quot;</span>,tf_guarantee_all,<span class="nu0">0</span>,<span class="nu0">0</span>,fac_kingdom_1,
+ <span class="br0">&#91;</span>itm_cartridges,itm_cartridges,itm_pystykorva,itm_ukkopekka,itm_kypara,itm_stickgrenade,itm_pystykorva,itm_sword_medieval_b_small,itm_tab_shield_heater_a,itm_red_shirt,itm_ankle_boots<span class="br0">&#93;</span>,
+ def_attrib_multiplayer|level<span class="br0">&#40;</span><span class="nu0">19</span><span class="br0">&#41;</span>,wpe<span class="br0">&#40;</span><span class="nu0">90</span>,<span class="nu0">60</span>,<span class="nu0">180</span>,<span class="nu0">90</span><span class="br0">&#41;</span>,knows_common|knows_ironflesh_2|knows_athletics_5|knows_shield_5|knows_power_strike_2|knows_riding_1,swadian_face_young_1, swadian_face_old_2<span class="br0">&#93;</span>,</pre></div></div>
+<p>Again, copy a existing code, paste it under the last sarranid unit code and edit it to your liking. This is pretty much the same as adding multiplayer ai troops, <b>expect, the unit id doesnt have to have the "_multiplayer_ai".</b> It only has to have <b>"_multiplayer"</b> in it.
+Mine looks like this 
+</p><p><br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#91;</span><span class="st0">&quot;finnish_rifleman_multiplayer&quot;</span>,<span class="st0">&quot;Finnish Rifleman&quot;</span>,<span class="st0">&quot;Finnish Riflemen&quot;</span>,tf_guarantee_all,<span class="nu0">0</span>,<span class="nu0">0</span>,fac_kingdom_8,
+ <span class="br0">&#91;</span>itm_cartridges,itm_cartridges,itm_pystykorva,itm_ukkopekka,itm_kypara,itm_red_shirt,itm_ankle_boots<span class="br0">&#93;</span>,
+ def_attrib_multiplayer|level<span class="br0">&#40;</span><span class="nu0">19</span><span class="br0">&#41;</span>,wpe<span class="br0">&#40;</span><span class="nu0">90</span>,<span class="nu0">60</span>,<span class="nu0">180</span>,<span class="nu0">90</span><span class="br0">&#41;</span>,knows_common|knows_ironflesh_2|knows_athletics_5|knows_shield_5|knows_power_strike_2|knows_riding_1,swadian_face_young_1, swadian_face_old_2<span class="br0">&#93;</span>,</pre></div></div>
+<p>Again, if you need to add several troops to the faction, just do the same, only changing the stuff you need to. Now, save up and open up module_presentations. 
+</p>
+<hr />
+<p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=7.html" title="Edit section: Module Presentations">edit</a>]</span> <span class="mw-headline" id="Module_Presentations"> Module Presentations </span></h2>
+<p>Now, as you should have it open, search for "mesh_ui_kingdom_shield_2". You should see lines like this 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>eq, <span class="st0">&quot;$g_multiplayer_team_1_faction&quot;</span>, <span class="st0">&quot;fac_kingdom_2&quot;</span><span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>create_mesh_overlay, reg0, <span class="st0">&quot;mesh_ui_kingdom_shield_2&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Copy that code, and paste under the last one. Then it should look like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>eq, <span class="st0">&quot;$g_multiplayer_team_1_faction&quot;</span>, <span class="st0">&quot;fac_kingdom_1&quot;</span><span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>create_mesh_overlay, reg0, <span class="st0">&quot;mesh_ui_kingdom_shield_6&quot;</span><span class="br0">&#41;</span>,
+ <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>eq, <span class="st0">&quot;$g_multiplayer_team_1_faction&quot;</span>, <span class="st0">&quot;fac_kingdom_2&quot;</span><span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>create_mesh_overlay, reg0, <span class="st0">&quot;mesh_ui_kingdom_shield_2&quot;</span><span class="br0">&#41;</span>,
+ <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,</pre></div></div>
+<p>Now, change the "fac_kingdom_2" to your factions number. For me it's "fac_kingdom_8" 
+Now, you can change the "mesh_ui_kingdom_shield_2" to one of the six available ones. Or you can create your own. But I will use one of the existing ones(Adding your own ones will be covered in later steps). So, it now should look like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>eq, <span class="st0">&quot;$g_multiplayer_team_1_faction&quot;</span>, <span class="st0">&quot;fac_kingdom_8&quot;</span><span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>create_mesh_overlay, reg0, <span class="st0">&quot;mesh_ui_kingdom_shield_1&quot;</span><span class="br0">&#41;</span>,
+ <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,</pre></div></div>
+<p>Now, if you scroll down a little bit, you will see the exact same lines, expect, the line "$g_multiplayer_team_1_faction" is changed to "$g_multiplayer_team_2_faction". Again, do the same thing. <b>Copy a existing one, paste it under the last one and change it according to your faction. Like this</b>
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>eq, <span class="st0">&quot;$g_multiplayer_team_2_faction&quot;</span>, <span class="st0">&quot;fac_kingdom_8&quot;</span><span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>create_mesh_overlay, reg0, <span class="st0">&quot;mesh_ui_kingdom_shield_1&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,</pre></div></div>
+<p>Now, just save up and open module_scripts.
+</p>
+<hr />
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=8.html" title="Edit section: Module Scripts">edit</a>]</span> <span class="mw-headline" id="Module_Scripts"> Module Scripts </span></h2>
+<p>As you now should have module_scripts open, search for "#Faction banners". It should be quite ate the start of module_scripts. You will see lines like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>faction_set_slot, <span class="st0">&quot;fac_kingdom_1&quot;</span>, slot_faction_banner, <span class="st0">&quot;mesh_banner_kingdom_f&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>You want to copy that, and paste it under the last line, like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>faction_set_slot, <span class="st0">&quot;fac_kingdom_6&quot;</span>, slot_faction_banner, <span class="st0">&quot;mesh_banner_kingdom_e&quot;</span><span class="br0">&#41;</span>,
+ <span class="br0">&#40;</span>faction_set_slot, <span class="st0">&quot;fac_kingdom_7&quot;</span>, slot_faction_banner, <span class="st0">&quot;mesh_banner_kingdom_e&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>So, change the "fac_kingdom_1" to your factions number. Example, "fac_kingdom_8". Now, you can change what banner will it use. You can leave it as it is or use openbrf to look other banners and then change it, or add your own. Now, search for <b>"#script_determine_team_flags"</b>. You will see lines like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>eq, <span class="st0">&quot;:team_faction_no&quot;</span>, <span class="st0">&quot;fac_kingdom_2&quot;</span><span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>assign, <span class="st0">&quot;$team_1_flag_scene_prop&quot;</span>, <span class="st0">&quot;spr_headquarters_flag_vaegir&quot;</span><span class="br0">&#41;</span></pre></div></div>
+<p>Copy that code, and paste it under 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>eq, <span class="st0">&quot;:team_faction_no&quot;</span>, <span class="st0">&quot;fac_kingdom_6&quot;</span><span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>assign, <span class="st0">&quot;$team_1_flag_scene_prop&quot;</span>, <span class="st0">&quot;spr_headquarters_flag_vaegir&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Like this,
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>eq, <span class="st0">&quot;:team_faction_no&quot;</span>, <span class="st0">&quot;fac_kingdom_6&quot;</span><span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>assign, <span class="st0">&quot;$team_1_flag_scene_prop&quot;</span>, <span class="st0">&quot;spr_headquarters_flag_sarranid&quot;</span><span class="br0">&#41;</span>,
+ <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>eq, <span class="st0">&quot;:team_faction_no&quot;</span>, <span class="st0">&quot;fac_kingdom_8&quot;</span><span class="br0">&#41;</span>,
+         <span class="br0">&#40;</span>assign, <span class="st0">&quot;$team_1_flag_scene_prop&quot;</span>, <span class="st0">&quot;spr_headquarters_flag_vaegir&quot;</span><span class="br0">&#41;</span>,
+       <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,</pre></div></div>
+<p>Now, make sure the "fac_kingdom_8" is the number of your faction. You can change what flag will it use. Example, "spr_headquarters_flag_vaegir" could be changed to "spr_headquarters_flag_swadian" Now, if you scroll down, you will see the same codes, expect the "$team_1_flag_scene_prop" is now "$team_2_flag_scene_prop". Again, copy one of the lines, paste id under the last one and change it according to your faction.
+</p><p>Now, search for 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_warhorse&quot;</span>, <span class="st0">&quot;trp_sarranid_mamluke_multiplayer&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>What we want to do, is to add a comment which indicates for what troop are we making a item available. Example
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_warhorse&quot;</span>,   <span class="st0">&quot;trp_sarranid_mamluke_multiplayer&quot;</span><span class="br0">&#41;</span>,
+ <span class="co1">#Finnish Rifleman</span></pre></div></div>
+<p>Now, you should check what items did you put to your troops in your module_troops. Example, I assigned these items available for my finnish rifleman 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#91;</span>itm_cartridges,itm_cartridges,itm_pystykorva,itm_ukkopekka,itm_kypara,itm_red_shirt,itm_ankle_boots <span class="br0">&#93;</span>,</pre></div></div>
+<p>Now, I want to make these items actually available for this troop in multiplayer. So, Ill add 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_cartridges&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>under #Finnish Rifleman. Like this 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_warhorse&quot;</span>, <span class="st0">&quot;trp_sarranid_mamluke_multiplayer&quot;</span><span class="br0">&#41;</span>,
+ <span class="co1">#Finnish Rifleman</span>
+ <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_cartridges&quot;</span>,  <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>You do the same, expect, change the "itm_cartridges" to your item id, example, "itm_leather_jerkin". Then change the "trp_finnish_rifleman_multiplayer" to your troops id. Example "trp_my_unit_multiplayer" Now, you just do the same to make all the items you set your troop to have available. I suggest you do so that the first lines of code would be for weapons,shields, arrows etc. Then a empty line, then armors, helmets gloves etc. Then an empty line and adding anything else you need to still add. like this 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="co1">#Finnish Rifleman</span>
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_cartridges&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_pystykorva&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_ukkopekka&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_red_shirt&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_padded_cloth&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_leather_armor&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_haubergeon&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_ankle_boots&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_leather_boots&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_leather_gloves&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_kypara&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=9.html" title="Edit section: Adding your own Flags">edit</a>]</span> <span class="mw-headline" id="Adding_your_own_Flags"> Adding your own Flags </span></h2>
+<h3><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=10.html" title="Edit section: Module Meshes">edit</a>]</span> <span class="mw-headline" id="Module_Meshes"> Module Meshes </span></h3>
+<p><i>Before we start, it's important that all the flags are exactly in the same order as the factions are in module Factions. So if the first faction is fac_8, the first flag entries <b>MUST BE</b> for fac_8</i>
+</p><p>First, we need to create new entries to Module Meshes. Search for this line
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;flag_project_sr&quot;</span>, <span class="nu0">0</span>, <span class="st0">&quot;flag_project_sr&quot;</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Copy it, paste under it. The first "flag_project_sr" is the id of the line which can be referranced later on in other files. The second "flag_projet_sr" is the actual name of the mesh in the brf file. This is what I have for my custom faction
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">  <span class="br0">&#40;</span><span class="st0">&quot;flag_project_fi&quot;</span>, <span class="nu0">0</span>, <span class="st0">&quot;flag_project_fi&quot;</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>I used the same template of the other entries. Just changed the faction "_sr" to "_fi". 
+</p><p>Next, search for 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;banner_kingdom_f&quot;</span>, <span class="nu0">0</span>, <span class="st0">&quot;banner_kingdom_f&quot;</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, -<span class="nu0">90</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Copy it, paste under it. Pretty much as the previous one, expect the actual mesh is a bit different and this mesh is used differently in-game than the last one. This is my entry
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;banner_kingdom_fi&quot;</span>, <span class="nu0">0</span>, <span class="st0">&quot;banner_kingdom_fi&quot;</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, -<span class="nu0">90</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Next, search for
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;ui_kingdom_shield_6&quot;</span>, <span class="nu0">0</span>, <span class="st0">&quot;ui_kingdom_shield_6&quot;</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Copy it, paste under it. Same as the previous. This is the shield which will be seen in example, battle mode in the top left hand corner. My entry
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">  <span class="br0">&#40;</span><span class="st0">&quot;ui_kingdom_shield_8&quot;</span>, <span class="nu0">0</span>, <span class="st0">&quot;ui_kingdom_shield_8&quot;</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Now, you can go back to module presentations and change the codes to use your flags.
+</p>
+<h3><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=11.html" title="Edit section: Module Scene Props">edit</a>]</span> <span class="mw-headline" id="Module_Scene_Props"> Module Scene Props </span></h3>
+<p>First, search for
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;headquarters_flag_sarranid&quot;</span>,sokf_moveable|sokf_face_player,<span class="st0">&quot;flag_sarranid&quot;</span>,<span class="st0">&quot;0&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Copy it, paste under it. Again, First is the id of the entry used to referance in other files. The "Flag_sarranid" is the actual mesh name in the brf file. Make sure it matches your own. My entry
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;headquarters_flag_finland&quot;</span>,sokf_moveable|sokf_face_player,<span class="st0">&quot;flag_finland&quot;</span>,<span class="st0">&quot;0&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Now, search for
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;ctf_flag_kingdom_7&quot;</span>, sokf_moveable|sokf_face_player, <span class="st0">&quot;ctf_flag_kingdom_3&quot;</span>, <span class="st0">&quot;0&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Again, copy it, paste under it. Change the id and mesh referance to your own. My entry
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span><span class="st0">&quot;ctf_flag_kingdom_8&quot;</span>, sokf_moveable|sokf_face_player, <span class="st0">&quot;ctf_flag_kingdom_ru&quot;</span>, <span class="st0">&quot;0&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>Now you can go edit module scripts to use your own flags.
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit&amp;section=12.html" title="Edit section: Adding your own items to multiplayer">edit</a>]</span> <span class="mw-headline" id="Adding_your_own_items_to_multiplayer"> Adding your own items to multiplayer </span></h2>
+<p>Adding items to multiplayer is relatively easy. So, the only file we will be needing in this part is module_script because I presume you have already added your item to module_items.
+</p><p>So first of all, open up module scripts of course. Look for
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>item_set_slot, <span class="st0">&quot;itm_heavy_crossbow&quot;</span>, slot_item_multiplayer_item_class, multi_item_class_type_bow<span class="br0">&#41;</span>,</pre></div></div>
+<p>So, the "itm_your_item_id" Is the item made available and the multi_item_class_type_bow means what kind of item it is. There are various of types, all listed under here:
+</p>
+<pre>arrow
+bolt
+bow
+sword
+two_handed_sword
+axe
+two_handed_axe
+blunt
+picks
+cleavers
+spear
+lance
+small_shield
+throwing
+throwing_axe
+light_armor
+light_foot
+light_helm
+glove
+horse
+</pre>
+<p>So, as my item is a musket type weapon, it goes under bow category. So, it would look like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">   <span class="br0">&#40;</span>item_set_slot, <span class="st0">&quot;itm_pystykorva&quot;</span>, slot_item_multiplayer_item_class, multi_item_class_type_bow<span class="br0">&#41;</span>,</pre></div></div>
+<p>Now, the weapon is usable in multiplayer but still needs to be assigned to a class. So, I want to make this weapon available for my finnish rifleman, Ill search for the finnish rifleman equipment entries, and add this in. So find the troop you want to add the item for, example Swadian crossbowman. For me, its Finnish rifleman. Now, make an entry like this
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"> <span class="br0">&#40;</span>call_script, <span class="st0">&quot;script_multiplayer_set_item_available_for_troop&quot;</span>, <span class="st0">&quot;itm_pystykorva&quot;</span>, <span class="st0">&quot;trp_finnish_rifleman_multiplayer&quot;</span><span class="br0">&#41;</span>,</pre></div></div>
+<p>So, change the itm code to your item. For me it  was <b>itm_pystykorva</b>. Then, change the line <b>trp_finnish_rifleman_multiplayer</b> To your troop you want to add it in. Example, if it would be for swadian crossbowman, it would be like this
+</p>
+<pre>trp_swadian_crossbowman_multiplayer
+</pre>
+<p>Remember to have the _multiplayer at the end. Now you have the the item of your choice available to the troop you wanted.
+</p>
+<hr />
+<p>--<a href="Special%253AContributions/85.157.202.245.html" title="Special:Contributions/85.157.202.245">85.157.202.245</a> 21:40, 19 March 2011 (CET) Mr.Master
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 353/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:2-0!*!0!!en!* and timestamp 20200419213920 -->
+<div class="printfooter">
+Retrieved from "<a href="Adding_new_multiplayer_faction.html">http://mbmodwiki.ollclan.eu/Adding_new_multiplayer_faction</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253ATutorials.html" title="Category:Tutorials">Tutorials</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Adding_new_multiplayer_faction.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Adding_new_multiplayer_faction.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AAdding_new_multiplayer_faction&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="Adding_new_multiplayer_faction.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Adding_new_multiplayer_faction.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Adding_new_multiplayer_faction&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Adding_new_multiplayer_faction&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="Adding_new_multiplayer_faction.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Adding_new_multiplayer_faction.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Adding_new_multiplayer_faction.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Adding_new_multiplayer_faction&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Adding_new_multiplayer_faction&amp;oldid=63.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 8 June 2013, at 11:46.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 17 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Adding_new_multiplayer_faction", "wgTitle": "Adding new multiplayer faction", "wgAction": "view", "wgArticleId": 2, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 63, "wgCategories": ["Tutorials"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.118 secs. -->			</body>
+</html>

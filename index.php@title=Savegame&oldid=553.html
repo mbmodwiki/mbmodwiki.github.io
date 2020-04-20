@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Savegame - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Savegame&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Savegame&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Savegame&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Savegame skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Savegame</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 18:20, 19 July 2014 by <a href="http://mbmodwiki.ollclan.eu/Special:Contributions/178.190.245.187" title="Special:Contributions/178.190.245.187" class="mw-userlink">178.190.245.187</a>  <span class="mw-usertoollinks">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=User_talk:178.190.245.187&amp;action=edit&amp;redlink=1" class="new" title="User talk:178.190.245.187 (page does not exist)">Talk</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Savegame&amp;diff=prev&amp;oldid=553" title="Savegame">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Savegame&amp;direction=prev&amp;oldid=553" title="Savegame">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Savegame&amp;oldid=553.html#mw-head">navigation</a>,
+					<a href="index.php@title=Savegame&amp;oldid=553.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php@title=Savegame&amp;oldid=553.html#Binary_file_format_.28Warband_1.143.29"><span class="tocnumber">1</span> <span class="toctext">Binary file format (Warband 1.143)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php@title=Savegame&amp;oldid=553.html#game_.28.2A.sav.29"><span class="tocnumber">1.1</span> <span class="toctext">game (*.sav)</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php@title=Savegame&amp;oldid=553.html#header"><span class="tocnumber">1.2</span> <span class="toctext">header</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php@title=Savegame&amp;oldid=553.html#note"><span class="tocnumber">1.3</span> <span class="toctext">note</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php@title=Savegame&amp;oldid=553.html#trigger"><span class="tocnumber">1.4</span> <span class="toctext">trigger</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php@title=Savegame&amp;oldid=553.html#simple_trigger"><span class="tocnumber">1.5</span> <span class="toctext">simple_trigger</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php@title=Savegame&amp;oldid=553.html#quest"><span class="tocnumber">1.6</span> <span class="toctext">quest</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php@title=Savegame&amp;oldid=553.html#info_page"><span class="tocnumber">1.7</span> <span class="toctext">info_page</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php@title=Savegame&amp;oldid=553.html#site"><span class="tocnumber">1.8</span> <span class="toctext">site</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php@title=Savegame&amp;oldid=553.html#faction"><span class="tocnumber">1.9</span> <span class="toctext">faction</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php@title=Savegame&amp;oldid=553.html#map_track"><span class="tocnumber">1.10</span> <span class="toctext">map_track</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php@title=Savegame&amp;oldid=553.html#party_template"><span class="tocnumber">1.11</span> <span class="toctext">party_template</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php@title=Savegame&amp;oldid=553.html#party_record"><span class="tocnumber">1.12</span> <span class="toctext">party_record</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php@title=Savegame&amp;oldid=553.html#party"><span class="tocnumber">1.13</span> <span class="toctext">party</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php@title=Savegame&amp;oldid=553.html#party_stack"><span class="tocnumber">1.14</span> <span class="toctext">party_stack</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php@title=Savegame&amp;oldid=553.html#player_party_stack"><span class="tocnumber">1.15</span> <span class="toctext">player_party_stack</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php@title=Savegame&amp;oldid=553.html#map_event_record"><span class="tocnumber">1.16</span> <span class="toctext">map_event_record</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php@title=Savegame&amp;oldid=553.html#map_event"><span class="tocnumber">1.17</span> <span class="toctext">map_event</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php@title=Savegame&amp;oldid=553.html#troop"><span class="tocnumber">1.18</span> <span class="toctext">troop</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php@title=Savegame&amp;oldid=553.html#item"><span class="tocnumber">1.19</span> <span class="toctext">item</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php@title=Savegame&amp;oldid=553.html#item_kind"><span class="tocnumber">1.20</span> <span class="toctext">item_kind</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php@title=Savegame&amp;oldid=553.html#string"><span class="tocnumber">1.21</span> <span class="toctext">string</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=1.html" title="Edit section: Binary file format (Warband 1.143)">edit</a>]</span> <span class="mw-headline" id="Binary_file_format_.28Warband_1.143.29">Binary file format (Warband 1.143)</span></h2>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=2.html" title="Edit section: game (*.sav)">edit</a>]</span> <span class="mw-headline" id="game_.28.2A.sav.29">game (*.sav)</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#header">header</a>
+</td>
+<td> 1
+</td>
+<td> header
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint64
+</td>
+<td> 1
+</td>
+<td> game_time
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> random_seed
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> save_mode
+</td>
+<td>
+</td>
+<td> 0: saving allowed, 1: strict
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> combat_difficulty
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> combat_difficulty_friendlies
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> reduce_combat_ai
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> reduce_campaign_ai
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> combat_speed
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> date_timer
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> hour
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> day
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> week
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> month
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> year
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> global_cloud_amount
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> global_haze_amount
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> average_difficulty
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> average_difficulty_period
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> bool
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> tutorial_flags
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> default_prisoner_price
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> encountered_party_1_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> encountered_party_2_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> current_menu_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> current_site_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> current_entry_no
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> current_mission_template_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> party_creation_min_random_value
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> party_creation_max_random_value
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> game_log
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 6
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> rest_period
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> rest_time_speed
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> rest_is_interactive
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> rest_remain_attackable
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 9
+</td>
+<td> class_names
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_global_variables
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_global_variables
+</td>
+<td> global_variables
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_triggers
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#trigger">trigger</a>
+</td>
+<td> num_triggers
+</td>
+<td> triggers
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_simple_triggers
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#simple_trigger">simple_trigger</a>
+</td>
+<td> num_simple_triggers
+</td>
+<td> simple_triggers
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_quests
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#quest">quest</a>
+</td>
+<td> num_quests
+</td>
+<td> quests
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_info_pages
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#info_page">info_page</a>
+</td>
+<td> num_info_pages
+</td>
+<td> info_pages
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_sites
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#site">site</a>
+</td>
+<td> num_sites
+</td>
+<td> sites
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_factions
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#faction">faction</a>
+</td>
+<td> num_factions
+</td>
+<td> factions
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_map_tracks
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#map_track">map_track</a>
+</td>
+<td> num_map_tracks
+</td>
+<td> map_tracks
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_party_templates
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#party_template">party_template</a>
+</td>
+<td> num_party_templates
+</td>
+<td> party_templates
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_party_records
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_parties_created
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#party_record">party_record</a>
+</td>
+<td> num_party_records
+</td>
+<td> party_records
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#player_party_stack">player_party_stack</a>
+</td>
+<td> player_party.num_stacks
+</td>
+<td> player_party_stack_additional_info
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_map_event_records
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_map_events_created
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#map_event_record">map_event_record</a>
+</td>
+<td> num_map_event_records
+</td>
+<td> map_event_records
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_troops
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#troop">troop</a>
+</td>
+<td> num_troops
+</td>
+<td> troops
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 42
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_item_kinds
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#item_kind">item_kind</a>
+</td>
+<td> num_item_kinds
+</td>
+<td> item_kind
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint64
+</td>
+<td> 1
+</td>
+<td> player_face_keys[0]
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint64
+</td>
+<td> 1
+</td>
+<td> player_face_keys[1]
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> player_kill_count
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> player_wounded_count
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> player_own_troop_kill_count
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> player_own_troop_wounded_count
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=3.html" title="Edit section: header">edit</a>]</span> <span class="mw-headline" id="header">header</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> magic_number
+</td>
+<td>
+</td>
+<td> must be 0x52445257 (WRDR)
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> game_version
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> module_version
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> savegame_name
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> player_name
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> player_level
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> date
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=4.html" title="Edit section: note">edit</a>]</span> <span class="mw-headline" id="note">note</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> text
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> value
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> tableau_material_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> bool
+</td>
+<td> 1
+</td>
+<td> available
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=5.html" title="Edit section: trigger">edit</a>]</span> <span class="mw-headline" id="trigger">trigger</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> status
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> check_timer
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> delay_timer
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> rearm_timer
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=6.html" title="Edit section: simple trigger">edit</a>]</span> <span class="mw-headline" id="simple_trigger">simple_trigger</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> check_timer
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=7.html" title="Edit section: quest">edit</a>]</span> <span class="mw-headline" id="quest">quest</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> progression
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> giver_troop_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> number
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> start_date
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> title
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> text
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> giver
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#note">note</a>
+</td>
+<td> 16
+</td>
+<td> notes
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_slots
+</td>
+<td> slots
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=8.html" title="Edit section: info page">edit</a>]</span> <span class="mw-headline" id="info_page">info_page</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#note">note</a>
+</td>
+<td> 16
+</td>
+<td> notes
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=9.html" title="Edit section: site">edit</a>]</span> <span class="mw-headline" id="site">site</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_slots
+</td>
+<td> slots
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=10.html" title="Edit section: faction">edit</a>]</span> <span class="mw-headline" id="faction">faction</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_slots
+</td>
+<td> slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> game.num_factions
+</td>
+<td> relations
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> name
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> bool
+</td>
+<td> 1
+</td>
+<td> renamed
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint32
+</td>
+<td> 1
+</td>
+<td> color
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#note">note</a>
+</td>
+<td> 16
+</td>
+<td> notes
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=11.html" title="Edit section: map track">edit</a>]</span> <span class="mw-headline" id="map_track">map_track</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_x
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_y
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_z
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> rotation
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> age
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> flags
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=12.html" title="Edit section: party template">edit</a>]</span> <span class="mw-headline" id="party_template">party_template</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_parties_created
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_parties_destroyed
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_parties_destroyed_by_player
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_slots
+</td>
+<td> slots
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=13.html" title="Edit section: party record">edit</a>]</span> <span class="mw-headline" id="party_record">party_record</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> valid
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> raw_id
+</td>
+<td> valid == 1
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> id
+</td>
+<td> valid == 1
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#party">party</a>
+</td>
+<td> 1
+</td>
+<td> party
+</td>
+<td> valid == 1
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=14.html" title="Edit section: party">edit</a>]</span> <span class="mw-headline" id="party">party</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> name
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint64
+</td>
+<td> 1
+</td>
+<td> flags
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> menu_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> party_template_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> faction_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> personality
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> default_behavior
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> current_behavior
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> default_behavior_object_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> current_behavior_object_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> initial_position_x
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> initial_position_y
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> target_position_x
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> target_position_y
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_x
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_y
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_z
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_stacks
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#party_stack">party_stack</a>
+</td>
+<td> num_stacks
+</td>
+<td> stacks
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> bearing
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> bool
+</td>
+<td> 1
+</td>
+<td> renamed
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> extra_text
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> morale
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> hunger
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> patrol_radius
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> initiative
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> helpfulness
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> label_visible
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> bandit_attraction
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> marshall
+</td>
+<td> (game.header.game_version &gt;= 900 &amp;&amp; game.header.game_version &lt; 1000) &#124;&#124; game.header.game_version &gt;= 1020
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> ignore_player_timer
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> banner_map_icon_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> extra_map_icon_id
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> extra_map_icon_up_down_distance
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> extra_map_icon_up_down_frequency
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> extra_map_icon_rotate_frequency
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> extra_map_icon_fade_frequency
+</td>
+<td> game.header.game_version &gt; 1136
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> attached_to_party_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> bool
+</td>
+<td> 1
+</td>
+<td> is_attached
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_attached_party_ids
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> num_attached_party_ids
+</td>
+<td> attached_party_ids
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_particle_system_ids
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> num_particle_system_ids
+</td>
+<td> particle_system_ids
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#note">note</a>
+</td>
+<td> 16
+</td>
+<td> notes
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_slots
+</td>
+<td> slots
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=15.html" title="Edit section: party stack">edit</a>]</span> <span class="mw-headline" id="party_stack">party_stack</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> troop_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_troops
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_wounded_troops
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> flags
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=16.html" title="Edit section: player party stack">edit</a>]</span> <span class="mw-headline" id="player_party_stack">player_party_stack</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> experience
+</td>
+<td>&#160;!(cur_stack_troop_flags &amp; hero)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_upgradeable
+</td>
+<td>&#160;!(cur_stack_troop_flags &amp; hero)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 32
+</td>
+<td> troop_dnas
+</td>
+<td> cur_stack_no &lt; 32 &amp;&amp;&#160;!(cur_stack_troop_flags &amp; hero)
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=17.html" title="Edit section: map event record">edit</a>]</span> <span class="mw-headline" id="map_event_record">map_event_record</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> valid
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> id
+</td>
+<td> valid == 1
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#map_event">map_event</a>
+</td>
+<td> 1
+</td>
+<td> map_event
+</td>
+<td> valid == 1
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=18.html" title="Edit section: map event">edit</a>]</span> <span class="mw-headline" id="map_event">map_event</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> type
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_x
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> position_y
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> land_position_x
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> land_position_y
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> unused
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> attacker_party_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> defender_party_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> 1
+</td>
+<td> battle_simulation_timer
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> next_battle_simulation
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=19.html" title="Edit section: troop">edit</a>]</span> <span class="mw-headline" id="troop">troop</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_slots
+</td>
+<td> slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 4
+</td>
+<td> attributes
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 7
+</td>
+<td> proficiencies
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint32
+</td>
+<td> 6
+</td>
+<td> skills
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#note">note</a>
+</td>
+<td> 16
+</td>
+<td> notes
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint64
+</td>
+<td> 1
+</td>
+<td> flags
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> site_id_and_entry_no
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> skill_points
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> attribute_points
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> proficiency_points
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> level
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint32
+</td>
+<td> 1
+</td>
+<td> gold
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> experience
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> float
+</td>
+<td> 1
+</td>
+<td> health
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> faction_id
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#item">item</a>
+</td>
+<td> 96
+</td>
+<td> inventory_items
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#item">item</a>
+</td>
+<td> 10
+</td>
+<td> equipped_items
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> uint64
+</td>
+<td> 4
+</td>
+<td> face_keys
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> bool
+</td>
+<td> 1
+</td>
+<td> renamed
+</td>
+<td> (flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> name
+</td>
+<td> renamed == true &amp;&amp; ((flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="index.php@title=Savegame&amp;oldid=553.html#string">string</a>
+</td>
+<td> 1
+</td>
+<td> name_plural
+</td>
+<td> renamed == true &amp;&amp; ((flags &amp; tf_hero) &#124;&#124; dont_load_regular_troop_inventories == false)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> class_no
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=20.html" title="Edit section: item">edit</a>]</span> <span class="mw-headline" id="item">item</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> item_kind_id
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> item_flags
+</td>
+<td>
+</td>
+<td> modifier (LineNo - 1 from item_modifiers.txt) = (item_flags &gt;&gt; 24) &amp; 0xFF, ammo = item_flags &amp; 0xFF, hit_points = item_flags &amp; 0xFFFF
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=21.html" title="Edit section: item kind">edit</a>]</span> <span class="mw-headline" id="item_kind">item_kind</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_slots
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> int64
+</td>
+<td> num_slots
+</td>
+<td> slots
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=Savegame&amp;action=edit&amp;section=22.html" title="Edit section: string">edit</a>]</span> <span class="mw-headline" id="string">string</span></h3>
+<table class="wikitable">
+
+<tr>
+<th> Type
+</th>
+<th> Count
+</th>
+<th> Field
+</th>
+<th> Condition
+</th>
+<th> Info
+</th></tr>
+<tr>
+<td> int32
+</td>
+<td> 1
+</td>
+<td> num_chars
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> char
+</td>
+<td> num_chars
+</td>
+<td> text
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 86/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:105-0!*!0!!en!* and timestamp 20200419213930 -->
+<div class="printfooter">
+Retrieved from "<a href="Savegame.html">http://mbmodwiki.ollclan.eu/Savegame</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AFile-Type_Structure.html" title="Category:File-Type Structure">File-Type Structure</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=Savegame&amp;returntoquery=oldid%3D553" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Savegame.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk"><span><a href="Talk%253ASavegame.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Savegame&amp;oldid=553.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Savegame.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Savegame&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Savegame&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Savegame&amp;oldid=553.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Savegame.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Savegame.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Savegame&amp;oldid=553&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Savegame&amp;oldid=553.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Savegame", "wgTitle": "Savegame", "wgAction": "view", "wgArticleId": 105, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 553, "wgCategories": ["File-Type Structure"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.144 secs. -->			</body>
+</html>

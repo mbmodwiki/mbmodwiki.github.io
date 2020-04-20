@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Editing Official Module System Documentation: Part 04 - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<!--[if IE 8]><link rel="stylesheet" href="/skins/common/IE80Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Official_Module_System_Documentation_Part_04 skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Editing Official Module System Documentation: Part 04</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=edit.html#mw-head">navigation</a>,
+					<a href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=edit.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div id="mw-anon-edit-warning">
+<p><b>Warning:</b> You are not logged in.
+</p>
+Your IP address will be recorded in this page's edit history.</div>
+<div id="wikiPreview" class="ontop" style="display: none;"></div><div id='toolbar'>
+
+</div>
+<form id="editform" name="editform" method="post" action="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_04&amp;action=submit" enctype="multipart/form-data"><div id="checkmeout" style="display: none;">
+<label for="check">bot check.
+Do <b>NOT</b> fill this in!</label> <input type="text" name="check" id="check" value="" />
+<input type="hidden" name="swy-master" id="swy-master" value="ñ" />
+<input type="text" name="swy-magic" id="swy-magic" value="imasocool-yousuckbot!" />
+</div>
+<input type='hidden' value="" name="wpSection" />
+<input type='hidden' value="20200419223438" name="wpStarttime" />
+<input type='hidden' value="20120625164350" name="wpEdittime" />
+<input type='hidden' value="" name="wpScrolltop" id="wpScrolltop" />
+<input type="hidden" value="d41d8cd98f00b204e9800998ecf8427e" name="wpAutoSummary" /><input type="hidden" value="0" name="oldid" /><textarea tabindex="1" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" name="wpTextbox1">{{SwyNavbar|Official_Module_System_Documentation:_Part_03|Back to Previous Chapter
+           |Official_Module_System_Documentation:_Part_05|Go to the Next Chapter}}
+
+
+In Part 2 of this documentation, we learned how to make new parties; unique locations on the map. They are not to be confused with party templates, which we will be addressing here.
+
+In the simplest terms, party templates are a set of guidelines from which parties on the map are spawned. This marks the most notable difference between parties and party templates -- parties are unique entities on the map, whereas templates do not physically exist in the game world. They serve only as a list of guidelines from which to spawn parties. Therefore, certain operations that use a party_id for input will not work when they are fed a party_template_id.
+
+Parties that are spawned from a template do not have to be unique. There can be many parties of the same template; each will have a random number of troops depending on the player's level and the minimum/maximum troop limits defined in the template.
+
+
+
+== 4.1 -- Breakdown of Module_Party_Templates ==
+
+
+The file begins with the usual Python list: party_templates = [, followed by several templates that are hardwired into the game and should not be edited.
+
+You'll notice that the tuples in module_party_templates are very similar to those in module_parties, but the two are not interchangeable.
+
+Example of a party template:
+
+  ("farmers","farmers",icon_peasant|pf_auto_start_dialog,0,fac_innocents,merchant_personality,[(trp_farmer,11,22),(trp_peasant_woman,16,44)]),
+
+Here is a template we've all encountered in-game. Parties of this template will be called "farmers", they will automatically start dialogue when you encounter one, they will behave cowardly in-game, and they each have two troop stacks made up of farmers and peasant women.
+
+
+Breakdown of the tuple fields:
+
+1 ) Party-template id. Used for referencing party-templates in other files.
+2 ) Party-template name. The name that parties of this template will use.
+3 ) Party flags. You will notice that all templates in module_party_templates have pf_auto_start_dialogue set. This flag will automatically start a map dialogue when the player encounters a party of this template.
+4 ) Menu. Deprecated as in module_parties. Use the value 0 here.
+5 ) Faction.
+6 ) Personality. This field contains flags which determine party behaviour on the map.
+7 ) List of stacks. Each stack record is a tuple that contains the following fields:
+    7.1) Troop-id. 
+    7.2) Minimum number of troops in the stack. 
+    7.3) Maximum number of troops in the stack. 
+    7.4) Member flags(optional). You will have to add an extra field in order to set member flags. For example, (trp_swadian_crossbowman,5,14,pmf_is_prisoner)
+
+There can be at most 6 stacks in a party template.
+
+
+Farmers tuple examination:
+
+1 ) Party-template id = "farmers"
+2 ) Party-template name = "farmers"
+3 ) Party flags = icon_peasant|pf_auto_start_dialog
+4 ) Menu = 0
+5 ) Faction = fac_innocents
+6 ) Personality = merchant_personality
+7 ) List of stacks:
+    7.1) Troop-id = trp_farmer, trp_peasant_woman
+    7.2) Minimum number of troops in the stack = 11, 16
+    7.3) Maximum number of troops in the stack = 22, 44 
+    7.4) Member flags(optional) = None are set.
+
+
+If you've followed the documentation since Part 1, you should be fairly adept at reading tuples by this point, and you will have noticed the one field in this tuple that's unlike any other field we've encountered before: Field number 6, the Personality flags field. We will cover this field and its functions in the next segment.
+
+
+
+== 4.2 -- Personality ==
+
+
+As mentioned in the tuple breakdown, the Personality field determines party behaviour on the map. Here you can assign custom scores for Courage and Aggressiveness, or use one of the preset personalities such as merchant_personality. These presets are constants, each containing a Courage and an Aggressiveness score. The presets are all defined in header_parties.py, so open that file now and scroll to the bottom to see the constant definitions for yourself. There you will also notice the list of possible Courage and Aggressiveness settings.
+
+The constant merchant_personality is used in many templates throughout the file. Parties with this personality will be friendly, they will not go out to attack the enemy or raid weaker parties. This is because merchant_personality sets the party's Aggressiveness to aggresiveness_0. A party with aggresiveness_0 will never attack another party, whereas normal combative parties with the preset soldier_personality will have aggresiveness_8. This will let them attack other parties if the attackers' faction is on bad terms with the defenders' faction, and if the would-be attackers aren't badly outnumbered.
+
+Courage is the score that determines when parties will run away from another, larger party. Higher Courage means they will be less quick to turn away when the numbers aren't entirely favourable. merchant_personality parties have a Courage of 8, where soldier_personality have a Courage of 11.
+
+These settings scale from 0 to 15, allowing you to precisely set the desired behaviour for your party templates. New modders, however, are recommended to stick with the presets. They cover the full range of personalities you should need for your first mod.
+
+Finally, for bandit templates, there is the flag banditness. This causes the bandit party to constantly consider other nearby parties as prey, and if the prey is carrying significant amounts of gold and/or trade goods, the bandit party will attack. Ideally, a bandit party should have low aggressiveness or low troop numbers so that it does not attack soldier parties.
+
+
+
+== 4.3 -- Creating New Templates ==
+
+
+Copy the tuple for "farmers" and paste it at the bottom of your file, before the closing bracket.
+
+
+  ("new_template","new_template",icon_peasant|pf_auto_start_dialog,0,fac_innocents,merchant_personality,[(trp_farmer,11,22),(trp_peasant_woman,16,44)]),
+
+In this example we've changed the identifier from "farmers" to "new_template", and we've done likewise for the name. Once we've done this, we can begin to edit the specifics of this template.
+
+For our first tweak, let us change the template's faction to fac_neutral, and merchant_personality to soldier_personality.
+
+
+  ("new_template","new_template",icon_peasant|pf_auto_start_dialog,0,fac_neutral,soldier_personality,[(trp_farmer,11,22),(trp_peasant_woman,16,44)]),
+
+From now on, parties of this template will be of the Neutral faction, and they will attack an enemy party if they see one.
+
+Next, let's play with the troop composition.
+
+
+  ("new_template","new_template",icon_peasant|pf_auto_start_dialog,0,fac_neutral,soldier_personality,[(trp_geoffrey,1,1),(trp_new_troop,16,44)]),
+
+This example has a few notable changes -- most importantly, it's now being led by trp_geoffrey, the Hero troop we created in Part 3 of this documentation. Since there can't be more than one of Geoffrey, we've changed his minimum and maximum troop numbers to 1.
+
+As his followers, we've assigned a contingent of trp_new_troop, the regulars we also created in Part 3. There will be never be less than 16 "new troops" in this party, but as the player gains in level, the size will be gradually adjusted. Eventually this "new_template" can spawn with as many as 44 "new troops" -- but never more than 44.
+
+
+Save the file and click on build_module.bat. If everything went well, you will now be able to use the new template in your module code, but parties of a party template must be spawned -- they do not just show up of their own volition. If we were to run the game at this point, we would not see any parties of our "new template" running around.
+
+We will learn how to spawn parties of a template in an upcoming part of this documentation. For the moment, let us leave Geoffrey and his little band while we find out how to create new items in the next part of this documentation. Please move on to Part 5 now.
+
+ [[category:Official_Documentation]]
+</textarea><div id="editpage-copywarn">
+<p>Please note that all contributions to Mount&amp;Blade Modding Wiki are considered to be released under the Public Domain (see <a href="http://mbmodwiki.ollclan.eu/index.php?title=ModdingWiki:Copyrights&amp;action=edit&amp;redlink=1" class="new" title="ModdingWiki:Copyrights (page does not exist)">ModdingWiki:Copyrights</a> for details).
+If you do not want your writing to be edited mercilessly and redistributed at will, then do not submit it here.<br />
+You are also promising us that you wrote this yourself, or copied it from a public domain or similar free resource.
+<b>Do not submit copyrighted work without permission!</b>
+</p>
+</div>
+<div class='editOptions'>
+<span class="mw-summary" id="wpSummaryLabel"><label for="wpSummary">Summary:</label></span> <input class="mw-summary" id="wpSummary" maxlength="200" tabindex="1" size="60" spellcheck="true" title="Enter a short summary [b]" accesskey="b" name="wpSummary" /><div class='editCheckboxes'>
+</div>
+<div class='editButtons'>
+<input id="imDone" name="imDone" type="submit" tabindex="3" value="Save page" accesskey="s" title="Save your changes [s]" />
+<input id="wpPreview" name="wpPreview" type="submit" tabindex="4" value="Show preview" accesskey="p" title="Preview your changes, please use this before saving! [p]" />
+
+<input id="wpDiff" name="wpDiff" type="submit" tabindex="5" value="Show changes" accesskey="v" title="Show which changes you made to the text [v]" />
+	<span class='editHelp'><a href="Official_Module_System_Documentation%253A_Part_04.html" title="Official Module System Documentation: Part 04" id="mw-editform-cancel">Cancel</a> | <a target="helpwindow" href="http://mbmodwiki.ollclan.eu/Help:Editing">Editing help</a> (opens in new window)</span>
+</div><!-- editButtons -->
+</div><!-- editOptions -->
+
+<input type="hidden" value="+\" name="wpEditToken" />
+<div class="mw-editTools"></div>
+<div class='templatesUsed'>
+<div class="mw-templatesUsedExplanation"><p>Template used on this page:
+</p></div><ul>
+<li><a href="http://mbmodwiki.ollclan.eu/Template:SwyNavbar" title="Template:SwyNavbar">Template:SwyNavbar</a> (<a href="http://mbmodwiki.ollclan.eu/index.php?title=Template:SwyNavbar&amp;action=edit" title="Template:SwyNavbar">edit</a>) </li></ul>
+</div>
+<div class='hiddencats'>
+
+</div></form>
+<div class="printfooter">
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_04.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_04</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=Official_Module_System_Documentation:_Part_04&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_04.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_04&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=edit.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view"><span><a href="Official_Module_System_Documentation%253A_Part_04.html" >Read</a></span></li>
+					<li id="ca-edit" class="selected"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_04&amp;action=edit.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_04.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_04.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+													</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+																		<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Official_Module_System_Documentation:_Part_04", "wgTitle": "Official Module System Documentation: Part 04", "wgAction": "edit", "wgArticleId": 72, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 406, "wgCategories": [], "wgBreakFrames": true, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.edit", "mediawiki.action.edit", "ext.wikiEditor.dialogs", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) { addButton("/skins/common/images/button_bold.png","Bold text","\'\'\'","\'\'\'","Bold text","mw-editbutton-bold");
+addButton("/skins/common/images/button_italic.png","Italic text","\'\'","\'\'","Italic text","mw-editbutton-italic");
+addButton("/skins/common/images/button_link.png","Internal link","[[","]]","Link title","mw-editbutton-link");
+addButton("/skins/common/images/button_extlink.png","External link (remember http:// prefix)","[","]","http://www.example.com link title","mw-editbutton-extlink");
+addButton("/skins/common/images/button_headline.png","Level 2 headline","\n== "," ==\n","Headline text","mw-editbutton-headline");
+addButton("/skins/common/images/button_nowiki.png","Ignore wiki formatting","\x3cnowiki\x3e","\x3c/nowiki\x3e","Insert non-formatted text here","mw-editbutton-nowiki");
+addButton("/skins/common/images/button_sig.png","Your signature with timestamp","--~~~~","","","mw-editbutton-signature");
+addButton("/skins/common/images/button_hr.png","Horizontal line (use sparingly)","\n----\n","","","mw-editbutton-hr");
+ }</script>
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.178 secs. -->			</body>
+</html>

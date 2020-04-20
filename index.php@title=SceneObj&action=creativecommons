@@ -1,0 +1,18 @@
+<?xml version='1.0'  encoding="utf-8" ?>
+<rdf:RDF xmlns:cc="http://web.resource.org/cc/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<cc:Work rdf:about="http://mbmodwiki.ollclan.eu/SceneObj">
+		<dc:title>SceneObj</dc:title>
+		<dc:publisher rdf:resource="http://mbmodwiki.ollclan.eu/ModdingWiki:About" />
+		<dc:language>en</dc:language>
+		<dc:type>Text</dc:type>
+		<dc:format>text/html</dc:format>
+		<dc:identifier>http://mbmodwiki.ollclan.eu/SceneObj</dc:identifier>
+		<dc:date>2012-04-07</dc:date>
+		<dc:creator>Ismael</dc:creator>
+		<dc:contributor>Mount&amp;Blade Modding Wiki user Cmpxchg8b</dc:contributor>
+		<dc:rights rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+		<cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+	</cc:Work>
+</rdf:RDF>

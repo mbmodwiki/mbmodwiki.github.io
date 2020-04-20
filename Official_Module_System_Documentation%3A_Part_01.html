@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Official Module System Documentation: Part 01 - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<style type="text/css">/*<![CDATA[*/
+.source-apache {line-height: normal;}
+.source-apache li, .source-apache pre {
+	line-height: normal; border: 1px dashed #2f6fab;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for apache
+ * CSS class: source-apache, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.apache.source-apache .de1, .apache.source-apache .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.apache.source-apache  {font-family:monospace;}
+.apache.source-apache .imp {font-weight: bold; color: red;}
+.apache.source-apache li, .apache.source-apache .li1 {font-weight: normal; vertical-align:top;}
+.apache.source-apache .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.apache.source-apache .li2 {font-weight: bold; vertical-align:top;}
+.apache.source-apache .kw1 {color: #00007f;}
+.apache.source-apache .kw2 {color: #0000ff;}
+.apache.source-apache .kw3 {color: #000000; font-weight:bold;}
+.apache.source-apache .co1 {color: #adadad; font-style: italic;}
+.apache.source-apache .es0 {color: #000099; font-weight: bold;}
+.apache.source-apache .br0 {color: #339933;}
+.apache.source-apache .sy0 {color: #008000;}
+.apache.source-apache .st0 {color: #7f007f;}
+.apache.source-apache .nu0 {color: #ff0000;}
+.apache.source-apache .ln-xtra, .apache.source-apache li.ln-xtra, .apache.source-apache div.ln-xtra {background-color: #ffc;}
+.apache.source-apache span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "index.php@title=MediaWiki%253AGeshi.css&usemsgcache=yes&action=raw&ctype=text%252Fcss&smaxage=18000.css";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Official_Module_System_Documentation_Part_01 skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Official Module System Documentation: Part 01</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="Official_Module_System_Documentation%253A_Part_01.html#mw-head">navigation</a>,
+					<a href="Official_Module_System_Documentation%253A_Part_01.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
+<p>	<span class="swynavbar-left" style="float:left;">
+	<a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation"> <span style="color:navy;text-shadow:none;text-decoration:none;">Return to the Category
+           </span></a>
+	</span>
+	<span class="swynavbar-right">
+	<a href="Official_Module_System_Documentation%253A_Part_02.html" title="Official Module System Documentation: Part 02"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	</span>
+</p>
+</div>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Official_Module_System_Documentation%253A_Part_01.html#What_is_the_Module_System.3F"><span class="tocnumber">1</span> <span class="toctext">What is the Module System?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Official_Module_System_Documentation%253A_Part_01.html#Requirements_for_using_the_Module_System"><span class="tocnumber">2</span> <span class="toctext">Requirements for using the Module System</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Official_Module_System_Documentation%253A_Part_01.html#Obtaining_the_Module_System"><span class="tocnumber">3</span> <span class="toctext">Obtaining the Module System</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Official_Module_System_Documentation%253A_Part_01.html#Module_Sytem_Files"><span class="tocnumber">4</span> <span class="toctext">Module Sytem Files</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Official_Module_System_Documentation%253A_Part_01.html#Creating_a_new_module"><span class="tocnumber">5</span> <span class="toctext">Creating a new module</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit&amp;section=1.html" title="Edit section: What is the Module System?">edit</a>]</span> <span class="mw-headline" id="What_is_the_Module_System.3F"> What is the Module System? </span></h2>
+<p>The Mount&amp;Blade Module System is a set of python scripts that lets you create and/or modify content for Mount&amp;Blade. This is actually the system we are using for working on the content of the official version. Using the module system, you can do things like adding new troop types, new characters, new quests, new dialogs, etc., or you can edit the existing content.
+</p><p>It is important to note that Mount&amp;Blade does not use Python and does not read the Module System python scripts directly. Rather, the python scripts are executed to create the text files that Mount&amp;Blade reads.
+</p><p>Mount&amp;Blade actually reads its content from text files under the <tt style="color:navy;">Mount&amp;Blade/Modules</tt> folder.  Thus, *in theory* you can do all the modifications you'd like to do by editing these text files. (Indeed, some modders had worked out how to use these files and were able to create amazing mods by themselves.) However the text files are not really human-readable and are very impractical to work with. There are currently two options for writing new modules. The first is the official module system described in this document. The other is Effidian's unofficial editor which is currently discontinued and unusable for the current version -  v.1.011, but works for older versions of M&amp;B, such as v.7.51 .
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit&amp;section=2.html" title="Edit section: Requirements for using the Module System">edit</a>]</span> <span class="mw-headline" id="Requirements_for_using_the_Module_System"> Requirements for using the Module System </span></h2>
+<p>The module system consists of Python scripts, and as such, you need to have Python installed on your system to be able to work with them.<br />
+<br />
+<span style="color:maroon;font-style:oblique;">
+You can download Python from Python.org's download page:  <a href="http://www.python.org/download/" class="external autonumber" rel="nofollow">[1]</a><br />
+</span>
+There are more than a few downloads on that page. However you'll only need last version of 2.*.* for Windows (current is 2.7.8), although 2.4 may also work. 
+<br /><br /><br />
+After you download and install Python, you'll also need to add Python to your path enviroment variable. This is important, so try to be exact when you make these changes.
+</p><p>For Windows 9x systems, you can edit autoexec.bat file and add your python folder to the Path. For example if Python is installed under <tt>C:\Python27</tt>,<br />
+add the following line:
+</p>
+<pre>set PATH=C:\Python27;%PATH%</pre>
+<p>If you have a Windows XP, or a Windows 7 system, this operation is slightly different: Right-click on My Computer (Computer in the start menu for 7 users) select 'Properties', click on the 'Advanced' tab and then click on 'Enviroment Variables':
+</p><p><br />
+</p><p>1. Scroll down on the 'System variables' until you find the '<tt>Path</tt>' variable.
+</p><p>2. Click on the 'Edit...' button, a new window should pop up:
+</p><p><br />
+</p><p>Scroll to the end of the 'Variable value' and add "<tt>;C:\Python27</tt>".
+</p><p>You may also need to find the '<tt>PYTHONHOME</tt>' variable and add "<tt>;C:\Python27</tt>" to it's variable value also if it is not already in there.
+</p><p>Then click ok on the box, to save the changes to system variables.
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit&amp;section=3.html" title="Edit section: Obtaining the Module System">edit</a>]</span> <span class="mw-headline" id="Obtaining_the_Module_System"> Obtaining the Module System </span></h2>
+<p>The latest version of the Module System can be downloaded from the download pages here:
+</p><p><span style="color:maroon;font-style:oblique;">
+Mount&amp;Blade: <a href="http://www.taleworlds.com/en/Games/MountAndBlade/Download" class="external free" rel="nofollow">http://www.taleworlds.com/en/Games/MountAndBlade/Download</a><br />
+Mount&amp;Blade Warband: <a href="http://www.taleworlds.com/en/Games/Warband/Download" class="external free" rel="nofollow">http://www.taleworlds.com/en/Games/Warband/Download</a>
+</span>
+</p><p>You'll need to download the zip file for the module system and extract it (requiring a program such as WinRAR, or <a href="http://7-zip.org" class="external text" rel="nofollow">7-zip</a>). Extract the Module System wherever it is easy to locate, e.g, the Desktop or My Documents.
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit&amp;section=4.html" title="Edit section: Module Sytem Files">edit</a>]</span> <span class="mw-headline" id="Module_Sytem_Files"> Module Sytem Files </span></h2>
+<p>Now, let's have a look at the files in the module system. When we look at the actual Python files (files that end with .py) we see that there are actually four kinds of files:
+</p>
+<pre>   * files that start with header_
+   * files that start with process_
+   * files that start with ID_
+   * files that start with module_ 
+</pre>
+<p>The first two kinds of files are necessary for running the module system. You shouldn't modify these at all. The third kind of files (ID_) are temporary files created while building the module. You can delete them if you like and the module system will generate them again. The final kind of files (module_) are actually the files that contain the content data. These are the files you will be modifying.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit&amp;section=5.html" title="Edit section: Creating a new module">edit</a>]</span> <span class="mw-headline" id="Creating_a_new_module"> Creating a new module </span></h2>
+<p>Before going any further, let's first create a folder for your new module. For this, we need to go to the Mount&amp;Blade/Modules folder (by default this is at "<tt>c:/Program Files/Mount&amp;Blade/Modules</tt>") Now, under the Modules folder there should be a folder named Native. This is, so to speak, the official module. For your own module, you must create a new folder here, and copy the files from Native to the new folder. This new folder will be your own module folder so name it as you like. For the sake of simplicity, I am assuming it is named MyNewModule
+</p><p>You can test if you have done this right by launching Mount&amp;Blade. Now, Mount&amp;Blade's launch window should show a combo box, which lets you select the module you'd like to play. Now, try selecting your new module and starting a new game. Since we copied the contents of the native folder for our new module, the game we play now will be identical to the native game.
+</p>
+Next, we must make the Module System use the new folder as its target. To do that, open the file module_info.py for editing (Right click on the file and select "Edit with IDLE"; or open the file with Notepad++ or your preferred text editor) and change export_dir to point to your new folder. For example, if the folder for your module is: <pre>c:/Program Files (x86)/Mount&amp;Blade/Modules/MyNewModule</pre>  You should change this line as follows:
+<pre>export_dir = &quot;C:/Program Files (x86)/Mount&amp;Blade/Modules/MyNewModule/&quot;</pre>
+<p>Now our module system setup should be ready. To try it out, remove the file conversation.txt inside our new module folder, and then double click on <b>build_module.bat</b>. You should see a command prompt with some output like this:
+</p><p><br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="apache source-apache"><pre class="de1">Initializing...
+Compiling <span class="kw2">all</span> global variables...
+Exporting strings...
+Exporting skills...
+Exporting tracks...
+Exporting animations...
+Exporting meshes...
+Exporting sounds...
+Exporting skins...
+Exporting map icons...
+Creating new tag_uses.txt file...
+Creating new quick_strings.txt file...
+Exporting faction data...
+Exporting item data...
+Exporting scene data...
+Exporting troops data
+Exporting particle data...
+Exporting scene props...
+Exporting tableau materials data...
+Exporting presentations...
+Exporting party_template data...
+Exporting parties
+Exporting quest data...
+Exporting scripts...
+Exporting mission_template data...
+Exporting game menus data...
+exporting simple triggers...
+exporting triggers...
+exporting dialogs...
+Checking global variable usages...
+&#160;
+______________________________
+&#160;
+<span class="kw1">Script</span> processing has ended.
+Press any key to exit. . .</pre></div></div>
+<p>If you ran into an error, make sure you've followed all the steps of this tutorial exactly, and if you think you have, please use the Search function on the forums; chances are someone has already run into the same problem and an easy solution has already been posted.
+</p><p>For those who get the error "IOError: [Errno 13] Permission denied", and "Run as administrator" returns "python: can't open file 'FILE_NAME.py': [Errno 2] No such file or directory",<br />
+Do this&#160;:
+right click <b>build_module.bat</b> and choose edit, then add this line "cd /d&#160;%~dp0" under the "@echo off".
+Example&#160;:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="apache source-apache"><pre class="de1">@echo <span class="kw2">off</span>
+cd /d&#160;%~dp0
+python process_init.py
+python process_global_variables.py
+...</pre></div></div>
+<p>(Tested on Win 7, May also work on other versions of Windows)
+</p><p><br />
+If not, congratulations! You're all set up to create your own mod with the M&amp;B module system.  Now let's move on to <a href="Official_Module_System_Documentation%253A_Part_02.html" title="Official Module System Documentation: Part 02">Part 2</a>.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 60/1000000
+Post-expand include size: 528/2097152 bytes
+Template argument size: 133/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:69-0!*!0!!en!* and timestamp 20200419213829 -->
+<div class="printfooter">
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_01.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_01</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-login"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_01.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_01.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_01&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="Official_Module_System_Documentation%253A_Part_01.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_01.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="Official_Module_System_Documentation%253A_Part_01.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_01.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_01.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_01&amp;oldid=365.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 29 June 2015, at 05:59.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 121 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Official_Module_System_Documentation:_Part_01", "wgTitle": "Official Module System Documentation: Part 01", "wgAction": "view", "wgArticleId": 69, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 365, "wgCategories": ["Official Documentation"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.142 secs. -->			</body>
+</html>

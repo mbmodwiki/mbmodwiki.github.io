@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Editing SceneObj - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=SceneObj&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=SceneObj&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=SceneObj&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<!--[if IE 8]><link rel="stylesheet" href="/skins/common/IE80Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-SceneObj skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Editing SceneObj</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=SceneObj&amp;action=edit.html#mw-head">navigation</a>,
+					<a href="index.php@title=SceneObj&amp;action=edit.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div id="mw-anon-edit-warning">
+<p><b>Warning:</b> You are not logged in.
+</p>
+Your IP address will be recorded in this page's edit history.</div>
+<div id="wikiPreview" class="ontop" style="display: none;"></div><div id='toolbar'>
+
+</div>
+<form id="editform" name="editform" method="post" action="http://mbmodwiki.ollclan.eu/index.php?title=SceneObj&amp;action=submit" enctype="multipart/form-data"><div id="checkmeout" style="display: none;">
+<label for="check">bot check.
+Do <b>NOT</b> fill this in!</label> <input type="text" name="check" id="check" value="" />
+<input type="hidden" name="swy-master" id="swy-master" value="ñ" />
+<input type="text" name="swy-magic" id="swy-magic" value="imasocool-yousuckbot!" />
+</div>
+<input type='hidden' value="" name="wpSection" />
+<input type='hidden' value="20200419223303" name="wpStarttime" />
+<input type='hidden' value="20120407170716" name="wpEdittime" />
+<input type='hidden' value="" name="wpScrolltop" id="wpScrolltop" />
+<input type="hidden" value="d41d8cd98f00b204e9800998ecf8427e" name="wpAutoSummary" /><input type="hidden" value="0" name="oldid" /><textarea tabindex="1" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" name="wpTextbox1">Mount&amp;Blade [[scene|Scenes]] are composed of two independent structures. First, every scene entry has a [[terrain key]], provided by the built-in visual terrain generator.
+
+Later on, through the in-game [[Scene Editor]], which is enabled with the [[Edit Mode]] option in the launcher, the [[scene]] can be altered, adding flora, painting and modifying terrain's appearance or even adding [[scene prop|scene props]].
+
+==Terrain Keys==
+
+The structure of the [[terrain keys|Terrain Key]], also known as [[terrain hashes|Terrain Hash]] or [[Terrain Codes]], is composed by five serialized chunks of 32 bits, encoded in hexadecimal notation where its properties are stored using bitwise operations.
+
+As shown in the table, the first parts are for the noise generator's algorithm, water presence, and lastly size and terrain palette of the environment.
+
+Decoded by courtesy of [http://forums.taleworlds.com/index.php?action=profile;u=84182 cmpxchg8b]
+
+{| border="0" style="color:navy" align="top" class="sortable wikitable" align="center"
+!value
+!key no.
+!shift
+!num bits
+|-
+|seed_1			||0			||0			||31
+|-
+|seed_2			||1			||0			||31
+|-
+|deep_water	 	||1			||31			||1
+|-
+|seed_3			||2			||0			||31
+|-
+|size_x			||3			||0			||10
+|-
+|size_y			||3			||10			||10
+|-
+|shade_occluded 		||3			||30			||1
+|-
+|place_river 		||3			||31			||1
+|-
+|valley			||4			||0			||7
+|-
+|hill_height		||4			||7			||7
+|-
+|ruggedness		||4			||14			||7
+|-
+|vegetation		||4			||21			||7
+|-
+|region_type		||4			||28			||4
+|-
+|region_detail		||5			||0			||2
+|-
+|disable_grass		||5			||2			||2
+|}
+
+===Terrain Code Generator | Client-side Browser Application===
+Exists an online clone of the in-game terrain generation window, made by [[User:Swyter | Swyter]].&lt;br>
+As we're talking about a self-contained, downloadable, standard HTML web page, it can also be used offline without losing functionality.&lt;br>
+&lt;br>
+It provides some advantages respect to the original implementation, like more options and customization ranges.&lt;br>
+Avoids the tedious process of launching the game for simple tweaks. And works quite faster.&lt;br>
+&lt;br>
+You can find it here: http://mbcommands.ollclan.eu/terrain/&lt;br>
+&lt;br>
+==SceneObj==
+
+The *.sco files, located in the /SceneObj folder of every module, are automatically generated by the in-game scene editor.&lt;br>
+Those are the files that alters the default Terrain key orography, provides [[entry point|entry points]] (spawn) positions and repainted terrain or scene props and extra manually supplied plants (known internally as objects).
+
+=== scoUtils ===
+
+After some tweaks and additions [[http://forums.taleworlds.com/index.php?action=profile;u=199605 Disgrntld]] released a tidied up version of
+the original parser shown below that he called scoUtils, accompanied by the screenshot of a example map and a procedural object (a roman ''coliseum'') made with code.
+
+'''''First release''''': [[http://mbmodwiki.ollclan.eu/downloads/scoUtils.tar.bz2 Mirrored here]]&lt;br>
+'''''Second release''''' (''includes headers''): [[http://mbmodwiki.ollclan.eu/downloads/scoUtils.tar-2.bz2 Mirrored here]] [[http://dl.dropbox.com/u/70112191/scoUtils.tar.bz2 Dropbox]]&lt;br>
+&lt;br>
+For more information take a look to the original thread:
+
+http://forums.taleworlds.com/index.php/topic,221975.0.html
+
+
+=== Heightmap Toolset ===
+
+Later on a working, open source tested implementation of ''SCO to PNG heightmap import and export'' was released in binary form by [[User:Swyter | Swyter]],
+these two tiny tools can be found at [[Scene Heightmap Imp/export Tools]]. They include &lt;tt>scopng&lt;/tt>, a drag-and-drop SceneObj to PNG/TGA/BMP conversion, and &lt;tt>pngsco&lt;/tt>, its complementary friend that reimports back any modifications made to the images, supports PNG/PSD/TGA/BMP/JPG.
+
+
+
+=== .SCO File Parser===
+
+Here's the original Standard C code for interacting with this file format, yet again courtesy of [http://forums.taleworlds.com/index.php?action=profile;u=84182 cmpxchg8b]
+&lt;syntaxhighlight lang="c">#include &lt;stdio.h>
+#include &lt;stdlib.h>
+
+#define SCO_MAGIC -717
+#define GROUND_PAINT_MAGIC -11873882
+#define GROUND_PAINT_ELEVATION_MAGIC -7793
+#define GROUND_PAINT_COLOR_MAGIC -12565
+
+typedef struct vector
+{
+	float x;
+	float y;
+	float z;
+} vector_t;
+
+typedef struct matrix
+{
+	vector_t v0;
+	vector_t v1;
+	vector_t v2;
+	vector_t o;
+} matrix_t;
+
+typedef struct ground_paint_layer
+{
+	char *ground_spec_id;
+	int ground_spec_no;
+	float *cells;
+} ground_paint_layer_t;
+
+typedef struct ground_paint
+{
+	int size_x;
+	int size_y;
+	int num_layers;
+	ground_paint_layer_t *layers;
+} ground_paint_t;
+
+typedef struct ai_mesh_vertex
+{
+	vector_t position;
+} ai_mesh_vertex_t;
+
+typedef struct ai_mesh_edge
+{
+	int start_vertex;
+	int end_vertex;
+} ai_mesh_edge_t;
+
+typedef struct ai_mesh_face
+{
+	int num_vertices;
+	int vertices[4];
+	int edges[4];
+	int unknown;
+} ai_mesh_face_t;
+
+typedef struct ai_mesh
+{
+	int num_vertices;
+	int num_edges;
+	int num_faces;
+	ai_mesh_vertex_t *vertices;
+	ai_mesh_edge_t *edges;
+	ai_mesh_face_t *faces;
+} ai_mesh_t;
+
+typedef struct mission_object
+{
+	char *id;
+	int meta_type; // 0 = scene prop, 1 = entry point, 2 = scene item, 4 = flora, 5 = passage
+	int sub_kind_no;
+	int variation_id;
+	int variation_id_2;
+	matrix_t position;
+	vector_t scale;
+} mission_object_t;
+
+typedef struct sco_file
+{
+	int version;
+	int num_mission_objects;
+	mission_object_t *mission_objects;
+	ai_mesh_t *ai_mesh;
+	ground_paint_t *ground_paint;
+} sco_file_t;
+
+void read(FILE *file, size_t size, void *dest)
+{
+	if (dest)
+		fread(dest, size, 1, file);
+}
+
+void read_int(FILE *file, int *dest)
+{
+	read(file, 4, dest);
+}
+
+void read_char(FILE *file, char *dest)
+{
+	read(file, 1, dest);
+}
+
+void read_float(FILE *file, float *dest)
+{
+	read(file, 4, dest);
+}
+
+void read_string(FILE *file, char **dest)
+{
+	int length;
+	
+	read_int(file, &amp;length);
+	*dest = malloc(length + 1);
+	read(file, length, *dest);
+	(*dest)[length] = '\0';
+}
+
+void read_vector(FILE *file, vector_t *dest)
+{
+	read_float(file, &amp;dest->x);
+	read_float(file, &amp;dest->y);
+	read_float(file, &amp;dest->z);
+}
+
+void read_matrix(FILE *file, matrix_t *dest)
+{
+	read_vector(file, &amp;dest->v0);
+	read_vector(file, &amp;dest->v1);
+	read_vector(file, &amp;dest->v2);
+	read_vector(file, &amp;dest->o);
+}
+
+int main(int argc, char **argv)
+{
+	if (argc &lt; 2)
+	{
+		printf("Usage: %s filename\n", argv[0]);
+		return EXIT_FAILURE;
+	}
+	
+	FILE *file = fopen(argv[1], "rb");
+	
+	if (!file)
+	{
+		printf("ERROR: file %s not found\n", argv[1]);
+		return EXIT_FAILURE;
+	}
+	
+	fseek(file, 0, SEEK_END);
+	
+	long file_size = ftell(file);
+	
+	fseek(file, 0, SEEK_SET);
+	
+	printf("Reading %s\n", argv[1]);
+	
+	sco_file_t sco_file;
+	int magic;
+	
+	read_int(file, &amp;magic);
+	
+	if (magic == SCO_MAGIC)
+	{
+		read_int(file, &amp;sco_file.version);
+		read_int(file, &amp;sco_file.num_mission_objects);
+	}
+	else
+	{
+		sco_file.version = 0;
+		sco_file.num_mission_objects = magic;
+	}
+	
+	printf("SCO file version: %d\n", sco_file.version);
+	printf("Mission object count: %d\n", sco_file.num_mission_objects);
+	
+	sco_file.mission_objects = malloc(sco_file.num_mission_objects * sizeof(mission_object_t));
+	
+	for (int i = 0; i &lt; sco_file.num_mission_objects; ++i)
+	{
+		read_int(file, &amp;sco_file.mission_objects[i].meta_type);
+		read_int(file, &amp;sco_file.mission_objects[i].sub_kind_no);
+		fseek(file, 4, SEEK_CUR); // unused
+		read_matrix(file, &amp;sco_file.mission_objects[i].position);
+		read_string(file, &amp;sco_file.mission_objects[i].id);
+		read_int(file, &amp;sco_file.mission_objects[i].variation_id);
+		
+		if (sco_file.version >= 2)
+			read_int(file, &amp;sco_file.mission_objects[i].variation_id_2);
+		else
+			sco_file.mission_objects[i].variation_id_2 = 0;
+		
+		if (sco_file.version >= 3)
+			read_vector(file, &amp;sco_file.mission_objects[i].scale);
+		else
+		{
+			sco_file.mission_objects[i].scale.x = 1.0f;
+			sco_file.mission_objects[i].scale.y = 1.0f;
+			sco_file.mission_objects[i].scale.z = 1.0f;
+		}
+	}
+		
+	if (sco_file.version >= 4)
+	{
+		int ai_mesh_size;
+		
+		read_int(file, &amp;ai_mesh_size);
+		
+		long start_pos = ftell(file);
+		
+		sco_file.ai_mesh = malloc(sizeof(ai_mesh_t));
+		
+		read_int(file, &amp;sco_file.ai_mesh->num_vertices);
+		sco_file.ai_mesh->vertices = malloc(sco_file.ai_mesh->num_vertices * sizeof(ai_mesh_vertex_t));
+		
+		printf("AI mesh vertex count: %d\n", sco_file.ai_mesh->num_vertices);
+		
+		for (int i = 0; i &lt; sco_file.ai_mesh->num_vertices; ++i)
+		{
+			read_vector(file, &amp;sco_file.ai_mesh->vertices[i].position);
+		}
+		
+		read_int(file, &amp;sco_file.ai_mesh->num_edges);
+		sco_file.ai_mesh->edges = malloc(sco_file.ai_mesh->num_edges * sizeof(ai_mesh_edge_t));
+		
+		printf("AI mesh edge count: %d\n", sco_file.ai_mesh->num_edges);
+		
+		for (int i = 0; i &lt; sco_file.ai_mesh->num_edges; ++i)
+		{
+			fseek(file, 4, SEEK_CUR); // unused
+			read_int(file, &amp;sco_file.ai_mesh->edges[i].start_vertex);
+			read_int(file, &amp;sco_file.ai_mesh->edges[i].end_vertex);
+			fseek(file, 8, SEEK_CUR); // unused
+		}
+		
+		read_int(file, &amp;sco_file.ai_mesh->num_faces);
+		sco_file.ai_mesh->faces = malloc(sco_file.ai_mesh->num_faces * sizeof(ai_mesh_face_t));
+		
+		printf("AI mesh face count: %d\n", sco_file.ai_mesh->num_faces);
+		
+		for (int i = 0; i &lt; sco_file.ai_mesh->num_faces; ++i)
+		{
+			read_int(file, &amp;sco_file.ai_mesh->faces[i].num_vertices);
+			
+			for (int j = 0; j &lt; sco_file.ai_mesh->faces[i].num_vertices; ++j)
+			{
+				read_int(file, &amp;sco_file.ai_mesh->faces[i].vertices[j]);
+			}
+			
+			for (int j = 0; j &lt; sco_file.ai_mesh->faces[i].num_vertices; ++j)
+			{
+				read_int(file, &amp;sco_file.ai_mesh->faces[i].edges[j]);
+			}
+			
+			read_int(file, &amp;sco_file.ai_mesh->faces[i].unknown);
+			
+			if (sco_file.ai_mesh->faces[i].unknown > 0)
+				read_int(file, &amp;sco_file.ai_mesh->faces[i].unknown);
+			else
+				sco_file.ai_mesh->faces[i].unknown = 0;
+		}
+		
+		long end_pos = ftell(file);
+		
+		if (end_pos - start_pos != ai_mesh_size)
+		{
+			printf("ERROR: failed to read AI mesh\n");
+			fclose(file);
+			return EXIT_FAILURE;
+		}
+	}
+	else
+		sco_file.ai_mesh = NULL;
+	
+	if (ftell(file) != file_size)
+	{
+		read_int(file, &amp;magic);
+		
+		if (magic != GROUND_PAINT_MAGIC)
+		{
+			printf("ERROR: wrong ground paint magic\n");
+			fclose(file);
+			return EXIT_FAILURE;
+		}
+		
+		int ground_paint_size;
+		
+		read_int(file, &amp;ground_paint_size);
+		
+		long start_pos = ftell(file);
+		
+		sco_file.ground_paint = malloc(sizeof(ground_paint_t));
+		
+		read_int(file, &amp;sco_file.ground_paint->num_layers);
+		sco_file.ground_paint->layers = malloc(sco_file.ground_paint->num_layers * sizeof(ground_paint_layer_t));
+		
+		printf("Ground paint layer count: %d\n", sco_file.ground_paint->num_layers);
+		
+		read_int(file, &amp;sco_file.ground_paint->size_x);
+		read_int(file, &amp;sco_file.ground_paint->size_y);
+		
+		for (int i = 0; i &lt; sco_file.ground_paint->num_layers; ++i)
+		{
+			read_int(file, &amp;sco_file.ground_paint->layers[i].ground_spec_no);
+			read_string(file, &amp;sco_file.ground_paint->layers[i].ground_spec_id);
+			
+			int has_cells;
+			
+			read_int(file, &amp;has_cells);
+			
+			if (has_cells)
+			{
+				sco_file.ground_paint->layers[i].cells = malloc(sco_file.ground_paint->size_x * sco_file.ground_paint->size_y * sizeof(float));
+				
+				int empty = 1;
+				int count;
+				
+				read_int(file, &amp;count);
+				
+				for (int y = 0; y &lt; sco_file.ground_paint->size_y; ++y)
+				{
+					for (int x = 0; x &lt; sco_file.ground_paint->size_x; ++x)
+					{
+						if (!count)
+						{
+							empty = !empty;
+							read_int(file, &amp;count);
+						}
+						
+						count--;
+						
+						float value;
+						
+						if (empty)
+						{
+							if (sco_file.ground_paint->layers[i].ground_spec_no == GROUND_PAINT_COLOR_MAGIC)
+								value = -1.0f;
+							else
+								value = 0.0f;
+						}
+						else
+						{
+							if (sco_file.ground_paint->layers[i].ground_spec_no &lt; 0)
+								read_float(file, &amp;value);
+							else
+							{
+								char cvalue;
+								
+								read_char(file, &amp;cvalue);
+								value = cvalue / 255.0f;
+							}
+						}
+						
+						sco_file.ground_paint->layers[i].cells[x * sco_file.ground_paint->size_y + y] = value;
+					}
+				}
+			}
+			else
+				sco_file.ground_paint->layers[i].cells = NULL;
+		}
+		
+		long end_pos = ftell(file);
+		
+		if (end_pos - start_pos != ground_paint_size)
+		{
+			printf("ERROR: failed to read ground paint\n");
+			fclose(file);
+			return EXIT_FAILURE;
+		}
+	}
+	else
+		sco_file.ground_paint = NULL;
+	
+	fclose(file);
+	return EXIT_SUCCESS;
+}&lt;/syntaxhighlight>
+
+==Notes==
+Code and analysis of the disassembled structures posted on the forums within the following thread:
+http://forums.taleworlds.com/index.php/topic,184470.html
+
+ [[category:File-Type Structure]]
+</textarea><div id="editpage-copywarn">
+<p>Please note that all contributions to Mount&amp;Blade Modding Wiki are considered to be released under the Public Domain (see <a href="http://mbmodwiki.ollclan.eu/index.php?title=ModdingWiki:Copyrights&amp;action=edit&amp;redlink=1" class="new" title="ModdingWiki:Copyrights (page does not exist)">ModdingWiki:Copyrights</a> for details).
+If you do not want your writing to be edited mercilessly and redistributed at will, then do not submit it here.<br />
+You are also promising us that you wrote this yourself, or copied it from a public domain or similar free resource.
+<b>Do not submit copyrighted work without permission!</b>
+</p>
+</div>
+<div class='editOptions'>
+<span class="mw-summary" id="wpSummaryLabel"><label for="wpSummary">Summary:</label></span> <input class="mw-summary" id="wpSummary" maxlength="200" tabindex="1" size="60" spellcheck="true" title="Enter a short summary [b]" accesskey="b" name="wpSummary" /><div class='editCheckboxes'>
+</div>
+<div class='editButtons'>
+<input id="imDone" name="imDone" type="submit" tabindex="3" value="Save page" accesskey="s" title="Save your changes [s]" />
+<input id="wpPreview" name="wpPreview" type="submit" tabindex="4" value="Show preview" accesskey="p" title="Preview your changes, please use this before saving! [p]" />
+
+<input id="wpDiff" name="wpDiff" type="submit" tabindex="5" value="Show changes" accesskey="v" title="Show which changes you made to the text [v]" />
+	<span class='editHelp'><a href="SceneObj.html" title="SceneObj" id="mw-editform-cancel">Cancel</a> | <a target="helpwindow" href="http://mbmodwiki.ollclan.eu/Help:Editing">Editing help</a> (opens in new window)</span>
+</div><!-- editButtons -->
+</div><!-- editOptions -->
+
+<input type="hidden" value="+\" name="wpEditToken" />
+<div class="mw-editTools"></div>
+<div class='templatesUsed'>
+
+</div>
+<div class='hiddencats'>
+
+</div></form>
+<div class="printfooter">
+Retrieved from "<a href="SceneObj.html">http://mbmodwiki.ollclan.eu/SceneObj</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=SceneObj&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="SceneObj.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ASceneObj&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=SceneObj&amp;action=edit.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view"><span><a href="SceneObj.html" >Read</a></span></li>
+					<li id="ca-edit" class="selected"><span><a href="index.php@title=SceneObj&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=SceneObj&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=SceneObj&amp;action=edit.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/SceneObj.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/SceneObj.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+													</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+																		<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "SceneObj", "wgTitle": "SceneObj", "wgAction": "edit", "wgArticleId": 107, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 575, "wgCategories": [], "wgBreakFrames": true, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.edit", "mediawiki.action.edit", "ext.wikiEditor.dialogs", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) { addButton("/skins/common/images/button_bold.png","Bold text","\'\'\'","\'\'\'","Bold text","mw-editbutton-bold");
+addButton("/skins/common/images/button_italic.png","Italic text","\'\'","\'\'","Italic text","mw-editbutton-italic");
+addButton("/skins/common/images/button_link.png","Internal link","[[","]]","Link title","mw-editbutton-link");
+addButton("/skins/common/images/button_extlink.png","External link (remember http:// prefix)","[","]","http://www.example.com link title","mw-editbutton-extlink");
+addButton("/skins/common/images/button_headline.png","Level 2 headline","\n== "," ==\n","Headline text","mw-editbutton-headline");
+addButton("/skins/common/images/button_nowiki.png","Ignore wiki formatting","\x3cnowiki\x3e","\x3c/nowiki\x3e","Insert non-formatted text here","mw-editbutton-nowiki");
+addButton("/skins/common/images/button_sig.png","Your signature with timestamp","--~~~~","","","mw-editbutton-signature");
+addButton("/skins/common/images/button_hr.png","Horizontal line (use sparingly)","\n----\n","","","mw-editbutton-hr");
+ }</script>
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.163 secs. -->			</body>
+</html>

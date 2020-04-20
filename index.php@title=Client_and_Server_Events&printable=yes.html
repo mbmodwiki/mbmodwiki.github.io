@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Client and Server Events - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Client_and_Server_Events&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Client_and_Server_Events&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Client_and_Server_Events&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;%252A.css" />
+
+<style type="text/css">/*<![CDATA[*/
+.source-python {line-height: normal;}
+.source-python li, .source-python pre {
+	line-height: normal; border: 1px dashed #2f6fab;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for python
+ * CSS class: source-python, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.python.source-python .de1, .python.source-python .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.python.source-python  {font-family:monospace;}
+.python.source-python .imp {font-weight: bold; color: red;}
+.python.source-python li, .python.source-python .li1 {font-weight: normal; vertical-align:top;}
+.python.source-python .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.python.source-python .li2 {font-weight: bold; vertical-align:top;}
+.python.source-python .kw1 {color: #ff7700;font-weight:bold;}
+.python.source-python .kw2 {color: #008000;}
+.python.source-python .kw3 {color: #dc143c;}
+.python.source-python .kw4 {color: #0000cd;}
+.python.source-python .co1 {color: #808080; font-style: italic;}
+.python.source-python .coMULTI {color: #808080; font-style: italic;}
+.python.source-python .es0 {color: #000099; font-weight: bold;}
+.python.source-python .br0 {color: black;}
+.python.source-python .sy0 {color: #66cc66;}
+.python.source-python .st0 {color: #483d8b;}
+.python.source-python .nu0 {color: #ff4500;}
+.python.source-python .me1 {color: black;}
+.python.source-python .ln-xtra, .python.source-python li.ln-xtra, .python.source-python div.ln-xtra {background-color: #ffc;}
+.python.source-python span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "index.php@title=MediaWiki%253AGeshi.css&usemsgcache=yes&action=raw&ctype=text%252Fcss&smaxage=18000.css";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Client_and_Server_Events skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Client and Server Events</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Client_and_Server_Events&amp;printable=yes.html#mw-head">navigation</a>,
+					<a href="index.php@title=Client_and_Server_Events&amp;printable=yes.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<h2> <span class="mw-headline" id="Client_and_Server_Events"> Client and Server Events </span></h2>
+<p><b>Originally Written by:</b> Yoshiboy
+</p><p><b>Python Files Used:</b> Module_Scripts.py, Module_Items.py and Module_Common.py
+</p><p><br />
+<b>Part 1 - How to think about multiplayer modding</b>
+</p><p>Ok, so the first problem we ran into with this sort of thing in Hunt was that gun sounds would only play on the computer of the player who shot them. Of course this wasn't really the end of the world - but it was a pain - so I looked into how we could get them to sync. In this tutorial I'm going to be going through how to add new server and client events, in this case to enable our gun sounds (or any other sounds) to sync between players. So the running example will be this gun event - but it should be applicable to basically all other events you'll need and problems of the same sort.
+</p><p>What I did first was take a look at all the new multiplayer commands. We've got some ones which look like this:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="co1"># multiplayer</span>
+multiplayer_send_message_to_server   = <span class="nu0">388</span> <span class="co1"># (multiplayer_send_int_to_server, &lt;message_type&gt;),</span>
+multiplayer_send_int_to_server       = <span class="nu0">389</span> <span class="co1"># (multiplayer_send_int_to_server, &lt;message_type&gt;, &lt;value&gt;),</span>
+multiplayer_send_2_int_to_server     = <span class="nu0">390</span> <span class="co1"># (multiplayer_send_2_int_to_server, &lt;message_type&gt;, &lt;value&gt;, &lt;value&gt;),</span>
+multiplayer_send_3_int_to_server     = <span class="nu0">391</span> <span class="co1"># (multiplayer_send_3_int_to_server, &lt;message_type&gt;, &lt;value&gt;, &lt;value&gt;, &lt;value&gt;),</span>
+multiplayer_send_4_int_to_server     = <span class="nu0">392</span> <span class="co1"># (multiplayer_send_4_int_to_server, &lt;message_type&gt;, &lt;value&gt;, &lt;value&gt;, &lt;value&gt;, &lt;value&gt;),</span>
+multiplayer_send_string_to_server    = <span class="nu0">393</span> <span class="co1"># (multiplayer_send_string_to_server, &lt;message_type&gt;, &lt;string_id&gt;),</span>
+multiplayer_send_message_to_player   = <span class="nu0">394</span> <span class="co1"># (multiplayer_send_message_to_player, &lt;player_id&gt;, &lt;message_type&gt;),</span>
+multiplayer_send_int_to_player       = <span class="nu0">395</span> <span class="co1"># (multiplayer_send_int_to_player, &lt;player_id&gt;, &lt;message_type&gt;, &lt;value&gt;),</span>
+multiplayer_send_2_int_to_player     = <span class="nu0">396</span> <span class="co1"># (multiplayer_send_2_int_to_player, &lt;player_id&gt;, &lt;message_type&gt;, &lt;value&gt;, &lt;value&gt;),</span>
+multiplayer_send_3_int_to_player     = <span class="nu0">397</span> <span class="co1"># (multiplayer_send_3_int_to_player, &lt;player_id&gt;, &lt;message_type&gt;, &lt;value&gt;, &lt;value&gt;, &lt;value&gt;),</span>
+multiplayer_send_4_int_to_player     = <span class="nu0">398</span> <span class="co1"># (multiplayer_send_4_int_to_player, &lt;player_id&gt;, &lt;message_type&gt;, &lt;value&gt;, &lt;value&gt;, &lt;value&gt;, &lt;value&gt;),</span>
+multiplayer_send_string_to_player    = <span class="nu0">399</span> <span class="co1"># (multiplayer_send_string_to_player, &lt;player_id&gt;, &lt;message_type&gt;, &lt;string_id&gt;),</span></pre></div></div>
+<p>All these seem to be about sending things between the players and the server. More on these later.
+</p><p>Also we have this one:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">multiplayer_is_server                = <span class="nu0">417</span> <span class="co1"># (multiplayer_is_server),</span></pre></div></div>
+<p>Which is a conditional thing in "try" blocks which only allows the server to execute the commands following it (you can also negate it with neg| to make it client only)
+</p><p>So basically the server and the client both run the whole module in it's entirety with the exception of the server running these "multiplayer_is_server" blocks and the client only running the negated ones. Most of the time this actually works really well for us - along with all the hard coded stuff this means almost everything is already synced. We only run into issues with a few things. Like when the player or server generated a random number - these will be different. Or when the player does certain things like executing the code after firing a weapon or the code after interacting with a scene prop - this is something the server doesn't track or take into account.
+</p><p>So when you're thinking about multiplayer modding, just remember the following:
+</p>
+<ul><li> Each client and the server run the whole module in it's entirety with the exception of the server running "multiplayer_is_server" blocks and the client running the negated ones.
+</li><li> The Server sees everyone else as just another "agent" or, in more depth, a "player". It doesn't keep track of what is happening at their end.
+</li><li> Same goes for the client - everyone is just another "player" and all it tries to do is put them in the right position, doing the right thing.
+</li></ul>
+<p><br />
+</p><p><b>Part 2 - Setting up our gun</b>
+</p><p>So taking a quick look at the gun code:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#91;</span><span class="st0">&quot;flintlock_pistol&quot;</span>, <span class="st0">&quot;Flintlock Pistol&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#40;</span><span class="st0">&quot;flintlock_pistol&quot;</span>,<span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#93;</span>, itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, <span class="nu0">230</span> , weight<span class="br0">&#40;</span><span class="nu0">1.5</span><span class="br0">&#41;</span>|difficulty<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>|spd_rtng<span class="br0">&#40;</span><span class="nu0">38</span><span class="br0">&#41;</span> | shoot_speed<span class="br0">&#40;</span><span class="nu0">160</span><span class="br0">&#41;</span> | thrust_damage<span class="br0">&#40;</span><span class="nu0">45</span> ,pierce<span class="br0">&#41;</span>|max_ammo<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>|accuracy<span class="br0">&#40;</span><span class="nu0">65</span><span class="br0">&#41;</span>,imodbits_none,
+ <span class="br0">&#91;</span><span class="br0">&#40;</span>ti_on_weapon_attack, <span class="br0">&#91;</span><span class="br0">&#40;</span>play_sound,<span class="st0">&quot;snd_pistol_shot&quot;</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span>position_move_x, pos1,<span class="nu0">27</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span>position_move_y, pos1,<span class="nu0">36</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span>particle_system_burst, <span class="st0">&quot;psys_pistol_smoke&quot;</span>, pos1, <span class="nu0">15</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#93;</span>,</pre></div></div>
+<p>It's fairly obvious what is wrong. The (play_sound,"snd_pistol_shot") just plays a noise on the client which uses it, and doesn't send data to everyone else.
+</p><p><i>(Note: the particle stuff seems to already have hardcoded events so we don't have to sync this.)</i>
+</p><p>The solution is to use one of the new multiplayer commands, to send the data to the server, telling everyone that we've shot the gun, so that he can then relay this to all the other players. But all those commands take a &lt;message_type&gt; parameter. You might be wondering what this is. Well it's the event type - of which all the current ones are listed in header_common, and we need to set up our own before we can use the command. We're adding a new "client_event", because it is the client who is sending the message to the server. We'll call ours "multiplayer_event_sound_made_by_player"
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">...
+<span class="me1">multiplayer_event_admin_set_friendly_fire_damage_self_ratio</span>   = <span class="nu0">40</span>
+multiplayer_event_admin_set_friendly_fire_damage_friend_ratio = <span class="nu0">41</span>
+multiplayer_event_admin_set_allow_player_banners              = <span class="nu0">42</span>
+multiplayer_event_admin_set_force_default_armor               = <span class="nu0">43</span>
+multiplayer_event_admin_set_anti_cheat                        = <span class="nu0">44</span>
+&#160;
+<span class="co1"># NEW EVENTS</span>
+&#160;
+multiplayer_event_sound_made_by_player = <span class="nu0">45</span>
+&#160;
+...</pre></div></div>
+<p><i>(Note: In newer versions of M&amp;B more events have been added, so the constant numbers above might have to be changed. Just make sure there are no two event numbers that overlap and that you don't go above 128 because this is the hardcoded limit. If you need more events, consider using sub-events by always using one event number but then passing an extra parameter to differentiate between what you want to do.)</i>
+</p><p>Now changing the gun code so that it uses the event is fairly simple. We remove the "play_sound" command and replace it with our new message to the server. Idealy we'll want the server to relay this sound event back to all players - including the one who made the sound.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="br0">&#91;</span><span class="st0">&quot;flintlock_pistol&quot;</span>, <span class="st0">&quot;Flintlock Pistol&quot;</span>, <span class="br0">&#91;</span><span class="br0">&#40;</span><span class="st0">&quot;flintlock_pistol&quot;</span>,<span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#93;</span>, itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, <span class="nu0">230</span> , weight<span class="br0">&#40;</span><span class="nu0">1.5</span><span class="br0">&#41;</span>|difficulty<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>|spd_rtng<span class="br0">&#40;</span><span class="nu0">38</span><span class="br0">&#41;</span> | shoot_speed<span class="br0">&#40;</span><span class="nu0">160</span><span class="br0">&#41;</span> | thrust_damage<span class="br0">&#40;</span><span class="nu0">45</span> ,pierce<span class="br0">&#41;</span>|max_ammo<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>|accuracy<span class="br0">&#40;</span><span class="nu0">65</span><span class="br0">&#41;</span>,imodbits_none,
+ <span class="br0">&#91;</span><span class="br0">&#40;</span>ti_on_weapon_attack, <span class="br0">&#91;</span><span class="br0">&#40;</span>multiplayer_send_int_to_server,multiplayer_event_sound_made_by_player,<span class="st0">&quot;snd_pistol_shot&quot;</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span>position_move_x, pos1,<span class="nu0">27</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span>position_move_y, pos1,<span class="nu0">36</span><span class="br0">&#41;</span>,<span class="br0">&#40;</span>particle_system_burst, <span class="st0">&quot;psys_pistol_smoke&quot;</span>, pos1, <span class="nu0">15</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#93;</span>,</pre></div></div>
+<p><br />
+</p><p><b>Part 3 - Telling the server what to do</b>
+</p><p>So now we've got the gun sending a message to the server, but the server doesn't know what to do when it receives this message, so we need to add some code for that. Open up module_scripts and search for this script "game_receive_network_message".
+</p><p>This is a very important script. Basically it is the script which is called whenever any of the new "multiplayer_send_X_to_Y" commands are used, and the various script parameters correspond to the extra data which is send by the command. So in here, we want to add some code that is executed when it picks up on our messages. Slightly confusingly we want to add our code into the section labelled with "SERVER EVENTS" as it is the server which executes our stuff. We'll add our code right at the end so scroll down to just above where we have "CLIENT EVENTS" in a comment block and we'll add some code:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">...
+          <span class="br0">&#40;</span>assign, <span class="st0">&quot;$g_multiplayer_force_default_armor&quot;</span>, <span class="st0">&quot;:value&quot;</span><span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,
+      <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+&#160;
+	  <span class="co1"># NEW EVENTS ADDED</span>
+&#160;
+	  <span class="br0">&#40;</span>eq,<span class="st0">&quot;:event_type&quot;</span>, multiplayer_event_sound_made_by_player<span class="br0">&#41;</span>,
+	  <span class="br0">&#40;</span>neq,<span class="st0">&quot;:player_no&quot;</span>,<span class="nu0">0</span><span class="br0">&#41;</span>,
+	  <span class="br0">&#40;</span>store_script_param, <span class="st0">&quot;:sound&quot;</span>, <span class="nu0">3</span><span class="br0">&#41;</span>,
+&#160;
+          <span class="br0">&#40;</span>get_max_players, <span class="st0">&quot;:num_players&quot;</span><span class="br0">&#41;</span>,
+          <span class="br0">&#40;</span>try_for_range, <span class="st0">&quot;:cur_player&quot;</span>, <span class="nu0">0</span>, <span class="st0">&quot;:num_players&quot;</span><span class="br0">&#41;</span>,
+            <span class="br0">&#40;</span>player_is_active,<span class="st0">&quot;:cur_player&quot;</span><span class="br0">&#41;</span>,
+            <span class="br0">&#40;</span>multiplayer_send_2_int_to_player, <span class="st0">&quot;:cur_player&quot;</span>, multiplayer_event_sound_at_player, <span class="st0">&quot;:sound&quot;</span>,<span class="st0">&quot;:player_no&quot;</span><span class="br0">&#41;</span>,
+          <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,
+&#160;
+	  <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+&#160;
+	  <span class="co1"># END NEW EVENTS ADDED</span>
+&#160;
+        <span class="co1">###############</span>
+        <span class="co1">#CLIENT EVENTS#</span>
+        <span class="co1">###############</span>
+        <span class="br0">&#40;</span>neq, multiplayer_is_server<span class="br0">&#41;</span>,
+        <span class="br0">&#40;</span>try_begin<span class="br0">&#41;</span>,      
+...</pre></div></div>
+<p>Ok so we've got a few things going on here. First of all you'll notice a new event I've sneaked in - "multiplayer_event_sound_at_player". We'll need to add this to header_common, under the server events section (as it is the server who uses it)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">...
+<span class="me1">multiplayer_event_return_anti_cheat</span>                           = <span class="nu0">104</span>
+&#160;
+<span class="co1"># NEW SERVER EVENTS</span>
+&#160;
+multiplayer_event_sound_at_player = <span class="nu0">105</span>
+...</pre></div></div>
+<p>This is the event which the clients pick up, to tell them that some player (":player_no") has made a sound (":sound"). ":player_no" is a variable grabbed right at the beginning of the script, and corresponds to the player who send the event message to the server in the first place. ":sound" is just the sound variable which was sent by the player - we grab this from the script parameters.
+</p><p>Then finally we have a try for range block - which loops over all the players, and sends them this message. And we're done with the server.
+</p><p><br />
+</p><p><br />
+<b>Part 4 - Telling the clients what to do</b>
+</p><p>Getting the clients to do the right thing is actually really quite similar. You might have spotted the massive comments block labelled "CLIENT EVENTS" and this is exactly where we are going to add our code for catching this new message the server just sent out. Scroll down right to the bottom of this "CLIENT EVENTS" block and we'll add our new code.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1">...
+            <span class="br0">&#40;</span>store_add, <span class="st0">&quot;$g_my_spawn_count&quot;</span>, <span class="st0">&quot;$g_my_spawn_count&quot;</span>, <span class="st0">&quot;:value&quot;</span><span class="br0">&#41;</span>,
+          <span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+            <span class="br0">&#40;</span>assign, <span class="st0">&quot;$g_my_spawn_count&quot;</span>, <span class="st0">&quot;:value&quot;</span><span class="br0">&#41;</span>,      
+          <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,
+&#160;
+		<span class="co1"># NEW CLIENT EVENTS</span>
+&#160;
+		<span class="br0">&#40;</span>else_try<span class="br0">&#41;</span>,
+			<span class="br0">&#40;</span>eq, <span class="st0">&quot;:event_type&quot;</span>, multiplayer_event_sound_at_player<span class="br0">&#41;</span>,
+			<span class="br0">&#40;</span>store_script_param, <span class="st0">&quot;:sound&quot;</span>, <span class="nu0">3</span><span class="br0">&#41;</span>,
+			<span class="br0">&#40;</span>store_script_param, <span class="st0">&quot;:player&quot;</span>, <span class="nu0">4</span><span class="br0">&#41;</span>,
+&#160;
+			<span class="br0">&#40;</span>player_get_agent_id,<span class="st0">&quot;:agent&quot;</span>,<span class="st0">&quot;:player&quot;</span><span class="br0">&#41;</span>,
+&#160;
+			<span class="br0">&#40;</span>try_begin<span class="br0">&#41;</span>,
+			<span class="br0">&#40;</span>neq,<span class="st0">&quot;:agent&quot;</span>,-<span class="nu0">1</span><span class="br0">&#41;</span>,
+				<span class="br0">&#40;</span>display_message,<span class="st0">&quot;@BANG!&quot;</span><span class="br0">&#41;</span>, <span class="co1"># This is just a debug message, it isn't essential.</span>
+				<span class="br0">&#40;</span>agent_play_sound,<span class="st0">&quot;:agent&quot;</span>,<span class="st0">&quot;:sound&quot;</span><span class="br0">&#41;</span>,
+			<span class="br0">&#40;</span>end_try<span class="br0">&#41;</span>,
+&#160;
+		<span class="co1"># END NEW CLIENT EVENTS  </span>
+&#160;
+        <span class="br0">&#40;</span>try_end<span class="br0">&#41;</span>,
+     <span class="br0">&#93;</span><span class="br0">&#41;</span>, 
+...</pre></div></div> 
+<p>So this is all fairly straight foward. We test to see if it is our new event, if so we grab the parameter for which sound was made and which player made the sound. Then we find the agent that player uses and get it to make the sound. I've also added a debug message for testing. To stop some errors we also have to test for a null agent.
+</p><p><br />
+</p><p><br />
+<b>Part 5 - You're done</b>
+</p><p>And this is it. Believe it or not you're done. Compile your code, load up the server running your new mod, get a couple of players on there and shoot away.
+</p><p><img src="http://www.theorangeduck.com/other_stuff/bang.png" alt="bang.png" />
+</p><p>Finally it is probably worth noting the difference between dedicated servers and hosted games and how this effects your code. The main difference is that in hosted games, player number 0 is also a player playing the game (and as such will have to be sent sound events and the like) where as with a dedicated server, player number 0 is always the server. This can get you into different bits of trouble if you're not careful and I believe there have been introduced some other peculiarities in recent versions too which I'm not familiar with. The way to see if the game is running as dedicated or hosted is to use the command "multiplayer_is_dedicated_server".
+</p><p>Lots of people have been saying they did this tutorial exactly and that it didn't work (i.e didn't play any sound). I'd love to help you, but realize that I cannot read minds. Unless you give me some more info then I don't have any more idea than you on how to get it working. What you should do at this point is try adding in some debug messages using "display_message" to see what parts of the code are getting executed and which are not. Really any info will help me tell you where things might be going wrong.
+</p><p>If anyone finds any errors in the tutorial or has any issues then please say. I did test it in-game and it was being a bit funny (although the code is exactly the same as for hunt so I'm not sure why).
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 26/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:11-0!*!0!!*!*!edit=0 and timestamp 20200419223153 -->
+<div class="printfooter">
+Retrieved from "<a href="Client_and_Server_Events.html">http://mbmodwiki.ollclan.eu/Client_and_Server_Events</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253ATutorials.html" title="Category:Tutorials">Tutorials</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Client_and_Server_Events&amp;returntoquery=printable=yes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Client_and_Server_Events.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AClient_and_Server_Events&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Client_and_Server_Events&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Client_and_Server_Events.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Client_and_Server_Events&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Client_and_Server_Events&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Client_and_Server_Events&amp;printable=yes.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Client_and_Server_Events.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Client_and_Server_Events.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php@title=Client_and_Server_Events&amp;oldid=113.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 29 July 2011, at 19:08.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 12 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Client_and_Server_Events", "wgTitle": "Client and Server Events", "wgAction": "view", "wgArticleId": 11, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 113, "wgCategories": ["Tutorials"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.290 secs. -->			</body>
+</html>

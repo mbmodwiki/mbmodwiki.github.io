@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>SceneObj - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="canonical" href="SceneObj.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=SceneObj&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=SceneObj&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=SceneObj&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<style type="text/css">/*<![CDATA[*/
+.source-c {line-height: normal;}
+.source-c li, .source-c pre {
+	line-height: normal; border: 1px dashed #2f6fab;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "index.php@title=MediaWiki%253AGeshi.css&usemsgcache=yes&action=raw&ctype=text%252Fcss&smaxage=18000.css";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-SceneObj skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">SceneObj</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub">(Redirected from <a href="index.php@title=Terrain_code&amp;redirect=no.html" title="Terrain code">Terrain code</a>)</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="Terrain_code.html#mw-head">navigation</a>,
+					<a href="Terrain_code.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p>Mount&amp;Blade <a href="Scene.html" title="Scene">Scenes</a> are composed of two independent structures. First, every scene entry has a <a href="index.php@title=Terrain_key&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain key (page does not exist)">terrain key</a>, provided by the built-in visual terrain generator.
+</p><p>Later on, through the in-game <a href="index.php@title=Scene_Editor&amp;action=edit&amp;redlink=1.html" class="new" title="Scene Editor (page does not exist)">Scene Editor</a>, which is enabled with the <a href="Edit_Mode.html" title="Edit Mode">Edit Mode</a> option in the launcher, the <a href="Scene.html" title="Scene">scene</a> can be altered, adding flora, painting and modifying terrain's appearance or even adding <a href="index.php@title=Scene_prop&amp;action=edit&amp;redlink=1.html" class="new" title="Scene prop (page does not exist)">scene props</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Terrain_code.html#Terrain_Keys"><span class="tocnumber">1</span> <span class="toctext">Terrain Keys</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Terrain_code.html#Terrain_Code_Generator_.7C_Client-side_Browser_Application"><span class="tocnumber">1.1</span> <span class="toctext">Terrain Code Generator | Client-side Browser Application</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="Terrain_code.html#SceneObj"><span class="tocnumber">2</span> <span class="toctext">SceneObj</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Terrain_code.html#scoUtils"><span class="tocnumber">2.1</span> <span class="toctext">scoUtils</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Terrain_code.html#Heightmap_Toolset"><span class="tocnumber">2.2</span> <span class="toctext">Heightmap Toolset</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Terrain_code.html#.SCO_File_Parser"><span class="tocnumber">2.3</span> <span class="toctext">.SCO File Parser</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Terrain_code.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=1.html" title="Edit section: Terrain Keys">edit</a>]</span> <span class="mw-headline" id="Terrain_Keys">Terrain Keys</span></h2>
+<p>The structure of the <a href="index.php@title=Terrain_keys&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain keys (page does not exist)">Terrain Key</a>, also known as <a href="index.php@title=Terrain_hashes&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain hashes (page does not exist)">Terrain Hash</a> or <a href="index.php@title=Terrain_Codes&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain Codes (page does not exist)">Terrain Codes</a>, is composed by five serialized chunks of 32 bits, encoded in hexadecimal notation where its properties are stored using bitwise operations.
+</p><p>As shown in the table, the first parts are for the noise generator's algorithm, water presence, and lastly size and terrain palette of the environment.
+</p><p>Decoded by courtesy of <a href="http://forums.taleworlds.com/index.php?action=profile;u=84182" class="external text" rel="nofollow">cmpxchg8b</a>
+</p>
+<table border="0" style="color:navy" align="center" class="sortable wikitable">
+<tr>
+<th>value
+</th>
+<th>key no.
+</th>
+<th>shift
+</th>
+<th>num bits
+</th></tr>
+<tr>
+<td>seed_1			</td>
+<td>0			</td>
+<td>0			</td>
+<td>31
+</td></tr>
+<tr>
+<td>seed_2			</td>
+<td>1			</td>
+<td>0			</td>
+<td>31
+</td></tr>
+<tr>
+<td>deep_water	 	</td>
+<td>1			</td>
+<td>31			</td>
+<td>1
+</td></tr>
+<tr>
+<td>seed_3			</td>
+<td>2			</td>
+<td>0			</td>
+<td>31
+</td></tr>
+<tr>
+<td>size_x			</td>
+<td>3			</td>
+<td>0			</td>
+<td>10
+</td></tr>
+<tr>
+<td>size_y			</td>
+<td>3			</td>
+<td>10			</td>
+<td>10
+</td></tr>
+<tr>
+<td>shade_occluded 		</td>
+<td>3			</td>
+<td>30			</td>
+<td>1
+</td></tr>
+<tr>
+<td>place_river 		</td>
+<td>3			</td>
+<td>31			</td>
+<td>1
+</td></tr>
+<tr>
+<td>valley			</td>
+<td>4			</td>
+<td>0			</td>
+<td>7
+</td></tr>
+<tr>
+<td>hill_height		</td>
+<td>4			</td>
+<td>7			</td>
+<td>7
+</td></tr>
+<tr>
+<td>ruggedness		</td>
+<td>4			</td>
+<td>14			</td>
+<td>7
+</td></tr>
+<tr>
+<td>vegetation		</td>
+<td>4			</td>
+<td>21			</td>
+<td>7
+</td></tr>
+<tr>
+<td>region_type		</td>
+<td>4			</td>
+<td>28			</td>
+<td>4
+</td></tr>
+<tr>
+<td>region_detail		</td>
+<td>5			</td>
+<td>0			</td>
+<td>2
+</td></tr>
+<tr>
+<td>disable_grass		</td>
+<td>5			</td>
+<td>2			</td>
+<td>2
+</td></tr></table>
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=2.html" title="Edit section: Terrain Code Generator | Client-side Browser Application">edit</a>]</span> <span class="mw-headline" id="Terrain_Code_Generator_.7C_Client-side_Browser_Application">Terrain Code Generator | Client-side Browser Application</span></h3>
+<p>Exists an online clone of the in-game terrain generation window, made by <a href="User%253ASwyter.html" title="User:Swyter"> Swyter</a>.<br />
+As we're talking about a self-contained, downloadable, standard HTML web page, it can also be used offline without losing functionality.<br />
+<br />
+It provides some advantages respect to the original implementation, like more options and customization ranges.<br />
+Avoids the tedious process of launching the game for simple tweaks. And works quite faster.<br />
+<br />
+You can find it here: <a href="http://mbcommands.ollclan.eu/terrain/" class="external free" rel="nofollow">http://mbcommands.ollclan.eu/terrain/</a><br />
+<br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=3.html" title="Edit section: SceneObj">edit</a>]</span> <span class="mw-headline" id="SceneObj">SceneObj</span></h2>
+<p>The *.sco files, located in the /SceneObj folder of every module, are automatically generated by the in-game scene editor.<br />
+Those are the files that alters the default Terrain key orography, provides <a href="index.php@title=Entry_point&amp;action=edit&amp;redlink=1.html" class="new" title="Entry point (page does not exist)">entry points</a> (spawn) positions and repainted terrain or scene props and extra manually supplied plants (known internally as objects).
+</p>
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=4.html" title="Edit section: scoUtils">edit</a>]</span> <span class="mw-headline" id="scoUtils"> scoUtils </span></h3>
+<p>After some tweaks and additions [<a href="http://forums.taleworlds.com/index.php?action=profile;u=199605" class="external text" rel="nofollow">Disgrntld</a>] released a tidied up version of
+the original parser shown below that he called scoUtils, accompanied by the screenshot of a example map and a procedural object (a roman <i>coliseum</i>) made with code.
+</p><p><i><b>First release</b></i>: [<a href="downloads/scoUtils.tar.bz2" class="external text" rel="nofollow">Mirrored here</a>]<br />
+<i><b>Second release</b></i> (<i>includes headers</i>): [<a href="downloads/scoUtils.tar-2.bz2" class="external text" rel="nofollow">Mirrored here</a>] [<a href="http://dl.dropbox.com/u/70112191/scoUtils.tar.bz2" class="external text" rel="nofollow">Dropbox</a>]<br />
+<br />
+For more information take a look to the original thread:
+</p><p><a href="http://forums.taleworlds.com/index.php/topic,221975.0.html" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php/topic,221975.0.html</a>
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=5.html" title="Edit section: Heightmap Toolset">edit</a>]</span> <span class="mw-headline" id="Heightmap_Toolset"> Heightmap Toolset </span></h3>
+<p>Later on a working, open source tested implementation of <i>SCO to PNG heightmap import and export</i> was released in binary form by <a href="User%253ASwyter.html" title="User:Swyter"> Swyter</a>,
+these two tiny tools can be found at <a href="Scene_Heightmap_Imp/export_Tools.html" title="Scene Heightmap Imp/export Tools">Scene Heightmap Imp/export Tools</a>. They include <tt>scopng</tt>, a drag-and-drop SceneObj to PNG/TGA/BMP conversion, and <tt>pngsco</tt>, its complementary friend that reimports back any modifications made to the images, supports PNG/PSD/TGA/BMP/JPG.
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=6.html" title="Edit section: .SCO File Parser">edit</a>]</span> <span class="mw-headline" id=".SCO_File_Parser"> .SCO File Parser</span></h3>
+<p>Here's the original Standard C code for interacting with this file format, yet again courtesy of <a href="http://forums.taleworlds.com/index.php?action=profile;u=84182" class="external text" rel="nofollow">cmpxchg8b</a>
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+&#160;
+<span class="co2">#define SCO_MAGIC -717</span>
+<span class="co2">#define GROUND_PAINT_MAGIC -11873882</span>
+<span class="co2">#define GROUND_PAINT_ELEVATION_MAGIC -7793</span>
+<span class="co2">#define GROUND_PAINT_COLOR_MAGIC -12565</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> vector
+<span class="br0">&#123;</span>
+	<span class="kw4">float</span> x<span class="sy0">;</span>
+	<span class="kw4">float</span> y<span class="sy0">;</span>
+	<span class="kw4">float</span> z<span class="sy0">;</span>
+<span class="br0">&#125;</span> vector_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> matrix
+<span class="br0">&#123;</span>
+	vector_t v0<span class="sy0">;</span>
+	vector_t v1<span class="sy0">;</span>
+	vector_t v2<span class="sy0">;</span>
+	vector_t o<span class="sy0">;</span>
+<span class="br0">&#125;</span> matrix_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> ground_paint_layer
+<span class="br0">&#123;</span>
+	<span class="kw4">char</span> <span class="sy0">*</span>ground_spec_id<span class="sy0">;</span>
+	<span class="kw4">int</span> ground_spec_no<span class="sy0">;</span>
+	<span class="kw4">float</span> <span class="sy0">*</span>cells<span class="sy0">;</span>
+<span class="br0">&#125;</span> ground_paint_layer_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> ground_paint
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> size_x<span class="sy0">;</span>
+	<span class="kw4">int</span> size_y<span class="sy0">;</span>
+	<span class="kw4">int</span> num_layers<span class="sy0">;</span>
+	ground_paint_layer_t <span class="sy0">*</span>layers<span class="sy0">;</span>
+<span class="br0">&#125;</span> ground_paint_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> ai_mesh_vertex
+<span class="br0">&#123;</span>
+	vector_t position<span class="sy0">;</span>
+<span class="br0">&#125;</span> ai_mesh_vertex_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> ai_mesh_edge
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> start_vertex<span class="sy0">;</span>
+	<span class="kw4">int</span> end_vertex<span class="sy0">;</span>
+<span class="br0">&#125;</span> ai_mesh_edge_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> ai_mesh_face
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> num_vertices<span class="sy0">;</span>
+	<span class="kw4">int</span> vertices<span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="sy0">;</span>
+	<span class="kw4">int</span> edges<span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="sy0">;</span>
+	<span class="kw4">int</span> unknown<span class="sy0">;</span>
+<span class="br0">&#125;</span> ai_mesh_face_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> ai_mesh
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> num_vertices<span class="sy0">;</span>
+	<span class="kw4">int</span> num_edges<span class="sy0">;</span>
+	<span class="kw4">int</span> num_faces<span class="sy0">;</span>
+	ai_mesh_vertex_t <span class="sy0">*</span>vertices<span class="sy0">;</span>
+	ai_mesh_edge_t <span class="sy0">*</span>edges<span class="sy0">;</span>
+	ai_mesh_face_t <span class="sy0">*</span>faces<span class="sy0">;</span>
+<span class="br0">&#125;</span> ai_mesh_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> mission_object
+<span class="br0">&#123;</span>
+	<span class="kw4">char</span> <span class="sy0">*</span>id<span class="sy0">;</span>
+	<span class="kw4">int</span> meta_type<span class="sy0">;</span> <span class="co1">// 0 = scene prop, 1 = entry point, 2 = scene item, 4 = flora, 5 = passage</span>
+	<span class="kw4">int</span> sub_kind_no<span class="sy0">;</span>
+	<span class="kw4">int</span> variation_id<span class="sy0">;</span>
+	<span class="kw4">int</span> variation_id_2<span class="sy0">;</span>
+	matrix_t position<span class="sy0">;</span>
+	vector_t scale<span class="sy0">;</span>
+<span class="br0">&#125;</span> mission_object_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> sco_file
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> version<span class="sy0">;</span>
+	<span class="kw4">int</span> num_mission_objects<span class="sy0">;</span>
+	mission_object_t <span class="sy0">*</span>mission_objects<span class="sy0">;</span>
+	ai_mesh_t <span class="sy0">*</span>ai_mesh<span class="sy0">;</span>
+	ground_paint_t <span class="sy0">*</span>ground_paint<span class="sy0">;</span>
+<span class="br0">&#125;</span> sco_file_t<span class="sy0">;</span>
+&#160;
+<span class="kw4">void</span> read<span class="br0">&#40;</span>FILE <span class="sy0">*</span>file<span class="sy0">,</span> size_t size<span class="sy0">,</span> <span class="kw4">void</span> <span class="sy0">*</span>dest<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>dest<span class="br0">&#41;</span>
+		fread<span class="br0">&#40;</span>dest<span class="sy0">,</span> size<span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> file<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> read_int<span class="br0">&#40;</span>FILE <span class="sy0">*</span>file<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">*</span>dest<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	read<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> dest<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> read_char<span class="br0">&#40;</span>FILE <span class="sy0">*</span>file<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>dest<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	read<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> dest<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> read_float<span class="br0">&#40;</span>FILE <span class="sy0">*</span>file<span class="sy0">,</span> <span class="kw4">float</span> <span class="sy0">*</span>dest<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	read<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> dest<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> read_string<span class="br0">&#40;</span>FILE <span class="sy0">*</span>file<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">**</span>dest<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> length<span class="sy0">;</span>
+&#160;
+	read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>length<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="sy0">*</span>dest <span class="sy0">=</span> malloc<span class="br0">&#40;</span>length <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	read<span class="br0">&#40;</span>file<span class="sy0">,</span> length<span class="sy0">,</span> <span class="sy0">*</span>dest<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#40;</span><span class="sy0">*</span>dest<span class="br0">&#41;</span><span class="br0">&#91;</span>length<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="st0">'<span class="es5">\0</span>'</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> read_vector<span class="br0">&#40;</span>FILE <span class="sy0">*</span>file<span class="sy0">,</span> vector_t <span class="sy0">*</span>dest<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	read_float<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>dest<span class="sy0">-&gt;</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+	read_float<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>dest<span class="sy0">-&gt;</span>y<span class="br0">&#41;</span><span class="sy0">;</span>
+	read_float<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>dest<span class="sy0">-&gt;</span>z<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> read_matrix<span class="br0">&#40;</span>FILE <span class="sy0">*</span>file<span class="sy0">,</span> matrix_t <span class="sy0">*</span>dest<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	read_vector<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>dest<span class="sy0">-&gt;</span>v0<span class="br0">&#41;</span><span class="sy0">;</span>
+	read_vector<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>dest<span class="sy0">-&gt;</span>v1<span class="br0">&#41;</span><span class="sy0">;</span>
+	read_vector<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>dest<span class="sy0">-&gt;</span>v2<span class="br0">&#41;</span><span class="sy0">;</span>
+	read_vector<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>dest<span class="sy0">-&gt;</span>o<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">**</span>argv<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>argc <span class="sy0">&lt;</span> <span class="nu0">2</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Usage:&#160;%s filename<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> argv<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw1">return</span> EXIT_FAILURE<span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	FILE <span class="sy0">*</span>file <span class="sy0">=</span> fopen<span class="br0">&#40;</span>argv<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span> <span class="st0">&quot;rb&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>file<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;ERROR: file&#160;%s not found<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> argv<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw1">return</span> EXIT_FAILURE<span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	fseek<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> SEEK_END<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw4">long</span> file_size <span class="sy0">=</span> ftell<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	fseek<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> SEEK_SET<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Reading&#160;%s<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> argv<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	sco_file_t sco_file<span class="sy0">;</span>
+	<span class="kw4">int</span> magic<span class="sy0">;</span>
+&#160;
+	read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>magic<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>magic <span class="sy0">==</span> SCO_MAGIC<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">version</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">num_mission_objects</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+	<span class="br0">&#123;</span>
+		sco_file.<span class="me1">version</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+		sco_file.<span class="me1">num_mission_objects</span> <span class="sy0">=</span> magic<span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;SCO file version:&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sco_file.<span class="me1">version</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Mission object count:&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sco_file.<span class="me1">num_mission_objects</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	sco_file.<span class="me1">mission_objects</span> <span class="sy0">=</span> malloc<span class="br0">&#40;</span>sco_file.<span class="me1">num_mission_objects</span> <span class="sy0">*</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>mission_object_t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> sco_file.<span class="me1">num_mission_objects</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">meta_type</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">sub_kind_no</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		fseek<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> SEEK_CUR<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// unused</span>
+		read_matrix<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">position</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		read_string<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">id</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">variation_id</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>sco_file.<span class="me1">version</span> <span class="sy0">&gt;=</span> <span class="nu0">2</span><span class="br0">&#41;</span>
+			read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">variation_id_2</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw1">else</span>
+			sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">variation_id_2</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>sco_file.<span class="me1">version</span> <span class="sy0">&gt;=</span> <span class="nu0">3</span><span class="br0">&#41;</span>
+			read_vector<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">scale</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">scale</span>.<span class="me1">x</span> <span class="sy0">=</span> <span class="nu17">1.0f</span><span class="sy0">;</span>
+			sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">scale</span>.<span class="me1">y</span> <span class="sy0">=</span> <span class="nu17">1.0f</span><span class="sy0">;</span>
+			sco_file.<span class="me1">mission_objects</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">scale</span>.<span class="me1">z</span> <span class="sy0">=</span> <span class="nu17">1.0f</span><span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>sco_file.<span class="me1">version</span> <span class="sy0">&gt;=</span> <span class="nu0">4</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw4">int</span> ai_mesh_size<span class="sy0">;</span>
+&#160;
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>ai_mesh_size<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw4">long</span> start_pos <span class="sy0">=</span> ftell<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		sco_file.<span class="me1">ai_mesh</span> <span class="sy0">=</span> malloc<span class="br0">&#40;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>ai_mesh_t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_vertices<span class="br0">&#41;</span><span class="sy0">;</span>
+		sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>vertices <span class="sy0">=</span> malloc<span class="br0">&#40;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_vertices <span class="sy0">*</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>ai_mesh_vertex_t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;AI mesh vertex count:&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_vertices<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_vertices<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			read_vector<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>vertices<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">position</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+&#160;
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_edges<span class="br0">&#41;</span><span class="sy0">;</span>
+		sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>edges <span class="sy0">=</span> malloc<span class="br0">&#40;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_edges <span class="sy0">*</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>ai_mesh_edge_t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;AI mesh edge count:&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_edges<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_edges<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			fseek<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> SEEK_CUR<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// unused</span>
+			read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>edges<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">start_vertex</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>edges<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">end_vertex</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			fseek<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="nu0">8</span><span class="sy0">,</span> SEEK_CUR<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// unused</span>
+		<span class="br0">&#125;</span>
+&#160;
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_faces<span class="br0">&#41;</span><span class="sy0">;</span>
+		sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces <span class="sy0">=</span> malloc<span class="br0">&#40;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_faces <span class="sy0">*</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>ai_mesh_face_t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;AI mesh face count:&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_faces<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>num_faces<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">num_vertices</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+			<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">num_vertices</span><span class="sy0">;</span> <span class="sy0">++</span>j<span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">vertices</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			<span class="br0">&#125;</span>
+&#160;
+			<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">num_vertices</span><span class="sy0">;</span> <span class="sy0">++</span>j<span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">edges</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			<span class="br0">&#125;</span>
+&#160;
+			read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">unknown</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+			<span class="kw1">if</span> <span class="br0">&#40;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">unknown</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+				read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">unknown</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			<span class="kw1">else</span>
+				sco_file.<span class="me1">ai_mesh</span><span class="sy0">-&gt;</span>faces<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">unknown</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+&#160;
+		<span class="kw4">long</span> end_pos <span class="sy0">=</span> ftell<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>end_pos <span class="sy0">-</span> start_pos <span class="sy0">!=</span> ai_mesh_size<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;ERROR: failed to read AI mesh<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			fclose<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+			<span class="kw1">return</span> EXIT_FAILURE<span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+		sco_file.<span class="me1">ai_mesh</span> <span class="sy0">=</span> NULL<span class="sy0">;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>ftell<span class="br0">&#40;</span>file<span class="br0">&#41;</span> <span class="sy0">!=</span> file_size<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>magic<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>magic <span class="sy0">!=</span> GROUND_PAINT_MAGIC<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;ERROR: wrong ground paint magic<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			fclose<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+			<span class="kw1">return</span> EXIT_FAILURE<span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+&#160;
+		<span class="kw4">int</span> ground_paint_size<span class="sy0">;</span>
+&#160;
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>ground_paint_size<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw4">long</span> start_pos <span class="sy0">=</span> ftell<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		sco_file.<span class="me1">ground_paint</span> <span class="sy0">=</span> malloc<span class="br0">&#40;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>ground_paint_t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>num_layers<span class="br0">&#41;</span><span class="sy0">;</span>
+		sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers <span class="sy0">=</span> malloc<span class="br0">&#40;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>num_layers <span class="sy0">*</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>ground_paint_layer_t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Ground paint layer count:&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>num_layers<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>size_x<span class="br0">&#41;</span><span class="sy0">;</span>
+		read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>size_y<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>num_layers<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">ground_spec_no</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			read_string<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">ground_spec_id</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+			<span class="kw4">int</span> has_cells<span class="sy0">;</span>
+&#160;
+			read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>has_cells<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+			<span class="kw1">if</span> <span class="br0">&#40;</span>has_cells<span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">cells</span> <span class="sy0">=</span> malloc<span class="br0">&#40;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>size_x <span class="sy0">*</span> sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>size_y <span class="sy0">*</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">float</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+				<span class="kw4">int</span> empty <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+				<span class="kw4">int</span> count<span class="sy0">;</span>
+&#160;
+				read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>count<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+				<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> y <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> y <span class="sy0">&lt;</span> sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>size_y<span class="sy0">;</span> <span class="sy0">++</span>y<span class="br0">&#41;</span>
+				<span class="br0">&#123;</span>
+					<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> x <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> x <span class="sy0">&lt;</span> sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>size_x<span class="sy0">;</span> <span class="sy0">++</span>x<span class="br0">&#41;</span>
+					<span class="br0">&#123;</span>
+						<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>count<span class="br0">&#41;</span>
+						<span class="br0">&#123;</span>
+							empty <span class="sy0">=</span> <span class="sy0">!</span>empty<span class="sy0">;</span>
+							read_int<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>count<span class="br0">&#41;</span><span class="sy0">;</span>
+						<span class="br0">&#125;</span>
+&#160;
+						count<span class="sy0">--;</span>
+&#160;
+						<span class="kw4">float</span> value<span class="sy0">;</span>
+&#160;
+						<span class="kw1">if</span> <span class="br0">&#40;</span>empty<span class="br0">&#41;</span>
+						<span class="br0">&#123;</span>
+							<span class="kw1">if</span> <span class="br0">&#40;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">ground_spec_no</span> <span class="sy0">==</span> GROUND_PAINT_COLOR_MAGIC<span class="br0">&#41;</span>
+								value <span class="sy0">=</span> <span class="sy0">-</span><span class="nu17">1.0f</span><span class="sy0">;</span>
+							<span class="kw1">else</span>
+								value <span class="sy0">=</span> <span class="nu17">0.0f</span><span class="sy0">;</span>
+						<span class="br0">&#125;</span>
+						<span class="kw1">else</span>
+						<span class="br0">&#123;</span>
+							<span class="kw1">if</span> <span class="br0">&#40;</span>sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">ground_spec_no</span> <span class="sy0">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+								read_float<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>value<span class="br0">&#41;</span><span class="sy0">;</span>
+							<span class="kw1">else</span>
+							<span class="br0">&#123;</span>
+								<span class="kw4">char</span> cvalue<span class="sy0">;</span>
+&#160;
+								read_char<span class="br0">&#40;</span>file<span class="sy0">,</span> <span class="sy0">&amp;</span>cvalue<span class="br0">&#41;</span><span class="sy0">;</span>
+								value <span class="sy0">=</span> cvalue <span class="sy0">/</span> <span class="nu17">255.0f</span><span class="sy0">;</span>
+							<span class="br0">&#125;</span>
+						<span class="br0">&#125;</span>
+&#160;
+						sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">cells</span><span class="br0">&#91;</span>x <span class="sy0">*</span> sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>size_y <span class="sy0">+</span> y<span class="br0">&#93;</span> <span class="sy0">=</span> value<span class="sy0">;</span>
+					<span class="br0">&#125;</span>
+				<span class="br0">&#125;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">else</span>
+				sco_file.<span class="me1">ground_paint</span><span class="sy0">-&gt;</span>layers<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">cells</span> <span class="sy0">=</span> NULL<span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+&#160;
+		<span class="kw4">long</span> end_pos <span class="sy0">=</span> ftell<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>end_pos <span class="sy0">-</span> start_pos <span class="sy0">!=</span> ground_paint_size<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;ERROR: failed to read ground paint<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			fclose<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+			<span class="kw1">return</span> EXIT_FAILURE<span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+		sco_file.<span class="me1">ground_paint</span> <span class="sy0">=</span> NULL<span class="sy0">;</span>
+&#160;
+	fclose<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">return</span> EXIT_SUCCESS<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=7.html" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h2>
+<p>Code and analysis of the disassembled structures posted on the forums within the following thread:
+<a href="http://forums.taleworlds.com/index.php/topic,184470.html" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php/topic,184470.html</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 36/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:107-0!*!0!!en!* and timestamp 20200419205947 -->
+<div class="printfooter">
+Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.eu/SceneObj#Terrain_Codes</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AFile-Type_Structure.html" title="Category:File-Type Structure">File-Type Structure</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=SceneObj.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="SceneObj.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ASceneObj&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="Terrain_code.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="SceneObj.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=SceneObj&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=SceneObj&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="Terrain_code.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/SceneObj.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/SceneObj.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=SceneObj&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=SceneObj&amp;oldid=575.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 7 April 2012, at 17:07.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 25 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "SceneObj", "wgTitle": "SceneObj", "wgAction": "view", "wgArticleId": 107, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 575, "wgCategories": ["File-Type Structure"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>
+redirectToFragment("#Terrain_Codes");
+</script>
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.159 secs. -->			</body>
+</html>

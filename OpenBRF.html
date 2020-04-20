@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>OpenBRF - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=OpenBRF&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=OpenBRF&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=OpenBRF&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-OpenBRF skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">OpenBRF</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="OpenBRF.html#mw-head">navigation</a>,
+					<a href="OpenBRF.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p>OpenBRF is the cornerstone of the <a href="Mount&amp;Blade.html" title="Mount&amp;Blade" class="mw-redirect">Mount&amp;Blade</a> modding. Made by Marco Tarini (<a href="http://forums.taleworlds.com/index.php?action=profile;u=3965" class="external text" rel="nofollow">mtarini</a>) originally made with <i>The Last Days of the Third Age</i> module in mind (the Lord of the Ring based one). He was developing it inside  of that community, but after some early revisions the tool was made public. It is meant to be used to preview and edit BRF files (Binary Resource Files), i.e. most content of the game (e.g. meshes and animations).
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="OpenBRF.html#Story"><span class="tocnumber">1</span> <span class="toctext">Story</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="OpenBRF.html#Features"><span class="tocnumber">2</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="OpenBRF.html#Basic_Features"><span class="tocnumber">2.1</span> <span class="toctext">Basic Features</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="OpenBRF.html#Loading_.26_saving:"><span class="tocnumber">2.1.1</span> <span class="toctext">Loading &amp; saving:</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="OpenBRF.html#Viewing:"><span class="tocnumber">2.1.2</span> <span class="toctext">Viewing:</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="OpenBRF.html#Importing_.26_exporting:"><span class="tocnumber">2.1.3</span> <span class="toctext">Importing &amp; exporting:</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="OpenBRF.html#Basic_editing:"><span class="tocnumber">2.1.4</span> <span class="toctext">Basic editing:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="OpenBRF.html#Tools_for_skeletons.2Frigging.2Fskeletal-animation"><span class="tocnumber">2.2</span> <span class="toctext">Tools for skeletons/rigging/skeletal-animation</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="OpenBRF.html#Autobreak-up_of_animations_into_sub-sequences:"><span class="tocnumber">2.2.1</span> <span class="toctext">Autobreak-up of animations into sub-sequences:</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="OpenBRF.html#Customizable_skinning_to_view_animations:"><span class="tocnumber">2.2.2</span> <span class="toctext">Customizable skinning to view animations:</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="OpenBRF.html#Simplified_skeleton_retouching_through_meshes:"><span class="tocnumber">2.2.3</span> <span class="toctext">Simplified skeleton retouching through meshes:</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="OpenBRF.html#Reskeletonize_tool_for_rigged_meshes:"><span class="tocnumber">2.2.4</span> <span class="toctext">Reskeletonize tool for rigged meshes:</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="OpenBRF.html#Transfer_rigging_from_a_mesh_to_another:"><span class="tocnumber">2.2.5</span> <span class="toctext">Transfer rigging from a mesh to another:</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="OpenBRF.html#Transfer_timings:"><span class="tocnumber">2.2.6</span> <span class="toctext">Transfer timings:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="OpenBRF.html#Tools_for_3D_meshes:"><span class="tocnumber">2.3</span> <span class="toctext">Tools for 3D meshes:</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="OpenBRF.html#Renormalize_and_merge_tool:"><span class="tocnumber">2.3.1</span> <span class="toctext">Renormalize and merge tool:</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="OpenBRF.html#Redefine_hard-edges:"><span class="tocnumber">2.3.2</span> <span class="toctext">Redefine hard-edges:</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="OpenBRF.html#.22Feminization.22_of_outfits:"><span class="tocnumber">2.3.3</span> <span class="toctext">"Feminization" of outfits:</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="OpenBRF.html#Rescale-rotote-translate-mirror-etc.2C_meshes:"><span class="tocnumber">2.3.4</span> <span class="toctext">Rescale-rotote-translate-mirror-etc, meshes:</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="OpenBRF.html#Ruler_tool:"><span class="tocnumber">2.3.5</span> <span class="toctext">Ruler tool:</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="OpenBRF.html#Combine_meshes_tool:"><span class="tocnumber">2.3.6</span> <span class="toctext">Combine meshes tool:</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="OpenBRF.html#Back-faces:"><span class="tocnumber">2.3.7</span> <span class="toctext">Back-faces:</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="OpenBRF.html#Recoloring:"><span class="tocnumber">2.3.8</span> <span class="toctext">Recoloring:</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="OpenBRF.html#Ambient_occlusion:"><span class="tocnumber">2.3.9</span> <span class="toctext">Ambient occlusion:</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="OpenBRF.html#Tangent_direction_computations:"><span class="tocnumber">2.3.10</span> <span class="toctext">Tangent direction computations:</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="OpenBRF.html#LoDs_computation:"><span class="tocnumber">2.3.11</span> <span class="toctext">LoDs computation:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="OpenBRF.html#Tools_for_Collision_Objects:"><span class="tocnumber">2.4</span> <span class="toctext">Tools for Collision Objects:</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="OpenBRF.html#Smart_Import.2Fexports_of_subparts:"><span class="tocnumber">2.4.1</span> <span class="toctext">Smart Import/exports of subparts:</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="OpenBRF.html#Auto-quadrangolized:"><span class="tocnumber">2.4.2</span> <span class="toctext">Auto-quadrangolized:</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="OpenBRF.html#Smart_visualization:"><span class="tocnumber">2.4.3</span> <span class="toctext">Smart visualization:</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="OpenBRF.html#Scale.2Ftranslate.2Frotate.2Fmirror.2Fmerge:"><span class="tocnumber">2.4.4</span> <span class="toctext">Scale/translate/rotate/mirror/merge:</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="OpenBRF.html#Build_from_mesh:"><span class="tocnumber">2.4.5</span> <span class="toctext">Build from mesh:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-33"><a href="OpenBRF.html#Tools_for_Materials.2FTextures:"><span class="tocnumber">2.5</span> <span class="toctext">Tools for Materials/Textures:</span></a>
+<ul>
+<li class="toclevel-3 tocsection-34"><a href="OpenBRF.html#Editing_of_multiple_materials.2Fmeshes:"><span class="tocnumber">2.5.1</span> <span class="toctext">Editing of multiple materials/meshes:</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="OpenBRF.html#Direct_flag_editing:"><span class="tocnumber">2.5.2</span> <span class="toctext">Direct flag editing:</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="OpenBRF.html#Texture_data:"><span class="tocnumber">2.5.3</span> <span class="toctext">Texture data:</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="OpenBRF.html#Mini-.22can.27t_find_texture.22_diagnostics:"><span class="tocnumber">2.5.4</span> <span class="toctext">Mini-"can't find texture" diagnostics:</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="OpenBRF.html#Material_rendering:"><span class="tocnumber">2.5.5</span> <span class="toctext">Material rendering:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-39"><a href="OpenBRF.html#Tools_for_vertex_animations:"><span class="tocnumber">2.6</span> <span class="toctext">Tools for vertex animations:</span></a>
+<ul>
+<li class="toclevel-3 tocsection-40"><a href="OpenBRF.html#Frame_stacking:"><span class="tocnumber">2.6.1</span> <span class="toctext">Frame stacking:</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="OpenBRF.html#Direct_import.2Fexport:"><span class="tocnumber">2.6.2</span> <span class="toctext">Direct import/export:</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="OpenBRF.html#Copy_timings:"><span class="tocnumber">2.6.3</span> <span class="toctext">Copy timings:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-43"><a href="OpenBRF.html#Module_management:"><span class="tocnumber">2.7</span> <span class="toctext">Module management:</span></a>
+<ul>
+<li class="toclevel-3 tocsection-44"><a href="OpenBRF.html#Fast_ini_loading:"><span class="tocnumber">2.7.1</span> <span class="toctext">Fast ini loading:</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="OpenBRF.html#Module_navigation:"><span class="tocnumber">2.7.2</span> <span class="toctext">Module navigation:</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="OpenBRF.html#.22Used-by.22_submenu:"><span class="tocnumber">2.7.3</span> <span class="toctext">"Used-by" submenu:</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="OpenBRF.html#Autocompletion:"><span class="tocnumber">2.7.4</span> <span class="toctext">Autocompletion:</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="OpenBRF.html#Verify-module_tool:"><span class="tocnumber">2.7.5</span> <span class="toctext">Verify-module tool:</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="OpenBRF.html#Search:"><span class="tocnumber">2.7.6</span> <span class="toctext">Search:</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="OpenBRF.html#Scanning_of_txt:"><span class="tocnumber">2.7.7</span> <span class="toctext">Scanning of txt:</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="OpenBRF.html#.22Follow_used.22:"><span class="tocnumber">2.7.8</span> <span class="toctext">"Follow used":</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="OpenBRF.html#Show_unreferenced_DDS_tool:"><span class="tocnumber">2.7.9</span> <span class="toctext">Show unreferenced DDS tool:</span></a></li>
+<li class="toclevel-3 tocsection-53"><a href="OpenBRF.html#Dump_module_content_from_prompt:"><span class="tocnumber">2.7.10</span> <span class="toctext">Dump module content from prompt:</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-54"><a href="OpenBRF.html#Links"><span class="tocnumber">3</span> <span class="toctext">Links</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=1.html" title="Edit section: Story">edit</a>]</span> <span class="mw-headline" id="Story"> Story </span></h2>
+<p>It was originally developed as an internal tool within the <a href="index.php@title=The_Last_Days&amp;action=edit&amp;redlink=1.html" class="new" title="The Last Days (page does not exist)">The Last Days</a> Mod team. Marco, who helped them programming shaders, beautifying the map, in complex tweaking and posting general suggestions and advice. Seeing the potential of such a tool, decided to release it publicly as an open source tool, hence the name.
+</p><p>Once its public release was announced in the Official Forums, it was received with expectation, good critics and a mare magnum of suggestions, slow but steady Marco began to add features from animation support to vertex coloring, investigating <a href="Warband.html" title="Warband" class="mw-redirect">Warband</a>'s format with zero documentation from part of the TaleWorlds developers, today has been accepted as the de-facto tool by the <a href="Mount&amp;Blade.html" title="Mount&amp;Blade" class="mw-redirect">Mount&amp;Blade</a> <a href="Modding.html" title="Modding">modding</a> scene.
+</p>
+<h2><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=2.html" title="Edit section: Features">edit</a>]</span> <span class="mw-headline" id="Features"> Features </span></h2>
+<h3><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=3.html" title="Edit section: Basic Features">edit</a>]</span> <span class="mw-headline" id="Basic_Features"> Basic Features </span></h3>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=4.html" title="Edit section: Loading &amp; saving:">edit</a>]</span> <span class="mw-headline" id="Loading_.26_saving:"> Loading &amp; saving:  </span></h4>
+<ul><li> Loads and saves all contents of BRF files:
+</li></ul>
+<ol><li>Meshes (including vertex-animated &amp; rigged)
+</li><li>Collision objects (including spheres capsules manifold &amp; faces...)
+</li><li>Textures, Materials, Shaders
+</li><li>Skeletons, Skeletal-animations.
+</li></ol>
+<ul><li> Compatibility:
+</li></ul>
+<ol><li>M&amp;B ver 1.011 complaint.
+</li><li>Back compatibility with M&amp;B .808 BRF files (load only).
+</li><li>"Forward" compatibility with Warband BRF files (save/load).
+</li></ol>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=5.html" title="Edit section: Viewing:">edit</a>]</span> <span class="mw-headline" id="Viewing:"> Viewing: </span></h4>
+<ul><li> Meshes, Collision objects,  Skeletons, Skel-animations, Texture and Material:<br />Shown in 3D view (using, as appropriate, textures, wireframe, per-vertex color, animations, customizable skins, alpha channel, xrays -- for collision objects, etc)
+</li><li> All attributes for all objects (e.g. flags, numbers and strings) are shown in the GUI.
+</li><li> navigation mode (WASD) for interiors; custom view orientation for helmets.
+</li><li> "side-to-side" or "combined" modes for viewing multiple selections.
+</li></ul>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=6.html" title="Edit section: Importing &amp; exporting:">edit</a>]</span> <span class="mw-headline" id="Importing_.26_exporting:"> Importing &amp; exporting:  </span></h4>
+<ul><li> Meshes exported/imported in: obj (including multi-material), ply, dxf (autocad), dae (collada), off.
+</li></ul>
+<p>(not all formats allow to export vertex colors or normals. Normals are recomputed if missing).
+</p>
+<ul><li> Rigged meshes,  Skeletal-Animations: export/import as SMD (or maya .ma, experimental)
+</li><li> Skeletons: export/import as SMD  --  also, export/import as a control (static) mesh
+</li><li> Vertex-animated meshes: export/import as MD3 or as separate frames,
+</li><li> Collision bodies: export/import as multiple-object obj (notes on usage: see this info)
+</li></ul>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=7.html" title="Edit section: Basic editing:">edit</a>]</span> <span class="mw-headline" id="Basic_editing:"> Basic editing:   </span></h4>
+<ul><li> Direct editing of any attribute of any object (e.g. flags).
+</li><li> Group edits: multiple-select objects to view or edit them all in one go (e.g. renaming a group will edit prefixes)
+</li><li> Cut, copy and paste objects to easily move them from a brf file to another.
+</li><li> Remove, rename, duplicate objects; sort them or move them up and down in the list
+</li><li> Search for objects, or module inconsistencies.
+</li></ul>
+<h3><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=8.html" title="Edit section: Tools for skeletons/rigging/skeletal-animation">edit</a>]</span> <span class="mw-headline" id="Tools_for_skeletons.2Frigging.2Fskeletal-animation"> Tools for skeletons/rigging/skeletal-animation </span></h3>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=9.html" title="Edit section: Autobreak-up of animations into sub-sequences:">edit</a>]</span> <span class="mw-headline" id="Autobreak-up_of_animations_into_sub-sequences:"> Autobreak-up of animations into sub-sequences: </span></h4>
+<p>(useful for for long sequence of animations listed as a single one). Animation can be either auto-split, by dividing chunks separated by large gaps in frame numeration, or split by following an action.txt file (in this case, a new action.txt is also produced, which refers the new split animations. The original action.txt file is kept intact -- just for safety).
+</p>
+<pre>     How-to: Just right click on an animation in the list.
+</pre>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=10.html" title="Edit section: Customizable skinning to view animations:">edit</a>]</span> <span class="mw-headline" id="Customizable_skinning_to_view_animations:"> Customizable skinning to view animations:</span></h4>
+<p>Rigged meshes can be enlisted to compose "skins". Skins are sets of user-selected rigged meshes which are used by OpenBrf to display skeletal-animations.  Similarly, animations can be set as "reference animations" so that you can see your rigged meshes under that animation. Skins can also be used to export animations/rigged meshes/skeletons.
+</p><p>How-to: 
+</p>
+<ol><li>Right click on the mesh to add it to a skin, or on an animation to use it as a "reference" animation. 
+</li><li>Reference objects (skeletons, animations, models) are auto-saved but you can also edit them directly (tools=&gt;edit reference models).
+</li></ol>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=11.html" title="Edit section: Simplified skeleton retouching through meshes:">edit</a>]</span> <span class="mw-headline" id="Simplified_skeleton_retouching_through_meshes:"> Simplified skeleton retouching through meshes:</span></h4>
+<p>This is to allow edits of the skeleton w/o using an animation program (small thing, mostly for myself). First, export a "skeleton modification mesh", which is  just a static mesh (e.g. obj) featuring the bones. Then, edit the resulting mesh using any 3D editor; don't change bone size, number or shape: only their orientation and positions. Then, you use that mesh to modify the skeleton, and openBRF will modify just bone positions/orientation, keeping all else, like bone names, bone connections etc.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=12.html" title="Edit section: Reskeletonize tool for rigged meshes:">edit</a>]</span> <span class="mw-headline" id="Reskeletonize_tool_for_rigged_meshes:"> Reskeletonize tool for rigged meshes:</span></h4>
+<p>This can be used to go from a mesh rigged for skeleton A to make a new mesh rigged for skeleton B. (if the two skeletons are similar enough). The mesh will deform to adapt to the new skeleton. This is not supposed to be perfect, but can be a start for further editing. Optionally, the deformed mesh can be placed as a frame to the original body mesh (you know, just how natives hides feminine version of armor shapes in subsequent frames).
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=13.html" title="Edit section: Transfer rigging from a mesh to another:">edit</a>]</span> <span class="mw-headline" id="Transfer_rigging_from_a_mesh_to_another:"> Transfer rigging from a mesh to another:</span></h4>
+<pre>to transfer rigging from a rigged "exemplar" mesh to one or more target (usually non rigged) mesh (Similar to "obj2smd" program.).
+How to:  
+#select one or more exemplar meshes, 
+#copy [ctrl+C], 
+#select one or more target mesh, 
+#"edit" -&gt; "paste rigging"
+</pre>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=14.html" title="Edit section: Transfer timings:">edit</a>]</span> <span class="mw-headline" id="Transfer_timings:"> Transfer timings:</span></h4>
+<pre>to transfer timings (times per frame): as above, but use "paste timings"
+</pre>
+<h3><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=15.html" title="Edit section: Tools for 3D meshes:">edit</a>]</span> <span class="mw-headline" id="Tools_for_3D_meshes:">Tools for 3D meshes:</span></h3>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=16.html" title="Edit section: Renormalize and merge tool:">edit</a>]</span> <span class="mw-headline" id="Renormalize_and_merge_tool:"> Renormalize and merge tool:</span></h4>
+<p>Recomputes the normal of the mesh + merges together positions and vertices, so that the data is more compact and rendering efficient. You can see the number of vertices and positions go down in the "data" box. There is also an option to automatically perform either of these operations after import.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=17.html" title="Edit section: Redefine hard-edges:">edit</a>]</span> <span class="mw-headline" id="Redefine_hard-edges:"> Redefine hard-edges:</span></h4>
+<p>hard edges (normal discontinuities) can also be redefined using a custom crease-angle parameter, with the above tool. Texture seams can be preserved or ignored.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=18.html" title="Edit section: &quot;Feminization&quot; of outfits:">edit</a>]</span> <span class="mw-headline" id=".22Feminization.22_of_outfits:"> "Feminization" of outfits:</span></h4>
+<p>you can pick an armor/outfit of your mod and make OpenBRF build the feminine version of it (it will be added as another frame of that mesh, just like the game wants).
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=19.html" title="Edit section: Rescale-rotote-translate-mirror-etc, meshes:">edit</a>]</span> <span class="mw-headline" id="Rescale-rotote-translate-mirror-etc.2C_meshes:"> Rescale-rotote-translate-mirror-etc, meshes: </span></h4>
+<p>just as the name says.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=20.html" title="Edit section: Ruler tool:">edit</a>]</span> <span class="mw-headline" id="Ruler_tool:"> Ruler tool: </span></h4>
+<p>designed to pinpoint the precise reach of weapons [Fei Dao suggestion]
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=21.html" title="Edit section: Combine meshes tool:">edit</a>]</span> <span class="mw-headline" id="Combine_meshes_tool:"> Combine meshes tool:</span></h4>
+<p>makes one mesh from many (works with static, vertex-animated, rigged meshes alike).
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=22.html" title="Edit section: Back-faces:">edit</a>]</span> <span class="mw-headline" id="Back-faces:"> Back-faces:</span></h4>
+<p>add them (creates x2 faces), or remove them. Useful for flat impostors that must be seen from both sides.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=23.html" title="Edit section: Recoloring:">edit</a>]</span> <span class="mw-headline" id="Recoloring:"> Recoloring:</span></h4>
+<p>(i.e. per vertex colors support). Assign a uniform color, tune hue-saturation-brightness-contrast of existing colors.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=24.html" title="Edit section: Ambient occlusion:">edit</a>]</span> <span class="mw-headline" id="Ambient_occlusion:"> Ambient occlusion:</span></h4>
+<p>computes ambient occlusions and stores it as per vertex color. Adds a lot of realism cheap and fast to your meshes. A few parameters (darkness, and light dispositions) can be tuned under "settings".
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=25.html" title="Edit section: Tangent direction computations:">edit</a>]</span> <span class="mw-headline" id="Tangent_direction_computations:"> Tangent direction computations:</span></h4>
+<p>tang. dirs, which are needed for bumpmapping, can be computed over your meshes (they can be saved only as WarBand BRF).
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=26.html" title="Edit section: LoDs computation:">edit</a>]</span> <span class="mw-headline" id="LoDs_computation:"> LoDs computation:</span></h4>
+<p>OpenBRF can build lod's (level of details) for your meshes, progressively simplifying them by automatic polygonal reduction. Under "settings", you can customize which lod are produced, and how much polygonal reduction should take place.
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=27.html" title="Edit section: Tools for Collision Objects:">edit</a>]</span> <span class="mw-headline" id="Tools_for_Collision_Objects:">Tools for Collision Objects:</span></h3>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=28.html" title="Edit section: Smart Import/exports of subparts:">edit</a>]</span> <span class="mw-headline" id="Smart_Import.2Fexports_of_subparts:"> Smart Import/exports of subparts:</span></h4>
+<p>To make collision objects using the efficient "sphere" and "capsules" primitive. See more info [here]
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=29.html" title="Edit section: Auto-quadrangolized:">edit</a>]</span> <span class="mw-headline" id="Auto-quadrangolized:"> Auto-quadrangolized:</span></h4>
+<p>to turn a triangle-based Collision Object to a more efficient Quad-dominant one (because, in game, it is better to use fewer quads than more triangles).
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=30.html" title="Edit section: Smart visualization:">edit</a>]</span> <span class="mw-headline" id="Smart_visualization:"> Smart visualization: </span></h4>
+<p>"X-rays" style.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=31.html" title="Edit section: Scale/translate/rotate/mirror/merge:">edit</a>]</span> <span class="mw-headline" id="Scale.2Ftranslate.2Frotate.2Fmirror.2Fmerge:"> Scale/translate/rotate/mirror/merge:</span></h4>
+<p>Of Collision objects.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=32.html" title="Edit section: Build from mesh:">edit</a>]</span> <span class="mw-headline" id="Build_from_mesh:"> Build from mesh:</span></h4>
+<p>Turn a mesh (or a group of meshes) into a collision object:====
+(note: it better be closed, and appropriately low res).
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=33.html" title="Edit section: Tools for Materials/Textures:">edit</a>]</span> <span class="mw-headline" id="Tools_for_Materials.2FTextures:">Tools for Materials/Textures:</span></h3>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=34.html" title="Edit section: Editing of multiple materials/meshes:">edit</a>]</span> <span class="mw-headline" id="Editing_of_multiple_materials.2Fmeshes:"> Editing of multiple materials/meshes:</span></h4>
+<p>Just make a multiple selection and edit flags, texture names, etc.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=35.html" title="Edit section: Direct flag editing:">edit</a>]</span> <span class="mw-headline" id="Direct_flag_editing:"> Direct flag editing:</span></h4>
+<p>Of material, textures.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=36.html" title="Edit section: Texture data:">edit</a>]</span> <span class="mw-headline" id="Texture_data:"> Texture data:</span></h4>
+<p>openBRF will tell you everything about resolution, mipmap level, compression mode, disk size, location (module or common folder) etc of your textures.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=37.html" title="Edit section: Mini-&quot;can't find texture&quot; diagnostics:">edit</a>]</span> <span class="mw-headline" id="Mini-.22can.27t_find_texture.22_diagnostics:"> Mini-"can't find texture" diagnostics:</span></h4>
+<p>If openBRF is not able to show textures, for whatever reason, it shows a checkboard replacement and offer a mini-diagnostic under settings
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=38.html" title="Edit section: Material rendering:">edit</a>]</span> <span class="mw-headline" id="Material_rendering:"> Material rendering:</span></h4>
+<p>openBRF will try to guess rendering of a material (shininess, transparency, cutouts...) when rendering a material over a mesh. Normalmap and specular maps too.
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=39.html" title="Edit section: Tools for vertex animations:">edit</a>]</span> <span class="mw-headline" id="Tools_for_vertex_animations:">Tools for vertex animations:</span></h3>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=40.html" title="Edit section: Frame stacking:">edit</a>]</span> <span class="mw-headline" id="Frame_stacking:"> Frame stacking:</span></h4>
+<p>vertex animation are build stacking each frame separately.
+</p>
+<pre>You can import them separately, or use the cut-frame, copy-frame, paste-frame operations (under "edit"). Either way, you can choose one of two algorithms in order to actually assemble the animation (make your choice under "settings" menu): either you trust the vertex order of your mesh, or you distinguish vertices by their vertex coordinates. More info in this post.
+</pre>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=41.html" title="Edit section: Direct import/export:">edit</a>]</span> <span class="mw-headline" id="Direct_import.2Fexport:"> Direct import/export:</span></h4>
+<p>As MD2 files
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=42.html" title="Edit section: Copy timings:">edit</a>]</span> <span class="mw-headline" id="Copy_timings:"> Copy timings:</span></h4>
+<p>To transfer per-frame timings from an ani to another (select first animation, copy it (ctrl+C), select second ani, "edit"-&gt;"paste timings".
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=43.html" title="Edit section: Module management:">edit</a>]</span> <span class="mw-headline" id="Module_management:">Module management:</span></h3>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=44.html" title="Edit section: Fast ini loading:">edit</a>]</span> <span class="mw-headline" id="Fast_ini_loading:"> Fast ini loading:</span></h4>
+<p>to make a quick auto-scan of the entire dataset as described in the ini- file (i.e.\ read all the included brf files for further references).
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=45.html" title="Edit section: Module navigation:">edit</a>]</span> <span class="mw-headline" id="Module_navigation:"> Module navigation:</span></h4>
+<p>to jump from a mesh to its material and from a material to its textures/shader (and back). Use Ctrl-arrows (left/right), or click on labels (e.g. "Material") in the panel.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=46.html" title="Edit section: &quot;Used-by&quot; submenu:">edit</a>]</span> <span class="mw-headline" id=".22Used-by.22_submenu:"> "Used-by" submenu:</span></h4>
+<p>(the opposite of the above): you can see all other objects using an object (and load them if you want). The same menu shows all txt files making any use of that object, directly or indirectly (txt files are the one the games loads when it loads your module) .
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=47.html" title="Edit section: Autocompletion:">edit</a>]</span> <span class="mw-headline" id="Autocompletion:"> Autocompletion:</span></h4>
+<p>of texture names, etc. Also, after you copy an object (ctrl-C), you can paste its name (ctrl-V) in a text box (you can still paste the object itself in the object list, to move it from a brf file to another).
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=48.html" title="Edit section: Verify-module tool:">edit</a>]</span> <span class="mw-headline" id="Verify-module_tool:"> Verify-module tool:</span></h4>
+<p>to scan the entire module for errors and inconsistencies: missing texture, doubled item, meshes using unknown material,wrong brf order in ini file. It's in the "module" menu.  [HokieBT and Dain Ironfoot suggestion]
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=49.html" title="Edit section: Search:">edit</a>]</span> <span class="mw-headline" id="Search:"> Search:</span></h4>
+<p>to look for objects with a certain string in the name [HokieBT and Darwin suggestion] 
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=50.html" title="Edit section: Scanning of txt:">edit</a>]</span> <span class="mw-headline" id="Scanning_of_txt:"> Scanning of txt:</span></h4>
+<p>so that OpenBRF knows what Meshes, Matrerials, Skeletons... etc your module is using. Objects are color coded accordingly. More info [here]
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=51.html" title="Edit section: &quot;Follow used&quot;:">edit</a>]</span> <span class="mw-headline" id=".22Follow_used.22:"> "Follow used":</span></h4>
+<p>to jump from a mesh to its material and from a material to its textures/shader (and back). Use Ctrl-arrows (left/right), or click on labels (e.g. "Material") in the panel.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=52.html" title="Edit section: Show unreferenced DDS tool:">edit</a>]</span> <span class="mw-headline" id="Show_unreferenced_DDS_tool:"> Show unreferenced DDS tool:</span></h4>
+<p>to see what texture files (DDS and TIFs) are sitting on the hard drive unused.
+</p>
+<h4><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=53.html" title="Edit section: Dump module content from prompt:">edit</a>]</span> <span class="mw-headline" id="Dump_module_content_from_prompt:"> Dump module content from prompt:</span></h4>
+<p>if you run it from the command line (or a batch file) like this:
+OpenBRF.exe --dump &lt;module_path&gt; &lt;file.txt&gt;
+then OpenBRF will not open the GUI, but instead it will dump an easy-to-parse text file with the names of all the meshes, materials, animations... etc  found in the BRF files which are listed in the ini of the module. This is intended to be used by other mod tools, e.g. to add auto-completion or error checking.
+</p>
+<h2><span class="editsection">[<a href="index.php@title=OpenBRF&amp;action=edit&amp;section=54.html" title="Edit section: Links">edit</a>]</span> <span class="mw-headline" id="Links"> Links </span></h2>
+<p>Official Board in TaleWorlds Forums: <a href="http://forums.taleworlds.com/index.php/board,215.0.html" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php/board,215.0.html</a><br />
+Download Link and Updated Information: <a href="http://forums.taleworlds.com/index.php?topic=72279.0" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php?topic=72279.0</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 215/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:88-0!*!0!!en!* and timestamp 20200419213916 -->
+<div class="printfooter">
+Retrieved from "<a href="OpenBRF.html">http://mbmodwiki.ollclan.eu/OpenBRF</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AEditing_Tool.html" title="Category:Editing Tool">Editing Tool</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=OpenBRF.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="OpenBRF.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOpenBRF&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="OpenBRF.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="OpenBRF.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=OpenBRF&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=OpenBRF&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="OpenBRF.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/OpenBRF.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/OpenBRF.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=OpenBRF&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=OpenBRF&amp;oldid=492.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 8 May 2015, at 02:24.</li>
+																							<li id="footer-info-viewcount">This page has been accessed 13 times.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "OpenBRF", "wgTitle": "OpenBRF", "wgAction": "view", "wgArticleId": 88, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 492, "wgCategories": ["Editing Tool"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.134 secs. -->			</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Official Module System Documentation: Part 05 - Mount&amp;Blade Modding Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit.html" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit.html" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
+<link title="Creative Commons" type="application/rdf+xml" href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://creativecommons.org/licenses/publicdomain/" />
+<link rel="alternate" type="application/atom+xml" title="Mount&amp;Blade Modding Wiki Atom feed" href="index.php@title=Special%253ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared%257Cskins.vector&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+<link rel="stylesheet" href="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;%252A.css" />
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Official_Module_System_Documentation_Part_05 skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Official Module System Documentation: Part 05</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 09:23, 10 October 2013 by <a href="http://mbmodwiki.ollclan.eu/Special:Contributions/212.57.167.57" title="Special:Contributions/212.57.167.57" class="mw-userlink">212.57.167.57</a>  <span class="mw-usertoollinks">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=User_talk:212.57.167.57&amp;action=edit&amp;redlink=1" class="new" title="User talk:212.57.167.57 (page does not exist)">Talk</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_05&amp;diff=prev&amp;oldid=417" title="Official Module System Documentation: Part 05">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_05&amp;direction=prev&amp;oldid=417" title="Official Module System Documentation: Part 05">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#mw-head">navigation</a>,
+					<a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
+<p>	<span class="swynavbar-left" style="float:left;">
+	<a href="Official_Module_System_Documentation%253A_Part_04.html" title="Official Module System Documentation: Part 04"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+           </span></a>
+	</span>
+	<span class="swynavbar-right">
+	<a href="Official_Module_System_Documentation%253A_Part_06.html" title="Official Module System Documentation: Part 06"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	</span>
+</p>
+</div>
+<p><br />
+In Parts 3 and 4, we have learned how to create and equip new troops and party templates. With this background in place, we can now study how to make new items for our troops to use.
+</p><p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#5.1_--_Breakdown_of_Module_Items"><span class="tocnumber">1</span> <span class="toctext">5.1 -- Breakdown of Module_Items</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#Breakdown_of_the_tuple_fields:"><span class="tocnumber">2</span> <span class="toctext">Breakdown of the tuple fields:</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#5.2_--_Damage_Types"><span class="tocnumber">3</span> <span class="toctext">5.2 -- Damage Types</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#5.3_--_Creating_An_Item"><span class="tocnumber">4</span> <span class="toctext">5.3 -- Creating An Item</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#5.4_--_Item_Stats"><span class="tocnumber">5</span> <span class="toctext">5.4 -- Item Stats</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit&amp;section=1.html" title="Edit section: 5.1 -- Breakdown of Module Items">edit</a>]</span> <span class="mw-headline" id="5.1_--_Breakdown_of_Module_Items"> 5.1 -- Breakdown of Module_Items </span></h2>
+<p>module_items.py begins with a number of constants that are used to govern item modifiers, which adjust the items we see in-game. Bent polearms, chipped swords, heavy axes, they are all created from a tuple in module_items and then given an appropriate item modifier to adjust their stats up or down.
+</p><p>The constants defined here consist of standard item modifiers. The items you find in merchants and in loot will draw their modifiers randomly from these constants. Modifiers that are not listed in an item's modifier constant will not be considered for merchant inventory or battle loot. 
+</p><p>For more experienced modders, it is interesting to note that modifiers which aren't listed in the appropriate constant can still be used with the "troop_add_item" operation. For example, longbows usually come only in "plain", "bent" and "cracked" forms; but if we were to add a longbow to the player's inventory with the modifier "balanced" on it, the player will receive a balanced longbow.
+</p><p><br />
+After the constants, the list of tuples begins. The first one of interest is the weapon "practice_sword", which will function as a good example.
+</p><p><br />
+Example of an item:
+</p><p>["practice_sword","practice_sword", [("practice_sword",0)], itp_type_one_handed_wpn|itp_melee|itp_primary|itp_secondary, itc_longsword, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt),imodbits_none],
+</p><p>This is a basic practice weapon, used in Zendar throughout the training and in the arena fights.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit&amp;section=2.html" title="Edit section: Breakdown of the tuple fields:">edit</a>]</span> <span class="mw-headline" id="Breakdown_of_the_tuple_fields:"> Breakdown of the tuple fields: </span></h2>
+<p>1 ) Item id. Used for referencing items in other files.
+2 ) Item name. Name of item as it will appear in inventory window
+3 ) List of meshes.  Each mesh record is a tuple containing the following fields:
+</p>
+<pre>   3.1) Mesh name. The name of a 3d model in the game or module's resource files.
+   3.2) Modifier bits that this mesh matches. A list of item modifiers that will use this mesh instead of the default. The first mesh in the list is the default.
+</pre>
+<p>4 ) Item flags.
+5 ) Item capabilities. This field contains a list of animations that this item can use.
+6 ) Item value. The base value in denars. Note, the actual value of the item will be much higher in-game unless the player has a trade skill of 10.
+7 ) Item stats. This is where the statistics of the item are defined; weight, abundance, difficulty, armour ratings, etc.
+8 ) Modifier bits. Modifiers that can be applied to this item.
+9 ) [Optional] Triggers. A list of simple triggers to be associated with this item.
+</p><p><br />
+Practice_sword tuple examination:
+</p><p>1 ) Item id = "practice_sword"
+2 ) Item name = "practice_sword"
+3 ) List of meshes:
+</p>
+<pre>   3.1) Mesh name = "practice_sword"
+   3.2) Modifier bits = 0
+</pre>
+<p>4 ) Item flags = itp_type_one_handed_wpn|itp_melee|itp_primary|itp_secondary
+5 ) Item capabilities = itc_longsword
+6 ) Item value = 3
+7 ) Item stats = weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt)
+8 ) Modifier bits = imodbits_none
+9 ) Triggers = None.
+</p><p>We can now tell all of "practice_sword"'s details from its tuple.
+</p><p>- It uses the mesh "practice_sword" as its default mesh.
+- It uses item flags that mark it as a one-handed melee weapon. Troops who are equipped with "practice_sword" will consider "practice_sword" when choosing a primary melee weapon from their inventory listing. They will also consider "practice_sword" when choosing a backup (secondary) weapon.
+(Note: The secondary weapon function is currently nebulous. It's unclear when it's used or if it's used at all. However, melee troops certainly will not switch to different melee weapons during combat.)
+- It has all the animations defined in the constant itc_longsword, so "practice_sword" is able to be used as a longsword would be.
+- It weights 1.5 kilogrammes. Its speed rating is 103, its weapon length is 90. It does a base 16 blunt damage while swinging, and a base 10 blunt damage while thrusting.
+- It uses no item modifiers.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit&amp;section=3.html" title="Edit section: 5.2 -- Damage Types">edit</a>]</span> <span class="mw-headline" id="5.2_--_Damage_Types"> 5.2 -- Damage Types </span></h2>
+<p>As we've observed in the tuple examination, "practice_sword" does blunt damage. Obviously this is because it's a practice weapon, but it provides a good incentive to look into the different damage types available in M&amp;B.
+</p><p>First, there is cut damage. Cut damage represents the slicing action of a sharp blade, such as a sword or an axe. Cut damage gets a bonus against unarmoured or lightly-armoured enemies, but conversely it has a large penalty against heavy armour. Cut damage will kill an enemy if it brings the enemy to 0 hit points.
+</p><p>Next we have blunt damage. Blunt damage represents the bludgeoning effect of weapons without an edge, such as a mace or hammer. Blunt damage gets a 50% bonus against heavy armour, but blunt weapons are often shorter than cutting weapons and they do less damage overall. The largest advantage of blunt damage is that it knocks an enemy unconscious when the enemy is brought to 0 hit points, instead of killing him. Unconscious enemies can be captured and sold into slavery. Charging horses also do blunt damage.
+</p><p>Finally, pierce damage represents the penetrating tip of arrows, crossbow bolts and similar weapons. Pierce damage gets a 50% bonus against heavy armour, but piercing weapons usually do less damage overall in order to balance it with the other damage types. Pierce damage will kill an enemy if it brings the enemy to 0 hit points.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit&amp;section=4.html" title="Edit section: 5.3 -- Creating An Item">edit</a>]</span> <span class="mw-headline" id="5.3_--_Creating_An_Item"> 5.3 -- Creating An Item </span></h2>
+<p>Copy the "practice_sword" tuple and paste it at the bottom of the file, before the closing bracket. Once done, change the name and identifier of this new tuple to "new_mace".
+</p><p>["new_mace","new_mace", [("practice_sword",0)], itp_type_one_handed_wpn|itp_melee|itp_primary|itp_secondary, itc_longsword, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt),imodbits_none],
+</p><p>The M&amp;B items system is very flexible; it takes only a few small adjustments to turn a sword into a mace. In the case of "practice_sword", it was already set to do blunt damage. That makes our job even easier.
+</p><p>First, we change the item capabilities of our new mace from itc_longsword to itc_scimitar. This will cause our mace to lose the ability to thrust, because M&amp;B's thrusting animation is not included in the itc_scimitar constant.
+</p><p><br />
+["new_mace","new_mace", [("practice_sword",0)], itp_type_one_handed_wpn|itp_melee|itp_primary|itp_secondary, itc_scimitar, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt),imodbits_none],
+</p><p>Next, we'll change the item's mesh from "practice_sword" to "mace_pear". This is a mesh that is not used in the Native game, so by doing this we will be giving our new mace a fresh new look.
+</p><p><br />
+["new_mace","new_mace", [("mace_pear",0)], itp_type_one_handed_wpn|itp_melee|itp_primary|itp_secondary, itc_scimitar, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt),imodbits_mace],
+</p><p>In this example, we have changed the mesh as planned, and also switched the modifier bits from imodbits_none to imodbits_mace. This will allow our new mace to use all the modifiers specified in the constant imodbits_mace at the beginning of the file.
+</p><p>There are only two further changes we need to make to finish up this item. Notably, we're going to increase its swing damage, and we're going to give it an additional item flag.
+</p><p>Observe:
+</p><p><br />
+["new_mace","new_mace", [("mace_pear",0)], itp_type_one_handed_wpn|itp_melee|itp_primary|itp_secondary|itp_unique, itc_scimitar, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(26,blunt)|thrust_damage(10,blunt),imodbits_mace],
+</p><p>As you can see, we have upped the swing damage from 16 to 26, which will make our new mace a good deal more dangerous in a fight. And, more notably, we've added the flag itp_unique to the Flags field. An item with itp_unique cannot be looted via the normal post-battle loot screen. This will keep the player from getting his hands on it too early, because we have plans for this mace.
+</p><p>For our last adjustment, change the item name from "new_mace" to "Geoffrey's_mace". Then, open module_trooops.py and replace the itm_club in Geoffrey's inventory with itm_new_mace.
+</p><p>Save your progress in both files, then click on build_module.bat.
+</p><p>Congratulations! You've made a brand new item and added it to a troop's inventory. The troop in question is a Hero, so he will always have the new mace in his inventory, and he will always use the best weapon in his inventory that he's able to use. 
+</p><p>Regulars, on the other hand, will choose their equipment at random from their inventory list. This is why most regulars have a very varied selection -- otherwise they will all look the same.
+</p><p><br />
+Now that we know how to create new items, we can take a look at the various different statistics and examine what they all mean.
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit&amp;section=5.html" title="Edit section: 5.4 -- Item Stats">edit</a>]</span> <span class="mw-headline" id="5.4_--_Item_Stats"> 5.4 -- Item Stats </span></h2>
+<p>In this segment you will find a comprehensive list of stats and a breakdown of their function. As some stats mean different things for different item types, we have organised the list by item types.
+</p><p>General
+</p><p>abundance -- Percentage value.
+This stat governs how often the item will appear in merchant inventories and combat loot. 100 is standard; can be more or less than 100 (down to 0).
+</p><p>weight -- Kilogramme value.
+Defines the weight of the item in kilogrammes.
+</p><p><br />
+itp_type_horse
+</p><p>body_armor -- Value.
+Determines the horse's armour rating and number of hit points. A higher value means more armour and more hit points.
+</p><p>difficulty -- Value.
+Determines how high the player's Riding skill needs to be to be able to mount this horse.
+</p><p>horse_speed -- Value.
+The horse's speed on the battle map. Higher values make faster horses.
+</p><p>horse_maneuver -- Value.
+The horse's manoeuvrability on the battle map.
+</p><p>horse_charge -- Value.
+Determines how much damage the horse will do when charging infantry, and how much speed the horse will lose during each collision with an infantryman. Higher values will allow horses to do more damage and wade through more infantry.
+</p><p><br />
+itp_type_one_handed_wpn
+</p><p>difficulty -- Value.
+The minimum STR score needed to be able to use this weapon. If a troop does not have greater or equal STR, he will not be able to wield it.
+</p><p>spd_rtng -- Value.
+The attack speed of the weapon, both swing and thrust.
+</p><p>weapon_length -- Centimetre value.
+The length of the weapon in centimetres. This stat determines how far the weapon will be able to reach in-game, regardless of the mesh size.
+</p><p>swing_damage -- Value, damage type.
+The base damage and damage type of the weapon when performing a swing attack.
+</p><p>thrust_damage -- Value, damage type.
+The base damage and damage type of the weapon when performing a thrust attack.
+</p><p><br />
+itp_type_two_handed_wpn
+</p><p>Same as itp_type_one_handed_wpn.
+</p><p><br />
+itp_type_polearm
+</p><p>Same as itp_type_one_handed_wpn.
+</p><p><br />
+itp_type_arrows
+</p><p>weapon_length -- Centimetre value.
+The length of the arrow in centimetres.
+</p><p>thrust_damage -- Value, damage type.
+The amount of damage this type of arrow adds to the bow's base damage, and the damage type.
+</p><p>max_ammo -- Value.
+The number of arrows in one stack.
+</p><p><br />
+itp_type_bolts
+</p><p>Same as itp_type_arrows.
+</p><p><br />
+itp_type_shield
+</p><p>difficulty -- Value.
+The minimum shield skill score needed to be able to use this shield.
+</p><p>hit_points -- Value.
+The base number of hit points for this shield.
+</p><p>body_armor -- Value.
+The amount of damage subtracted from every hit to the shield,.
+</p><p>spd_rtng -- Value.
+The speed with which the shield can be brought up into defensive mode.
+</p><p>weapon_length -- Value.
+Shield coverage. Higher values allow the shield to cover more body area, offering shield protection from arrows to larger sections of the body.
+</p><p><br />
+itp_type_bow
+</p><p>difficulty -- Value.
+The minimum Power Draw score needed to be able to use this bow. If a troop does not have greater or equal Power Draw, he will not be able to wield it.
+</p><p>spd_rtng -- Value.
+The bow's reloading speed. IE, how fast a troop will be able to take an arrow from quiver, notch, and draw the bow again. Higher values will mean quicker reload times.
+</p><p>shoot_speed -- Value.
+The speed at which ammunition from this bow flies through the air. Higher values will mean faster arrows; note, however, that very fast ammunition may clip through nearby enemies without hitting them.
+</p><p>thrust_damage -- Value, damage type.
+The base damage and damage type inflicted by hits from this bow.
+</p><p>accuracy -- Percentage value.
+The chance of a shot flying exactly at the troop's aiming point. 100 represents a 100% chance, lower values will greatly decrease the chance of a hit. This is not used on the Native bows and crossbows, but can be added.
+</p><p><br />
+itp_type_crossbow
+</p><p>difficulty -- Value.
+The minimum STR score needed to be able to use this crossbow. If a troop does not have greater or equal STR, he will not be able to use it.
+</p><p>spd_rtng -- Value.
+The crossbow's reloading speed. IE, how fast a troop will be able to take a bolt from quiver, notch, and pull back the string for firing. Higher values will mean quicker reload times.
+</p><p>shoot_speed -- Value.
+The speed at which ammunition from this crossbow flies through the air. Higher values will mean faster bolts; note, however, that very fast ammunition may clip through nearby enemies without hitting them.
+</p><p>thrust_damage -- Value, damage type.
+The base damage and damage type inflicted by hits from this crossbow.
+</p><p>max_ammo -- Value.
+The number of bolts that can be fired from this crossbow before it must be reloaded.
+</p><p>accuracy -- Percentage value.
+The chance of a shot flying exactly at the troop's aiming point. 100 represents a 100% chance, lower values will greatly decrease the chance of a hit. This is not used on the Native bows and crossbows, but can be added.
+</p><p><br />
+itp_type_thrown
+</p><p>difficulty -- Value.
+The minimum Power Throw score needed to be able to use this weapon. If a troop does not have greater or equal Power Throw, he will not be able to use it.
+</p><p>spd_rtng -- Value.
+The reloading rate for this weapon. IE, how fast the next piece of ammunition can be readied for throwing.
+</p><p>shoot_speed -- Value.
+The speed at which this weapon's ammunition flies through the air.
+</p><p>thrust_damage -- Value, damage type.
+The base damage and damage type inflicted by hits from this weapon.
+</p><p>max_ammo -- Value.
+The number of weapons (IE, ammunition) contained in one stack.
+</p><p>weapon_length -- Centimetre value.
+The weapon's length in centimetres.
+</p><p><br />
+itp_type_goods
+</p><p>food_quality
+The impact a food item will have on party morale. Values above 50 will improve morale while the item is being consumed, lower values will lower morale.
+</p><p>max_ammo
+The number of consumable parts for this item.
+</p><p><br />
+itp_type_head_armor
+</p><p>head_armor -- Value.
+The amount of damage this piece of armour will prevent to the head of the troop.
+</p><p>body_armor -- Value.
+The amount of damage this piece of armour will prevent to the body of the troop.
+</p><p>leg_armor -- Value.
+The amount of damage this piece of armour will prevent to the legs of the troop.
+</p><p>difficulty -- Value.
+The minimum STR required to wear this piece of armour.
+</p><p><br />
+itp_type_body_armor
+</p><p>Same as itp_type_head_armor.
+</p><p><br />
+itp_type_foot_armor
+</p><p>Same as itp_type_head_armor.
+</p><p><br />
+itp_type_hand_armor
+</p><p>Same as itp_type_head_armor.
+</p><p><br />
+itp_type_pistol
+</p><p>difficulty -- Value.
+The minimum STR score needed to be able to use this pistol.
+</p><p>spd_rtng -- Value.
+The pistol's reloading speed. IE, how fast a troop will be able to reload the pistol and aim it again.
+</p><p>shoot_speed -- Value.
+The speed at which ammunition from this pistol flies through the air.
+</p><p>thrust_damage -- Value, damage type.
+The base damage and damage type inflicted by hits from this pistol.
+</p><p>max_ammo -- Value.
+The number of bullets that can be fired from this pistol before it must be reloaded.
+</p><p>accuracy -- Percentage value.
+The chance of a shot flying exactly at the troop's aiming point. 100 represents a 100% chance, lower values will greatly decrease the chance of a hit.
+</p><p><br />
+itp_type_musket
+</p><p>Same as itp_type_pistol.
+</p><p><br />
+itp_type_bullets
+</p><p>Same as itp_type_arrows.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 35/1000000
+Post-expand include size: 543/2097152 bytes
+Template argument size: 148/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:73-0!*!0!!en!* and timestamp 20200419220841 -->
+<div class="printfooter">
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_05.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_05</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
+					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+					<li  id="pt-anonlogin"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Special:UserLogin&amp;returnto=Official_Module_System_Documentation:_Part_05&amp;returntoquery=oldid%3D417" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_05.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_05&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_05.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://mbmodwiki.ollclan.eu/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Mount&amp;Blade Modding Wiki [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search the pages for this text"><img src="http://mbmodwiki.ollclan.eu/skins/vector/images/search-ltr.png?301" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_05.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_05.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_05&amp;oldid=417&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_05&amp;oldid=417.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/publicdomain/"><img src="images/public-domain.png" alt="Public Domain" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://mbmodwiki.ollclan.eu/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Official_Module_System_Documentation:_Part_05", "wgTitle": "Official Module System Documentation: Part 05", "wgAction": "view", "wgArticleId": 73, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 417, "wgCategories": ["Official Documentation"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": false, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": false, "expandablesearch": true, "footercleanup": false, "simplesearch": true}});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.expandableSearch", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;%252A"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar-cgd":1,"vector-simplesearch":1,"vector-collapsiblenav":1,"vector-collapsibletabs":1,"vector-editwarning":1,"vector-expandablesearch":1,"vector-footercleanup":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.151 secs. -->			</body>
+</html>
