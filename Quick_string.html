@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>Quick string - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Quick_string&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Quick_string&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Quick_string&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Quick_string&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -43,7 +43,7 @@
 				</div>
 				<!-- /jumpto -->
 								<!-- bodytext -->
-				<p>A <b>quick string</b> is a <a href="String.html" title="String">string</a> that isn't defined in advance in <a href="index.php@title=Module_strings&amp;action=edit&amp;redlink=1.html" class="new" title="Module strings (page does not exist)">module_strings</a>.py.  It can be used anywhere that a string ID would normally be used &#8212; normally a <a href="String_register.html" title="String register">string register</a>.
+				<p>A <b>quick string</b> is a <a href="String.html" title="String">string</a> that isn't defined in advance in <a href="index.php@title=Module_strings&amp;action=edit&amp;redlink=1.html" class="new" title="Module strings (page does not exist)">module_strings</a>.py.  It can be used anywhere that a string ID would normally be used &#8212; normally a <a href="String_register" title="String register">string register</a>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -56,7 +56,7 @@
 </li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=1.html" title="Edit section: Construction">edit</a>]</span> <span class="mw-headline" id="Construction"> Construction </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=1" title="Edit section: Construction">edit</a>]</span> <span class="mw-headline" id="Construction"> Construction </span></h2>
 <p>A quick string is written exactly like a string literal would be, but it is prefaced with the strudel "<code><b>@</b></code>" symbol.  For instance, the following expression:
 </p>
 <pre>(str_store_string, s0, "comment_you_defeated_my_friend_enemy_pragmatic")
@@ -65,13 +65,13 @@
 </p>
 <pre>(str_store_string, s0, "@You may have bested {s54}, but you cannot defeat us all.")
 </pre>
-<h2><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=2.html" title="Edit section: Caveat">edit</a>]</span> <span class="mw-headline" id="Caveat"> Caveat </span></h2>
-<h3><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=3.html" title="Edit section: Repeated strings">edit</a>]</span> <span class="mw-headline" id="Repeated_strings"> Repeated strings </span></h3>
+<h2><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=2" title="Edit section: Caveat">edit</a>]</span> <span class="mw-headline" id="Caveat"> Caveat </span></h2>
+<h3><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=3" title="Edit section: Repeated strings">edit</a>]</span> <span class="mw-headline" id="Repeated_strings"> Repeated strings </span></h3>
 <p>Good practice is to put any text you will use repeatedly into module_strings.py and avoid using quick strings.  That way, if you find you have a typo or you need to refactor the text, you can simply perform one edit and all copies of the text will be updated accordingly.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=4.html" title="Edit section: Strings vs. quick strings">edit</a>]</span> <span class="mw-headline" id="Strings_vs._quick_strings"> Strings vs. quick strings </span></h3>
-<p>It is much easier to edit and localise mod text in module_strings than it is to locate and edit mod text inside <a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module scripts (page does not exist)">module_scripts</a> and <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>, but at the same time it is easier to maintain a collaborative mod project without having to ensure that new strings are not accidentally omitted from module_strings when a new version is released.
-</p><p>If you are making a <a href="index.php@title=Submod&amp;action=edit&amp;redlink=1.html" class="new" title="Submod (page does not exist)">submod</a>, it is probably better to maintain your text as quick strings directly in the dialogue or script.  If you are making a full mod, it is better to make a genuine <a href="String.html" title="String">string</a> in module_strings and reference that from the dialogue or script instead.
+<h3><span class="editsection">[<a href="index.php@title=Quick_string&amp;action=edit&amp;section=4" title="Edit section: Strings vs. quick strings">edit</a>]</span> <span class="mw-headline" id="Strings_vs._quick_strings"> Strings vs. quick strings </span></h3>
+<p>It is much easier to edit and localise mod text in module_strings than it is to locate and edit mod text inside <a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module scripts (page does not exist)">module_scripts</a> and <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>, but at the same time it is easier to maintain a collaborative mod project without having to ensure that new strings are not accidentally omitted from module_strings when a new version is released.
+</p><p>If you are making a <a href="index.php@title=Submod&amp;action=edit&amp;redlink=1.html" class="new" title="Submod (page does not exist)">submod</a>, it is probably better to maintain your text as quick strings directly in the dialogue or script.  If you are making a full mod, it is better to make a genuine <a href="String" title="String">string</a> in module_strings and reference that from the dialogue or script instead.
 </p>
 <!-- 
 NewPP limit report
@@ -83,10 +83,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:98-0!*!0!!en!* and timestamp 20200419213852 -->
 <div class="printfooter">
-Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_string</a>"</div>
+Retrieved from "<a href="Quick_string">http://mbmodwiki.ollclan.eu/Quick_string</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AStrings.html" title="Category:Strings">Strings</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AStrings" title="Category:Strings">Strings</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -101,7 +101,7 @@ Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_st
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Quick_string.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Quick_string" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -112,8 +112,8 @@ Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_st
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Quick_string.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AQuick_string&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Quick_string"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AQuick_string&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -136,9 +136,9 @@ Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_st
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Quick_string.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Quick_string&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Quick_string&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Quick_string" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Quick_string&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Quick_string&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -174,7 +174,7 @@ Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_st
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -182,13 +182,13 @@ Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_st
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -204,11 +204,11 @@ Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_st
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Quick_string.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Quick_string.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=Quick_string&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Quick_string&amp;oldid=531.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Quick_string" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Quick_string" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Quick_string&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Quick_string&amp;oldid=531" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -228,9 +228,9 @@ Retrieved from "<a href="Quick_string.html">http://mbmodwiki.ollclan.eu/Quick_st
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

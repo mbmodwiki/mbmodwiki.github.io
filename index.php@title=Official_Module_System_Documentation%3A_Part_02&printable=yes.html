@@ -5,8 +5,8 @@
 <title>Official Module System Documentation: Part 02 - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
 <meta name="robots" content="noindex,follow" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -46,11 +46,11 @@
 								<!-- bodytext -->
 				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
 <p>	<span class="swynavbar-left" style="float:left;">
-	<a href="Official_Module_System_Documentation%253A_Part_01.html" title="Official Module System Documentation: Part 01"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+	<a href="Official_Module_System_Documentation%253A_Part_01" title="Official Module System Documentation: Part 01"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
            </span></a>
 	</span>
 	<span class="swynavbar-right">
-	<a href="Official_Module_System_Documentation%253A_Part_03.html" title="Official Module System Documentation: Part 03"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	<a href="Official_Module_System_Documentation%253A_Part_03" title="Official Module System Documentation: Part 03"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
 	</span>
 </p>
 </div>
@@ -72,7 +72,7 @@ As mentioned in the previous chapter, you work with the Module system as follows
 </ul>
 </td></tr></table>
 <h2> <span class="mw-headline" id="Editing_the_Module_Files"> Editing the Module Files </span></h2>
-<p>The module system uses <a href="Python.html#Lists" title="Python">Python lists</a> to represent collections of game objects. If you open and view any of the module files you'll see that it contains such a list. An excerpt from <a href="index.php@title=Module_map_icons&amp;action=edit&amp;redlink=1.html" class="new" title="Module map icons (page does not exist)">module_map_icons</a> contains:
+<p>The module system uses <a href="Python.html#Lists" title="Python">Python lists</a> to represent collections of game objects. If you open and view any of the module files you'll see that it contains such a list. An excerpt from <a href="index.php@title=Module_map_icons&amp;action=edit&amp;redlink=1" class="new" title="Module map icons (page does not exist)">module_map_icons</a> contains:
 </p>
 <pre>
 map_icons = [
@@ -142,18 +142,18 @@ map_icons = [
 <pre> ("new_icon",0,"<i>City</i>", <b>3.5</b>,0),
 </pre>
 <p>In this example, we have changed the mesh reference to "<i>City</i>" and the icon's scale from 0.35 to 3.5. This means the icon will be displayed 3.5 times as large as its model size, or ten times as large as it would have been. That should help us tell it apart from "town" when we put it into the game.
-</p><p>Next we will create a new party in <a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1.html" class="new" title="Module parties (page does not exist)">module_parties</a> that uses our new icon. To do this, we will need to reference the icon.
+</p><p>Next we will create a new party in <a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1" class="new" title="Module parties (page does not exist)">module_parties</a> that uses our new icon. To do this, we will need to reference the icon.
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Referencing_Game_Objects"> Referencing Game Objects </span></h2>
-<p>Open <a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1.html" class="new" title="Module parties (page does not exist)">module_parties</a> in your module system folder. You will see another Python list, parties = [.
+<p>Open <a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1" class="new" title="Module parties (page does not exist)">module_parties</a> in your module system folder. You will see another Python list, parties = [.
 </p><p>As you can see, the structure of tuples in module_parties is slightly different from module_map_icons. This holds true for many -- if not all -- of the module files. We'll take this opportunity to closely examine the parties structure.
 </p><p>An example of a party: 
 </p>
 <pre>("main_party","Main Party",icon_player|pf_limit_members, no_menu, pt_none,fac_player_faction,0,ai_bhvr_hold,0,(17, 52.5),[(trp_player,1,0)]),
 </pre>
-<p>This tuple is our player character's party. Its various qualities are set in the appropriate fields -- quite similar to the fields we've seen previously. These initial attributes are often overriden by <a href="index.php@title=Party_operations&amp;action=edit&amp;redlink=1.html" class="new" title="Party operations (page does not exist)">party operations</a>.
-</p><p>Breakdown of the tuple fields (See <a href="index.php@title=Header_parties&amp;action=edit&amp;redlink=1.html" class="new" title="Header parties (page does not exist)">header_parties</a> for definitions of party flags, personality, and AI-behaviour):
+<p>This tuple is our player character's party. Its various qualities are set in the appropriate fields -- quite similar to the fields we've seen previously. These initial attributes are often overriden by <a href="index.php@title=Party_operations&amp;action=edit&amp;redlink=1" class="new" title="Party operations (page does not exist)">party operations</a>.
+</p><p>Breakdown of the tuple fields (See <a href="index.php@title=Header_parties&amp;action=edit&amp;redlink=1" class="new" title="Header parties (page does not exist)">header_parties</a> for definitions of party flags, personality, and AI-behaviour):
 </p>
 <dl><dt> Party-id
 </dt><dd>"main_party"
@@ -172,10 +172,10 @@ map_icons = [
 </dd><dd>ID of the party template this party belongs to. Use pt_none (0) as the default value.
 </dd><dt> Party faction
 </dt><dd>fac_player_faction
-</dd><dd>ID of any faction from <a href="index.php@title=Module_factions&amp;action=edit&amp;redlink=1.html" class="new" title="Module factions (page does not exist)">module_factions</a>. For most centers, this is overriden by scripts
+</dd><dd>ID of any faction from <a href="index.php@title=Module_factions&amp;action=edit&amp;redlink=1" class="new" title="Module factions (page does not exist)">module_factions</a>. For most centers, this is overriden by scripts
 </dd><dt> Party personality
 </dt><dd>0
-</dd><dd>This is usually defined for individual <a href="index.php@title=Module_party_templates&amp;action=edit&amp;redlink=1.html" class="new" title="Module party templates (page does not exist)">party_templates</a> instead.
+</dd><dd>This is usually defined for individual <a href="index.php@title=Module_party_templates&amp;action=edit&amp;redlink=1" class="new" title="Module party templates (page does not exist)">party_templates</a> instead.
 </dd><dt> AI-behaviour
 </dt><dd>ai_bhvr_hold
 </dd><dd>How the AI party will act on the overland map.
@@ -191,7 +191,7 @@ map_icons = [
 </dd></dl>
 <ol><li> Troop-id.
 <dl><dd>trp_player
-</dd><dd>This can be the ID of any regular or hero troop from <a href="index.php@title=Module_troops&amp;action=edit&amp;redlink=1.html" class="new" title="Module troops (page does not exist)">module_troops</a>.
+</dd><dd>This can be the ID of any regular or hero troop from <a href="index.php@title=Module_troops&amp;action=edit&amp;redlink=1" class="new" title="Module troops (page does not exist)">module_troops</a>.
 </dd></dl>
 </li><li> Number of troops in this stack
 <dl><dd>1
@@ -202,9 +202,9 @@ map_icons = [
 </dd><dd>Use pmf_is_prisoner to note that a party member is a prisoner.
 </dd></dl>
 </li></ol>
-<p>By looking at the party flags, we can see that our party references the icon "player" from <a href="index.php@title=Module_map_icons&amp;action=edit&amp;redlink=1.html" class="new" title="Module map icons (page does not exist)">module_map_icons</a>, by adding the prefix icon_ to it. This prefix is what points the system to the right module file. In order to reference map icons, we use icon_; in order to reference module_factions, we use fac_; in order to reference module_parties, we use p_; and so on. There is an <a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;printable=yes.html#List_of_module_file_prefixes">appropriate prefix</a> for every module file.
+<p>By looking at the party flags, we can see that our party references the icon "player" from <a href="index.php@title=Module_map_icons&amp;action=edit&amp;redlink=1" class="new" title="Module map icons (page does not exist)">module_map_icons</a>, by adding the prefix icon_ to it. This prefix is what points the system to the right module file. In order to reference map icons, we use icon_; in order to reference module_factions, we use fac_; in order to reference module_parties, we use p_; and so on. There is an <a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;printable=yes.html#List_of_module_file_prefixes">appropriate prefix</a> for every module file.
 </p><p><br />
-Now that we know how parties are structured, we can begin adding our own. But before you do so, take note: In the case of module_parties.py and certain other module files, you should not add your new towns at the bottom of the list. There will be comments in these files warning you about doing this, as it can break operations in the native code. In <a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1.html" class="new" title="Module parties (page does not exist)">module_parties</a>, it is recommended that you add any new towns between "town_22" and "castle_1".
+Now that we know how parties are structured, we can begin adding our own. But before you do so, take note: In the case of module_parties.py and certain other module files, you should not add your new towns at the bottom of the list. There will be comments in these files warning you about doing this, as it can break operations in the native code. In <a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1" class="new" title="Module parties (page does not exist)">module_parties</a>, it is recommended that you add any new towns between "town_22" and "castle_1".
 </p><p>Now, copy the entry "town_14" and paste it after "town_22".
 </p>
 <pre> ("town_22","Bariyye", icon_town_desert|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(165, -106.7),[], 225),
@@ -225,37 +225,37 @@ Now that we know how parties are structured, we can begin adding our own. But be
 </p><p>The town is now set up to use our new icon and has its own unique map coordinates, allowing it to show up without problems.
 </p><p>Save your progress, then click on build_module.bat. If everything went well, you should now be able to start up your mod and see the new town and icon near the centre of the map. Try it.
 </p><p>If everything did not go well, check carefully for spelling and syntax. Make very sure that all commas and brackets are in the right place. Bad syntax is the most common source of compiler errors in the official module system.
-</p><p>In-game, travelling to the town now will trigger a default town menu (most options will not work), because the town is currently within the range of towns to be initialized in <a href="index.php@title=Script_game_start&amp;action=edit&amp;redlink=1.html" class="new" title="Script game start (page does not exist)">script_game_start</a>. Initializing a new town is a slightly complicated task, so we will leave our new town for the moment and return to it in a later chapter of this documentation.
+</p><p>In-game, travelling to the town now will trigger a default town menu (most options will not work), because the town is currently within the range of towns to be initialized in <a href="index.php@title=Script_game_start&amp;action=edit&amp;redlink=1" class="new" title="Script game start (page does not exist)">script_game_start</a>. Initializing a new town is a slightly complicated task, so we will leave our new town for the moment and return to it in a later chapter of this documentation.
 </p><p>As you can see, the interrelation of the various module files can be extensive. Every part must be covered for your module to work properly. Fortunately, most changes only require the editing of one or two files at most.
-</p><p>Now that you have a thorough grasp of the modding basics, we can take an in-depth look into the various module files. Please go to <a href="Official_Module_System_Documentation%253A_Part_3.html" title="Official Module System Documentation: Part 3" class="mw-redirect">Chapter 3</a> of the documentation now.
+</p><p>Now that you have a thorough grasp of the modding basics, we can take an in-depth look into the various module files. Please go to <a href="Official_Module_System_Documentation%253A_Part_3" title="Official Module System Documentation: Part 3" class="mw-redirect">Chapter 3</a> of the documentation now.
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="List_of_module_file_prefixes">List of module file prefixes</span></h2>
-<dl><dt>anim_<a href="index.php@title=Module_animations&amp;action=edit&amp;redlink=1.html" class="new" title="Module animations (page does not exist)">animation</a>
-</dt><dt>fac_<a href="index.php@title=Module_factions%253Afaction&amp;action=edit&amp;redlink=1.html" class="new" title="Module factions:faction (page does not exist)">module_factions:faction</a>
-</dt><dt>icon_<a href="index.php@title=Module_map_icons&amp;action=edit&amp;redlink=1.html" class="new" title="Module map icons (page does not exist)">map_icon</a>
-</dt><dt>ip_<a href="index.php@title=Module_info_pages%253Ainfo_page&amp;action=edit&amp;redlink=1.html" class="new" title="Module info pages:info page (page does not exist)">module_info_pages:info_page</a>
-</dt><dt>itm_<a href="index.php@title=Module_items&amp;action=edit&amp;redlink=1.html" class="new" title="Module items (page does not exist)">item</a>
-</dt><dt>mesh_<a href="index.php@title=Module_meshes&amp;action=edit&amp;redlink=1.html" class="new" title="Module meshes (page does not exist)">mesh</a>
-</dt><dt>mnu_<a href="index.php@title=Module_game_menus&amp;action=edit&amp;redlink=1.html" class="new" title="Module game menus (page does not exist)">game_menu</a>
-</dt><dt>mt_<a href="index.php@title=Module_mission_templates&amp;action=edit&amp;redlink=1.html" class="new" title="Module mission templates (page does not exist)">mission_template</a>
-</dt><dt>psys_<a href="index.php@title=Module_particle_systems&amp;action=edit&amp;redlink=1.html" class="new" title="Module particle systems (page does not exist)">particle_system</a>
-</dt><dt>p_<a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1.html" class="new" title="Module parties (page does not exist)">party</a>
-</dt><dt>pfx_<a href="index.php@title=Module_postfx&amp;action=edit&amp;redlink=1.html" class="new" title="Module postfx (page does not exist)">postfx</a>
-</dt><dt>prsnt_<a href="index.php@title=Module_presentations&amp;action=edit&amp;redlink=1.html" class="new" title="Module presentations (page does not exist)">presentation</a>
-</dt><dt>pt_<a href="index.php@title=Module_party_templates&amp;action=edit&amp;redlink=1.html" class="new" title="Module party templates (page does not exist)">party_template</a>
-</dt><dt>qst_<a href="index.php@title=Module_quests&amp;action=edit&amp;redlink=1.html" class="new" title="Module quests (page does not exist)">quest</a>
-</dt><dt>script_<a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module scripts (page does not exist)">script</a>
-</dt><dt>scn_<a href="index.php@title=Module_scenes&amp;action=edit&amp;redlink=1.html" class="new" title="Module scenes (page does not exist)">scene</a>
-</dt><dt>skl_<a href="index.php@title=Module_skills&amp;action=edit&amp;redlink=1.html" class="new" title="Module skills (page does not exist)">skill</a>
-</dt><dt>snd_<a href="index.php@title=Module_sounds&amp;action=edit&amp;redlink=1.html" class="new" title="Module sounds (page does not exist)">sound</a>
-</dt><dt>spr_<a href="index.php@title=Module_scene_props&amp;action=edit&amp;redlink=1.html" class="new" title="Module scene props (page does not exist)">scene_prop</a>
-</dt><dt>str_<a href="index.php@title=Module_strings&amp;action=edit&amp;redlink=1.html" class="new" title="Module strings (page does not exist)">string</a>
-</dt><dt>tableau_<a href="index.php@title=Module_tableau_meshes&amp;action=edit&amp;redlink=1.html" class="new" title="Module tableau meshes (page does not exist)">mesh</a>
-</dt><dt>track_<a href="index.php@title=Module_music&amp;action=edit&amp;redlink=1.html" class="new" title="Module music (page does not exist)">music</a>
-</dt><dt>trp_<a href="index.php@title=Module_troops&amp;action=edit&amp;redlink=1.html" class="new" title="Module troops (page does not exist)">troop</a>
+<dl><dt>anim_<a href="index.php@title=Module_animations&amp;action=edit&amp;redlink=1" class="new" title="Module animations (page does not exist)">animation</a>
+</dt><dt>fac_<a href="index.php@title=Module_factions%253Afaction&amp;action=edit&amp;redlink=1" class="new" title="Module factions:faction (page does not exist)">module_factions:faction</a>
+</dt><dt>icon_<a href="index.php@title=Module_map_icons&amp;action=edit&amp;redlink=1" class="new" title="Module map icons (page does not exist)">map_icon</a>
+</dt><dt>ip_<a href="index.php@title=Module_info_pages%253Ainfo_page&amp;action=edit&amp;redlink=1" class="new" title="Module info pages:info page (page does not exist)">module_info_pages:info_page</a>
+</dt><dt>itm_<a href="index.php@title=Module_items&amp;action=edit&amp;redlink=1" class="new" title="Module items (page does not exist)">item</a>
+</dt><dt>mesh_<a href="index.php@title=Module_meshes&amp;action=edit&amp;redlink=1" class="new" title="Module meshes (page does not exist)">mesh</a>
+</dt><dt>mnu_<a href="index.php@title=Module_game_menus&amp;action=edit&amp;redlink=1" class="new" title="Module game menus (page does not exist)">game_menu</a>
+</dt><dt>mt_<a href="index.php@title=Module_mission_templates&amp;action=edit&amp;redlink=1" class="new" title="Module mission templates (page does not exist)">mission_template</a>
+</dt><dt>psys_<a href="index.php@title=Module_particle_systems&amp;action=edit&amp;redlink=1" class="new" title="Module particle systems (page does not exist)">particle_system</a>
+</dt><dt>p_<a href="index.php@title=Module_parties&amp;action=edit&amp;redlink=1" class="new" title="Module parties (page does not exist)">party</a>
+</dt><dt>pfx_<a href="index.php@title=Module_postfx&amp;action=edit&amp;redlink=1" class="new" title="Module postfx (page does not exist)">postfx</a>
+</dt><dt>prsnt_<a href="index.php@title=Module_presentations&amp;action=edit&amp;redlink=1" class="new" title="Module presentations (page does not exist)">presentation</a>
+</dt><dt>pt_<a href="index.php@title=Module_party_templates&amp;action=edit&amp;redlink=1" class="new" title="Module party templates (page does not exist)">party_template</a>
+</dt><dt>qst_<a href="index.php@title=Module_quests&amp;action=edit&amp;redlink=1" class="new" title="Module quests (page does not exist)">quest</a>
+</dt><dt>script_<a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1" class="new" title="Module scripts (page does not exist)">script</a>
+</dt><dt>scn_<a href="index.php@title=Module_scenes&amp;action=edit&amp;redlink=1" class="new" title="Module scenes (page does not exist)">scene</a>
+</dt><dt>skl_<a href="index.php@title=Module_skills&amp;action=edit&amp;redlink=1" class="new" title="Module skills (page does not exist)">skill</a>
+</dt><dt>snd_<a href="index.php@title=Module_sounds&amp;action=edit&amp;redlink=1" class="new" title="Module sounds (page does not exist)">sound</a>
+</dt><dt>spr_<a href="index.php@title=Module_scene_props&amp;action=edit&amp;redlink=1" class="new" title="Module scene props (page does not exist)">scene_prop</a>
+</dt><dt>str_<a href="index.php@title=Module_strings&amp;action=edit&amp;redlink=1" class="new" title="Module strings (page does not exist)">string</a>
+</dt><dt>tableau_<a href="index.php@title=Module_tableau_meshes&amp;action=edit&amp;redlink=1" class="new" title="Module tableau meshes (page does not exist)">mesh</a>
+</dt><dt>track_<a href="index.php@title=Module_music&amp;action=edit&amp;redlink=1" class="new" title="Module music (page does not exist)">music</a>
+</dt><dt>trp_<a href="index.php@title=Module_troops&amp;action=edit&amp;redlink=1" class="new" title="Module troops (page does not exist)">troop</a>
 </dt></dl>
-<p><a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a> is never directly referenced, so it has no prefix. The same applies for <a href="index.php@title=Module_triggers&amp;action=edit&amp;redlink=1.html" class="new" title="Module triggers (page does not exist)">module_triggers</a> and <a href="index.php@title=Module_simple_triggers&amp;action=edit&amp;redlink=1.html" class="new" title="Module simple triggers (page does not exist)">simple_triggers</a>, as well as any module file which do not generate a corresponding id_x file.
+<p><a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a> is never directly referenced, so it has no prefix. The same applies for <a href="index.php@title=Module_triggers&amp;action=edit&amp;redlink=1.html" class="new" title="Module triggers (page does not exist)">module_triggers</a> and <a href="index.php@title=Module_simple_triggers&amp;action=edit&amp;redlink=1" class="new" title="Module simple triggers (page does not exist)">simple_triggers</a>, as well as any module file which do not generate a corresponding id_x file.
 </p>
 <!-- 
 NewPP limit report
@@ -267,10 +267,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:70-0!*!0!!en!*!edit=0 and timestamp 20200419220854 -->
 <div class="printfooter">
-Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_02</a>"</div>
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_02</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -285,7 +285,7 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html"
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_02&amp;returntoquery=printable=yes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_02&amp;returntoquery=printable=yes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -296,8 +296,8 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html"
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_02.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_02&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_02"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_02&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -320,9 +320,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html"
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_02.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_02" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -358,7 +358,7 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html"
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -366,13 +366,13 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html"
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -388,10 +388,10 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html"
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_02.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_02.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;oldid=379.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_02" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_02" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_02&amp;oldid=379" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -411,9 +411,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_02.html"
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

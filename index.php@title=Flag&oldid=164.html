@@ -5,8 +5,8 @@
 <title>Flag - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
 <meta name="robots" content="noindex,nofollow" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Flag&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Flag&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Flag&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Flag&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -36,7 +36,7 @@
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub">
-				<div id="mw-revision-info">Revision as of 00:03, 26 June 2012 by <a href="User%253AJT.html" title="User:JT" class="mw-userlink">JT</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253AJT&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:JT (page does not exist)">Talk</a> | <a href="Special%253AContributions/JT.html" title="Special:Contributions/JT">contribs</a>)</span></div>
+				<div id="mw-revision-info">Revision as of 00:03, 26 June 2012 by <a href="User%253AJT.html" title="User:JT" class="mw-userlink">JT</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253AJT&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:JT (page does not exist)">Talk</a> | <a href="Special%253AContributions/JT" title="Special:Contributions/JT">contribs</a>)</span></div>
 
 				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Flag&amp;diff=prev&amp;oldid=164" title="Flag">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Flag&amp;direction=prev&amp;oldid=164" title="Flag">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
 			</div>
@@ -51,16 +51,16 @@
 				<p>A <b>flag</b> is an on-or-off state that can be attached to a given value through the use of the bitwise OR "|" masking operator.  The name derives from the use of a semaphore signal: when the flag is raised, the state is active, while when the flag is lowered (not present), the state is inactive.  In the case of binary, this "flag" translates instead to a single bit from a binary number: if the bit is 1, the state is active, whereas when the number is 0, the state is inactive.  By assigning certain bits as flags, the remaining bits can be used for a number and the existence of the flag can be checked using a simple mathematical operation, allowing a single number to store several pieces of information without requiring something more complicated to develop.
 </p><p>In the Mount&amp;Blade scripting language, all objects, functions, and variables are technically just numbers, so flags are added to object IDs and other similar constructs to store additional information about the objects.  Flags are pre-defined by the Mount&amp;Blade developers, as only the game engine itself is capable of performing decisions based on the presence or absence of flags in a given identifier.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Flag&amp;action=edit&amp;section=1.html" title="Edit section: How to use">edit</a>]</span> <span class="mw-headline" id="How_to_use"> How to use </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Flag&amp;action=edit&amp;section=1" title="Edit section: How to use">edit</a>]</span> <span class="mw-headline" id="How_to_use"> How to use </span></h2>
 <p>The syntax of adding a flag is writing the name of the variable or object, the pipe key symbol "<code><b>|</b></code>", and the name of the flag, for instance <code>anyone|plyr</code>.  The pipe key can be produced by pressing Shift+Backslash on a U.S. keyboard layout.  More than one flag can be appended simply by adding additional pipes and flag names for the remaining flags.  Each flag included will simply assign its corresponding bit inside the value.
 </p><p>The order of the flag and value does not matter &#8212; due to the mathematical operation used, a flag modified by a value is the same as a value modified by a flag.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Flag&amp;action=edit&amp;section=2.html" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example"> Example </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Flag&amp;action=edit&amp;section=2" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example"> Example </span></h2>
 <table class="wikitable" style="margin-left: 1cm">
 <tr>
 <td> <code><span style="color: #f00">party_tpl</span>|<span style="color: #00f">pt_looters</span>|<span style="color: #393">plyr</span></code>
 </td></tr></table>
-<p>This example from <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>.py associates the given <a href="Dialogue.html" title="Dialogue" class="mw-redirect">dialogue</a> with the <code><span style="color: #00f">pt_looters</span></code> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">party template</a>, modified by the <code><span style="color: #f00">party_tpl</span></code> flag and the <code><span style="color: #393">plyr</span></code> flag.  As is evident, the order of the flags and the value doesn't matter, as long as they are appended to each other with the pipe symbol.  The final resulting value in this case is for the Mount&amp;Blade engine to allow the topic to appear when speaking to a group of looters (overriding the default assumption that <code>pt_looters</code> is a <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a>, as in this case it is not), and the dialogue will be spoken by the player rather than the leader of the looter party.
+<p>This example from <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>.py associates the given <a href="Dialogue.html" title="Dialogue" class="mw-redirect">dialogue</a> with the <code><span style="color: #00f">pt_looters</span></code> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">party template</a>, modified by the <code><span style="color: #f00">party_tpl</span></code> flag and the <code><span style="color: #393">plyr</span></code> flag.  As is evident, the order of the flags and the value doesn't matter, as long as they are appended to each other with the pipe symbol.  The final resulting value in this case is for the Mount&amp;Blade engine to allow the topic to appear when speaking to a group of looters (overriding the default assumption that <code>pt_looters</code> is a <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">troop</a>, as in this case it is not), and the dialogue will be spoken by the player rather than the leader of the looter party.
 </p>
 <!-- 
 NewPP limit report
@@ -70,10 +70,10 @@ Template argument size: 0/2097152 bytes
 Expensive parser function count: 0/100
 -->
 <div class="printfooter">
-Retrieved from "<a href="Flag.html">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
+Retrieved from "<a href="Flag">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AModding_Concepts" title="Category:Modding Concepts">Modding Concepts</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -99,8 +99,8 @@ Retrieved from "<a href="Flag.html">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Flag.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AFlag&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Flag"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AFlag&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -123,9 +123,9 @@ Retrieved from "<a href="Flag.html">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Flag.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Flag&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Flag&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Flag" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Flag&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Flag&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -161,7 +161,7 @@ Retrieved from "<a href="Flag.html">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -169,13 +169,13 @@ Retrieved from "<a href="Flag.html">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -191,11 +191,11 @@ Retrieved from "<a href="Flag.html">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Flag.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Flag.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Flag" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Flag" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
 									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Flag&amp;oldid=164&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Flag&amp;oldid=164.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-permalink"><a href="index.php@title=Flag&amp;oldid=164" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -213,9 +213,9 @@ Retrieved from "<a href="Flag.html">http://mbmodwiki.ollclan.eu/Flag</a>"</div>
 																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

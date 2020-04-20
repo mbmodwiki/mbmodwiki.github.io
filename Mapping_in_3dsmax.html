@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>Mapping in 3dsmax - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Mapping_in_3dsmax&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Mapping_in_3dsmax&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Mapping_in_3dsmax&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Mapping_in_3dsmax&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -58,10 +58,10 @@
 </li>
 </ul>
 </td></tr></table>
-<h3><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=1.html" title="Edit section: Mapping with 3ds max">edit</a>]</span> <span class="mw-headline" id="Mapping_with_3ds_max"> <b>Mapping with 3ds max</b> </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=1" title="Edit section: Mapping with 3ds max">edit</a>]</span> <span class="mw-headline" id="Mapping_with_3ds_max"> <b>Mapping with 3ds max</b> </span></h3>
 <p>By <a href="http://forums.taleworlds.com/index.php?action=profile;u=155795" class="external text" rel="nofollow">harry</a>
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=2.html" title="Edit section: Intro">edit</a>]</span> <span class="mw-headline" id="Intro"> Intro </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=2" title="Edit section: Intro">edit</a>]</span> <span class="mw-headline" id="Intro"> Intro </span></h4>
 <p>THIS IS NOT A MODELING TUTORIAL. If you don't know how to use 3ds max, this will be useless to you. This article covers the pipeline from 3ds max into the game, rather than actually making the map.
 </p><p>I personally don't like to use heightmap imports, as most tutorials for M&amp;B maps seem to go. I prefer to model my scenery.
 I'm a 3ds max user, and it took me a bit of messing around to get a map exported from max, into M&amp;B, working correctly.
@@ -76,18 +76,18 @@ out however you like, distribute detail to the correct areas for best performanc
 </li><li> Industry-standard 3d suites are generally more stable and bug-free than the currently available M&amp;B map editors.
 </li><li> Industry-standard 3d suites generally have more efficient tools than available map editors, as well.
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=3.html" title="Edit section: Tools">edit</a>]</span> <span class="mw-headline" id="Tools"> Tools </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=3" title="Edit section: Tools">edit</a>]</span> <span class="mw-headline" id="Tools"> Tools </span></h4>
 <ul><li> Obviously, you'll need 3ds max.
 </li><li> For converting the OBJ file, I found <a href="http://forums.taleworlds.com/index.php?action=profile;u=60338" class="external text" rel="nofollow">Othr</a>'s tool to be the most effective. <a href="http://www.mbrepository.com/file.php?id=2220" class="external text" rel="nofollow">Link</a> There are other tools available, but it seems they scale the mesh based on their target software packages. Othr's tool does no such thing, and co-ordinates within 3ds max will apply 1:1 with ingame town co-ordinates, which will be <b>very</b> useful once you start messing around with module_parties.py to place towns.
 </li><li> Recommended: Thorgrim's map editor.
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=4.html" title="Edit section: Considerations">edit</a>]</span> <span class="mw-headline" id="Considerations"> Considerations </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=4" title="Edit section: Considerations">edit</a>]</span> <span class="mw-headline" id="Considerations"> Considerations </span></h4>
 <ul><li> Model your map treating the "front" view in 3ds max as if you are viewing the map from above. Unfortunately, this seems to export as south being upward. You can solve the problem easilly at the end of the mapping process by rotating the map, of course.
 </li><li> The engine automatically UVmaps your map. Open up map.txt and you'll see there are no UV co-ordinates what-so-ever. Edit whatever you want on the UVs, it will have no effect. The up-side of this is... we don't need to UV the map. The engine will project all the textures from directly above, which means you should pay attention to the next point.
 </li><li> When you view your map from this angle, and with no lights in the scene, pay attention to very darkened areas. These usually signify faces which are perpendicular to the "earth surface" and thus, will get stretched UVmaps. Pay attention to this, and don't let your cliffs become too sheer.
 </li><li> For applying textures within the 3d program, all you need to do is use the material editor (if you don't know how to do this, consult 3ds max documentation) and name materials as is described on Othr's tool's repository page. I also like to give them a colour which roughly corresponds to the texture i want them to use. They could also use the actual texture if you want to go to that much trouble, but the textures will not look as they do ingame, from within 3dsmax. I find the best way to check how the texturing looks is by loading the map in thorgrim's editor.
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=5.html" title="Edit section: OBJ export settings">edit</a>]</span> <span class="mw-headline" id="OBJ_export_settings"> OBJ export settings </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=5" title="Edit section: OBJ export settings">edit</a>]</span> <span class="mw-headline" id="OBJ_export_settings"> OBJ export settings </span></h4>
 <p>If you aren't using an antiquated version of 3ds max, when you export the map as an OBJ, you will have a rather complicated dialog. The conversion tool is rather sensetive, and needs its OBJ files formatted so it can easilly digest the data.
 Barf discovered the ideal export settings for this. To save you scrounging through forum threads, <a href="http://img175.imageshack.us/img175/2120/settingsi.jpg" class="external text" rel="nofollow">here</a> it is.
 </p><p><img src="http://img175.imageshack.us/img175/2120/settingsi.jpg" alt="settingsi.jpg" />
@@ -106,7 +106,7 @@ Barf discovered the ideal export settings for this. To save you scrounging throu
 </li><li> Precision: <b>As far as i've tested, unimportant. But I recommend "6"</b>
 </li><li> Optimise: Vertex, Normal, Texture Co-ord: <b>ALL YES</b>
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=6.html" title="Edit section: After Export">edit</a>]</span> <span class="mw-headline" id="After_Export"> After Export </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Mapping_in_3dsmax&amp;action=edit&amp;section=6" title="Edit section: After Export">edit</a>]</span> <span class="mw-headline" id="After_Export"> After Export </span></h4>
 <p>I recommend firing up Thorgrim's editor to check your textures, map borders, and party positions.
 Remember that you can use co-ordinates from 3ds max to place towns using module_parties.py - With this method the unit scale is 1:1.
 </p><p>Peace Gents, enjoy mapping
@@ -122,10 +122,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:48-0!*!0!!en!* and timestamp 20200419213922 -->
 <div class="printfooter">
-Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Mapping_in_3dsmax</a>"</div>
+Retrieved from "<a href="Mapping_in_3dsmax">http://mbmodwiki.ollclan.eu/Mapping_in_3dsmax</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253ATutorials.html" title="Category:Tutorials">Tutorials</a></span> | <span dir='ltr'><a href="Category%253ANotes.html" title="Category:Notes">Notes</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253ATutorials.html" title="Category:Tutorials">Tutorials</a></span> | <span dir='ltr'><a href="Category%253ANotes" title="Category:Notes">Notes</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -140,7 +140,7 @@ Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Map
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Mapping_in_3dsmax.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Mapping_in_3dsmax" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -151,8 +151,8 @@ Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Map
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Mapping_in_3dsmax.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AMapping_in_3dsmax&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Mapping_in_3dsmax"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AMapping_in_3dsmax&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -175,9 +175,9 @@ Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Map
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Mapping_in_3dsmax.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Mapping_in_3dsmax&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Mapping_in_3dsmax&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Mapping_in_3dsmax" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Mapping_in_3dsmax&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Mapping_in_3dsmax&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -213,7 +213,7 @@ Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Map
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -221,13 +221,13 @@ Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Map
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -243,11 +243,11 @@ Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Map
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Mapping_in_3dsmax.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Mapping_in_3dsmax.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=Mapping_in_3dsmax&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Mapping_in_3dsmax&amp;oldid=272.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Mapping_in_3dsmax" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Mapping_in_3dsmax" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Mapping_in_3dsmax&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Mapping_in_3dsmax&amp;oldid=272" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -267,9 +267,9 @@ Retrieved from "<a href="Mapping_in_3dsmax.html">http://mbmodwiki.ollclan.eu/Map
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

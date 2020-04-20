@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <title>Official Module System Documentation: Part 03 - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="canonical" href="Official_Module_System_Documentation%253A_Part_03.html" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit.html" />
+<link rel="canonical" href="Official_Module_System_Documentation%253A_Part_03" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -35,7 +35,7 @@
 				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
 				<!-- /tagline -->
 				<!-- subtitle -->
-				<div id="contentSub">(Redirected from <a href="index.php@title=Official_Module_System_Documentation%253A_Part_3&amp;redirect=no.html" title="Official Module System Documentation: Part 3">Official Module System Documentation: Part 3</a>)</div>
+				<div id="contentSub">(Redirected from <a href="index.php@title=Official_Module_System_Documentation%253A_Part_3&amp;redirect=no" title="Official Module System Documentation: Part 3">Official Module System Documentation: Part 3</a>)</div>
 				<!-- /subtitle -->
 																<!-- jumpto -->
 				<div id="jump-to-nav">
@@ -46,11 +46,11 @@
 								<!-- bodytext -->
 				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
 <p>	<span class="swynavbar-left" style="float:left;">
-	<a href="Official_Module_System_Documentation%253A_Part_02.html" title="Official Module System Documentation: Part 02"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+	<a href="Official_Module_System_Documentation%253A_Part_02" title="Official Module System Documentation: Part 02"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
            </span></a>
 	</span>
 	<span class="swynavbar-right">
-	<a href="Official_Module_System_Documentation%253A_Part_04.html" title="Official Module System Documentation: Part 04"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	<a href="Official_Module_System_Documentation%253A_Part_04" title="Official Module System Documentation: Part 04"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
 	</span>
 </p>
 </div>
@@ -68,7 +68,7 @@ In this chapter of the documentation, we cover module_troops.py and its function
 <li class="toclevel-1 tocsection-6"><a href="Official_Module_System_Documentation%253A_Part_3.html#3.6_--_Merchants"><span class="tocnumber">6</span> <span class="toctext">3.6 -- Merchants</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=1.html" title="Edit section: 3.1 -- Breakdown of Module Troops">edit</a>]</span> <span class="mw-headline" id="3.1_--_Breakdown_of_Module_Troops"> 3.1 -- Breakdown of Module_Troops </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=1" title="Edit section: 3.1 -- Breakdown of Module Troops">edit</a>]</span> <span class="mw-headline" id="3.1_--_Breakdown_of_Module_Troops"> 3.1 -- Breakdown of Module_Troops </span></h2>
 <p>The file begins with a small block of code that calculates weapon proficiencies and some other non-moddable code. Since this whole block falls outside the Python list and we will not be editing it, it needn't concern us yet. Skip ahead to the list troops = [.
 </p><p>Here we find tuples for our friend, the player, and several other troops important to the game. Just below that are the various fighters we encounter in the Zendar trainer. We'll study a few of these, as they are excellent examples of regular troops' level progression.
 </p><p>Observe:
@@ -127,7 +127,7 @@ Breakdown of the tuple fields:
 <p><br />
 In this example, you can see the slightly stronger "regular fighter"; this one has higher ability scores, is level 11, and knows some skills beyond knows_common. In-game, if some "novice fighters" in our party had reached sufficient experience to reach level 11, we could upgrade them into "regular fighters".
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=2.html" title="Edit section: 3.2 -- Upgrading Troops">edit</a>]</span> <span class="mw-headline" id="3.2_--_Upgrading_Troops"> 3.2 -- Upgrading Troops </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=2" title="Edit section: 3.2 -- Upgrading Troops">edit</a>]</span> <span class="mw-headline" id="3.2_--_Upgrading_Troops"> 3.2 -- Upgrading Troops </span></h2>
 <p>The list of which troops can be upgraded into what is contained at the bottom of module_troops. Please scroll down to the bottom now.
 </p><p>As you can see, each troop's upgrade choices must be defined here through the operation upgrade(troops). The first string is the ID of the troop to be upgraded, the second string is the ID of the resulting troop. For example, upgrade(troops,"farmer", "watchman") will allow a "farmer" to upgrade into a "watchman", when the "farmer" has accrued enough experience.
 </p><p>There are two types of upgrade operations.
@@ -138,7 +138,7 @@ and paste it to the bottom of the block. Then change "farmer" to "novice_fighter
 </p><p>Next, we'll take it a bit further. Make another entry at the bottom of the list, with the source troop "new_troop" and the target troop "regular_fighter". Then scroll up to the phrase: # Add Extra Quest NPCs below this point . Here you will see ], the closing bracket of the Troops Python list. New troops should be added before the bracket, which is what we're going to do now.
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=3.html" title="Edit section: 3.3 -- Adding New Troops">edit</a>]</span> <span class="mw-headline" id="3.3_--_Adding_New_Troops"> 3.3 -- Adding New Troops </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=3" title="Edit section: 3.3 -- Adding New Troops">edit</a>]</span> <span class="mw-headline" id="3.3_--_Adding_New_Troops"> 3.3 -- Adding New Troops </span></h2>
 <p>Move the bracket down two lines, then copy/paste the following code into the empty space:
 </p>
 <pre> ["new_troop","new_troop","new_troops",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
@@ -171,7 +171,7 @@ For our next edit, we will make some changes the troop's stats. Put its STR to 9
 </pre>
 <p>It's now ready to be placed into the game, as an experiment.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=4.html" title="Edit section: 3.4 -- Mercenaries">edit</a>]</span> <span class="mw-headline" id="3.4_--_Mercenaries"> 3.4 -- Mercenaries </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=4" title="Edit section: 3.4 -- Mercenaries">edit</a>]</span> <span class="mw-headline" id="3.4_--_Mercenaries"> 3.4 -- Mercenaries </span></h2>
 <p>Save your progress, then open module_parties.py. Scroll down until you see the party "zendar_mercs".
 </p>
 <pre> ("zendar_mercs","zendar_mercs",pf_disabled, no_menu, pt_none, fac_commoners,0,ai_bhvr_hold,0,(0,0),[(trp_farmer,15,0)]),
@@ -183,7 +183,7 @@ For our next edit, we will make some changes the troop's stats. Put its STR to 9
 </p><p><br />
 Congratulations! You now know how to make and manipulate regular troops. We will cover Heroes, Merchants and other NPCs in the next segment.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=5.html" title="Edit section: 3.5 -- NPCs">edit</a>]</span> <span class="mw-headline" id="3.5_--_NPCs"> 3.5 -- NPCs </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=5" title="Edit section: 3.5 -- NPCs">edit</a>]</span> <span class="mw-headline" id="3.5_--_NPCs"> 3.5 -- NPCs </span></h2>
 <p>The various merchants and NPCs you see in the game are very similar to regular troops. The most significant element setting them apart is the flag tf_hero; this flag is what causes Marnid and Borcha to achieve their special status. Every unique NPC you encounter in the game is a Hero, even the merchants. The main differences between Heroes and regular troops are:
 </p><p>1 ) Heroes are unkillable. Their health is represented by a percentage value, and you can have only one of each Hero unless they are cloned by error or by design. Even by design, however, cloning Heroes is a bad idea.
 2 ) Heroes each take up a full party stack.
@@ -216,7 +216,7 @@ We can now begin to make our own hero. Copy Marnid's tuple, and paste it just be
 </p><p>We will leave Geoffrey where is for now, and come back to him later as we explore module_quests and module_dialogs.
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=6.html" title="Edit section: 3.6 -- Merchants">edit</a>]</span> <span class="mw-headline" id="3.6_--_Merchants"> 3.6 -- Merchants </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;section=6" title="Edit section: 3.6 -- Merchants">edit</a>]</span> <span class="mw-headline" id="3.6_--_Merchants"> 3.6 -- Merchants </span></h2>
 <p>Merchants are a special type of Hero. In addition to tf_hero, they also have the flag tf_is_merchant. This flag causes them to not equip any of the items in their inventory, except what they are originally assigned in their troop tuple. In other words, these merchants can receive all sorts of items over the course of the game, but they will not wear or use the items, and the items will properly show up for sale.
 </p><p>Example of a merchant:
 </p>
@@ -247,10 +247,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:71-0!*!0!!en!* and timestamp 20200419220841 -->
 <div class="printfooter">
-Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_03</a>"</div>
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_03</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -265,7 +265,7 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html"
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_03.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_03" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -276,8 +276,8 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html"
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_03.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_03"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_03&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -300,9 +300,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html"
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_03.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_03" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -338,7 +338,7 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html"
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -346,13 +346,13 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html"
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -368,11 +368,11 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html"
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_03.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_03.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;oldid=394.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_03" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_03" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_03&amp;oldid=394" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -392,9 +392,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_03.html"
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

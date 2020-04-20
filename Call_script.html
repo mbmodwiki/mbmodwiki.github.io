@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>Call script - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Call_script&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Call_script&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Call_script&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Call_script&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -43,7 +43,7 @@
 				</div>
 				<!-- /jumpto -->
 								<!-- bodytext -->
-				<p><i><b>call_script</b></i> is a <a href="index.php@title=Category%253AControl_Operations&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Control Operations (page does not exist)">control</a> <a href="Operation.html" title="Operation">operation</a>.
+				<p><i><b>call_script</b></i> is a <a href="index.php@title=Category%253AControl_Operations&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Control Operations (page does not exist)">control</a> <a href="Operation" title="Operation">operation</a>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -53,12 +53,12 @@
 <li class="toclevel-1 tocsection-4"><a href="Call_script.html#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=1.html" title="Edit section: Description">edit</a>]</span> <span class="mw-headline" id="Description"> Description </span></h2>
-<p>When run from a code block, <i>call_script</i> scans the list of scripts (compiled from <a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module scripts (page does not exist)">module_scripts</a>.py) and then processes the script which matches the provided script ID.  After all code in the script  has been executed, the game resumes processing the original code block.  <a href="index.php@title=Variable&amp;action=edit&amp;redlink=1.html" class="new" title="Variable (page does not exist)">Variables</a> can be provided to <i>call_script</i> as "parameters" (input values to be used by the script); if any "return" values (output values to be used by the original code block) are needed afterward, they are assigned to <a href="Register.html" title="Register">registers</a> by the script.
+<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=1" title="Edit section: Description">edit</a>]</span> <span class="mw-headline" id="Description"> Description </span></h2>
+<p>When run from a code block, <i>call_script</i> scans the list of scripts (compiled from <a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module scripts (page does not exist)">module_scripts</a>.py) and then processes the script which matches the provided script ID.  After all code in the script  has been executed, the game resumes processing the original code block.  <a href="index.php@title=Variable&amp;action=edit&amp;redlink=1.html" class="new" title="Variable (page does not exist)">Variables</a> can be provided to <i>call_script</i> as "parameters" (input values to be used by the script); if any "return" values (output values to be used by the original code block) are needed afterward, they are assigned to <a href="Register" title="Register">registers</a> by the script.
 </p><p>The script name parameter should include the <i>"script_"</i> prefix, but scripts in module_scripts.py do not include these prefixes.  For instance, to call the script named <i>"find_center_to_defend"</i>, you would use the script ID <i>"script_find_center_to_defend"</i>.
 </p><p>All script processing in Mount and Blade is "single-threaded".  This means that two pieces of code will not run at the same time; in single player, you can be assured that the script called will complete prior to resuming the original script that it was called from.  This also means, however, that if the script run by <i>call_script</i> loops infinitely, Mount and Blade will no longer process any additional code until the script is unloaded or until it finally is resolved.  This can also result in severe "freezes" in gameplay as the script happily processes away while the game waits for it to finish.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=2.html" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax"> Syntax </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=2" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax"> Syntax </span></h2>
 <pre>(call_script, <i>script_ID</i>&lt;string&gt;)
 
 (call_script, <i>script_ID</i>&lt;string&gt;, <i>parameter_1</i>&lt;variable&gt;, <i>...</i>, <i>parameter_n</i>&lt;variable&gt;)
@@ -66,16 +66,16 @@
 <dl><dt> script_ID&#160;</dt><dd> The ID of the script to execute, including <i>"script_"</i> prefix.
 </dd><dt> <i>parameter_1</i>
 </dt><dt> ...
-</dt><dt> <i>parameter_n</i>&#160;</dt><dd> (Optional) Zero or more <a href="index.php@title=Variable&amp;action=edit&amp;redlink=1.html" class="new" title="Variable (page does not exist)">variables</a> of any kind, separated by commas, to be used as the input of the script; the script can get the values of these with the <a href="index.php@title=Store_script_param&amp;action=edit&amp;redlink=1.html" class="new" title="Store script param (page does not exist)">store_script_param</a> operation.
+</dt><dt> <i>parameter_n</i>&#160;</dt><dd> (Optional) Zero or more <a href="index.php@title=Variable&amp;action=edit&amp;redlink=1.html" class="new" title="Variable (page does not exist)">variables</a> of any kind, separated by commas, to be used as the input of the script; the script can get the values of these with the <a href="index.php@title=Store_script_param&amp;action=edit&amp;redlink=1" class="new" title="Store script param (page does not exist)">store_script_param</a> operation.
 </dd></dl>
-<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=3.html" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example"> Example </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example"> Example </span></h2>
 <pre>(call_script, "script_give_center_to_faction_aux", "p_town_1", "fac_kingdom_4"),
 </pre>
 <p>&#8212;from <i>script_game_start</i>
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=4.html" title="Edit section: See Also">edit</a>]</span> <span class="mw-headline" id="See_Also"> See Also </span></h2>
-<ul><li> <a href="Register.html" title="Register">register</a>
-</li><li> <a href="index.php@title=Store_script_param&amp;action=edit&amp;redlink=1.html" class="new" title="Store script param (page does not exist)">store_script_param</a>, <a href="index.php@title=Store_script_param_1&amp;action=edit&amp;redlink=1.html" class="new" title="Store script param 1 (page does not exist)">store_script_param_1</a>, <a href="index.php@title=Store_script_param_2&amp;action=edit&amp;redlink=1.html" class="new" title="Store script param 2 (page does not exist)">store_script_param_2</a>
+<h2><span class="editsection">[<a href="index.php@title=Call_script&amp;action=edit&amp;section=4" title="Edit section: See Also">edit</a>]</span> <span class="mw-headline" id="See_Also"> See Also </span></h2>
+<ul><li> <a href="Register" title="Register">register</a>
+</li><li> <a href="index.php@title=Store_script_param&amp;action=edit&amp;redlink=1.html" class="new" title="Store script param (page does not exist)">store_script_param</a>, <a href="index.php@title=Store_script_param_1&amp;action=edit&amp;redlink=1.html" class="new" title="Store script param 1 (page does not exist)">store_script_param_1</a>, <a href="index.php@title=Store_script_param_2&amp;action=edit&amp;redlink=1" class="new" title="Store script param 2 (page does not exist)">store_script_param_2</a>
 </li></ul>
 
 <!-- 
@@ -88,10 +88,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:7-0!*!0!!en!* and timestamp 20200419220822 -->
 <div class="printfooter">
-Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_script</a>"</div>
+Retrieved from "<a href="Call_script">http://mbmodwiki.ollclan.eu/Call_script</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="index.php@title=Category%253AOperations&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Operations (page does not exist)">Operations</a></span> | <span dir='ltr'><a href="index.php@title=Category%253AControl_Operations&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Control Operations (page does not exist)">Control Operations</a></span> | <span dir='ltr'><a href="index.php@title=Category%253AScripting&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Scripting (page does not exist)">Scripting</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="index.php@title=Category%253AOperations&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Operations (page does not exist)">Operations</a></span> | <span dir='ltr'><a href="index.php@title=Category%253AControl_Operations&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Control Operations (page does not exist)">Control Operations</a></span> | <span dir='ltr'><a href="index.php@title=Category%253AScripting&amp;action=edit&amp;redlink=1" class="new" title="Category:Scripting (page does not exist)">Scripting</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -106,7 +106,7 @@ Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_scri
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Call_script.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Call_script" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -117,8 +117,8 @@ Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_scri
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Call_script.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ACall_script&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Call_script"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ACall_script&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -141,9 +141,9 @@ Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_scri
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Call_script.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Call_script&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Call_script&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Call_script" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Call_script&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Call_script&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -179,7 +179,7 @@ Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_scri
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -187,13 +187,13 @@ Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_scri
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -209,11 +209,11 @@ Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_scri
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Call_script.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Call_script.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=Call_script&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Call_script&amp;oldid=87.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Call_script" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Call_script" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Call_script&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Call_script&amp;oldid=87" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -233,9 +233,9 @@ Retrieved from "<a href="Call_script.html">http://mbmodwiki.ollclan.eu/Call_scri
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

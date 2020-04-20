@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>Official Module System Documentation: Part 06 - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -45,11 +45,11 @@
 								<!-- bodytext -->
 				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
 <p>	<span class="swynavbar-left" style="float:left;">
-	<a href="Official_Module_System_Documentation%253A_Part_05.html" title="Official Module System Documentation: Part 05"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+	<a href="Official_Module_System_Documentation%253A_Part_05" title="Official Module System Documentation: Part 05"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
            </span></a>
 	</span>
 	<span class="swynavbar-right">
-	<a href="Official_Module_System_Documentation%253A_Part_07.html" title="Official Module System Documentation: Part 07"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	<a href="Official_Module_System_Documentation%253A_Part_07" title="Official Module System Documentation: Part 07"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
 	</span>
 </p>
 </div>
@@ -65,13 +65,13 @@ In this part of the documentation, we examine the smallest module files in the s
 <li class="toclevel-1 tocsection-4"><a href="Official_Module_System_Documentation%253A_Part_06.html#6.4_--_Module_Quests"><span class="tocnumber">4</span> <span class="toctext">6.4 -- Module_Quests</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=1.html" title="Edit section: 6.1 -- Module Constants">edit</a>]</span> <span class="mw-headline" id="6.1_--_Module_Constants"> 6.1 -- Module_Constants </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=1" title="Edit section: 6.1 -- Module Constants">edit</a>]</span> <span class="mw-headline" id="6.1_--_Module_Constants"> 6.1 -- Module_Constants </span></h2>
 <p>module_constants.py is a very simple file. It is filled with constants -- you should already know how these work from reading Part 3 of this documentation. The constants in module_constants are exactly the same as constants defined anywhere else, but constants which are used in multiple module files should be defined in module_constants so that the module system always knows where to find them.
 </p><p>Module_constants also serves as an organised, easily-accessible list where you can change the value of a constant whenever you might need to. Any changes will immediately affect all operations using the constant, so that you don't need to do a manual find/replace.
 </p><p>For example, changing marnid_inn_entry = 2 to marnid_inn_entry = 4 would immediately change any operations using marnid_inn_entry, treating the constant as the value 4 instead of the value 2.
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=2.html" title="Edit section: 6.2 -- Module Factions">edit</a>]</span> <span class="mw-headline" id="6.2_--_Module_Factions"> 6.2 -- Module_Factions </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=2" title="Edit section: 6.2 -- Module Factions">edit</a>]</span> <span class="mw-headline" id="6.2_--_Module_Factions"> 6.2 -- Module_Factions </span></h2>
 <p>module_factions.py contains all the factions used by the module system and by M&amp;B's artificial intelligence. Though a small file, it governs several important settings which we will cover here.
 </p><p>The file immediately begins with a Python list: factions = [. As in most of the module files, the first few tuples are hardwired into the game and should not be edited.
 </p><p><br />
@@ -107,7 +107,7 @@ Innocents tuple examination:
 </p><p>Save your progress. Once you've done that, open module_party_templates.py and module_troops.py, and change the faction of the template "new_template" and the faction of the troop "Geoffrey" to "fac_geoffrey". Save, and close the files. Click on build_module.bat. If all went well, parties of "new_template" will now visibly have "Geoffrey" as their faction, and they will be hostile to the player.
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=3.html" title="Edit section: 6.3 -- Module Strings">edit</a>]</span> <span class="mw-headline" id="6.3_--_Module_Strings"> 6.3 -- Module_Strings </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=3" title="Edit section: 6.3 -- Module Strings">edit</a>]</span> <span class="mw-headline" id="6.3_--_Module_Strings"> 6.3 -- Module_Strings </span></h2>
 <p>module_strings.py is arguably the simplest file in the module system. It contains strings -- blocks of text which can be displayed in various ways. Strings are used all throughout the module system, from module_dialogs to module_quests; whenever a block of text needs to be displayed on the screen. Module_strings, however, is a repository for independent strings, which aren't bound to any single file. Therefore they can be called by operations from anywhere in the module system.
 </p><p>You can see these strings used in various places in the game, as white scrolling messages at the lower left of your screen, or in a tutorial box, or even inserted into a game menu or dialogue sequence.
 </p><p>Much like module_factions, this file immediately begins with a Python list: strings = [. Again, the first few tuples are hardwired into the game and should not be edited.
@@ -140,7 +140,7 @@ green      = 0xFFAAFFAA
 brown      = 0xFF7A4800
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=4.html" title="Edit section: 6.4 -- Module Quests">edit</a>]</span> <span class="mw-headline" id="6.4_--_Module_Quests"> 6.4 -- Module_Quests </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;section=4" title="Edit section: 6.4 -- Module Quests">edit</a>]</span> <span class="mw-headline" id="6.4_--_Module_Quests"> 6.4 -- Module_Quests </span></h2>
 <p>module_quests.py is the last of our small, simple files. It contains quests, including all the text related to those quests. Putting new quests here allows them to be activated via the module system, so that operations can read the quest's current status and use that status as a condition operation.
 </p><p><br />
 Example of a quest:
@@ -190,10 +190,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:74-0!*!0!!en!* and timestamp 20200419220842 -->
 <div class="printfooter">
-Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_06</a>"</div>
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_06</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -208,7 +208,7 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html"
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_06.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Official_Module_System_Documentation%253A_Part_06" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -219,8 +219,8 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html"
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_06.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_06"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_06&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -243,9 +243,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html"
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_06.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_06" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -281,7 +281,7 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html"
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -289,13 +289,13 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html"
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -311,11 +311,11 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html"
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_06.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_06.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;oldid=427.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_06" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_06" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_06&amp;oldid=427" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -335,9 +335,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_06.html"
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

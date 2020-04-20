@@ -5,8 +5,8 @@
 <title>Conditional string - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
 <meta name="robots" content="noindex,nofollow" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Conditional_string&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Conditional_string&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Conditional_string&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Conditional_string&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -36,7 +36,7 @@
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub">
-				<div id="mw-revision-info">Revision as of 09:52, 24 June 2011 by <a href="User%253AJT.html" title="User:JT" class="mw-userlink">JT</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253AJT&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:JT (page does not exist)">Talk</a> | <a href="Special%253AContributions/JT.html" title="Special:Contributions/JT">contribs</a>)</span></div>
+				<div id="mw-revision-info">Revision as of 09:52, 24 June 2011 by <a href="User%253AJT.html" title="User:JT" class="mw-userlink">JT</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253AJT&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:JT (page does not exist)">Talk</a> | <a href="Special%253AContributions/JT" title="Special:Contributions/JT">contribs</a>)</span></div>
 
 				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Conditional_string&amp;diff=prev&amp;oldid=116" title="Conditional string">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Conditional_string&amp;direction=prev&amp;oldid=116" title="Conditional string">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
 			</div>
@@ -48,9 +48,9 @@
 				</div>
 				<!-- /jumpto -->
 								<!-- bodytext -->
-				<p>A <b>conditional string</b> is an embedded expression in a <a href="String.html" title="String">string</a> that evaluates to one of two possibilities based on the value contained in a given <a href="Register.html" title="Register">register</a>.  If the register contains a non-zero value, the first choice is used; otherwise the second choice is used.  Either choice can be blank.  Persons familiar with programming will recognise a conditional string as the ternary operator "<code><b>?:</b></code>".
+				<p>A <b>conditional string</b> is an embedded expression in a <a href="String.html" title="String">string</a> that evaluates to one of two possibilities based on the value contained in a given <a href="Register" title="Register">register</a>.  If the register contains a non-zero value, the first choice is used; otherwise the second choice is used.  Either choice can be blank.  Persons familiar with programming will recognise a conditional string as the ternary operator "<code><b>?:</b></code>".
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Conditional_string&amp;action=edit&amp;section=1.html" title="Edit section: Using conditional strings">edit</a>]</span> <span class="mw-headline" id="Using_conditional_strings"> Using conditional strings </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Conditional_string&amp;action=edit&amp;section=1" title="Edit section: Using conditional strings">edit</a>]</span> <span class="mw-headline" id="Using_conditional_strings"> Using conditional strings </span></h2>
 <p>Conditional strings are formatted by using the name of a register, followed by a question mark "<code><b>?</b></code>" and the string to use if true, followed by a colon "<code><b>:</b></code>" and the string to use as false, all surrounded by braces "{" and "}".
 </p><p>A common example of a conditional string is below:
 </p>
@@ -66,13 +66,13 @@
 </pre>
 <p>if <i>reg0</i> is equal to 0.  This is the principal method of pluralisation in Mount and Blade dialogue and scripting.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Conditional_string&amp;action=edit&amp;section=2.html" title="Edit section: Complex conditional strings">edit</a>]</span> <span class="mw-headline" id="Complex_conditional_strings"> Complex conditional strings </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Conditional_string&amp;action=edit&amp;section=2" title="Edit section: Complex conditional strings">edit</a>]</span> <span class="mw-headline" id="Complex_conditional_strings"> Complex conditional strings </span></h2>
 <p>Conditional strings can be embedded within each other in any combination desired.  For instance,
 </p>
 <pre>{reg6?I:{reg7?You:{s11}}}
 </pre>
-<p>will display "I" if register 6 is true, "You" if register 7 is true, or the contents of <a href="String_register.html" title="String register">string register</a> 11 (in this case containing the name of a lord) if neither are true.  This is a compact and elegant method that is more space efficient than using a string register directly and then assigning "I", "You", or the name of a person to that register as needed.
-</p><p>As a matter of style, if a conditional string is embedded more than twice, it is generally better to separate that logic out and assign a string register using a <b><a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1.html" class="new" title="Try begin (page does not exist)">try_begin</a></b>/<b>else_try</b>/<b>try_end</b> block.
+<p>will display "I" if register 6 is true, "You" if register 7 is true, or the contents of <a href="String_register" title="String register">string register</a> 11 (in this case containing the name of a lord) if neither are true.  This is a compact and elegant method that is more space efficient than using a string register directly and then assigning "I", "You", or the name of a person to that register as needed.
+</p><p>As a matter of style, if a conditional string is embedded more than twice, it is generally better to separate that logic out and assign a string register using a <b><a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1" class="new" title="Try begin (page does not exist)">try_begin</a></b>/<b>else_try</b>/<b>try_end</b> block.
 </p>
 <!-- 
 NewPP limit report
@@ -82,10 +82,10 @@ Template argument size: 0/2097152 bytes
 Expensive parser function count: 0/100
 -->
 <div class="printfooter">
-Retrieved from "<a href="Conditional_string.html">http://mbmodwiki.ollclan.eu/Conditional_string</a>"</div>
+Retrieved from "<a href="Conditional_string">http://mbmodwiki.ollclan.eu/Conditional_string</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AStrings.html" title="Category:Strings">Strings</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AStrings" title="Category:Strings">Strings</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -111,8 +111,8 @@ Retrieved from "<a href="Conditional_string.html">http://mbmodwiki.ollclan.eu/Co
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Conditional_string.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AConditional_string&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Conditional_string"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AConditional_string&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -135,9 +135,9 @@ Retrieved from "<a href="Conditional_string.html">http://mbmodwiki.ollclan.eu/Co
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Conditional_string.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Conditional_string&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Conditional_string&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Conditional_string" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Conditional_string&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Conditional_string&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -173,7 +173,7 @@ Retrieved from "<a href="Conditional_string.html">http://mbmodwiki.ollclan.eu/Co
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -181,13 +181,13 @@ Retrieved from "<a href="Conditional_string.html">http://mbmodwiki.ollclan.eu/Co
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -203,11 +203,11 @@ Retrieved from "<a href="Conditional_string.html">http://mbmodwiki.ollclan.eu/Co
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Conditional_string.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Conditional_string.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Conditional_string" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Conditional_string" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
 									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Conditional_string&amp;oldid=116&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Conditional_string&amp;oldid=116.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-permalink"><a href="index.php@title=Conditional_string&amp;oldid=116" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -225,9 +225,9 @@ Retrieved from "<a href="Conditional_string.html">http://mbmodwiki.ollclan.eu/Co
 																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

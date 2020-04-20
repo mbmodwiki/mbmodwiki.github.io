@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>Variables - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Variables&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Variables&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Variables&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Variables&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -43,7 +43,7 @@
 				</div>
 				<!-- /jumpto -->
 								<!-- bodytext -->
-				<p>A brief description of variables used in the <a href="Module_System.html" title="Module System" class="mw-redirect">Module System</a> as quoted from Caba`drin's &lt;<a href="http://forums.taleworlds.com/index.php/topic,142422.0.html" class="external text" rel="nofollow"><i>An Introduction to Module System Syntax and Usage</i></a>&gt;.
+				<p>A brief description of variables used in the <a href="Module_System.html" title="Module System" class="mw-redirect">Module System</a> as quoted from Caba`drin's &lt;<a href="http://forums.taleworlds.com/index.php/topic,142422.0" class="external text" rel="nofollow"><i>An Introduction to Module System Syntax and Usage</i></a>&gt;.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -56,27 +56,27 @@
 <li class="toclevel-1 tocsection-7"><a href="Variables.html#Remarks"><span class="tocnumber">7</span> <span class="toctext">Remarks</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=1.html" title="Edit section: Local Variables">edit</a>]</span> <span class="mw-headline" id="Local_Variables"> Local Variables </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=1" title="Edit section: Local Variables">edit</a>]</span> <span class="mw-headline" id="Local_Variables"> Local Variables </span></h2>
 <p><i>Local variables</i> - <tt>":variable"</tt> - variables declared with a <tt>:</tt> are local variables.  <br />They only exist in the current tuple (code block) and cannot be referenced in other code blocks unless passed as script parameters. One should initialize them (to 0 or another suitable value) before they are used as they main contain a value already. They are enclosed with quotations " ". Ex: <tt>":agent_id"</tt><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=2.html" title="Edit section: Global Variables">edit</a>]</span> <span class="mw-headline" id="Global_Variables"> Global Variables </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=2" title="Edit section: Global Variables">edit</a>]</span> <span class="mw-headline" id="Global_Variables"> Global Variables </span></h2>
 <p><i>Global variables</i> - <tt>"$variable"</tt> - variables declared with a $ are global variables.  <br />They are available to be referenced in any part of the code, from any module_*, once they are defined. Their default value is 0. They are enclosed in quotations " ". Ex: <tt>"$g_talk_troop"</tt>
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=3.html" title="Edit section: Registers">edit</a>]</span> <span class="mw-headline" id="Registers"> Registers </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=3" title="Edit section: Registers">edit</a>]</span> <span class="mw-headline" id="Registers"> Registers </span></h2>
 <p><i>Registers</i> - <tt>reg(#) OR reg#</tt> - are variables used by the engine to store bits of information temporarily. <br />They are global in scope, but may be accessed by a variety of different scripts for their duration and are then left for another bit of code to use them. In <tt>header_common</tt>, registers <tt>reg0</tt> to <tt>reg65</tt> are declared. 
-</p><p>Detailed article here: <a href="Register.html" title="Register">Register</a>
+</p><p>Detailed article here: <a href="Register" title="Register">Register</a>
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=4.html" title="Edit section: Strings">edit</a>]</span> <span class="mw-headline" id="Strings"> Strings </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=4" title="Edit section: Strings">edit</a>]</span> <span class="mw-headline" id="Strings"> Strings </span></h2>
 <p><i>Strings</i> - <tt>s#</tt> - are specific 'registers' used to hold a string, rather than an integer. <br />Strings not declared in <tt>module_strings</tt> (quick strings) begin with the <tt>@</tt> symbol. In <tt>header_common</tt> strings <tt>s0</tt> to <tt>s67</tt> are declared.
-</p><p>Detailed article here: <a href="String.html" title="String">String</a>
+</p><p>Detailed article here: <a href="String" title="String">String</a>
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=5.html" title="Edit section: Positions">edit</a>]</span> <span class="mw-headline" id="Positions"> Positions </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=5" title="Edit section: Positions">edit</a>]</span> <span class="mw-headline" id="Positions"> Positions </span></h2>
 <p><i>Positions</i> - pos# -  Unlike the previous two "registers", positions store more than one piece of information; each position stores X, Y, Z coordinates as well as rotations on each X, Y, and Z axis. In header_common positions pos0 to pos64 are declared, with pos64 beginning an unspecified range of positions used by siege towers (belfries).
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=6.html" title="Edit section: Constants">edit</a>]</span> <span class="mw-headline" id="Constants"> Constants </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=6" title="Edit section: Constants">edit</a>]</span> <span class="mw-headline" id="Constants"> Constants </span></h2>
 <p><i>Constants</i> - constant - are constants that are declared in module_constants, maintain the numerical value assigned there, and cannot be altered save through editing module_constants. They can be called from any module_* file and any tuple. Constants are not enclosed with quotations.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=7.html" title="Edit section: Remarks">edit</a>]</span> <span class="mw-headline" id="Remarks"> Remarks </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Variables&amp;action=edit&amp;section=7" title="Edit section: Remarks">edit</a>]</span> <span class="mw-headline" id="Remarks"> Remarks </span></h2>
 <p>Local and global variables, as well as registers, are declared with the (assign, &lt;variable_name&gt;, &lt;variable_value&gt;), operation. The variable value field can be another variable name. Strings and positions have their own unique operations, as defined in header_operations
 </p>
 <!-- 
@@ -89,10 +89,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:137-0!*!0!!en!* and timestamp 20200419213851 -->
 <div class="printfooter">
-Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</a>"</div>
+Retrieved from "<a href="Variables">http://mbmodwiki.ollclan.eu/Variables</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AModding_Concepts" title="Category:Modding Concepts">Modding Concepts</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -107,7 +107,7 @@ Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Variables.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Variables" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -118,8 +118,8 @@ Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Variables.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AVariables&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Variables"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AVariables&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -142,9 +142,9 @@ Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Variables.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Variables&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Variables&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Variables" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Variables&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Variables&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -180,7 +180,7 @@ Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -188,13 +188,13 @@ Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -210,11 +210,11 @@ Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Variables.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Variables.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=Variables&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Variables&amp;oldid=761.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Variables" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Variables" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Variables&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Variables&amp;oldid=761" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -234,9 +234,9 @@ Retrieved from "<a href="Variables.html">http://mbmodwiki.ollclan.eu/Variables</
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

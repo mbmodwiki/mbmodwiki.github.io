@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <title>SceneObj - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="canonical" href="SceneObj.html" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=SceneObj&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=SceneObj&amp;action=edit.html" />
+<link rel="canonical" href="SceneObj" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=SceneObj&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=SceneObj&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -89,7 +89,7 @@
 				<div id="siteSub">From Mount&amp;Blade Modding Wiki</div>
 				<!-- /tagline -->
 				<!-- subtitle -->
-				<div id="contentSub">(Redirected from <a href="index.php@title=Terrain_code&amp;redirect=no.html" title="Terrain code">Terrain code</a>)</div>
+				<div id="contentSub">(Redirected from <a href="index.php@title=Terrain_code&amp;redirect=no" title="Terrain code">Terrain code</a>)</div>
 				<!-- /subtitle -->
 																<!-- jumpto -->
 				<div id="jump-to-nav">
@@ -98,8 +98,8 @@
 				</div>
 				<!-- /jumpto -->
 								<!-- bodytext -->
-				<p>Mount&amp;Blade <a href="Scene.html" title="Scene">Scenes</a> are composed of two independent structures. First, every scene entry has a <a href="index.php@title=Terrain_key&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain key (page does not exist)">terrain key</a>, provided by the built-in visual terrain generator.
-</p><p>Later on, through the in-game <a href="index.php@title=Scene_Editor&amp;action=edit&amp;redlink=1.html" class="new" title="Scene Editor (page does not exist)">Scene Editor</a>, which is enabled with the <a href="Edit_Mode.html" title="Edit Mode">Edit Mode</a> option in the launcher, the <a href="Scene.html" title="Scene">scene</a> can be altered, adding flora, painting and modifying terrain's appearance or even adding <a href="index.php@title=Scene_prop&amp;action=edit&amp;redlink=1.html" class="new" title="Scene prop (page does not exist)">scene props</a>.
+				<p>Mount&amp;Blade <a href="Scene.html" title="Scene">Scenes</a> are composed of two independent structures. First, every scene entry has a <a href="index.php@title=Terrain_key&amp;action=edit&amp;redlink=1" class="new" title="Terrain key (page does not exist)">terrain key</a>, provided by the built-in visual terrain generator.
+</p><p>Later on, through the in-game <a href="index.php@title=Scene_Editor&amp;action=edit&amp;redlink=1.html" class="new" title="Scene Editor (page does not exist)">Scene Editor</a>, which is enabled with the <a href="Edit_Mode.html" title="Edit Mode">Edit Mode</a> option in the launcher, the <a href="Scene.html" title="Scene">scene</a> can be altered, adding flora, painting and modifying terrain's appearance or even adding <a href="index.php@title=Scene_prop&amp;action=edit&amp;redlink=1" class="new" title="Scene prop (page does not exist)">scene props</a>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -118,8 +118,8 @@
 <li class="toclevel-1 tocsection-7"><a href="Terrain_code.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=1.html" title="Edit section: Terrain Keys">edit</a>]</span> <span class="mw-headline" id="Terrain_Keys">Terrain Keys</span></h2>
-<p>The structure of the <a href="index.php@title=Terrain_keys&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain keys (page does not exist)">Terrain Key</a>, also known as <a href="index.php@title=Terrain_hashes&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain hashes (page does not exist)">Terrain Hash</a> or <a href="index.php@title=Terrain_Codes&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain Codes (page does not exist)">Terrain Codes</a>, is composed by five serialized chunks of 32 bits, encoded in hexadecimal notation where its properties are stored using bitwise operations.
+<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=1" title="Edit section: Terrain Keys">edit</a>]</span> <span class="mw-headline" id="Terrain_Keys">Terrain Keys</span></h2>
+<p>The structure of the <a href="index.php@title=Terrain_keys&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain keys (page does not exist)">Terrain Key</a>, also known as <a href="index.php@title=Terrain_hashes&amp;action=edit&amp;redlink=1.html" class="new" title="Terrain hashes (page does not exist)">Terrain Hash</a> or <a href="index.php@title=Terrain_Codes&amp;action=edit&amp;redlink=1" class="new" title="Terrain Codes (page does not exist)">Terrain Codes</a>, is composed by five serialized chunks of 32 bits, encoded in hexadecimal notation where its properties are stored using bitwise operations.
 </p><p>As shown in the table, the first parts are for the noise generator's algorithm, water presence, and lastly size and terrain palette of the environment.
 </p><p>Decoded by courtesy of <a href="http://forums.taleworlds.com/index.php?action=profile;u=84182" class="external text" rel="nofollow">cmpxchg8b</a>
 </p>
@@ -223,8 +223,8 @@
 <td>2			</td>
 <td>2
 </td></tr></table>
-<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=2.html" title="Edit section: Terrain Code Generator | Client-side Browser Application">edit</a>]</span> <span class="mw-headline" id="Terrain_Code_Generator_.7C_Client-side_Browser_Application">Terrain Code Generator | Client-side Browser Application</span></h3>
-<p>Exists an online clone of the in-game terrain generation window, made by <a href="User%253ASwyter.html" title="User:Swyter"> Swyter</a>.<br />
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=2" title="Edit section: Terrain Code Generator | Client-side Browser Application">edit</a>]</span> <span class="mw-headline" id="Terrain_Code_Generator_.7C_Client-side_Browser_Application">Terrain Code Generator | Client-side Browser Application</span></h3>
+<p>Exists an online clone of the in-game terrain generation window, made by <a href="User%253ASwyter" title="User:Swyter"> Swyter</a>.<br />
 As we're talking about a self-contained, downloadable, standard HTML web page, it can also be used offline without losing functionality.<br />
 <br />
 It provides some advantages respect to the original implementation, like more options and customization ranges.<br />
@@ -233,26 +233,26 @@ Avoids the tedious process of launching the game for simple tweaks. And works qu
 You can find it here: <a href="http://mbcommands.ollclan.eu/terrain/" class="external free" rel="nofollow">http://mbcommands.ollclan.eu/terrain/</a><br />
 <br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=3.html" title="Edit section: SceneObj">edit</a>]</span> <span class="mw-headline" id="SceneObj">SceneObj</span></h2>
+<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=3" title="Edit section: SceneObj">edit</a>]</span> <span class="mw-headline" id="SceneObj">SceneObj</span></h2>
 <p>The *.sco files, located in the /SceneObj folder of every module, are automatically generated by the in-game scene editor.<br />
-Those are the files that alters the default Terrain key orography, provides <a href="index.php@title=Entry_point&amp;action=edit&amp;redlink=1.html" class="new" title="Entry point (page does not exist)">entry points</a> (spawn) positions and repainted terrain or scene props and extra manually supplied plants (known internally as objects).
+Those are the files that alters the default Terrain key orography, provides <a href="index.php@title=Entry_point&amp;action=edit&amp;redlink=1" class="new" title="Entry point (page does not exist)">entry points</a> (spawn) positions and repainted terrain or scene props and extra manually supplied plants (known internally as objects).
 </p>
-<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=4.html" title="Edit section: scoUtils">edit</a>]</span> <span class="mw-headline" id="scoUtils"> scoUtils </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=4" title="Edit section: scoUtils">edit</a>]</span> <span class="mw-headline" id="scoUtils"> scoUtils </span></h3>
 <p>After some tweaks and additions [<a href="http://forums.taleworlds.com/index.php?action=profile;u=199605" class="external text" rel="nofollow">Disgrntld</a>] released a tidied up version of
 the original parser shown below that he called scoUtils, accompanied by the screenshot of a example map and a procedural object (a roman <i>coliseum</i>) made with code.
 </p><p><i><b>First release</b></i>: [<a href="downloads/scoUtils.tar.bz2" class="external text" rel="nofollow">Mirrored here</a>]<br />
 <i><b>Second release</b></i> (<i>includes headers</i>): [<a href="downloads/scoUtils.tar-2.bz2" class="external text" rel="nofollow">Mirrored here</a>] [<a href="http://dl.dropbox.com/u/70112191/scoUtils.tar.bz2" class="external text" rel="nofollow">Dropbox</a>]<br />
 <br />
 For more information take a look to the original thread:
-</p><p><a href="http://forums.taleworlds.com/index.php/topic,221975.0.html" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php/topic,221975.0.html</a>
+</p><p><a href="http://forums.taleworlds.com/index.php/topic,221975.0" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php/topic,221975.0.html</a>
 </p><p><br />
 </p>
-<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=5.html" title="Edit section: Heightmap Toolset">edit</a>]</span> <span class="mw-headline" id="Heightmap_Toolset"> Heightmap Toolset </span></h3>
-<p>Later on a working, open source tested implementation of <i>SCO to PNG heightmap import and export</i> was released in binary form by <a href="User%253ASwyter.html" title="User:Swyter"> Swyter</a>,
-these two tiny tools can be found at <a href="Scene_Heightmap_Imp/export_Tools.html" title="Scene Heightmap Imp/export Tools">Scene Heightmap Imp/export Tools</a>. They include <tt>scopng</tt>, a drag-and-drop SceneObj to PNG/TGA/BMP conversion, and <tt>pngsco</tt>, its complementary friend that reimports back any modifications made to the images, supports PNG/PSD/TGA/BMP/JPG.
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=5" title="Edit section: Heightmap Toolset">edit</a>]</span> <span class="mw-headline" id="Heightmap_Toolset"> Heightmap Toolset </span></h3>
+<p>Later on a working, open source tested implementation of <i>SCO to PNG heightmap import and export</i> was released in binary form by <a href="User%253ASwyter" title="User:Swyter"> Swyter</a>,
+these two tiny tools can be found at <a href="Scene_Heightmap_Imp/export_Tools" title="Scene Heightmap Imp/export Tools">Scene Heightmap Imp/export Tools</a>. They include <tt>scopng</tt>, a drag-and-drop SceneObj to PNG/TGA/BMP conversion, and <tt>pngsco</tt>, its complementary friend that reimports back any modifications made to the images, supports PNG/PSD/TGA/BMP/JPG.
 </p><p><br />
 </p>
-<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=6.html" title="Edit section: .SCO File Parser">edit</a>]</span> <span class="mw-headline" id=".SCO_File_Parser"> .SCO File Parser</span></h3>
+<h3><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=6" title="Edit section: .SCO File Parser">edit</a>]</span> <span class="mw-headline" id=".SCO_File_Parser"> .SCO File Parser</span></h3>
 <p>Here's the original Standard C code for interacting with this file format, yet again courtesy of <a href="http://forums.taleworlds.com/index.php?action=profile;u=84182" class="external text" rel="nofollow">cmpxchg8b</a>
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
@@ -631,9 +631,9 @@ these two tiny tools can be found at <a href="Scene_Heightmap_Imp/export_Tools.h
 	fclose<span class="br0">&#40;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
 	<span class="kw1">return</span> EXIT_SUCCESS<span class="sy0">;</span>
 <span class="br0">&#125;</span></pre></div></div>
-<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=7.html" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h2>
+<h2><span class="editsection">[<a href="index.php@title=SceneObj&amp;action=edit&amp;section=7" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h2>
 <p>Code and analysis of the disassembled structures posted on the forums within the following thread:
-<a href="http://forums.taleworlds.com/index.php/topic,184470.html" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php/topic,184470.html</a>
+<a href="http://forums.taleworlds.com/index.php/topic,184470" class="external free" rel="nofollow">http://forums.taleworlds.com/index.php/topic,184470.html</a>
 </p>
 <!-- 
 NewPP limit report
@@ -648,7 +648,7 @@ Expensive parser function count: 0/100
 Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.eu/SceneObj#Terrain_Codes</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AFile-Type_Structure.html" title="Category:File-Type Structure">File-Type Structure</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AFile-Type_Structure" title="Category:File-Type Structure">File-Type Structure</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -663,7 +663,7 @@ Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.e
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=SceneObj.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=SceneObj" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -674,8 +674,8 @@ Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.e
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="SceneObj.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ASceneObj&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="SceneObj"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ASceneObj&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -698,9 +698,9 @@ Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.e
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="SceneObj.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=SceneObj&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=SceneObj&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="SceneObj" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=SceneObj&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=SceneObj&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -736,7 +736,7 @@ Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.e
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -744,13 +744,13 @@ Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.e
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -766,11 +766,11 @@ Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.e
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/SceneObj.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/SceneObj.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=SceneObj&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=SceneObj&amp;oldid=575.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/SceneObj" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/SceneObj" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=SceneObj&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=SceneObj&amp;oldid=575" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -790,9 +790,9 @@ Retrieved from "<a href="SceneObj.html#Terrain_Codes">http://mbmodwiki.ollclan.e
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

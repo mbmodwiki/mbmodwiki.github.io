@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>Tips for scene props - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Tips_for_scene_props&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Tips_for_scene_props&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Tips_for_scene_props&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Tips_for_scene_props&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -59,23 +59,23 @@
 </li>
 </ul>
 </td></tr></table>
-<h3><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=1.html" title="Edit section: Notes on Scene Props">edit</a>]</span> <span class="mw-headline" id="Notes_on_Scene_Props"> <b>Notes on Scene Props</b> </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=1" title="Edit section: Notes on Scene Props">edit</a>]</span> <span class="mw-headline" id="Notes_on_Scene_Props"> <b>Notes on Scene Props</b> </span></h3>
 <p><b>By Harry</b>
 </p><p>This document will refer not only to module_scene_props.py, and my findings therein, but also a more generalised set of tips for creating and using scene props in M&amp;B.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=2.html" title="Edit section: Picking on sceners">edit</a>]</span> <span class="mw-headline" id="Picking_on_sceners"> Picking on sceners </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=2" title="Edit section: Picking on sceners">edit</a>]</span> <span class="mw-headline" id="Picking_on_sceners"> Picking on sceners </span></h4>
 <p>Even if you want the player to be able to completely pass through a mesh, If we don't include a "bo_" collision mesh, the prop can not easilly be picked in the editor. This is because to check for selection in the editor, the bo_ mesh is used. To save your scene artists some headaches, include some kind of bo_ mesh. I personally recommend, if you are making a lot of small-ish objects, to use a standardised collision mesh, perhaps of a small, low-poly sphere. Keep two duplicate lines for each of these props, one with the bo_ entry and one without. When you're not editing scenes, comment out the line containing the bo_mesh. If your sceners need to edit some of these kinds of objects, just switch the commented sections around.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=3.html" title="Edit section: Uneasy footing">edit</a>]</span> <span class="mw-headline" id="Uneasy_footing"> Uneasy footing </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=3" title="Edit section: Uneasy footing">edit</a>]</span> <span class="mw-headline" id="Uneasy_footing"> Uneasy footing </span></h4>
 <p>If we set the bo_ mesh to a very subtle "bump" made of half of a sphere, the prop will not block the player's path, but slow their horses down if going at full gallop. This is great to use on rough surfaces or thick bushes - without making them impassable, horses will still have trouble crossing them, which creates a tactical consideration for infantry - Take up a position behind uneasy terrain, and horses will lose all their speed when they try to charge you.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=4.html" title="Edit section: Bumping your head">edit</a>]</span> <span class="mw-headline" id="Bumping_your_head"> Bumping your head </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=4" title="Edit section: Bumping your head">edit</a>]</span> <span class="mw-headline" id="Bumping_your_head"> Bumping your head </span></h4>
 <p>It seems the player is not considered part of the collision hull when we are mounted. That is to say, if we have a rather low cieling, the players' head will clip through it. If you absolutely need to bar mounted players from entering a human-sized doorway, you will need to keep the door just the right size. The other alternative is to place an invisible "barrier" in the bo_mesh. The down-side of this is that missiles will collide with that invisible barrier just as much as mounted players will.
 Making props "usable"
 Just add this into the prop's definition, inside the square brackets: (ti_on_scene_prop_use, [ your_events ]), with your_events being whatever you want the effect of using the prop to actually be.
 The tag "spr_use_time", when added to the prop definition along with other tags, will control how long the player needs to hold the button to use the prop. A progress bar will appear for them, too. Use is spr_use_time(number) with number being the amount of time to hold the button, in seconds. You can only use integers here, so precision is low, but for 90% of uses, this should be fine.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=5.html" title="Edit section: Destroying props">edit</a>]</span> <span class="mw-headline" id="Destroying_props"> Destroying props </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=5" title="Edit section: Destroying props">edit</a>]</span> <span class="mw-headline" id="Destroying_props"> Destroying props </span></h4>
 <p>The sokf_destructible tag will define the props as destructible. But we don't stop there. We need to define hit points.
 </p>
 <pre>    (ti_on_init_scene_prop,
@@ -86,10 +86,10 @@ The tag "spr_use_time", when added to the prop definition along with other tags,
 </pre>
 <p>Put this inside your prop definition's square brackets, replacing health with the number of hit points you want the prop to have. Then, you can also call (ti_on_scene_prop_destroy, [your_events]), with your_events being whatever you want the effect of destroying the prop to actually be.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=6.html" title="Edit section: Sound props">edit</a>]</span> <span class="mw-headline" id="Sound_props"> Sound props </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=6" title="Edit section: Sound props">edit</a>]</span> <span class="mw-headline" id="Sound_props"> Sound props </span></h4>
 <p>It seems that calling play_sound on a scene_prop will cause the sound to originate from that scene prop. Invisible, or barely visible, scene props, would be a good way to create localised sound loops to add atmosphere to a scene. But remember the "picking on sceners" section.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=7.html" title="Edit section: Particle props">edit</a>]</span> <span class="mw-headline" id="Particle_props"> Particle props </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Tips_for_scene_props&amp;action=edit&amp;section=7" title="Edit section: Particle props">edit</a>]</span> <span class="mw-headline" id="Particle_props"> Particle props </span></h4>
 <p>A lot of vanilla props have particle effects attached, but these are mostly restricted to campfires or smoke from chimneys. Remember that particle effects can be used for a *lot* of things! You could create concentrated pillars of rain-drops to be placed on the corners of rooves during rainy scenes, or "dust emitters" which will fire large dust particles between two ridges on a dry map. If you take a look at the vanilla smoke props, you can see there are conditionals for day and night. At night the particle will be a darker colour - this is because M&amp;B default shaders do not apply lighting to particles, so what might look like grey smoke in the day time will be an eery glowing cloud at night. Switching to a darker particle at night time will solve this - remember to make similar considerations for your particles.
 </p>
 <!-- 
@@ -102,10 +102,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:127-0!*!0!!en!* and timestamp 20200419213922 -->
 <div class="printfooter">
-Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/Tips_for_scene_props</a>"</div>
+Retrieved from "<a href="Tips_for_scene_props">http://mbmodwiki.ollclan.eu/Tips_for_scene_props</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253ATutorials.html" title="Category:Tutorials">Tutorials</a></span> | <span dir='ltr'><a href="Category%253ANotes.html" title="Category:Notes">Notes</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253ATutorials.html" title="Category:Tutorials">Tutorials</a></span> | <span dir='ltr'><a href="Category%253ANotes" title="Category:Notes">Notes</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -120,7 +120,7 @@ Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Tips_for_scene_props.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=Tips_for_scene_props" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -131,8 +131,8 @@ Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Tips_for_scene_props.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ATips_for_scene_props&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Tips_for_scene_props"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ATips_for_scene_props&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -155,9 +155,9 @@ Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Tips_for_scene_props.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Tips_for_scene_props&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Tips_for_scene_props&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Tips_for_scene_props" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Tips_for_scene_props&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Tips_for_scene_props&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -193,7 +193,7 @@ Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -201,13 +201,13 @@ Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -223,11 +223,11 @@ Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Tips_for_scene_props.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Tips_for_scene_props.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=Tips_for_scene_props&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Tips_for_scene_props&amp;oldid=714.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Tips_for_scene_props" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Tips_for_scene_props" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=Tips_for_scene_props&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=Tips_for_scene_props&amp;oldid=714" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -247,9 +247,9 @@ Retrieved from "<a href="Tips_for_scene_props.html">http://mbmodwiki.ollclan.eu/
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

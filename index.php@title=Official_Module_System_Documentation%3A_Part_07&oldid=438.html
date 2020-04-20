@@ -5,8 +5,8 @@
 <title>Official Module System Documentation: Part 07 - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
 <meta name="robots" content="noindex,nofollow" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -36,7 +36,7 @@
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub">
-				<div id="mw-revision-info">Revision as of 13:34, 26 February 2012 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter.html" title="Special:Contributions/Swyter">contribs</a>)</span></div>
+				<div id="mw-revision-info">Revision as of 13:34, 26 February 2012 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter" title="Special:Contributions/Swyter">contribs</a>)</span></div>
 
 				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_07&amp;diff=prev&amp;oldid=438" title="Official Module System Documentation: Part 07">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_07&amp;direction=prev&amp;oldid=438" title="Official Module System Documentation: Part 07">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
 			</div>
@@ -50,11 +50,11 @@
 								<!-- bodytext -->
 				<div class="swynavbar" style="width:100%;background-color:whitesmoke;border:1px solid #999;border-radius:3px;text-align:right">
 <p>	<span class="swynavbar-left" style="float:left;">
-	<a href="Official_Module_System_Documentation%253A_Part_06.html" title="Official Module System Documentation: Part 06"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
+	<a href="Official_Module_System_Documentation%253A_Part_06" title="Official Module System Documentation: Part 06"> <span style="color:navy;text-shadow:none;text-decoration:none;">Back to Previous Chapter
            </span></a>
 	</span>
 	<span class="swynavbar-right">
-	<a href="Official_Module_System_Documentation%253A_Part_08.html" title="Official Module System Documentation: Part 08"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
+	<a href="Official_Module_System_Documentation%253A_Part_08" title="Official Module System Documentation: Part 08"> <span style="color:navy;text-shadow:none;text-decoration:none;">Go to the Next Chapter</span></a>
 	</span>
 </p>
 </div>
@@ -70,7 +70,7 @@ In this Part we will be examining module_dialogs.py, by far the largest file in 
 <li class="toclevel-1 tocsection-4"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html#7.4_--_Dialogue_And_Quests"><span class="tocnumber">4</span> <span class="toctext">7.4 -- Dialogue And Quests</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=1.html" title="Edit section: 7.1 -- Breakdown of Module Dialogs">edit</a>]</span> <span class="mw-headline" id="7.1_--_Breakdown_of_Module_Dialogs"> 7.1 -- Breakdown of Module_Dialogs </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=1" title="Edit section: 7.1 -- Breakdown of Module Dialogs">edit</a>]</span> <span class="mw-headline" id="7.1_--_Breakdown_of_Module_Dialogs"> 7.1 -- Breakdown of Module_Dialogs </span></h2>
 <p>The file begins immediately with a Python list, followed by the first piece of dialogue in the game -- Constable Hareck's announcement regarding the river pirates. An important fact to remember is that the game scans module_dialogs from top to bottom, using the first line that meets all the criteria of its situation. It differentiates between lines used in different situations, from a party encounter on the map to chatting with an NPC in a scene.
 </p><p>You will note, each line of dialogue is an individual tuple. The only things connecting them are their dialog-states, which we will review in a moment.
 </p><p>Example of a dialogue tuple:
@@ -115,7 +115,7 @@ As you can see, each initial dialog-state is designed for a specific situation. 
 </p><p>Since our example tuple is initiated by speaking to Constable Hareck in Zendar, its initial dialog-state is "start".
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=2.html" title="Edit section: 7.2 -- Requirements And The Conditions Block">edit</a>]</span> <span class="mw-headline" id="7.2_--_Requirements_And_The_Conditions_Block"> 7.2 -- Requirements And The Conditions Block </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=2" title="Edit section: 7.2 -- Requirements And The Conditions Block">edit</a>]</span> <span class="mw-headline" id="7.2_--_Requirements_And_The_Conditions_Block"> 7.2 -- Requirements And The Conditions Block </span></h2>
 <p>The dialogue interface is very flexible, and can be used in a great number of ways. It handles both events on the overland map and events in scenes. It allows dialogues to be triggered whenever you want them.
 </p><p>In the following segments, we examine how to use the dialogue interface to its fullest, and after that we will learn how to create complex dialogues of our own.
 </p><p><br />
@@ -140,7 +140,7 @@ However, when everything is working in harmony, conditions blocks can be very po
 <p>The only requirements on this line are that the player must be speaking to Constable Hareck in a scene. It will always be selected when speaking to Constable Hareck in the Zendar centre after he has delivered his speech.
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=3.html" title="Edit section: 7.3 -- Adding New Dialogue">edit</a>]</span> <span class="mw-headline" id="7.3_--_Adding_New_Dialogue"> 7.3 -- Adding New Dialogue </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=3" title="Edit section: 7.3 -- Adding New Dialogue">edit</a>]</span> <span class="mw-headline" id="7.3_--_Adding_New_Dialogue"> 7.3 -- Adding New Dialogue </span></h2>
 <p>Here we finally have a chance to give our new troop Geoffrey some unique dialogue. However, like module_troops, module_dialogs is another file where you cannot simply add more tuples at the bottom of the list. The end of module_dialogs's Python list contains placeholder conversations that will trigger for anyone at all, and because the file is scanned from top to bottom for a match, any dialogue that you add after the placeholder conversations will be completely ignored.
 </p><p>It is recommended that you add new dialogue before the following comment:
 </p>
@@ -181,7 +181,7 @@ However, when everything is working in harmony, conditions blocks can be very po
 <p><br />
 With that done, we now have a conversation with several quest-related conditions and consequences, as well as a ready-made quest tuple; but we have yet to create the conditions that will allow the player to activate the quest in the first place. This we will do in the next segment.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=4.html" title="Edit section: 7.4 -- Dialogue And Quests">edit</a>]</span> <span class="mw-headline" id="7.4_--_Dialogue_And_Quests"> 7.4 -- Dialogue And Quests </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;section=4" title="Edit section: 7.4 -- Dialogue And Quests">edit</a>]</span> <span class="mw-headline" id="7.4_--_Dialogue_And_Quests"> 7.4 -- Dialogue And Quests </span></h2>
 <p>When adding new lines to an existing conversation, we must be very careful that our new tuples play nicely with the existing ones. Remember that the dialogue file is scanned from top to bottom; remember to check your conditions blocks; remember to keep a close eye on your syntax. One misspelling can throw off entire blocks of code. Build your module often so that you can catch any syntax errors early.
 </p><p>First, we're going to add one more tuple for Geoffrey, and we're going to add it before any of his other lines. This means it will be considered before his other lines. If this tuple's conditions are present, it will be selected for use regardless of any others that might have also met conditions.
 </p><p><br />
@@ -242,10 +242,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:75-0!*!0!!en!* and timestamp 20200419220842 -->
 <div class="printfooter">
-Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_07</a>"</div>
+Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07">http://mbmodwiki.ollclan.eu/Official_Module_System_Documentation:_Part_07</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation.html" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Category</a>: <span dir='ltr'><a href="Category%253AOfficial_Documentation" title="Category:Official Documentation">Official Documentation</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -271,8 +271,8 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html"
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_07.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_07"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AOfficial_Module_System_Documentation%253A_Part_07&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -295,9 +295,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html"
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_07.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Official_Module_System_Documentation%253A_Part_07" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -333,7 +333,7 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html"
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -341,13 +341,13 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html"
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -363,11 +363,11 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html"
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_07.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_07.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Official_Module_System_Documentation%253A_Part_07" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Official_Module_System_Documentation%253A_Part_07" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
 									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Official_Module_System_Documentation:_Part_07&amp;oldid=438&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-permalink"><a href="index.php@title=Official_Module_System_Documentation%253A_Part_07&amp;oldid=438" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -385,9 +385,9 @@ Retrieved from "<a href="Official_Module_System_Documentation%253A_Part_07.html"
 																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

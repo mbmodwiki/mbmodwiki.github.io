@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>World map - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=World_map&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=World_map&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=World_map&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=World_map&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -54,14 +54,14 @@
 <li class="toclevel-1 tocsection-7"><a href="World_map.html#Original_Native_Mount.26Blade_Strategic_Map"><span class="tocnumber">7</span> <span class="toctext">Original Native Mount&amp;Blade Strategic Map</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=1.html" title="Edit section: Introduction">edit</a>]</span> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
-<p>The Strategic Map (don't confuse with <a href="Scenes.html" title="Scenes">Scenes</a>) is a big card where you can move to all the different locations, interact with the rest of parties (groups of agents, also named troops). It's generated based on the 3D data contained in Map.txt, located into the currently selected module.
+<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=1" title="Edit section: Introduction">edit</a>]</span> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>The Strategic Map (don't confuse with <a href="Scenes" title="Scenes">Scenes</a>) is a big card where you can move to all the different locations, interact with the rest of parties (groups of agents, also named troops). It's generated based on the 3D data contained in Map.txt, located into the currently selected module.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=2.html" title="Edit section: Internal Workings">edit</a>]</span> <span class="mw-headline" id="Internal_Workings"> Internal Workings </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=2" title="Edit section: Internal Workings">edit</a>]</span> <span class="mw-headline" id="Internal_Workings"> Internal Workings </span></h2>
 <p>You can open it with any text editor, as the rest of module files, isn't saved as binary format. Instead of that the game reads the triangle arrays from every line and generates a representation of the data.
 </p><p>It also defines what texture is used in every triangle. There's a hard-coded limit for that values and no extra textures can be added.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=3.html" title="Edit section: Map.txt Detailed Structure">edit</a>]</span> <span class="mw-headline" id="Map.txt_Detailed_Structure"> Map.txt Detailed Structure </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=3" title="Edit section: Map.txt Detailed Structure">edit</a>]</span> <span class="mw-headline" id="Map.txt_Detailed_Structure"> Map.txt Detailed Structure </span></h2>
 <p><i><b>Originally discovered By Drago</b></i>.
 </p><p>Is just a simple mesh, the first number is the vertex count, then a list of them all.
 After that is the face count, followed by.
@@ -76,7 +76,7 @@ map.txt consists of 2 parts.
 1st part lists all vertices with {x,y,z} coords
 2nd part lists all triangles with {terrain_code,0,3,vertex1,vertex,vertex3}
 </p>
-<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=4.html" title="Edit section: cmpxchg8b's Map.txt reverse engineered Structure">edit</a>]</span> <span class="mw-headline" id="cmpxchg8b.27s_Map.txt_reverse_engineered_Structure"> cmpxchg8b's Map.txt reverse engineered Structure </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=4" title="Edit section: cmpxchg8b's Map.txt reverse engineered Structure">edit</a>]</span> <span class="mw-headline" id="cmpxchg8b.27s_Map.txt_reverse_engineered_Structure"> cmpxchg8b's Map.txt reverse engineered Structure </span></h2>
 <p><a href="http://forums.taleworlds.com/index.php/topic,153323.msg3682815.html#msg3682815" class="external text" rel="nofollow">As seen in here...</a>
 </p>
 <blockquote style="background-color: lightgrey; border: solid thin grey;">
@@ -98,10 +98,10 @@ poly_2_terrain_type unused poly_2_number_of_points poly_2_point_1_index poly_2_p
 poly_n_terrain_type unused poly_n_number_of_points poly_n_point_1_index poly_n_point_2_index poly_n_point_3_index
 </pre>
 <p><br />
-</p><p>--<a href="Special%253AContributions/81.172.59.124.html" title="Special:Contributions/81.172.59.124">81.172.59.124</a> 17:14, 22 March 2011 (CET) Needs Formatting
+</p><p>--<a href="Special%253AContributions/81.172.59.124" title="Special:Contributions/81.172.59.124">81.172.59.124</a> 17:14, 22 March 2011 (CET) Needs Formatting
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=5.html" title="Edit section: Terrain Codes (from header terrain types.py):">edit</a>]</span> <span class="mw-headline" id="Terrain_Codes_.28from_header_terrain_types.py.29:">Terrain Codes (from header_terrain_types.py):</span></h2>
+<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=5" title="Edit section: Terrain Codes (from header terrain types.py):">edit</a>]</span> <span class="mw-headline" id="Terrain_Codes_.28from_header_terrain_types.py.29:">Terrain Codes (from header_terrain_types.py):</span></h2>
 <pre>
 rt_water = 0
 rt_mountain = 1
@@ -117,12 +117,12 @@ rt_forest = 11
 rt_snow_forest = 12
 rt_desert_forest = 13
 </pre>
-<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=6.html" title="Edit section: Native Warband Strategic Map">edit</a>]</span> <span class="mw-headline" id="Native_Warband_Strategic_Map"> Native Warband Strategic Map</span></h2>
+<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=6" title="Edit section: Native Warband Strategic Map">edit</a>]</span> <span class="mw-headline" id="Native_Warband_Strategic_Map"> Native Warband Strategic Map</span></h2>
 <p><img src="http://images.wikia.com/mountandblade/images/b/b6/MapCalradiaWarband.jpg" alt="MapCalradiaWarband.jpg" />
 </p><p>High resolution Official Poster version: <a href="http://img297.imageshack.us/img297/9845/mapinenglishcopy.jpg" class="external text" rel="nofollow">Click Here</a>
 </p><p><br />
 </p>
-<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=7.html" title="Edit section: Original Native Mount&amp;Blade Strategic Map">edit</a>]</span> <span class="mw-headline" id="Original_Native_Mount.26Blade_Strategic_Map"> Original Native Mount&amp;Blade Strategic Map </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=World_map&amp;action=edit&amp;section=7" title="Edit section: Original Native Mount&amp;Blade Strategic Map">edit</a>]</span> <span class="mw-headline" id="Original_Native_Mount.26Blade_Strategic_Map"> Original Native Mount&amp;Blade Strategic Map </span></h2>
 <p><img src="http://media.strategywiki.org/images/4/48/Mount%26Blade_world_map.jpg" alt="Mount%26Blade_world_map.jpg" />
 </p>
 <!-- 
@@ -135,10 +135,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:142-0!*!0!!en!* and timestamp 20200419213854 -->
 <div class="printfooter">
-Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</a>"</div>
+Retrieved from "<a href="World_map">http://mbmodwiki.ollclan.eu/World_map</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AFile-Type_Structure.html" title="Category:File-Type Structure">File-Type Structure</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AFile-Type_Structure" title="Category:File-Type Structure">File-Type Structure</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -153,7 +153,7 @@ Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=World_map.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=World_map" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -164,8 +164,8 @@ Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="World_map.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AWorld_map&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="World_map"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AWorld_map&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -188,9 +188,9 @@ Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="World_map.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=World_map&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=World_map&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="World_map" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=World_map&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=World_map&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -226,7 +226,7 @@ Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -234,13 +234,13 @@ Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -256,11 +256,11 @@ Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/World_map.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/World_map.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=World_map&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=World_map&amp;oldid=783.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/World_map" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/World_map" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=World_map&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=World_map&amp;oldid=783" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -280,9 +280,9 @@ Retrieved from "<a href="World_map.html">http://mbmodwiki.ollclan.eu/World_map</
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

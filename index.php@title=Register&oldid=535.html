@@ -5,8 +5,8 @@
 <title>Register - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
 <meta name="robots" content="noindex,nofollow" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Register&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Register&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Register&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Register&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -36,7 +36,7 @@
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub">
-				<div id="mw-revision-info">Revision as of 09:51, 24 June 2011 by <a href="User%253AJT.html" title="User:JT" class="mw-userlink">JT</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253AJT&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:JT (page does not exist)">Talk</a> | <a href="Special%253AContributions/JT.html" title="Special:Contributions/JT">contribs</a>)</span></div>
+				<div id="mw-revision-info">Revision as of 09:51, 24 June 2011 by <a href="User%253AJT.html" title="User:JT" class="mw-userlink">JT</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253AJT&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:JT (page does not exist)">Talk</a> | <a href="Special%253AContributions/JT" title="Special:Contributions/JT">contribs</a>)</span></div>
 
 				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Register&amp;diff=prev&amp;oldid=535" title="Register">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Register&amp;direction=prev&amp;oldid=535" title="Register">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
 			</div>
@@ -48,20 +48,20 @@
 				</div>
 				<!-- /jumpto -->
 								<!-- bodytext -->
-				<p><b>Registers</b> are the means of converting raw numbers into text that can be displayed to the player, by assigning a <a href="index.php@title=Variable&amp;action=edit&amp;redlink=1.html" class="new" title="Variable (page does not exist)">variable</a> to the register and then "embedding" the register into a text <a href="String.html" title="String">string</a> which is used in dialogue or messages.  They are one of the four ways of producing dynamic text for the player (the others being <a href="String_register.html" title="String register">string registers</a>, <a href="Conditional_string.html" title="Conditional string">conditional strings</a>, and <a href="Gender_string.html" title="Gender string">gender strings</a>).
+				<p><b>Registers</b> are the means of converting raw numbers into text that can be displayed to the player, by assigning a <a href="index.php@title=Variable&amp;action=edit&amp;redlink=1.html" class="new" title="Variable (page does not exist)">variable</a> to the register and then "embedding" the register into a text <a href="String.html" title="String">string</a> which is used in dialogue or messages.  They are one of the four ways of producing dynamic text for the player (the others being <a href="String_register.html" title="String register">string registers</a>, <a href="Conditional_string.html" title="Conditional string">conditional strings</a>, and <a href="Gender_string" title="Gender string">gender strings</a>).
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Register&amp;action=edit&amp;section=1.html" title="Edit section: Using registers">edit</a>]</span> <span class="mw-headline" id="Using_registers"> Using registers </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Register&amp;action=edit&amp;section=1" title="Edit section: Using registers">edit</a>]</span> <span class="mw-headline" id="Using_registers"> Using registers </span></h2>
 <p>Registers are used by inserting them ("embedding them") into a text string between braces ("{" and "}"). When the text is displayed to the player, the contents of the register are substituted in place of the braces. Variable names for registers are fixed and are defined by using the three letter code <b>reg</b> followed by a number starting from 0.  For instance, the following text string:
 </p>
 <pre>Your liquid assets: {reg1}^Appraised value of stored goods: {reg2}
 </pre>
 <p>contains two registers, corresponding to register IDs 1 and 2, which will have to have values assigned prior to the string being shown to the player.
-</p><p>The <b><a href="index.php@title=Assign&amp;action=edit&amp;redlink=1.html" class="new" title="Assign (page does not exist)">assign</a></b> function is used to set the value of registers.
+</p><p>The <b><a href="index.php@title=Assign&amp;action=edit&amp;redlink=1" class="new" title="Assign (page does not exist)">assign</a></b> function is used to set the value of registers.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Register&amp;action=edit&amp;section=2.html" title="Edit section: Good practice">edit</a>]</span> <span class="mw-headline" id="Good_practice"> Good practice </span></h2>
-<p>It is important to note that registers are not variables; they are intended to be used solely for the purpose of displaying numbers.  They are <i>assigned</i> values from variables after they have been calculated and should not be directly manipulated.  Think of a register as an "answer" that has been written down on the page after the calculations have been performed.  It is far more ideal to use <a href="index.php@title=Local_variables&amp;action=edit&amp;redlink=1.html" class="new" title="Local variables (page does not exist)">local variables</a> and <a href="index.php@title=Global_variables&amp;action=edit&amp;redlink=1.html" class="new" title="Global variables (page does not exist)">global variables</a> with proper names as needed for calculations, then to assign them to registers after the calculations are complete.
+<h2><span class="editsection">[<a href="index.php@title=Register&amp;action=edit&amp;section=2" title="Edit section: Good practice">edit</a>]</span> <span class="mw-headline" id="Good_practice"> Good practice </span></h2>
+<p>It is important to note that registers are not variables; they are intended to be used solely for the purpose of displaying numbers.  They are <i>assigned</i> values from variables after they have been calculated and should not be directly manipulated.  Think of a register as an "answer" that has been written down on the page after the calculations have been performed.  It is far more ideal to use <a href="index.php@title=Local_variables&amp;action=edit&amp;redlink=1.html" class="new" title="Local variables (page does not exist)">local variables</a> and <a href="index.php@title=Global_variables&amp;action=edit&amp;redlink=1" class="new" title="Global variables (page does not exist)">global variables</a> with proper names as needed for calculations, then to assign them to registers after the calculations are complete.
 </p><p>While registers can and do work with <b>store_add</b>, <b>val_add</b>, etc., this should be avoided if possible as using variables makes what you are doing much clearer to the person reading your source code.
-</p><p>The only function that is intended to work with registers directly is <b><a href="index.php@title=Shuffle_range&amp;action=edit&amp;redlink=1.html" class="new" title="Shuffle range (page does not exist)">shuffle_range</a></b>.
+</p><p>The only function that is intended to work with registers directly is <b><a href="index.php@title=Shuffle_range&amp;action=edit&amp;redlink=1" class="new" title="Shuffle range (page does not exist)">shuffle_range</a></b>.
 </p>
 <!-- 
 NewPP limit report
@@ -71,10 +71,10 @@ Template argument size: 0/2097152 bytes
 Expensive parser function count: 0/100
 -->
 <div class="printfooter">
-Retrieved from "<a href="Register.html">http://mbmodwiki.ollclan.eu/Register</a>"</div>
+Retrieved from "<a href="Register">http://mbmodwiki.ollclan.eu/Register</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AVariables.html" title="Category:Variables">Variables</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AVariables" title="Category:Variables">Variables</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -100,8 +100,8 @@ Retrieved from "<a href="Register.html">http://mbmodwiki.ollclan.eu/Register</a>
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Register.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ARegister&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Register"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253ARegister&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -124,9 +124,9 @@ Retrieved from "<a href="Register.html">http://mbmodwiki.ollclan.eu/Register</a>
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Register.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Register&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Register&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Register" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Register&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Register&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -162,7 +162,7 @@ Retrieved from "<a href="Register.html">http://mbmodwiki.ollclan.eu/Register</a>
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -170,13 +170,13 @@ Retrieved from "<a href="Register.html">http://mbmodwiki.ollclan.eu/Register</a>
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -192,11 +192,11 @@ Retrieved from "<a href="Register.html">http://mbmodwiki.ollclan.eu/Register</a>
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Register.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Register.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Register" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Register" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
 									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Register&amp;oldid=535&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Register&amp;oldid=535.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-permalink"><a href="index.php@title=Register&amp;oldid=535" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -214,9 +214,9 @@ Retrieved from "<a href="Register.html">http://mbmodwiki.ollclan.eu/Register</a>
 																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

@@ -5,8 +5,8 @@
 <title>Conversation - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
 <meta name="robots" content="noindex,nofollow" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Conversation&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Conversation&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Conversation&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Conversation&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -36,7 +36,7 @@
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub">
-				<div id="mw-revision-info">Revision as of 12:01, 8 June 2013 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter.html" title="Special:Contributions/Swyter">contribs</a>)</span></div>
+				<div id="mw-revision-info">Revision as of 12:01, 8 June 2013 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter" title="Special:Contributions/Swyter">contribs</a>)</span></div>
 
 				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Conversation&amp;diff=prev&amp;oldid=128" title="Conversation">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Conversation&amp;direction=prev&amp;oldid=128" title="Conversation">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
 			</div>
@@ -48,7 +48,7 @@
 				</div>
 				<!-- /jumpto -->
 								<!-- bodytext -->
-				<p><b>Conversation</b> or <b>dialogue</b> (simplified to <b>dialog</b> in American English) is the system built into Mount&amp;Blade that allows two persons to communicate with one another in a menu-based interface.  Each individual entry in the <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>.py file is referred to officially as <b>a dialogue</b> or <b>a dialog</b>, but for purposes of clarity in this article it is referred to here as a <b>dialogue entry</b>, particularly to avoid confusion with pop-up message boxes.
+				<p><b>Conversation</b> or <b>dialogue</b> (simplified to <b>dialog</b> in American English) is the system built into Mount&amp;Blade that allows two persons to communicate with one another in a menu-based interface.  Each individual entry in the <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>.py file is referred to officially as <b>a dialogue</b> or <b>a dialog</b>, but for purposes of clarity in this article it is referred to here as a <b>dialogue entry</b>, particularly to avoid confusion with pop-up message boxes.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -87,23 +87,23 @@
 </li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=1.html" title="Edit section: Implementation">edit</a>]</span> <span class="mw-headline" id="Implementation"> Implementation </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=1" title="Edit section: Implementation">edit</a>]</span> <span class="mw-headline" id="Implementation"> Implementation </span></h2>
 <p>The conversation system operates in a simple, discrete way.
 </p>
-<ol><li> The player chooses to Talk to an <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agent</a> in a scene, or the game selects an appropriate <a href="index.php@title=Conversation&amp;oldid=128.html#topic">topic</a> if conversation was started automatically.
-<ol><li> In a town or other <a href="Scene.html" title="Scene">scene</a>, or when encountering someone normally on the world map, the topic is "start".
+<ol><li> The player chooses to Talk to an <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1" class="new" title="Agent (page does not exist)">agent</a> in a scene, or the game selects an appropriate <a href="index.php@title=Conversation&amp;oldid=128.html#topic">topic</a> if conversation was started automatically.
+<ol><li> In a town or other <a href="Scene" title="Scene">scene</a>, or when encountering someone normally on the world map, the topic is "start".
 </li><li> After winning a battle started by an ally on the world map, conversation is started automatically with the topic "party_relieved".
-</li><li> After winning a battle and a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a> was present in the enemy's prisoners, conversation is started automatically with the (former) prisoner with the topic "prisoner_liberated".
+</li><li> After winning a battle and a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a> was present in the enemy's prisoners, conversation is started automatically with the (former) prisoner with the topic "prisoner_liberated".
 </li><li> After winning a battle against an enemy hero, conversation is started automatically with the enemy hero with the topic "enemy_defeated".
 </li><li> If the conversation was started automatically by a trigger, the topic is "event_triggered".
 </li><li> If talking to a person in the party, the topic is "member_chat".
 </li></ol>
 </li><li> This topic becomes the new "dialogue state".
-</li><li> The game processes the list of dialogue <a href="Tuple.html" title="Tuple">tuples</a> and selects the list of topics where the <a href="index.php@title=Conversation&amp;oldid=128.html#Actor">actor</a> matches the agent's <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> ID and the topic matches the initial dialogue state.
+</li><li> The game processes the list of dialogue <a href="Tuple.html" title="Tuple">tuples</a> and selects the list of topics where the <a href="index.php@title=Conversation&amp;oldid=128.html#Actor">actor</a> matches the agent's <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">troop</a> ID and the topic matches the initial dialogue state.
 </li><li> For each of the topics that match, the <a href="index.php@title=Conversation&amp;oldid=128.html#Condition_block">condition block</a> is run.
-<ol><li> If any <a href="index.php@title=Condition_function&amp;action=edit&amp;redlink=1.html" class="new" title="Condition function (page does not exist)">condition function</a> in the block fails, further code stops executing in the precondition block.
+<ol><li> If any <a href="index.php@title=Condition_function&amp;action=edit&amp;redlink=1" class="new" title="Condition function (page does not exist)">condition function</a> in the block fails, further code stops executing in the precondition block.
 </li><li> If all of the code in the block succeeds, or there is no code in the block, the dialogue topic is selected.
-</li><li> If the actor ID is modified with the "plyr" <a href="Flag.html" title="Flag">flag</a>, then it searches for additional topics to select.   Otherwise, only the first matching dialog topic is selected.
+</li><li> If the actor ID is modified with the "plyr" <a href="Flag" title="Flag">flag</a>, then it searches for additional topics to select.   Otherwise, only the first matching dialog topic is selected.
 </li></ol>
 </li><li> Once the selection of topics is available, the selected <a href="index.php@title=Conversation&amp;oldid=128.html#Dialogue_text">dialogue text</a> is displayed.
 <ol><li> If the selection is for the "plyr", then a number of dialogue choices are presented in a menu for the player to choose from; if only one choice is available, it is spoken automatically by the player.
@@ -114,8 +114,8 @@
 </li><li> Otherwise, conversation goes back to step 3 above, matching the new dialogue state rather than the starting dialogue state.
 </li></ol>
 </li></ol>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=2.html" title="Edit section: Default variables">edit</a>]</span> <span class="mw-headline" id="Default_variables"> Default variables </span></h3>
-<p>Several global variables and registers are automatically assigned to you every time you start conversation in the default Mount&amp;Blade module, due to the existence of a preprocessing dialogue entry at the very top of the standard <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>.py.
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=2" title="Edit section: Default variables">edit</a>]</span> <span class="mw-headline" id="Default_variables"> Default variables </span></h3>
+<p>Several global variables and registers are automatically assigned to you every time you start conversation in the default Mount&amp;Blade module, due to the existence of a preprocessing dialogue entry at the very top of the standard <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>.py.
 </p>
 <table class="wikitable" style="margin-left: 1cm">
 
@@ -127,17 +127,17 @@
 <tr>
 <td> $g_talk_troop </td>
 <td> All </td>
-<td> The <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> of the actor.
+<td> The <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">troop</a> of the actor.
 </td></tr>
 <tr>
 <td> $g_talk_agent </td>
 <td> All </td>
-<td> The <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agent</a> of the actor.
+<td> The <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1" class="new" title="Agent (page does not exist)">agent</a> of the actor.
 </td></tr>
 <tr>
 <td> $g_talk_troop_faction </td>
 <td> All </td>
-<td> The <a href="index.php@title=Faction&amp;action=edit&amp;redlink=1.html" class="new" title="Faction (page does not exist)">faction</a> the actor belongs to.
+<td> The <a href="index.php@title=Faction&amp;action=edit&amp;redlink=1" class="new" title="Faction (page does not exist)">faction</a> the actor belongs to.
 </td></tr>
 <tr>
 <td> $g_talk_troop_relation </td>
@@ -152,12 +152,12 @@
 <tr>
 <td> $g_talk_troop_faction_relation </td>
 <td> All </td>
-<td> The relationship level between the <a href="index.php@title=Player_faction&amp;action=edit&amp;redlink=1.html" class="new" title="Player faction (page does not exist)">player faction</a> and the actor's faction.
+<td> The relationship level between the <a href="index.php@title=Player_faction&amp;action=edit&amp;redlink=1" class="new" title="Player faction (page does not exist)">player faction</a> and the actor's faction.
 </td></tr>
 <tr>
 <td> $g_talk_troop_party </td>
 <td> All </td>
-<td> The <a href="index.php@title=Party&amp;action=edit&amp;redlink=1.html" class="new" title="Party (page does not exist)">party</a> the actor belongs to, if applicable.
+<td> The <a href="index.php@title=Party&amp;action=edit&amp;redlink=1" class="new" title="Party (page does not exist)">party</a> the actor belongs to, if applicable.
 </td></tr>
 <tr>
 <td> $g_current_hours </td>
@@ -177,12 +177,12 @@
 <tr>
 <td> $g_talk_troop_met </td>
 <td>  </td>
-<td> Set to 1 if the player has spoken to this <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a> (lord) before.
+<td> Set to 1 if the player has spoken to this <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a> (lord) before.
 </td></tr>
 <tr>
 <td> $g_enemy_strength </td>
 <td>  </td>
-<td> The calculated <a href="Party_strength.html" title="Party strength">party strength</a> score of all of the enemies in a <a href="World_map.html" title="World map">world map</a> encounter.
+<td> The calculated <a href="Party_strength.html" title="Party strength">party strength</a> score of all of the enemies in a <a href="World_map" title="World map">world map</a> encounter.
 </td></tr>
 <tr>
 <td> $g_ally_strength </td>
@@ -198,27 +198,27 @@
 </table>
 <p>TODO Complete list
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=3.html" title="Edit section: Format">edit</a>]</span> <span class="mw-headline" id="Format"> Format </span></h2>
-<p>Dialogue is specified in <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>, with each <a href="Tuple.html" title="Tuple">tuple</a> containing a list of values that specify how the conversation is to be conducted.
+<h2><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=3" title="Edit section: Format">edit</a>]</span> <span class="mw-headline" id="Format"> Format </span></h2>
+<p>Dialogue is specified in <a href="index.php@title=Module_dialogs&amp;action=edit&amp;redlink=1.html" class="new" title="Module dialogs (page does not exist)">module_dialogs</a>, with each <a href="Tuple" title="Tuple">tuple</a> containing a list of values that specify how the conversation is to be conducted.
 </p><p>The essentials of the dialogue format are below:
 </p>
 <pre>#[actor, "topic", [(condition_function,0,1), (call_script, "script_condition_block")], "Text spoken by person.", "next_topic", [(call_script, "script_consequences_block")],
 #[actor|plyr, "next_topic", [(condition_function,0,1), (call_script, "script_condition_block")], "Text spoken by player.", "next_topic", [(call_script, "script_consequences_block")],
 </pre>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=4.html" title="Edit section: Actor">edit</a>]</span> <span class="mw-headline" id="Actor"> Actor </span></h3>
-<p>In a dialogue tuple, the <b>actor</b> or <b>partner</b> is the <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> who is being conversed with by the player.  The special troop "anyone" means that the dialogue topic is available regardless of the specific actor in the conversation.  Instead of a troop, a <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">party template</a> can also be used in combination with the flag "party_tpl" to allow any encountered party to talk to the player, with either a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a> or the strongest troop conducting the conversation on the party's behalf.
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=4" title="Edit section: Actor">edit</a>]</span> <span class="mw-headline" id="Actor"> Actor </span></h3>
+<p>In a dialogue tuple, the <b>actor</b> or <b>partner</b> is the <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> who is being conversed with by the player.  The special troop "anyone" means that the dialogue topic is available regardless of the specific actor in the conversation.  Instead of a troop, a <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">party template</a> can also be used in combination with the flag "party_tpl" to allow any encountered party to talk to the player, with either a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a> or the strongest troop conducting the conversation on the party's behalf.
 </p><p>The actor is always assigned to the person the player is talking to.  Even if the player or a third party is talking, the actor ID always remains the same.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=5.html" title="Edit section: Flags">edit</a>]</span> <span class="mw-headline" id="Flags"> Flags </span></h4>
-<p>For lines of dialogue that are intended to be spoken by the player, the <a href="Flag.html" title="Flag">flag</a> "plyr" is added to the actor name.  These will be presented in a menu if there is more than one choice, or automatically spoken if there is only one choice available.  In game, if there is only one choice, the camera will automatically pan to the player as he or she speaks.  Otherwise, the camera will remain focused on the NPC.
-</p><p>For lines of dialogue that are to be spoken by a third party present in the <a href="Scene.html" title="Scene">scene</a>, the flag "other(<i>troop</i>)" is added to the actor name, with <i>troop</i> assigned to the troop ID of the other person in the conversation.  Note that in encounters in the world map, a new scene is automatically produced and there will be no way to introduce a third party<small><sup><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1.html" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>; this function works only for scenes such as towns and interiors.
+<h4><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=5" title="Edit section: Flags">edit</a>]</span> <span class="mw-headline" id="Flags"> Flags </span></h4>
+<p>For lines of dialogue that are intended to be spoken by the player, the <a href="Flag" title="Flag">flag</a> "plyr" is added to the actor name.  These will be presented in a menu if there is more than one choice, or automatically spoken if there is only one choice available.  In game, if there is only one choice, the camera will automatically pan to the player as he or she speaks.  Otherwise, the camera will remain focused on the NPC.
+</p><p>For lines of dialogue that are to be spoken by a third party present in the <a href="Scene.html" title="Scene">scene</a>, the flag "other(<i>troop</i>)" is added to the actor name, with <i>troop</i> assigned to the troop ID of the other person in the conversation.  Note that in encounters in the world map, a new scene is automatically produced and there will be no way to introduce a third party<small><sup><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>; this function works only for scenes such as towns and interiors.
 </p><p>If you want the conversation to proceed automatically, append the flag "auto_proceed" to the actor name.  Note that this will skip the dialogue text completely and is usually intended only if you want to use one dialogue topic to accomplish a certain bit of code (<i>e.g.</i>, playing a sound effect) before immediately displaying the next, or if you want two or more distinct actors to redirect the player to the same dialogue topic when conversation is started.
 </p><p>If you want a dialogue topic to iterate through a number of in-game objects or even a set number, use the <i>repeat_for_x</i> flags as follows. See <a href="index.php@title=Conversation&amp;oldid=128.html#Iteration">below in special notes</a> for more information.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=6.html" title="Edit section: Topic">edit</a>]</span> <span class="mw-headline" id="Topic"> Topic </span></h3>
-<p>The <b>topic</b> specifies in which <b>dialogue state</b> the dialogue entry should appear.  This can be any <a href="String.html" title="String">string</a> desired (no dynamic text allowed) as a custom dialogue state which is linked to from <a href="index.php@title=Conversation&amp;oldid=128.html#Next_topic">another topic</a>, or one of the initial dialogue states below.
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=6" title="Edit section: Topic">edit</a>]</span> <span class="mw-headline" id="Topic"> Topic </span></h3>
+<p>The <b>topic</b> specifies in which <b>dialogue state</b> the dialogue entry should appear.  This can be any <a href="String" title="String">string</a> desired (no dynamic text allowed) as a custom dialogue state which is linked to from <a href="index.php@title=Conversation&amp;oldid=128.html#Next_topic">another topic</a>, or one of the initial dialogue states below.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=7.html" title="Edit section: Initial dialogue state">edit</a>]</span> <span class="mw-headline" id="Initial_dialogue_state"> Initial dialogue state </span></h4>
+<h4><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=7" title="Edit section: Initial dialogue state">edit</a>]</span> <span class="mw-headline" id="Initial_dialogue_state"> Initial dialogue state </span></h4>
 <p>When the player enters a conversation, the game automatically assigns a dialogue state according to circumstance:
 </p>
 <table class="wikitable" style="margin-left: 1cm">
@@ -230,20 +230,20 @@
 <th> Dialogue State
 </th></tr>
 <tr>
-<th> Player activates <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agent</a> in <a href="Scene.html" title="Scene">scene</a> with "Talk" function
+<th> Player activates <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agent</a> in <a href="Scene" title="Scene">scene</a> with "Talk" function
 </th>
 <td> No
 </td>
-<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">Troop</a>
+<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">Troop</a>
 </td>
 <td> "start"
 </td></tr>
 <tr>
-<th> Player clicks on and catches <a href="index.php@title=Party&amp;action=edit&amp;redlink=1.html" class="new" title="Party (page does not exist)">party</a> on world map
+<th> Player clicks on and catches <a href="index.php@title=Party&amp;action=edit&amp;redlink=1" class="new" title="Party (page does not exist)">party</a> on world map
 </th>
 <td> No
 </td>
-<td> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">Party template</a> or <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> (<a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a>)
+<td> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">Party template</a> or <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> (<a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a>)
 </td>
 <td> "start"
 </td></tr>
@@ -252,52 +252,52 @@
 </th>
 <td> No
 </td>
-<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">Troop</a>
+<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">Troop</a>
 </td>
 <td> "member_chat"
 </td></tr>
 <tr>
-<th> Player caught by aggressive <a href="index.php@title=Party&amp;action=edit&amp;redlink=1.html" class="new" title="Party (page does not exist)">party</a> on world map
+<th> Player caught by aggressive <a href="index.php@title=Party&amp;action=edit&amp;redlink=1" class="new" title="Party (page does not exist)">party</a> on world map
 </th>
 <td> Yes
 </td>
-<td> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">Party template</a> or <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> (<a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a>)
+<td> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">Party template</a> or <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> (<a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a>)
 </td>
 <td> "start"
 </td></tr>
 <tr>
-<th> Player joins an ally on <a href="World_map.html" title="World map">world map</a> and wins the battle
+<th> Player joins an ally on <a href="World_map" title="World map">world map</a> and wins the battle
 </th>
 <td> Yes
 </td>
-<td> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">Party template</a> or <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> (<a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a>)
+<td> <a href="index.php@title=Party_template&amp;action=edit&amp;redlink=1.html" class="new" title="Party template (page does not exist)">Party template</a> or <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">troop</a> (<a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a>)
 </td>
 <td> "party_relieved"
 </td></tr>
 <tr>
-<th> Player defeats an enemy party led by a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a>
+<th> Player defeats an enemy party led by a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a>
 </th>
 <td> Yes
 </td>
-<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">Troop</a>
+<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">Troop</a>
 </td>
 <td> "enemy_defeated"
 </td></tr>
 <tr>
-<th> Player defeats an enemy party containing a captive <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a>
+<th> Player defeats an enemy party containing a captive <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1" class="new" title="Hero (page does not exist)">hero</a>
 </th>
 <td> Yes
 </td>
-<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">Troop</a>
+<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">Troop</a>
 </td>
 <td> "prisoner_liberated"
 </td></tr>
 <tr>
-<th> Scripted trigger forces a conversation with a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a> or <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agent</a>
+<th> Scripted trigger forces a conversation with a <a href="index.php@title=Hero&amp;action=edit&amp;redlink=1.html" class="new" title="Hero (page does not exist)">hero</a> or <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1" class="new" title="Agent (page does not exist)">agent</a>
 </th>
 <td> Yes
 </td>
-<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1.html" class="new" title="Troop (page does not exist)">Troop</a>
+<td> <a href="index.php@title=Troop&amp;action=edit&amp;redlink=1" class="new" title="Troop (page does not exist)">Troop</a>
 </td>
 <td> "event_triggered"
 </td></tr>
@@ -312,28 +312,28 @@
 <p>For automatic dialogue, all possible events will activate conversations sequentially; each time a conversation ends by being directed to the "close_window" topic, the next available conversation will start automatically.  For instance, after defeating an enemy party that contained allied prisoners, you will speak to the leader of the enemy party; after exiting the conversation with the leader of the enemy party, another conversation will start automatically with the first prisoner, and so forth for each prisoner remaining.
 </p><p>The order given above is the order in which the automatic conversations are processed.  The allied lords and party leader will be spoken to before the enemy leader is spoken to, and the enemy leader will be spoken to before the allied prisoners will be spoken to.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=8.html" title="Edit section: Condition Block">edit</a>]</span> <span class="mw-headline" id="Condition_Block"> Condition Block </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=8" title="Edit section: Condition Block">edit</a>]</span> <span class="mw-headline" id="Condition_Block"> Condition Block </span></h3>
 <p>The condition block serves two purposes.
-</p><p>The first purpose is to limit the appearance of dialogue topics according to conditions.  It contains a list of <a href="index.php@title=Condition_operation&amp;action=edit&amp;redlink=1.html" class="new" title="Condition operation (page does not exist)">condition operations</a> which, if any return false, the block will cancel immediately and the dialogue choice will not be available.  A condition operation marked with <a href="index.php@title=This_or_next&amp;action=edit&amp;redlink=1.html" class="new" title="This or next (page does not exist)">this_or_next</a> will not cancel the dialogue entry unless all of the marked 
-</p><p>The second purpose is to run <a href="index.php@title=Script&amp;action=edit&amp;redlink=1.html" class="new" title="Script (page does not exist)">scripts</a> or to have script code embedded directly.  This code will evaluate immediately before the dialogue is displayed and is used to load <a href="Register.html" title="Register">registers</a> and <a href="String_register.html" title="String register">string registers</a> with information prior to the dialogue string being displayed.  It is also used to accomplish other tasks, like rewarding the player, modifying the NPC's relation to the player, and so forth.
+</p><p>The first purpose is to limit the appearance of dialogue topics according to conditions.  It contains a list of <a href="index.php@title=Condition_operation&amp;action=edit&amp;redlink=1.html" class="new" title="Condition operation (page does not exist)">condition operations</a> which, if any return false, the block will cancel immediately and the dialogue choice will not be available.  A condition operation marked with <a href="index.php@title=This_or_next&amp;action=edit&amp;redlink=1" class="new" title="This or next (page does not exist)">this_or_next</a> will not cancel the dialogue entry unless all of the marked 
+</p><p>The second purpose is to run <a href="index.php@title=Script&amp;action=edit&amp;redlink=1.html" class="new" title="Script (page does not exist)">scripts</a> or to have script code embedded directly.  This code will evaluate immediately before the dialogue is displayed and is used to load <a href="Register.html" title="Register">registers</a> and <a href="String_register" title="String register">string registers</a> with information prior to the dialogue string being displayed.  It is also used to accomplish other tasks, like rewarding the player, modifying the NPC's relation to the player, and so forth.
 </p>
-<h4><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=9.html" title="Edit section: Preprocessing">edit</a>]</span> <span class="mw-headline" id="Preprocessing"> Preprocessing </span></h4>
-<p>The condition block can also be used simply to "preprocess" &#8212; to run code instead of showing dialogue, in advance of displaying other dialogue &#8212; which is especially useful to assign <a href="index.php@title=Global_variable&amp;action=edit&amp;redlink=1.html" class="new" title="Global variable (page does not exist)">global variables</a> related to the next dialogue entries in the file.  Creating a preprocessing dialogue entry is simply a matter of writing your code in the condition block, and placing a condition function guaranteed to return false at the end (rather than at the beginning).  This prevents that particular dialogue entry from being selected, even though all of the code in the block has already been executed.  As soon as the game engine reaches the dialogue entry matching the corresponding topic, it will run the code automatically, halting only when it reaches the guaranteed-false condition.  The dialogue text and next topic parameters are completely ignored in this case, although it is usually a good idea to set the dialogue text to a warning string that it is a processing block and should never be displayed, and to set the next topic to "close_window" to prevent being locked in conversation in case the condition function is somehow accidentally omitted or deleted.
+<h4><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=9" title="Edit section: Preprocessing">edit</a>]</span> <span class="mw-headline" id="Preprocessing"> Preprocessing </span></h4>
+<p>The condition block can also be used simply to "preprocess" &#8212; to run code instead of showing dialogue, in advance of displaying other dialogue &#8212; which is especially useful to assign <a href="index.php@title=Global_variable&amp;action=edit&amp;redlink=1" class="new" title="Global variable (page does not exist)">global variables</a> related to the next dialogue entries in the file.  Creating a preprocessing dialogue entry is simply a matter of writing your code in the condition block, and placing a condition function guaranteed to return false at the end (rather than at the beginning).  This prevents that particular dialogue entry from being selected, even though all of the code in the block has already been executed.  As soon as the game engine reaches the dialogue entry matching the corresponding topic, it will run the code automatically, halting only when it reaches the guaranteed-false condition.  The dialogue text and next topic parameters are completely ignored in this case, although it is usually a good idea to set the dialogue text to a warning string that it is a processing block and should never be displayed, and to set the next topic to "close_window" to prevent being locked in conversation in case the condition function is somehow accidentally omitted or deleted.
 </p><p>Using preprocessing can accomplish a number of useful tasks, such as choosing a random number and then checking that number in the topics below to determine which of the topics will display, or simply pre-loading variables, registers, and string registers in a clearly-defined place in the module_dialogs.py file rather than having to insert this script code into the first of several possible choices.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=10.html" title="Edit section: Dialogue text">edit</a>]</span> <span class="mw-headline" id="Dialogue_text"> Dialogue text </span></h3>
-<p>The dialogue text is the <a href="String.html" title="String">string</a> that will be displayed to the player verbatim.  It can make use of <a href="Register.html" title="Register">registers</a>, <a href="String_register.html" title="String register">string registers</a>, <a href="Conditional_string.html" title="Conditional string">conditional strings</a>, and <a href="Gender_string.html" title="Gender string">gender strings</a> to be modified as necessary.
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=10" title="Edit section: Dialogue text">edit</a>]</span> <span class="mw-headline" id="Dialogue_text"> Dialogue text </span></h3>
+<p>The dialogue text is the <a href="String.html" title="String">string</a> that will be displayed to the player verbatim.  It can make use of <a href="Register.html" title="Register">registers</a>, <a href="String_register.html" title="String register">string registers</a>, <a href="Conditional_string.html" title="Conditional string">conditional strings</a>, and <a href="Gender_string" title="Gender string">gender strings</a> to be modified as necessary.
 </p><p>One of the simplest ways to have a dynamic dialogue text is to set the dialogue text directly to a string register.  That way, you have full script control over what is shown to the player by assigning whatever text you'd like to display into the string register using the condition block, in advance of actually displaying it.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=11.html" title="Edit section: Next topic">edit</a>]</span> <span class="mw-headline" id="Next_topic"> Next topic </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=11" title="Edit section: Next topic">edit</a>]</span> <span class="mw-headline" id="Next_topic"> Next topic </span></h3>
 <p>The next topic is what the current dialogue state will change to when this dialogue entry is chosen, whether by clicking in the menu in the case of the player, or automatically after the player clicks the mouse when in conversation with an NPC.
 </p><p>Alternatively, it can be set to "close_window" to end the conversation and return the player back to main gameplay.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=12.html" title="Edit section: Consequences block">edit</a>]</span> <span class="mw-headline" id="Consequences_block"> Consequences block </span></h3>
-<p>The consequences block is a set of script instructions executed after the dialogue entry is chosen.  Unlike the condition block, any condition function in the consequences block will not halt execution of the code, except in the case of cancelling a <a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1.html" class="new" title="Try begin (page does not exist)">try_begin</a> block.<small><sup><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1.html" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=12" title="Edit section: Consequences block">edit</a>]</span> <span class="mw-headline" id="Consequences_block"> Consequences block </span></h3>
+<p>The consequences block is a set of script instructions executed after the dialogue entry is chosen.  Unlike the condition block, any condition function in the consequences block will not halt execution of the code, except in the case of cancelling a <a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1.html" class="new" title="Try begin (page does not exist)">try_begin</a> block.<small><sup><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1" class="new" title="Talk:Conversation (page does not exist)">verify</a></sup></small>
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=13.html" title="Edit section: Special notes">edit</a>]</span> <span class="mw-headline" id="Special_notes"> Special notes </span></h2>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=14.html" title="Edit section: Playing speech">edit</a>]</span> <span class="mw-headline" id="Playing_speech"> Playing speech </span></h3>
+<h2><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=13" title="Edit section: Special notes">edit</a>]</span> <span class="mw-headline" id="Special_notes"> Special notes </span></h2>
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=14" title="Edit section: Playing speech">edit</a>]</span> <span class="mw-headline" id="Playing_speech"> Playing speech </span></h3>
 <p>To add voice effects to the player, you must combine two dialogue entries sequentially, one to present the menu choice which will play the sound effect when clicked, and one to present the dialogue text and give the player the "Click to continue" prompt.
 </p><p>As an example, the following dialogue entries allow the player to say the bandit line to an NPC, which for some reason has been Cockneyed; this is strictly for show and it doesn't do anything else.
 </p>
@@ -342,7 +342,7 @@
 </pre>
 <p>This method also works for NPCs, if you append the auto_proceed flag to the first dialogue entry.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=15.html" title="Edit section: Iteration">edit</a>]</span> <span class="mw-headline" id="Iteration"> Iteration </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=Conversation&amp;action=edit&amp;section=15" title="Edit section: Iteration">edit</a>]</span> <span class="mw-headline" id="Iteration"> Iteration </span></h3>
 <p>The following iteration flags are available for repeating one set of conditions and consequences over a number of objects. Examples include awarding fiefs to lords (this may use both repeat_for_parties and repeat_for_troops) and iterating through a troop's inventory (with repeat_for_100).
 </p>
 <ul><li> repeat_for_factions
@@ -383,10 +383,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:13-0!*!0!!en!* and timestamp 20200419173039 -->
 <div class="printfooter">
-Retrieved from "<a href="Conversation.html">http://mbmodwiki.ollclan.eu/Conversation</a>"</div>
+Retrieved from "<a href="Conversation">http://mbmodwiki.ollclan.eu/Conversation</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AModule_System.html" title="Category:Module System">Module System</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="Category%253AModule_System" title="Category:Module System">Module System</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -412,8 +412,8 @@ Retrieved from "<a href="Conversation.html">http://mbmodwiki.ollclan.eu/Conversa
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Conversation.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Conversation"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AConversation&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -436,9 +436,9 @@ Retrieved from "<a href="Conversation.html">http://mbmodwiki.ollclan.eu/Conversa
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Conversation.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Conversation&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Conversation&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Conversation" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Conversation&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Conversation&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -474,7 +474,7 @@ Retrieved from "<a href="Conversation.html">http://mbmodwiki.ollclan.eu/Conversa
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -482,13 +482,13 @@ Retrieved from "<a href="Conversation.html">http://mbmodwiki.ollclan.eu/Conversa
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -504,11 +504,11 @@ Retrieved from "<a href="Conversation.html">http://mbmodwiki.ollclan.eu/Conversa
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Conversation.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Conversation.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Conversation" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Conversation" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
 									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Conversation&amp;oldid=128&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Conversation&amp;oldid=128.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-permalink"><a href="index.php@title=Conversation&amp;oldid=128" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -526,9 +526,9 @@ Retrieved from "<a href="Conversation.html">http://mbmodwiki.ollclan.eu/Conversa
 																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

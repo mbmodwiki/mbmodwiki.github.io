@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <title>String Operations - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=String_Operations&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=String_Operations&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=String_Operations&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=String_Operations&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -73,46 +73,46 @@
 </li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=1.html" title="Edit section: Operations">edit</a>]</span> <span class="mw-headline" id="Operations"> Operations </span></h2>
-<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=2.html" title="Edit section: Basic Manipulation">edit</a>]</span> <span class="mw-headline" id="Basic_Manipulation">Basic Manipulation</span></h3>
+<h2><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=1" title="Edit section: Operations">edit</a>]</span> <span class="mw-headline" id="Operations"> Operations </span></h2>
+<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=2" title="Edit section: Basic Manipulation">edit</a>]</span> <span class="mw-headline" id="Basic_Manipulation">Basic Manipulation</span></h3>
 <ul><li> str_is_empty                    = 2318 # (str_is_empty, &lt;string_register&gt;),
 </li><li> str_clear                       = 2319 # (str_clear, &lt;string_register&gt;)
 </li><li> str_store_string                = 2320	# (str_store_string,&lt;string_register&gt;,&lt;string_id&gt;),
 </li><li> str_store_string_reg            = 2321	# (str_store_string,&lt;string_register&gt;,&lt;string_no&gt;), #copies one string register to another.
 </li></ul>
-<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=3.html" title="Edit section: Basic Display">edit</a>]</span> <span class="mw-headline" id="Basic_Display">Basic Display</span></h3>
+<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=3" title="Edit section: Basic Display">edit</a>]</span> <span class="mw-headline" id="Basic_Display">Basic Display</span></h3>
 <ul><li> display_debug_message           = 1104 # (display_debug_message,&lt;string_id&gt;,[hex_colour_code]), #displays message only in debug mode, but writes to rgl_log.txt in both release and debug modes when edit mode is enabled
 </li><li> display_log_message             = 1105 # (display_log_message,&lt;string_id&gt;,[hex_colour_code]),
 </li><li> display_message                 = 1106 # (display_message,&lt;string_id&gt;,[hex_colour_code]),
 </li><li> set_show_messages               = 1107 # (set_show_messages,&lt;value&gt;), #0 disables window messages 1 re-enables them.
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=4.html" title="Edit section: Graphical Display">edit</a>]</span> <span class="mw-headline" id="Graphical_Display">Graphical Display</span></h4>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=4" title="Edit section: Graphical Display">edit</a>]</span> <span class="mw-headline" id="Graphical_Display">Graphical Display</span></h4>
 <ul><li> tutorial_box                    = 1120 # (tutorial_box,&lt;string_id&gt;,&lt;string_id&gt;), #deprecated use dialog_box instead.
 </li><li> dialog_box                      = 1120 # (tutorial_box,&lt;text_string_id&gt;,&lt;title_string_id&gt;),
 </li><li> question_box                    = 1121 # (question_box,&lt;string_id&gt;, [&lt;yes_string_id&gt;], [&lt;no_string_id&gt;]),
-</li><li> <a href="index.php@title=Tutorial_message&amp;action=edit&amp;redlink=1.html" class="new" title="Tutorial message (page does not exist)">tutorial_message</a>                = 1122 # (tutorial_message,&lt;string_id&gt;, &lt;color&gt;), #set string_id = -1 for hiding the message
+</li><li> <a href="index.php@title=Tutorial_message&amp;action=edit&amp;redlink=1" class="new" title="Tutorial message (page does not exist)">tutorial_message</a>                = 1122 # (tutorial_message,&lt;string_id&gt;, &lt;color&gt;), #set string_id = -1 for hiding the message
 </li><li> set_tooltip_text                = 1130 #  (set_tooltip_text, &lt;string_id&gt;),
-</li><li> <a href="index.php@title=Talk_info&amp;action=edit&amp;redlink=1.html" class="new" title="Talk info (page does not exist)">talk_info</a>_set_line                     = 2022   # (talk_info_set_line, &lt;line_no&gt;, &lt;string_no&gt;)
+</li><li> <a href="index.php@title=Talk_info&amp;action=edit&amp;redlink=1" class="new" title="Talk info (page does not exist)">talk_info</a>_set_line                     = 2022   # (talk_info_set_line, &lt;line_no&gt;, &lt;string_no&gt;)
 </li></ul>
-<p>For advanced text display, see <a href="index.php@title=Module_presentations&amp;action=edit&amp;redlink=1.html" class="new" title="Module presentations (page does not exist)">module_presentations</a>.
+<p>For advanced text display, see <a href="index.php@title=Module_presentations&amp;action=edit&amp;redlink=1" class="new" title="Module presentations (page does not exist)">module_presentations</a>.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=5.html" title="Edit section: Game Objects">edit</a>]</span> <span class="mw-headline" id="Game_Objects">Game Objects</span></h3>
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=6.html" title="Edit section: Troop">edit</a>]</span> <span class="mw-headline" id="Troop">Troop</span></h4>
+<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=5" title="Edit section: Game Objects">edit</a>]</span> <span class="mw-headline" id="Game_Objects">Game Objects</span></h3>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=6" title="Edit section: Troop">edit</a>]</span> <span class="mw-headline" id="Troop">Troop</span></h4>
 <ul><li> str_store_troop_name            = 2322	# (str_store_troop_name,&lt;string_register&gt;,&lt;troop_id&gt;),
 </li><li> str_store_troop_name_plural     = 2323	# (str_store_troop_name_plural,&lt;string_register&gt;,&lt;troop_id&gt;),
 </li><li> str_store_troop_name_by_count   = 2324	# (str_store_troop_name_by_count,&lt;string_register&gt;,&lt;troop_id&gt;,&lt;number&gt;),
 </li><li> str_store_troop_name_link       = 2341 # (str_store_troop_name_link,&lt;string_register&gt;,&lt;troop_id&gt;),
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=7.html" title="Edit section: Agent/Class">edit</a>]</span> <span class="mw-headline" id="Agent.2FClass">Agent/Class</span></h4>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=7" title="Edit section: Agent/Class">edit</a>]</span> <span class="mw-headline" id="Agent.2FClass">Agent/Class</span></h4>
 <ul><li> str_store_agent_name            = 2332	# (str_store_agent_name,&lt;string_register&gt;,&lt;agent_id&gt;),
 </li><li> str_store_class_name            = 2346 # (str_store_class_name,&lt;stribg_register&gt;,&lt;class_id&gt;)
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=8.html" title="Edit section: Items">edit</a>]</span> <span class="mw-headline" id="Items">Items</span></h4>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=8" title="Edit section: Items">edit</a>]</span> <span class="mw-headline" id="Items">Items</span></h4>
 <ul><li> str_store_item_name             = 2325	# (str_store_item_name,&lt;string_register&gt;,&lt;item_id&gt;),
 </li><li> str_store_item_name_plural      = 2326	# (str_store_item_name_plural,&lt;string_register&gt;,&lt;item_id&gt;),
 </li><li> str_store_item_name_by_count    = 2327	# (str_store_item_name_by_count,&lt;string_register&gt;,&lt;item_id&gt;),
 </li></ul>
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=9.html" title="Edit section: Other">edit</a>]</span> <span class="mw-headline" id="Other">Other</span></h4>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=9" title="Edit section: Other">edit</a>]</span> <span class="mw-headline" id="Other">Other</span></h4>
 <ul><li> str_store_party_name            = 2330	# (str_store_party_name,&lt;string_register&gt;,&lt;party_id&gt;),
 <ul><li> str_store_party_name_link       = 2342 # (str_store_party_name_link,&lt;string_register&gt;,&lt;party_id&gt;),
 </li></ul>
@@ -127,20 +127,20 @@
 </li></ul>
 </li><li> str_store_date                  = 2340 # (str_store_date,&lt;string_register&gt;,&lt;number_of_hours_to_add_to_the_current_date&gt;),
 </li></ul>
-<p>name_links will refer to the in-game <a href="index.php@title=Notes&amp;action=edit&amp;redlink=1.html" class="new" title="Notes (page does not exist)">Notes</a> section inside <a href="index.php@title=Logs&amp;action=edit&amp;redlink=1.html" class="new" title="Logs (page does not exist)">Logs</a>.
+<p>name_links will refer to the in-game <a href="index.php@title=Notes&amp;action=edit&amp;redlink=1.html" class="new" title="Notes (page does not exist)">Notes</a> section inside <a href="index.php@title=Logs&amp;action=edit&amp;redlink=1" class="new" title="Logs (page does not exist)">Logs</a>.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=10.html" title="Edit section: Multiplayer">edit</a>]</span> <span class="mw-headline" id="Multiplayer"> Multiplayer </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=10" title="Edit section: Multiplayer">edit</a>]</span> <span class="mw-headline" id="Multiplayer"> Multiplayer </span></h3>
 <ul><li> str_store_player_username       = 2350 # (str_store_player_username,&lt;string_register&gt;,&lt;player_id&gt;),
 </li><li> str_store_server_password       = 2351 # (str_store_server_password, &lt;string_register&gt;),
 </li><li> str_store_server_name           = 2352 # (str_store_server_name, &lt;string_register&gt;),
 </li><li> str_store_welcome_message       = 2353 # (str_store_welcome_message, &lt;string_register&gt;),
 </li><li> str_encode_url                  = 2355 # (str_encode_url, &lt;string_register&gt;),
 </li></ul>
-<h2><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=11.html" title="Edit section: Special Characters">edit</a>]</span> <span class="mw-headline" id="Special_Characters"> Special Characters </span></h2>
-<p>These operations may be used inside of strings in the <a href="Module_System.html" title="Module System" class="mw-redirect">Module System</a>, to call and display certain data, or perform limited conditional operations via parameter substitution.
+<h2><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=11" title="Edit section: Special Characters">edit</a>]</span> <span class="mw-headline" id="Special_Characters"> Special Characters </span></h2>
+<p>These operations may be used inside of strings in the <a href="Module_System" title="Module System" class="mw-redirect">Module System</a>, to call and display certain data, or perform limited conditional operations via parameter substitution.
 </p>
 <table class="wikitable">
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=12.html" title="Edit section: Prefix">edit</a>]</span> <span class="mw-headline" id="Prefix">Prefix</span></h4>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=12" title="Edit section: Prefix">edit</a>]</span> <span class="mw-headline" id="Prefix">Prefix</span></h4>
 <tr>
 <th> Character
 </th>
@@ -154,10 +154,10 @@
 <tr>
 <td> @
 </td>
-<td> Initializes a quick-string which is not defined in <a href="index.php@title=Module_strings&amp;action=edit&amp;redlink=1.html" class="new" title="Module strings (page does not exist)">module_strings</a>
+<td> Initializes a quick-string which is not defined in <a href="index.php@title=Module_strings&amp;action=edit&amp;redlink=1" class="new" title="Module strings (page does not exist)">module_strings</a>
 </td></tr></table>
 <table class="wikitable">
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=13.html" title="Edit section: Line Manipulation">edit</a>]</span> <span class="mw-headline" id="Line_Manipulation">Line Manipulation</span></h4>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=13" title="Edit section: Line Manipulation">edit</a>]</span> <span class="mw-headline" id="Line_Manipulation">Line Manipulation</span></h4>
 <tr>
 <th> Character
 </th>
@@ -174,7 +174,7 @@
 <td> Nextline character. Will visually insert a new line in-game.
 </td></tr></table>
 <table class="wikitable">
-<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=14.html" title="Edit section: Substitution">edit</a>]</span> <span class="mw-headline" id="Substitution">Substitution</span></h4>
+<h4><span class="editsection">[<a href="index.php@title=String_Operations&amp;action=edit&amp;section=14" title="Edit section: Substitution">edit</a>]</span> <span class="mw-headline" id="Substitution">Substitution</span></h4>
 <tr>
 <th> String
 </th>
@@ -183,12 +183,12 @@
 <tr>
 <td> {s#}
 </td>
-<td> Outputs the contents of the specified <a href="String_register.html" title="String register">string register</a>.
+<td> Outputs the contents of the specified <a href="String_register" title="String register">string register</a>.
 </td></tr>
 <tr>
 <td> {reg#}
 </td>
-<td> Outputs the value of the specified <a href="Register.html" title="Register">register</a>.
+<td> Outputs the value of the specified <a href="Register" title="Register">register</a>.
 </td></tr>
 <tr>
 <td> {reg#?str1:str2}
@@ -198,7 +198,7 @@
 <tr>
 <td> {male/female}
 </td>
-<td> Displays either string depending on the <a href="index.php@title=Player&amp;action=edit&amp;redlink=1.html" class="new" title="Player (page does not exist)">player</a>'s <a href="index.php@title=Gender&amp;action=edit&amp;redlink=1.html" class="new" title="Gender (page does not exist)">gender</a>.
+<td> Displays either string depending on the <a href="index.php@title=Player&amp;action=edit&amp;redlink=1.html" class="new" title="Player (page does not exist)">player</a>'s <a href="index.php@title=Gender&amp;action=edit&amp;redlink=1" class="new" title="Gender (page does not exist)">gender</a>.
 </td></tr>
 <tr>
 <td> {playername}
@@ -216,7 +216,7 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:120-0!*!0!!en!* and timestamp 20200419221352 -->
 <div class="printfooter">
-Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/String_Operations</a>"</div>
+Retrieved from "<a href="String_Operations">http://mbmodwiki.ollclan.eu/String_Operations</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
 				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
@@ -234,7 +234,7 @@ Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/Str
 	<ul>
 					<li  id="pt-anonuserpage"><a href="http://mbmodwiki.ollclan.eu/User:127.0.0.1" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">127.0.0.1</a></li>
 					<li  id="pt-anontalk"><a href="http://mbmodwiki.ollclan.eu/User_talk:127.0.0.1" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
-					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=String_Operations.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+					<li  id="pt-anonlogin"><a href="index.php@title=Special%253AUserLogin&amp;returnto=String_Operations" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
 
@@ -245,8 +245,8 @@ Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/Str
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="String_Operations.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AString_Operations&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="String_Operations"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AString_Operations&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -269,9 +269,9 @@ Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/Str
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="String_Operations.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=String_Operations&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=String_Operations&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="String_Operations" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=String_Operations&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=String_Operations&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -307,7 +307,7 @@ Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/Str
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -315,13 +315,13 @@ Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/Str
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -337,11 +337,11 @@ Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/Str
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/String_Operations.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/String_Operations.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-									<li id="t-print"><a href="index.php@title=String_Operations&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=String_Operations&amp;oldid=699.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/String_Operations" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/String_Operations" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="index.php@title=String_Operations&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="index.php@title=String_Operations&amp;oldid=699" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -361,9 +361,9 @@ Retrieved from "<a href="String_Operations.html">http://mbmodwiki.ollclan.eu/Str
 																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">

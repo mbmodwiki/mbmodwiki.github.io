@@ -5,8 +5,8 @@
 <title>Scripting - Mount&amp;Blade Modding Wiki</title>
 <meta name="generator" content="MediaWiki 1.17.0" />
 <meta name="robots" content="noindex,nofollow" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Scripting&amp;action=edit.html" />
-<link rel="edit" title="Edit" href="index.php@title=Scripting&amp;action=edit.html" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="index.php@title=Scripting&amp;action=edit" />
+<link rel="edit" title="Edit" href="index.php@title=Scripting&amp;action=edit" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Mount&amp;Blade Modding Wiki (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="api.php@action=rsd" />
@@ -36,7 +36,7 @@
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub">
-				<div id="mw-revision-info">Revision as of 09:23, 28 June 2012 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter.html" title="Special:Contributions/Swyter">contribs</a>)</span></div>
+				<div id="mw-revision-info">Revision as of 09:23, 28 June 2012 by <a href="User%253ASwyter.html" title="User:Swyter" class="mw-userlink">Swyter</a>  <span class="mw-usertoollinks">(<a href="index.php@title=User_talk%253ASwyter&amp;action=edit&amp;redlink=1.html" class="new" title="User talk:Swyter (page does not exist)">Talk</a> | <a href="Special%253AContributions/Swyter" title="Special:Contributions/Swyter">contribs</a>)</span></div>
 
 				<div id="mw-revision-nav">(<a href="http://mbmodwiki.ollclan.eu/index.php?title=Scripting&amp;diff=prev&amp;oldid=589" title="Scripting">diff</a>) <a href="http://mbmodwiki.ollclan.eu/index.php?title=Scripting&amp;direction=prev&amp;oldid=589" title="Scripting">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
 			</div>
@@ -49,7 +49,7 @@
 				<!-- /jumpto -->
 								<!-- bodytext -->
 				<p>The Mount &amp; Blade scripting language is based on an "opcode parser" built into the game engine which interprets files containing a series of plain-text numbers, and occasionally sequences of letters, and performs tasks based on what it reads from these files.  While it shares most of the features of any other programming language, it is not a programming language: someone cannot do anything arbitrarily in the scripting language that has not been explicitly enabled in the game engine, meaning that scripters cannot delete files, draw graphics directly on the screen, compromise security, or otherwise manipulate an end-user's computer through scripting alone.  This also somewhat limits the power of the language for more complex tasks, as some of the particular quirks of the Mount and Blade scripting language make routine programming tasks more difficult.  Nevertheless, it is a very full-featured system and many Mount and Blade modders have barely scratched the surface of its potential.
-</p><p>Scripts in Mount &amp; Blade are tightly integrated with the <a href="Module_system.html" title="Module system">module system</a>, and many features of the module system involve scripts in some way.  Scripting is used in the conditions of <a href="Dialogue.html" title="Dialogue" class="mw-redirect">dialogue</a>, in <a href="index.php@title=Simple_trigger&amp;action=edit&amp;redlink=1.html" class="new" title="Simple trigger (page does not exist)">simple triggers</a>, and (of course) in full <a href="index.php@title=Script&amp;action=edit&amp;redlink=1.html" class="new" title="Script (page does not exist)">scripts</a>.
+</p><p>Scripts in Mount &amp; Blade are tightly integrated with the <a href="Module_system.html" title="Module system">module system</a>, and many features of the module system involve scripts in some way.  Scripting is used in the conditions of <a href="Dialogue.html" title="Dialogue" class="mw-redirect">dialogue</a>, in <a href="index.php@title=Simple_trigger&amp;action=edit&amp;redlink=1.html" class="new" title="Simple trigger (page does not exist)">simple triggers</a>, and (of course) in full <a href="index.php@title=Script&amp;action=edit&amp;redlink=1" class="new" title="Script (page does not exist)">scripts</a>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -65,35 +65,35 @@
 <li class="toclevel-1 tocsection-7"><a href="index.php@title=Scripting&amp;oldid=589.html#Other_resources"><span class="tocnumber">4</span> <span class="toctext">Other resources</span></a></li>
 </ul>
 </td></tr></table>
-<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=1.html" title="Edit section: Programming concepts">edit</a>]</span> <span class="mw-headline" id="Programming_concepts"> Programming concepts </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=1" title="Edit section: Programming concepts">edit</a>]</span> <span class="mw-headline" id="Programming_concepts"> Programming concepts </span></h2>
 <p>Scripting is divided into several core concepts.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=2.html" title="Edit section: Statements">edit</a>]</span> <span class="mw-headline" id="Statements"> Statements </span></h3>
-<p>A "statement" in programming terms is a single, <a href="http://en.wiktionary.org/wiki/discrete" class="external text" rel="nofollow">discrete</a> line of code that accomplishes a single, clearly defined task.  In Mount &amp; Blade, all statements must begin with an <b><a href="Operation.html" title="Operation">operation</a></b>; in other languages, a statement also contains an "operator", but the operator is not usually the first thing on the line (often there may be a variable on the left, an operator in the middle, and another variable on the right).  In Mount &amp; Blade, the operation is <i>always</i> the very first thing on the line, due to the unique way the game engine works.
-</p><p>All statements in Mount and Blade scripting are made from Python <a href="Tuple.html" title="Tuple">tuples</a>.  In the scripting community, "tuple" is usually equivalent to "statement" in the context of the scripting language.
+<h3><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=2" title="Edit section: Statements">edit</a>]</span> <span class="mw-headline" id="Statements"> Statements </span></h3>
+<p>A "statement" in programming terms is a single, <a href="http://en.wiktionary.org/wiki/discrete" class="external text" rel="nofollow">discrete</a> line of code that accomplishes a single, clearly defined task.  In Mount &amp; Blade, all statements must begin with an <b><a href="Operation" title="Operation">operation</a></b>; in other languages, a statement also contains an "operator", but the operator is not usually the first thing on the line (often there may be a variable on the left, an operator in the middle, and another variable on the right).  In Mount &amp; Blade, the operation is <i>always</i> the very first thing on the line, due to the unique way the game engine works.
+</p><p>All statements in Mount and Blade scripting are made from Python <a href="Tuple" title="Tuple">tuples</a>.  In the scripting community, "tuple" is usually equivalent to "statement" in the context of the scripting language.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=3.html" title="Edit section: Blocks">edit</a>]</span> <span class="mw-headline" id="Blocks"> Blocks </span></h3>
-<p>A "block" in programming terms is a series of statements that accomplishes a broader goal, by repeatedly manipulating numbers and game objects.  All code in a block is typically surrounded by brackets in the Mount and Blade scripting system and contains any arbitrary number of tuples.  Blocks can only appear when defined by new objects, such as new <a href="Dialogue.html" title="Dialogue" class="mw-redirect">dialogue</a> entries, new <a href="index.php@title=Trigger&amp;action=edit&amp;redlink=1.html" class="new" title="Trigger (page does not exist)">triggers</a>, and new <a href="index.php@title=Script&amp;action=edit&amp;redlink=1.html" class="new" title="Script (page does not exist)">scripts</a>.
+<h3><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=3" title="Edit section: Blocks">edit</a>]</span> <span class="mw-headline" id="Blocks"> Blocks </span></h3>
+<p>A "block" in programming terms is a series of statements that accomplishes a broader goal, by repeatedly manipulating numbers and game objects.  All code in a block is typically surrounded by brackets in the Mount and Blade scripting system and contains any arbitrary number of tuples.  Blocks can only appear when defined by new objects, such as new <a href="Dialogue.html" title="Dialogue" class="mw-redirect">dialogue</a> entries, new <a href="index.php@title=Trigger&amp;action=edit&amp;redlink=1.html" class="new" title="Trigger (page does not exist)">triggers</a>, and new <a href="index.php@title=Script&amp;action=edit&amp;redlink=1" class="new" title="Script (page does not exist)">scripts</a>.
 </p><p>In the module system, a block is a Python array of tuples.  As Mount &amp; Blade does not support array operations, using the term "array" is generally avoided in preference to "block".
-</p><p>Unlike most other programming languages, "nested" blocks (such as a <a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1.html" class="new" title="Try begin (page does not exist)">try_begin</a> block) are represented without any specific special symbols like braces or brackets, and indentation is unimportant as long as Python will accept it.
+</p><p>Unlike most other programming languages, "nested" blocks (such as a <a href="index.php@title=Try_begin&amp;action=edit&amp;redlink=1" class="new" title="Try begin (page does not exist)">try_begin</a> block) are represented without any specific special symbols like braces or brackets, and indentation is unimportant as long as Python will accept it.
 </p>
-<h3><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=4.html" title="Edit section: Functions">edit</a>]</span> <span class="mw-headline" id="Functions"> Functions </span></h3>
+<h3><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=4" title="Edit section: Functions">edit</a>]</span> <span class="mw-headline" id="Functions"> Functions </span></h3>
 <p>A "function" in programming terms is a block that has been specially named.  A function can be "called" by its name in order to run every statement it contains at once.  It can be reused as needed, and this is one of its greatest strengths: if it contains a bug that needs to be fixed, all pieces of code that use the same function will automatically use the fixed function instead of needing to be updated.  It reduces the likelihood of forgetting to update a piece of code.  It also provides an advantage in that once the function is designed properly, the code that uses it doesn't care about how it works, a concept called "encapsulation": the code tells the function what it wants and the function gives the results without the person writing the other piece of code having to worry about all of the gory details.  It can break large, daunting "spaghetti code" into an easily manageable set of simple features and the code that uses them.
-</p><p>In the module system, a function is a <a href="index.php@title=Script&amp;action=edit&amp;redlink=1.html" class="new" title="Script (page does not exist)">script</a> -- a special piece of data found in <a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module scripts (page does not exist)">module_scripts</a>.py that can be run using the <a href="Call_script.html" title="Call script">call_script</a> operation.  Mount &amp; Blade does not normally use actual Python functions.  Scripters generally use "function" and "script" interchangeably, but almost always mean anything that has been defined in module_scripts.py when they say "function".
+</p><p>In the module system, a function is a <a href="index.php@title=Script&amp;action=edit&amp;redlink=1.html" class="new" title="Script (page does not exist)">script</a> -- a special piece of data found in <a href="index.php@title=Module_scripts&amp;action=edit&amp;redlink=1.html" class="new" title="Module scripts (page does not exist)">module_scripts</a>.py that can be run using the <a href="Call_script" title="Call script">call_script</a> operation.  Mount &amp; Blade does not normally use actual Python functions.  Scripters generally use "function" and "script" interchangeably, but almost always mean anything that has been defined in module_scripts.py when they say "function".
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=5.html" title="Edit section: Basic scripting">edit</a>]</span> <span class="mw-headline" id="Basic_scripting"> Basic scripting </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=5" title="Edit section: Basic scripting">edit</a>]</span> <span class="mw-headline" id="Basic_scripting"> Basic scripting </span></h2>
 <p>Scripting in Mount &amp; Blade is not easy; not only is the syntax "a language within a language" but there is no single accepted "For Dummies" reference.  Many ideas for Mount &amp; Blade scripting will have never been done before, many operations will have never been used by anyone else, and there is still the potential to run into a show-stopping bug in the Mount &amp; Blade game engine, even though Mount &amp; Blade and its sequels have been present on the market for several years.
-</p><p>Before beginning scripting, it is strongly suggested that you have played Mount &amp; Blade for quite some time and have at least an appreciable grasp on how it all works together.  When you enter a city, you can see various buildings around town: the town is a <a href="Scene.html" title="Scene">scene</a> and the buildings are <a href="index.php@title=Scene_prop&amp;action=edit&amp;redlink=1.html" class="new" title="Scene prop (page does not exist)">scene props</a>.  When you enter a tavern, you see people standing around: it is much easier to understand that it is a tavern <a href="Scene.html" title="Scene">scene</a> containing a standard tavern <a href="index.php@title=Mission&amp;action=edit&amp;redlink=1.html" class="new" title="Mission (page does not exist)">mission</a> filled with NPC <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agents</a> than it is to simply try to comprehend the concepts of scenes, missions, and agents without any frame of reference.  You know that the places that the agents appear are fixed -- you remember to check upstairs in certain taverns because there are spawn points up there; each one of those is a <a href="index.php@title=Position&amp;action=edit&amp;redlink=1.html" class="new" title="Position (page does not exist)">position</a>.  And so on; once you comprehend how the game works "on the outside", reading the descriptions of what the things are "on the inside" will be much easier.
+</p><p>Before beginning scripting, it is strongly suggested that you have played Mount &amp; Blade for quite some time and have at least an appreciable grasp on how it all works together.  When you enter a city, you can see various buildings around town: the town is a <a href="Scene.html" title="Scene">scene</a> and the buildings are <a href="index.php@title=Scene_prop&amp;action=edit&amp;redlink=1.html" class="new" title="Scene prop (page does not exist)">scene props</a>.  When you enter a tavern, you see people standing around: it is much easier to understand that it is a tavern <a href="Scene.html" title="Scene">scene</a> containing a standard tavern <a href="index.php@title=Mission&amp;action=edit&amp;redlink=1.html" class="new" title="Mission (page does not exist)">mission</a> filled with NPC <a href="index.php@title=Agent&amp;action=edit&amp;redlink=1.html" class="new" title="Agent (page does not exist)">agents</a> than it is to simply try to comprehend the concepts of scenes, missions, and agents without any frame of reference.  You know that the places that the agents appear are fixed -- you remember to check upstairs in certain taverns because there are spawn points up there; each one of those is a <a href="index.php@title=Position&amp;action=edit&amp;redlink=1" class="new" title="Position (page does not exist)">position</a>.  And so on; once you comprehend how the game works "on the outside", reading the descriptions of what the things are "on the inside" will be much easier.
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=6.html" title="Edit section: Hello, world">edit</a>]</span> <span class="mw-headline" id="Hello.2C_world"> Hello, world </span></h2>
-<p>"Hello, world" is the traditional introduction to scripting by any programmer.  The easiest way to implement hello world in Mount &amp; Blade is with a <a href="index.php@title=Simple_trigger&amp;action=edit&amp;redlink=1.html" class="new" title="Simple trigger (page does not exist)">simple trigger</a>.
+<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=6" title="Edit section: Hello, world">edit</a>]</span> <span class="mw-headline" id="Hello.2C_world"> Hello, world </span></h2>
+<p>"Hello, world" is the traditional introduction to scripting by any programmer.  The easiest way to implement hello world in Mount &amp; Blade is with a <a href="index.php@title=Simple_trigger&amp;action=edit&amp;redlink=1" class="new" title="Simple trigger (page does not exist)">simple trigger</a>.
 </p><p>TODO
 </p>
-<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=7.html" title="Edit section: Other resources">edit</a>]</span> <span class="mw-headline" id="Other_resources"> Other resources </span></h2>
+<h2><span class="editsection">[<a href="index.php@title=Scripting&amp;action=edit&amp;section=7" title="Edit section: Other resources">edit</a>]</span> <span class="mw-headline" id="Other_resources"> Other resources </span></h2>
 <p>Community resources on the TaleWorlds forums are available to make the effort of scripting a little less unbearable:
 </p>
-<ul><li> <a href="http://forums.taleworlds.com/index.php/topic,213060.0.html" class="external text" rel="nofollow">Lav's Scripting Reference</a>
-</li><li> <a href="http://forums.taleworlds.com/index.php/topic,6575.0.html" class="external text" rel="nofollow">Mod Maker's Q&amp;A Thread</a>
+<ul><li> <a href="http://forums.taleworlds.com/index.php/topic,213060.0" class="external text" rel="nofollow">Lav's Scripting Reference</a>
+</li><li> <a href="http://forums.taleworlds.com/index.php/topic,6575.0" class="external text" rel="nofollow">Mod Maker's Q&amp;A Thread</a>
 </li></ul>
 
 <!-- 
@@ -106,10 +106,10 @@ Expensive parser function count: 0/100
 
 <!-- Saved in parser cache with key benelux_mb_mod_wiki-wiki_:pcache:idhash:110-0!*!0!!en!* and timestamp 20200419213853 -->
 <div class="printfooter">
-Retrieved from "<a href="Scripting.html">http://mbmodwiki.ollclan.eu/Scripting</a>"</div>
+Retrieved from "<a href="Scripting">http://mbmodwiki.ollclan.eu/Scripting</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="index.php@title=Category%253AScripting&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Scripting (page does not exist)">Scripting</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="Special%253ACategories.html" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="Category%253AModding_Concepts.html" title="Category:Modding Concepts">Modding Concepts</a></span> | <span dir='ltr'><a href="index.php@title=Category%253AScripting&amp;action=edit&amp;redlink=1" class="new" title="Category:Scripting (page does not exist)">Scripting</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -135,8 +135,8 @@ Retrieved from "<a href="Scripting.html">http://mbmodwiki.ollclan.eu/Scripting</
 <div id="p-namespaces" class="vectorTabs">
 	<h5>Namespaces</h5>
 	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="Scripting.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AScripting&amp;action=edit&amp;redlink=1.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Scripting"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index.php@title=Talk%253AScripting&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -159,9 +159,9 @@ Retrieved from "<a href="Scripting.html">http://mbmodwiki.ollclan.eu/Scripting</
 <div id="p-views" class="vectorTabs">
 	<h5>Views</h5>
 	<ul>
-					<li id="ca-view" class="selected"><span><a href="Scripting.html" >Read</a></span></li>
-					<li id="ca-edit"><span><a href="index.php@title=Scripting&amp;action=edit.html"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Scripting&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-view" class="selected"><span><a href="Scripting" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="index.php@title=Scripting&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="index.php@title=Scripting&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
 			</ul>
 </div>
 
@@ -197,7 +197,7 @@ Retrieved from "<a href="Scripting.html">http://mbmodwiki.ollclan.eu/Scripting</
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(images/logo-jfinal-3_production.png);" href="Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -205,13 +205,13 @@ Retrieved from "<a href="Scripting.html">http://mbmodwiki.ollclan.eu/Scripting</
 	<h5>Navigation</h5>
 	<div class="body">
 				<ul>
-					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0.html">The Forge</a></li>
-					<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-					<li id="n-The-Basics"><a href="Category%253AModding_Concepts.html">The Basics</a></li>
-					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1.html">Begin to Mod</a></li>
-					<li id="n-recentchanges"><a href="Special%253ARecentChanges.html" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-					<li id="n-randompage"><a href="Classical_Italian/Roman_Items.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
-					<li id="n-help"><a href="Help%253AContents.html" title="The place to find out">Help</a></li>
+					<li id="n-The-Forge"><a href="http://forums.taleworlds.com/index.php/board,64.0">The Forge</a></li>
+					<li id="n-mainpage-description"><a href="Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-The-Basics"><a href="Category%253AModding_Concepts">The Basics</a></li>
+					<li id="n-Begin-to-Mod"><a href="Official_Module_System_Documentation%253A_Part_1">Begin to Mod</a></li>
+					<li id="n-recentchanges"><a href="Special%253ARecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="Classical_Italian/Roman_Items" title="Load a random page [x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="Help%253AContents" title="The place to find out">Help</a></li>
 				</ul>
 			</div>
 </div>
@@ -227,11 +227,11 @@ Retrieved from "<a href="Scripting.html">http://mbmodwiki.ollclan.eu/Scripting</
 	<h5>Toolbox</h5>
 	<div class="body">
 		<ul>
-					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Scripting.html" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
-						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Scripting.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
-																																										<li id="t-specialpages"><a href="Special%253ASpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+					<li id="t-whatlinkshere"><a href="Special%253AWhatLinksHere/Scripting" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="Special%253ARecentChangesLinked/Scripting" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="Special%253ASpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
 									<li id="t-print"><a href="http://mbmodwiki.ollclan.eu/index.php?title=Scripting&amp;oldid=589&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
-						<li id="t-permalink"><a href="index.php@title=Scripting&amp;oldid=589.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-permalink"><a href="index.php@title=Scripting&amp;oldid=589" title="Permanent link to this revision of the page">Permanent link</a></li>
 						</ul>
 	</div>
 </div>
@@ -249,9 +249,9 @@ Retrieved from "<a href="Scripting.html">http://mbmodwiki.ollclan.eu/Scripting</
 																	<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/publicdomain/" class="external ">Public Domain</a>.</li>
 															</ul>
 															<ul id="footer-places">
-																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy.html" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
-																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout.html" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
-																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer.html" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
+																	<li id="footer-places-privacy"><a href="ModdingWiki%253APrivacy_policy" title="ModdingWiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="ModdingWiki%253AAbout" title="ModdingWiki:About">About Mount&amp;Blade Modding Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="ModdingWiki%253AGeneral_disclaimer" title="ModdingWiki:General disclaimer">Disclaimers</a></li>
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">
